@@ -36,6 +36,7 @@ branches:
   only:
     - master
     - /^.*-stable$/
+    - /^greenkeeper/.*$/
 
 notifications:
   email:
