@@ -63,5 +63,5 @@
     /* Advanced Options */
     // "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["./typescript/babel-plugin-flow-to-typescript/**/*.ts"]
+  "include": ["./typescript/babel-plugin-flow-to-typescript/**/*.tsx"]
 }
