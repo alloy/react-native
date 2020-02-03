@@ -1,0 +1,23 @@
+import { $ReadOnly } from "utility-types";
+export declare type GeneratedViewConfig = {
+    uiViewClassName: string;
+    bubblingEventTypes?: $ReadOnly<{
+        [eventName: string]: $ReadOnly<{
+            phasedRegistrationNames: $ReadOnly<{
+                captured: string;
+                bubbled: string;
+            }>;
+        }>;
+    }>;
+    directEventTypes?: $ReadOnly<{
+        [eventName: string]: $ReadOnly<{
+            registrationName: string;
+        }>;
+    }>;
+    validAttributes?: {
+        [propName: string]: true | $ReadOnly<{
+            diff?: <T>(arg1: any, arg2: any) => boolean;
+            process?: (arg1: any) => any;
+        }>;
+    };
+};

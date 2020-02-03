@@ -1,0 +1,17 @@
+declare const ReactNativeStyleAttributes: any;
+declare const UIManager: any;
+declare const insetsDiffer: any;
+declare const invariant: any;
+declare const matricesDiffer: any;
+declare const pointsDiffer: any;
+declare const processColor: any;
+declare const processColorArray: any;
+declare const resolveAssetSource: any;
+declare const sizesDiffer: any;
+declare const warning: any;
+declare function getNativeComponentAttributes(uiViewClassName: string): any;
+declare let hasAttachedDefaultEventTypes: boolean;
+declare function attachDefaultEventTypes(viewConfig: any): void;
+declare function merge(destination: Object | null | undefined, source: Object | null | undefined): Object | null | undefined;
+declare function getDifferForType(typeName: string): (prevProp: any, nextProp: any) => boolean | null | undefined;
+declare function getProcessorForType(typeName: string): (nextProp: any) => any | null | undefined;
