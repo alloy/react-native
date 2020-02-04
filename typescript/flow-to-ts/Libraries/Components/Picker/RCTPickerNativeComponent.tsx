@@ -1,0 +1,60 @@
+yarn run v1.21.1
+$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Picker/RCTPickerNativeComponent.js
+'use strict';
+import { $ReadOnly } from "utility-types";
+
+
+
+
+
+
+
+
+
+
+
+
+const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
+
+import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
+import { SyntheticEvent } from "../../Types/CoreEventTypes";
+import { TextStyleProp } from "../../StyleSheet/StyleSheet";
+import codegenNativeCommands from "../../Utilities/codegenNativeCommands";
+import * as React from "react";
+
+type PickerIOSChangeEvent = React.SyntheticEvent<$ReadOnly<{
+  newValue: number | string;
+  newIndex: number;
+}>>;
+
+type RCTPickerIOSItemType = $ReadOnly<{
+  label: Label | null | undefined;
+  value: (number | string) | null | undefined;
+  textColor: number | null | undefined;
+}>;
+
+type Label = Stringish | number;
+
+type NativeProps = $ReadOnly<{
+  items: ReadonlyArray<RCTPickerIOSItemType>;
+  onChange: (event: PickerIOSChangeEvent) => void;
+  selectedIndex: number;
+  style?: TextStyleProp | null | undefined;
+  testID?: string | null | undefined;
+  accessibilityLabel?: string | null | undefined;
+}>;
+
+type ComponentType = HostComponent<NativeProps>;
+
+interface NativeCommands {
+  readonly setNativeSelectedIndex: (viewRef: React.ElementRef<ComponentType>, index: number) => void;
+}
+
+export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({
+  supportedCommands: ['setNativeSelectedIndex']
+});
+
+const RCTPickerNativeComponent: ComponentType = requireNativeComponent<NativeProps>('RCTPicker');
+
+export default RCTPickerNativeComponent;
+Done in 0.51s.

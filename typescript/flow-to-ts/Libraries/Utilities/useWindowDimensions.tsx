@@ -1,0 +1,41 @@
+yarn run v1.21.1
+$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/useWindowDimensions.js
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+import Dimensions from "./Dimensions";
+import { DisplayMetrics } from "./NativeDeviceInfo";
+import { useEffect, useState } from "react";
+
+export default function useWindowDimensions(): DisplayMetrics {
+  const [dimensions, setDimensions] = useState(() => Dimensions.get('window'));
+  useEffect(() => {
+    function handleChange({
+      window
+    }) {
+      if (dimensions.width !== window.width || dimensions.height !== window.height || dimensions.scale !== window.scale || dimensions.fontScale !== window.fontScale) {
+        setDimensions(window);
+      }
+    }
+    Dimensions.addEventListener('change', handleChange);
+    // We might have missed an update between calling `get` in render and
+    // `addEventListener` in this handler, so we set it here. If there was
+    // no change, React will filter out this update as a no-op.
+    handleChange({ window: Dimensions.get('window') });
+    return () => {
+      Dimensions.removeEventListener('change', handleChange);
+    };
+  }, [dimensions]);
+  return dimensions;
+}
+Done in 0.47s.

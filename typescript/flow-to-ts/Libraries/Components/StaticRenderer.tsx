@@ -1,0 +1,44 @@
+yarn run v1.21.1
+$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/StaticRenderer.js
+'use strict';
+import { $ReadOnly } from "utility-types";
+
+
+
+
+
+
+
+
+
+
+
+
+const React = require('react');
+
+type Props = $ReadOnly<{
+  /**
+   * Indicates whether the render function needs to be called again
+   */
+  shouldUpdate: boolean;
+
+  /**
+   * () => renderable
+   * A function that returns a renderable component
+   */
+  render: () => React.ReactNode;
+}>;
+
+class StaticRenderer extends React.Component<Props> {
+
+  shouldComponentUpdate(nextProps: Props): boolean {
+    return nextProps.shouldUpdate;
+  }
+
+  render(): React.ReactNode {
+    return this.props.render();
+  }
+}
+
+module.exports = StaticRenderer;
+Done in 0.51s.

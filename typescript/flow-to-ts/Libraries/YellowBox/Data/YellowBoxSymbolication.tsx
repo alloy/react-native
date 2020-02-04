@@ -1,0 +1,93 @@
+yarn run v1.21.1
+$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/YellowBox/Data/YellowBoxSymbolication.js
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+const symbolicateStackTrace = require('../../Core/Devtools/symbolicateStackTrace');
+
+import { StackFrame } from "../../Core/NativeExceptionsManager";
+import { SymbolicatedStackTrace } from "../../Core/Devtools/symbolicateStackTrace";
+
+type CacheKey = string;
+
+export type Stack = Array<StackFrame>;
+
+const cache: Map<CacheKey, Promise<Stack>> = new Map();
+
+const YellowBoxSymbolication = {
+  delete(stack: Stack): void {
+    cache.delete(getCacheKey(stack));
+  },
+
+  symbolicate(stack: Stack): Promise<Stack> {
+    const key = getCacheKey(stack);
+
+    let promise = cache.get(key);
+    if (promise == null) {
+      promise = symbolicateStackTrace(stack).then(sanitize);
+      cache.set(key, promise);
+    }
+
+    return promise;
+  }
+};
+
+const getCacheKey = (stack: Stack): CacheKey => {
+  return JSON.stringify(stack);
+};
+
+/**
+ * Sanitize because sometimes, `symbolicateStackTrace` gives us invalid values.
+ */
+const sanitize = (data: SymbolicatedStackTrace): Stack => {
+  const maybeStack = data?.stack;
+  if (!Array.isArray(maybeStack)) {
+    throw new Error('Expected stack to be an array.');
+  }
+  const stack = [];
+  for (const maybeFrame of maybeStack) {
+    if (typeof maybeFrame !== 'object' || maybeFrame == null) {
+      throw new Error('Expected each stack frame to be an object.');
+    }
+    if (typeof maybeFrame.column !== 'number' && maybeFrame.column != null) {
+      throw new Error('Expected stack frame `column` to be a nullable number.');
+    }
+    if (typeof maybeFrame.file !== 'string') {
+      throw new Error('Expected stack frame `file` to be a string.');
+    }
+    if (typeof maybeFrame.lineNumber !== 'number') {
+      throw new Error('Expected stack frame `lineNumber` to be a number.');
+    }
+    if (typeof maybeFrame.methodName !== 'string') {
+      throw new Error('Expected stack frame `methodName` to be a string.');
+    }
+    let collapse = false;
+    if ('collapse' in maybeFrame) {
+      if (typeof maybeFrame.collapse !== 'boolean') {
+        throw new Error('Expected stack frame `collapse` to be a boolean.');
+      }
+      collapse = maybeFrame.collapse;
+    }
+    stack.push({
+      column: maybeFrame.column,
+      file: maybeFrame.file,
+      lineNumber: maybeFrame.lineNumber,
+      methodName: maybeFrame.methodName,
+      collapse
+    });
+  }
+  return stack;
+};
+
+module.exports = YellowBoxSymbolication;
+Done in 0.53s.

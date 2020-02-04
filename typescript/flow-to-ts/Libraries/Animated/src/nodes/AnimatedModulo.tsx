@@ -1,0 +1,65 @@
+yarn run v1.21.1
+$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/nodes/AnimatedModulo.js
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+const AnimatedInterpolation = require('./AnimatedInterpolation');
+const AnimatedNode = require('./AnimatedNode');
+const AnimatedWithChildren = require('./AnimatedWithChildren');
+
+import { InterpolationConfigType } from "./AnimatedInterpolation";
+
+class AnimatedModulo extends AnimatedWithChildren {
+
+  _a: AnimatedNode;
+  _modulus: number;
+
+  constructor(a: AnimatedNode, modulus: number) {
+    super();
+    this._a = a;
+    this._modulus = modulus;
+  }
+
+  __makeNative() {
+    this._a.__makeNative();
+    super.__makeNative();
+  }
+
+  __getValue(): number {
+    return (this._a.__getValue() % this._modulus + this._modulus) % this._modulus;
+  }
+
+  interpolate(config: InterpolationConfigType): AnimatedInterpolation {
+    return new AnimatedInterpolation(this, config);
+  }
+
+  __attach(): void {
+    this._a.__addChild(this);
+  }
+
+  __detach(): void {
+    this._a.__removeChild(this);
+    super.__detach();
+  }
+
+  __getNativeConfig(): any {
+    return {
+      type: 'modulus',
+      input: this._a.__getNativeTag(),
+      modulus: this._modulus
+    };
+  }
+}
+
+module.exports = AnimatedModulo;
+Done in 0.49s.
