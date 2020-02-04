@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/LogBox/UI/LogBoxButton.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -57,4 +55,3 @@ function LogBoxButton(props: Props): React.ReactNode {
 }
 
 export default LogBoxButton;
-Done in 0.49s.

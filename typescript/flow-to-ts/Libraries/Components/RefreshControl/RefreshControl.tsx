@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/RefreshControl/RefreshControl.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -196,4 +194,3 @@ class RefreshControl extends React.Component<RefreshControlProps> {
 }
 
 module.exports = RefreshControl;
-Done in 0.52s.

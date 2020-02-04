@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Touchable/TouchableHighlight.js
 'use strict';
 import { $ReadOnly, $Diff } from "utility-types";
 
@@ -330,4 +328,3 @@ class TouchableHighlight extends React.Component<Props, State> {
 }
 
 module.exports = (React.forwardRef((props, hostRef) => <TouchableHighlight {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>);
-Done in 0.59s.

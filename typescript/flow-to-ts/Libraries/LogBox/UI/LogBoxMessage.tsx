@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/LogBox/UI/LogBoxMessage.js
 'use strict';
 
 
@@ -83,4 +81,3 @@ function LogBoxMessage(props: Props): React.ReactNode {
 }
 
 export default LogBoxMessage;
-Done in 0.53s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Image/ImageProps.js
 'use strict';
 import { $ReadOnly, $Diff } from "utility-types";
 
@@ -163,4 +161,3 @@ export type ImageProps = $Diff<ViewProps, $ReadOnly<{style: ViewStyleProp | null
   src?: never;
   children?: never;
 };
-Done in 0.50s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpGlobals.js
 'use strict';
 
 
@@ -35,4 +33,3 @@ global.process.env = global.process.env || {};
 if (!global.process.env.NODE_ENV) {
   global.process.env.NODE_ENV = __DEV__ ? 'development' : 'production';
 }
-Done in 0.49s.

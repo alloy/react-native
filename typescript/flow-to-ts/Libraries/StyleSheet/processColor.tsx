@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/StyleSheet/processColor.js
 'use strict';
 
 
@@ -42,4 +40,3 @@ function processColor(color?: (string | number) | null | undefined): number | nu
 }
 
 module.exports = processColor;
-Done in 0.53s.

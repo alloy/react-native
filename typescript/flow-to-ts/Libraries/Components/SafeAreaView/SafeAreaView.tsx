@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/SafeAreaView/SafeAreaView.js
 import { $ReadOnly } from "utility-types";
 
 /**
@@ -51,4 +49,3 @@ if (Platform.OS === 'android') {
 }
 
 module.exports = exported;
-Done in 0.52s.

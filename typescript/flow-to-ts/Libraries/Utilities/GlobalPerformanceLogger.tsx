@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/GlobalPerformanceLogger.js
 'use strict';
 
 
@@ -26,4 +24,3 @@ import { IPerformanceLogger } from "./createPerformanceLogger";
 const GlobalPerformanceLogger: IPerformanceLogger = createPerformanceLogger();
 
 module.exports = GlobalPerformanceLogger;
-Done in 0.47s.

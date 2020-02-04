@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Picker/RCTPickerNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -57,4 +55,3 @@ export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({
 const RCTPickerNativeComponent: ComponentType = requireNativeComponent<NativeProps>('RCTPicker');
 
 export default RCTPickerNativeComponent;
-Done in 0.51s.

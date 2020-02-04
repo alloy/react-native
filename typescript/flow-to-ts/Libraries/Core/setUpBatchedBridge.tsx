@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpBatchedBridge.js
 'use strict';
 
 
@@ -36,4 +34,3 @@ if (__DEV__ && !global.__RCTProfileIsProfiling) {
 } else {
   registerModule('HMRClient', () => require('../Utilities/HMRClientProdShim'));
 }
-Done in 0.51s.

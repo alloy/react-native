@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/LogBox/UI/LogBoxStyle.js
 'use strict';
 
 
@@ -68,4 +66,3 @@ export function getHighlightColor(opacity?: number): string {
 export function getTextColor(opacity?: number): string {
   return `rgba(255, 255, 255, ${opacity == null ? 1 : opacity})`;
 }
-Done in 0.51s.

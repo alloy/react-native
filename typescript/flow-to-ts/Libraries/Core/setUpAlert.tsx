@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpAlert.js
 'use strict';
 
 
@@ -24,4 +22,3 @@ if (!global.alert) {
     require('../Alert/Alert').alert('Alert', '' + text);
   };
 }
-Done in 0.51s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/TextInput/RCTMultilineTextInputNativeComponent.js
 'use strict';
 
 
@@ -36,4 +34,3 @@ export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({
 const SinglelineTextInputNativeComponent: HostComponent<unknown> = requireNativeComponent<unknown>('RCTMultilineTextInputView');
 
 export default SinglelineTextInputNativeComponent;
-Done in 0.48s.

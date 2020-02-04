@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Types/CodegenTypes.js
 'use strict';
 
 
@@ -35,4 +33,3 @@ type DefaultTypes = number | boolean | string | ReadonlyArray<string>;
 //
 // eslint-disable-next-line no-unused-vars
 export type WithDefault<Type extends DefaultTypes, Value extends (Type | null | undefined) | string> = Type | null | undefined;
-Done in 0.47s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/ScrollView/ScrollViewCommands.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -33,4 +31,3 @@ interface NativeCommands {
 export default (codegenNativeCommands<NativeCommands>({
   supportedCommands: ['flashScrollIndicators', 'scrollTo', 'scrollToEnd', 'zoomToRect']
 }) as NativeCommands);
-Done in 0.47s.

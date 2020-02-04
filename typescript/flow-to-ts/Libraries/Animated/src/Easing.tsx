@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/Easing.js
 'use strict';
 
 
@@ -248,4 +246,3 @@ class Easing {
 }
 
 module.exports = Easing;
-Done in 0.50s.

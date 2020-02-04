@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/truncate.js
 'use strict';
 
 
@@ -43,4 +41,3 @@ const truncate = function (str: string | null | undefined, maxChars: number, opt
 };
 
 module.exports = truncate;
-Done in 0.48s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Keyboard/KeyboardAvoidingView.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -195,4 +193,3 @@ class KeyboardAvoidingView extends React.Component<Props, State> {
 }
 
 module.exports = KeyboardAvoidingView;
-Done in 0.54s.

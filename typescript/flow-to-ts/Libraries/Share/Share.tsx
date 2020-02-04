@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Share/Share.js
 'use strict';
 
 
@@ -133,4 +131,3 @@ class Share {
 }
 
 module.exports = Share;
-Done in 0.56s.

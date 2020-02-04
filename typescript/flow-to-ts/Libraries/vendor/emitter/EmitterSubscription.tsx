@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/vendor/emitter/EmitterSubscription.js
 'use strict';
 
 
@@ -56,4 +54,3 @@ class EmitterSubscription extends EventSubscription {
 }
 
 module.exports = EmitterSubscription;
-Done in 0.48s.

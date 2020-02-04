@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Touchable/BoundingDimensions.js
 'use strict';
 
 
@@ -44,4 +42,3 @@ BoundingDimensions.getPooledFromElement = function (element) {
 PooledClass.addPoolingTo(BoundingDimensions, twoArgumentPooler);
 
 module.exports = BoundingDimensions;
-Done in 0.47s.

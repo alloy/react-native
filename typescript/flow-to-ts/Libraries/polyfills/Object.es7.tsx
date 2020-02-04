@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/polyfills/Object.es7.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -59,4 +57,3 @@ $ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Librari
     };
   }
 })();
-Done in 0.47s.

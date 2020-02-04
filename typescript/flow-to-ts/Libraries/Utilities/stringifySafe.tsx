@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/stringifySafe.js
 'use strict';
 
 
@@ -51,4 +49,3 @@ function stringifySafe(arg: any): string {
 }
 
 module.exports = stringifySafe;
-Done in 0.50s.

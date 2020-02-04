@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedLayoutPropTypes.js
 'use strict';
 
 
@@ -72,4 +70,3 @@ const LayoutPropTypes = {
 };
 
 module.exports = LayoutPropTypes;
-Done in 0.61s.

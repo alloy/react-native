@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Lists/VirtualizedSectionList.js
 'use strict';
 import { $PropertyType, $Diff, $ReadOnly } from "utility-types";
 
@@ -531,4 +529,3 @@ class ItemWithSeparator extends React.Component<ItemWithSeparatorProps, ItemWith
 }
 
 module.exports = VirtualizedSectionList;
-Done in 0.63s.

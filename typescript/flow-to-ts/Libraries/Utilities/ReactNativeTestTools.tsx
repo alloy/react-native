@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/ReactNativeTestTools.js
 'use strict';
 
 
@@ -188,4 +186,3 @@ export { renderWithStrictMode };
 export { scrollToBottom };
 export { tap };
 export { withMessage };
-Done in 0.61s.

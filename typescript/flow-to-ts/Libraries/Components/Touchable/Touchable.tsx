@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Touchable/Touchable.js
 'use strict';
 
 
@@ -888,4 +886,3 @@ const styles = StyleSheet.create({
 });
 
 module.exports = Touchable;
-Done in 0.67s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpReactDevTools.js
 'use strict';
 
 
@@ -53,4 +51,3 @@ if (__DEV__) {
   RCTNativeAppEventEmitter.addListener('RCTDevMenuShown', connectToDevTools);
   connectToDevTools(); // Try connecting once on load
 }
-Done in 0.48s.

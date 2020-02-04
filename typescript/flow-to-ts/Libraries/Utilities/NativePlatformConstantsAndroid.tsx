@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/NativePlatformConstantsAndroid.js
 'use strict';
 
 
@@ -37,4 +35,3 @@ export interface Spec extends TurboModule {
 }
 
 export default (TurboModuleRegistry.getEnforcing<Spec>('PlatformConstants') as Spec);
-Done in 0.49s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpSegmentFetcher.js
 'use strict';
 
 
@@ -68,4 +66,3 @@ function __getSegment(segmentId: number, options: {
 }
 
 global.__getSegment = __getSegment;
-Done in 0.47s.

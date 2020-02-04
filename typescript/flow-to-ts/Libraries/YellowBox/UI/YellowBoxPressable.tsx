@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/YellowBox/UI/YellowBoxPressable.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -75,4 +73,3 @@ class YellowBoxPressable extends React.Component<Props, State> {
 }
 
 module.exports = YellowBoxPressable;
-Done in 0.56s.

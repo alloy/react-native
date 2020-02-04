@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/I18nManager.js
 'use strict';
 
 
@@ -55,4 +53,3 @@ module.exports = {
   isRTL: i18nConstants.isRTL,
   doLeftAndRightSwapInRTL: i18nConstants.doLeftAndRightSwapInRTL
 };
-Done in 0.48s.

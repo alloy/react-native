@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/CheckBox/CheckBox.android.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -193,4 +191,3 @@ const CheckBoxWithRef = React.forwardRef<Props, React.ElementRef<typeof AndroidC
 });
 
 module.exports = (CheckBoxWithRef as CheckBoxType);
-Done in 0.54s.

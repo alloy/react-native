@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/codegenNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -51,4 +49,3 @@ function codegenNativeComponent<Props>(componentName: string, options?: Options)
 }
 
 export default codegenNativeComponent;
-Done in 0.48s.

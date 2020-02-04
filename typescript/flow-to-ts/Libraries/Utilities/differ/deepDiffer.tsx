@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/differ/deepDiffer.js
 'use strict';
 
 
@@ -91,4 +89,3 @@ const deepDiffer = function (one: any, two: any, maxDepthOrOptions: Options | nu
 
 module.exports = deepDiffer;
 module.exports.unstable_setLogListeners = unstable_setLogListeners;
-Done in 0.48s.

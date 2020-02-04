@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/StaticRenderer.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -41,4 +39,3 @@ class StaticRenderer extends React.Component<Props> {
 }
 
 module.exports = StaticRenderer;
-Done in 0.51s.

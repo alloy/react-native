@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/mapWithSeparator.js
 'use strict';
 
 
@@ -25,4 +23,3 @@ function mapWithSeparator<TFrom, TTo>(items: Array<TFrom>, itemRenderer: (item: 
 }
 
 module.exports = mapWithSeparator;
-Done in 0.46s.

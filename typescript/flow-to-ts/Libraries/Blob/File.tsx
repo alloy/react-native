@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Blob/File.js
 'use strict';
 
 
@@ -50,4 +48,3 @@ class File extends Blob {
 }
 
 module.exports = File;
-Done in 0.52s.

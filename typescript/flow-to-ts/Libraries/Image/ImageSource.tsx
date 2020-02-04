@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Image/ImageSource.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -94,4 +92,3 @@ export type ImageURISource = $ReadOnly<{
 // https://fburl.com/8ljo5tmr
 // https://fb.facebook.com/groups/flow/permalink/1824103160971624/
 export type ImageSource = ImageURISource | number | Array<ImageURISource>;
-Done in 0.49s.

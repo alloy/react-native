@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Renderer/shims/ReactNativeViewConfigRegistry.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -109,4 +107,3 @@ exports.get = function (name: string): ReactNativeBaseComponentViewConfig<> {
   invariant(viewConfig, 'View config not found for name %s', name);
   return viewConfig;
 };
-Done in 0.49s.

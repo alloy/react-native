@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Network/convertRequestBody.js
 'use strict';
 
 
@@ -38,4 +36,3 @@ function convertRequestBody(body: RequestBody): Object {
 }
 
 module.exports = convertRequestBody;
-Done in 0.50s.

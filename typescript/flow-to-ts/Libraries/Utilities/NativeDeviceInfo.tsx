@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/NativeDeviceInfo.js
 'use strict';
 
 
@@ -50,4 +48,3 @@ const NativeModule: Spec = TurboModuleRegistry.getEnforcing<Spec>('DeviceInfo');
 const NativeDeviceInfo = NativeModule;
 
 export default NativeDeviceInfo;
-Done in 0.48s.

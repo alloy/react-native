@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/AppState/AppState.js
 'use strict';
 
 
@@ -164,4 +162,3 @@ class MissingNativeAppStateShim extends EventEmitter {
 const AppStateInstance: AppState | MissingNativeAppStateShim = NativeAppState ? new AppState() : new MissingNativeAppStateShim();
 
 module.exports = AppStateInstance;
-Done in 0.63s.

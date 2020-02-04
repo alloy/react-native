@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Switch/Switch.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -209,4 +207,3 @@ const returnsFalse = () => false;
 const returnsTrue = () => true;
 
 module.exports = Switch;
-Done in 0.53s.

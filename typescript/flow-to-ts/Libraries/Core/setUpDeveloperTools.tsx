@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpDeveloperTools.js
 'use strict';
 
 
@@ -70,4 +68,3 @@ if (__DEV__) {
     require('./setUpReactRefresh');
   }
 }
-Done in 0.51s.

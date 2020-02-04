@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/setUpXHR.js
 'use strict';
 
 
@@ -40,4 +38,3 @@ polyfillGlobal('AbortController', () => require('abort-controller/dist/abort-con
 );
 polyfillGlobal('AbortSignal', () => require('abort-controller/dist/abort-controller').AbortSignal // flowlint-line untyped-import:off
 );
-Done in 0.46s.

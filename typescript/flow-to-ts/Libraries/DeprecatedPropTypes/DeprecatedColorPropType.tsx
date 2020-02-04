@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedColorPropType.js
 'use strict';
 
 
@@ -55,4 +53,3 @@ ColorPropType.isRequired = colorPropType.bind(null, true
 );
 
 module.exports = ColorPropType;
-Done in 0.48s.

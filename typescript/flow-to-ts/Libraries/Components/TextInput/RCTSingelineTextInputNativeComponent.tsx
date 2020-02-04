@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/TextInput/RCTSingelineTextInputNativeComponent.js
 'use strict';
 
 
@@ -47,4 +45,3 @@ if (global.RN$Bridgeless) {
 
 // flowlint-next-line unclear-type:off
 export default ((SinglelineTextInputNativeComponent as any) as HostComponent<unknown>);
-Done in 0.48s.

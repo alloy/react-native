@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Interaction/Batchinator.js
 'use strict';
 
 
@@ -79,4 +77,3 @@ class Batchinator {
 }
 
 module.exports = Batchinator;
-Done in 0.54s.

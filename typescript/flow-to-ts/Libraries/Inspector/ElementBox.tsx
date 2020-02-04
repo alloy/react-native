@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Inspector/ElementBox.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -133,4 +131,3 @@ function resolveSizeInPlace(style: Style, direction: string, dimension: string) 
 }
 
 module.exports = ElementBox;
-Done in 0.52s.

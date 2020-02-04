@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Renderer/implementations/ReactFabric-profiling.fb.js
 "use strict";
 
 
@@ -4432,4 +4430,3 @@ var roots = new Map(),
 var ReactFabric$2 = { default: ReactFabric },
     ReactFabric$3 = ReactFabric$2 && ReactFabric || ReactFabric$2;
 module.exports = ReactFabric$3.default || ReactFabric$3;
-Done in 1.12s.

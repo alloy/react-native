@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/differ/insetsDiffer.js
 'use strict';
 
 
@@ -35,4 +33,3 @@ const insetsDiffer = function (one: Inset, two: Inset): boolean {
 };
 
 module.exports = insetsDiffer;
-Done in 0.47s.

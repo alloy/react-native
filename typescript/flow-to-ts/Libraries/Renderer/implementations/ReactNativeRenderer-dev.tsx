@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Renderer/implementations/ReactNativeRenderer-dev.js
 'use strict';
 
 
@@ -20600,4 +20598,3 @@ if (__DEV__) {
 
   })();
 }
-Done in 1.65s.

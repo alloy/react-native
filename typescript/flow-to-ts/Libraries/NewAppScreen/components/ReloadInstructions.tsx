@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/NewAppScreen/components/ReloadInstructions.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -32,4 +30,3 @@ const ReloadInstructions: () => Node = Platform.select({
 });
 
 export default ReloadInstructions;
-Done in 0.52s.

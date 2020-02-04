@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/renderApplication.js
 'use strict';
 
 
@@ -43,4 +41,3 @@ function renderApplication<Props extends Object>(RootComponent: React.ComponentT
 }
 
 module.exports = renderApplication;
-Done in 0.48s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/DatePicker/RCTDatePickerNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -51,4 +49,3 @@ export default (codegenNativeComponent<NativeProps>('DatePicker', {
   paperComponentName: 'RCTDatePicker',
   excludedPlatform: 'android'
 }) as HostComponent<NativeProps>);
-Done in 0.60s.

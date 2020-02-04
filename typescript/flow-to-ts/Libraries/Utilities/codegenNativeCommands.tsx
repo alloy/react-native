@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/codegenNativeCommands.js
 'use strict';
 import { $ReadOnly, $Keys } from "utility-types";
 
@@ -33,4 +31,3 @@ function codegenNativeCommands<T extends {}>(options: Options<$Keys<T>>): T {
 }
 
 export default codegenNativeCommands;
-Done in 0.49s.

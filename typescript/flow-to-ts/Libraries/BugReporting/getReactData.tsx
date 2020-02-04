@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/BugReporting/getReactData.js
 'use strict';
 
 
@@ -168,4 +166,3 @@ function copyWithSet(obj: Object | Array<any>, path: Array<string | number>, val
 }
 
 module.exports = getData;
-Done in 0.54s.

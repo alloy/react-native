@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/WebSocket/NativeWebSocketModule.js
 'use strict';
 
 
@@ -28,4 +26,3 @@ export interface Spec extends TurboModule {
 }
 
 export default (TurboModuleRegistry.getEnforcing<Spec>('WebSocketModule') as Spec);
-Done in 0.48s.

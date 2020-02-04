@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/polyfillPromise.js
 'use strict';
 
 
@@ -25,4 +23,3 @@ const {
  * require the modules you need from InitializeCore for setup.
  */
 polyfillGlobal('Promise', () => require('../Promise'));
-Done in 0.49s.

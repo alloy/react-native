@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedTextPropTypes.js
 'use strict';
 
 
@@ -162,4 +160,3 @@ module.exports = {
    */
   dataDetectorType: (PropTypes.oneOf(DataDetectorTypes) as React$PropType$Primitive<"phoneNumber" | "link" | "email" | "none" | "all">)
 };
-Done in 0.48s.

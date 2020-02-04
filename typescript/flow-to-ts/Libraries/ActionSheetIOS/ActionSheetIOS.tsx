@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ActionSheetIOS/ActionSheetIOS.js
 'use strict';
 
 
@@ -106,4 +104,3 @@ const ActionSheetIOS = {
 };
 
 module.exports = ActionSheetIOS;
-Done in 0.52s.

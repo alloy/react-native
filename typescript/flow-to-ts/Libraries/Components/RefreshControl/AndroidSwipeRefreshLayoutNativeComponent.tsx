@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/RefreshControl/AndroidSwipeRefreshLayoutNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -80,4 +78,3 @@ export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({
 });
 
 export default (codegenNativeComponent<NativeProps>('AndroidSwipeRefreshLayout') as NativeType);
-Done in 0.49s.

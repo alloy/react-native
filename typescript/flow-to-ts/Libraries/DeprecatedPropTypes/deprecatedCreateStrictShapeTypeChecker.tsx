@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/deprecatedCreateStrictShapeTypeChecker.js
 'use strict';
 
 
@@ -55,4 +53,3 @@ function deprecatedCreateStrictShapeTypeChecker(shapeTypes: {
 }
 
 module.exports = deprecatedCreateStrictShapeTypeChecker;
-Done in 0.48s.

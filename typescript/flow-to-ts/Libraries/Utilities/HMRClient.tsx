@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/HMRClient.js
 'use strict';
 
 
@@ -289,4 +287,3 @@ function showCompileError() {
 }
 
 module.exports = HMRClient;
-Done in 0.51s.

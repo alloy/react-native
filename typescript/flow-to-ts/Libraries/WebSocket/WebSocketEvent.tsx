@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/WebSocket/WebSocketEvent.js
 'use strict';
 
 
@@ -29,4 +27,3 @@ class WebSocketEvent {
 }
 
 module.exports = WebSocketEvent;
-Done in 0.47s.

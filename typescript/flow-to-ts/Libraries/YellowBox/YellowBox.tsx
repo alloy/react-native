@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/YellowBox/YellowBox.js
 'use strict';
 import { $ReadOnly, Class } from "utility-types";
 
@@ -242,4 +240,3 @@ module.exports = (YellowBox as Class<React.Component<Props, State>> & {
   __unstable_isLogBoxEnabled(): boolean;
 
 });
-Done in 0.55s.

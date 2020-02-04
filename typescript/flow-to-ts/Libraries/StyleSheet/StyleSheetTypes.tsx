@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/StyleSheet/StyleSheetTypes.js
 'use strict';
 import { $ReadOnly, $Shape } from "utility-types";
 
@@ -600,4 +598,3 @@ export type ____ImageStyleProp_Internal = GenericStyleProp<$ReadOnly<$Shape<____
 export type ____Styles_Internal = {
   readonly [key: string]: $Shape<____DangerouslyImpreciseStyle_Internal>;
 };
-Done in 0.56s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Touchable/TouchableNativeFeedback.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -288,4 +286,3 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
 const getBackgroundProp = Platform.OS === 'android' ? (background, useForeground) => useForeground && TouchableNativeFeedback.canUseNativeForeground() ? { nativeForegroundAndroid: background } : { nativeBackgroundAndroid: background } : (background, useForeground) => null;
 
 module.exports = TouchableNativeFeedback;
-Done in 0.61s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/View/View.js
 'use strict';
 
 
@@ -37,4 +35,3 @@ const View: React.AbstractComponent<ViewProps, React.ElementRef<typeof ViewNativ
 View.displayName = 'View';
 
 module.exports = View;
-Done in 0.53s.

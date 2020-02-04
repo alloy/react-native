@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/StatusBar/StatusBar.js
 'use strict';
 import { $Keys, $ReadOnly } from "utility-types";
 
@@ -448,4 +446,3 @@ class StatusBar extends React.Component<Props> {
 }
 
 module.exports = StatusBar;
-Done in 0.56s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/CheckBox/AndroidCheckBoxNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -60,4 +58,3 @@ export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({
 });
 
 export default (requireNativeComponent<NativeProps>('AndroidCheckBox') as NativeType);
-Done in 0.52s.

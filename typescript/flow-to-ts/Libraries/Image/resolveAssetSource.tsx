@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Image/resolveAssetSource.js
 'use strict';
 
 
@@ -102,4 +100,3 @@ function resolveAssetSource(source: any): ResolvedAssetSource | null | undefined
 module.exports = resolveAssetSource;
 module.exports.pickScale = AssetSourceResolver.pickScale;
 module.exports.setCustomSourceTransformer = setCustomSourceTransformer;
-Done in 0.48s.

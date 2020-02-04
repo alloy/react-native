@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/polyfills/Set.js
 'use strict';
 
 
@@ -27,4 +25,3 @@ SetPolyfill.prototype.forEach = function (cb) {
 };
 
 module.exports = SetPolyfill;
-Done in 0.45s.

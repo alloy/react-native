@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Promise.js
 'use strict';
 
 
@@ -48,4 +46,3 @@ if (__DEV__) {
 }
 
 module.exports = Promise;
-Done in 0.49s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Pressability/HoverState.js
 'use strict';
 
 
@@ -55,4 +53,3 @@ if (Platform.OS === 'web') {
 export function isHoverEnabled(): boolean {
   return isEnabled;
 }
-Done in 0.53s.

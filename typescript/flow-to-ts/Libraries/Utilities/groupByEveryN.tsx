@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/groupByEveryN.js
 'use strict';
 
 
@@ -52,4 +50,3 @@ function groupByEveryN<T>(array: Array<T>, n: number): Array<Array<T | null | un
 }
 
 module.exports = groupByEveryN;
-Done in 0.46s.

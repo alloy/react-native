@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/View/ReactNativeViewViewConfigAndroid.js
 'use strict';
 
 
@@ -75,4 +73,3 @@ const ReactNativeViewViewConfigAndroid = {
 };
 
 module.exports = ReactNativeViewViewConfigAndroid;
-Done in 0.53s.

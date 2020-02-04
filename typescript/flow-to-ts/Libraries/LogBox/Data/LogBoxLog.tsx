@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/LogBox/Data/LogBoxLog.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -125,4 +123,3 @@ class LogBoxLog {
 }
 
 export default LogBoxLog;
-Done in 0.50s.

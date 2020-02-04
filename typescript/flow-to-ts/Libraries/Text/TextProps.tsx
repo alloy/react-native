@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Text/TextProps.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -187,4 +185,3 @@ export type TextProps = $ReadOnly<{
    */
   suppressHighlighting?: boolean | null | undefined;
 }>;
-Done in 0.50s.

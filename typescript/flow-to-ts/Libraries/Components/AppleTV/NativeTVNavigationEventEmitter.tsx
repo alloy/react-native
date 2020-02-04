@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/AppleTV/NativeTVNavigationEventEmitter.js
 'use strict';
 
 
@@ -22,4 +20,3 @@ export interface Spec extends TurboModule {
 }
 
 export default (TurboModuleRegistry.get<Spec>('TVNavigationEventEmitter') as Spec | null | undefined);
-Done in 0.51s.

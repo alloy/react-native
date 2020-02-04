@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Renderer/shims/ReactNativeTypes.js
 import { $ReadOnly, Class } from "utility-types";
 
 /**
@@ -168,4 +166,3 @@ export type ReactFaricEvent = {
   target: number;
 
 };
-Done in 0.53s.

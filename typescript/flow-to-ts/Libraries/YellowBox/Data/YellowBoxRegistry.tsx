@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/YellowBox/Data/YellowBoxRegistry.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -150,4 +148,3 @@ const YellowBoxRegistry = {
 };
 
 module.exports = YellowBoxRegistry;
-Done in 0.51s.

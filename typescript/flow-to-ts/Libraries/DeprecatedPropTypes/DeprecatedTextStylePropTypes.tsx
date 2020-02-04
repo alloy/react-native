@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedTextStylePropTypes.js
 'use strict';
 
 
@@ -101,4 +99,3 @@ const DeprecatedTextStylePropTypes = {
 };
 
 module.exports = DeprecatedTextStylePropTypes;
-Done in 0.50s.

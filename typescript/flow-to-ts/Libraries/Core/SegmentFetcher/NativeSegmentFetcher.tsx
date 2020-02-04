@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/SegmentFetcher/NativeSegmentFetcher.js
 'use strict';
 
 
@@ -26,4 +24,3 @@ export interface Spec extends TurboModule {
 }
 
 export default (TurboModuleRegistry.getEnforcing<Spec>('SegmentFetcher') as Spec);
-Done in 0.47s.

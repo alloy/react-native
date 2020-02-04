@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Performance/PureComponentDebug.js
 'use strict';
 
 
@@ -62,4 +60,3 @@ class PureComponentDebug<P extends DoNotCommitUsageOfPureComponentDebug, S exten
 }
 
 module.exports = PureComponentDebug;
-Done in 0.48s.

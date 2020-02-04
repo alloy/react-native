@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/YellowBox/YellowBoxContainer.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -62,4 +60,3 @@ class YellowBoxContainer extends React.Component<Props, State> {
 }
 
 export default YellowBoxContainer;
-Done in 0.48s.

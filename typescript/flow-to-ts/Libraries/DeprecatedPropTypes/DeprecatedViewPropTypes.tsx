@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedViewPropTypes.js
 'use strict';
 
 
@@ -368,4 +366,3 @@ module.exports = {
    */
   needsOffscreenAlphaCompositing: PropTypes.bool
 };
-Done in 0.54s.

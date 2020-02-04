@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/StyleSheet/setNormalizedColorAlpha.js
 'use strict';
 
 
@@ -32,4 +30,3 @@ function setNormalizedColorAlpha(input: number, alpha: number): number {
 }
 
 module.exports = setNormalizedColorAlpha;
-Done in 0.48s.

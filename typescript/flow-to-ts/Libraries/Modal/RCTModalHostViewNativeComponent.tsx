@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Modal/RCTModalHostViewNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -110,4 +108,3 @@ export default (codegenNativeComponent<NativeProps>('ModalHostView', {
   interfaceOnly: true,
   paperComponentName: 'RCTModalHostView'
 }) as HostComponent<NativeProps>);
-Done in 0.50s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/queryLayoutByID.js
 'use strict';
 
 
@@ -48,4 +46,3 @@ const queryLayoutByID = function (tag: number | null | undefined, onError: OnErr
 };
 
 module.exports = queryLayoutByID;
-Done in 0.48s.

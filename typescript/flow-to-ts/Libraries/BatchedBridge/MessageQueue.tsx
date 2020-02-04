@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/BatchedBridge/MessageQueue.js
 'use strict';
 
 
@@ -391,4 +389,3 @@ class MessageQueue {
 }
 
 module.exports = MessageQueue;
-Done in 0.59s.

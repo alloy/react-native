@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Interaction/NativeFrameRateLogger.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -24,4 +22,3 @@ export interface Spec extends TurboModule {
 }
 
 export default (TurboModuleRegistry.get<Spec>('FrameRateLogger') as Spec | null | undefined);
-Done in 0.50s.

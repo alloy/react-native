@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/requireNativeComponent.js
 'use strict';
 
 
@@ -29,4 +27,3 @@ import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 const requireNativeComponent = <T>(uiViewClassName: string): HostComponent<T> => ((createReactNativeComponentClass(uiViewClassName, () => getNativeComponentAttributes(uiViewClassName)) as any) as HostComponent<T>);
 
 module.exports = requireNativeComponent;
-Done in 0.50s.

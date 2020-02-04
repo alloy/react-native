@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/ReactNativeVersion.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -17,4 +15,3 @@ exports.version = {
   patch: 0,
   prerelease: null
 };
-Done in 0.45s.

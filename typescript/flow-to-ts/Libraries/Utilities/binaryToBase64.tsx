@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/binaryToBase64.js
 'use strict';
 
 
@@ -34,4 +32,3 @@ function binaryToBase64(data: ArrayBuffer | $ArrayBufferView): any {
 }
 
 module.exports = binaryToBase64;
-Done in 0.52s.

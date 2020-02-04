@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Image/ImageResizeMode.js
 'use strict';
 
 
@@ -28,4 +26,3 @@ export type ImageResizeMode = // Resize by scaling down such that it is complete
 | "repeat" // Resize by stretching it to fill the entire frame of the view without
 // clipping. This may change the aspect ratio of the image, distorting it.
 | "stretch";
-Done in 0.50s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Network/XHRInterceptor.js
 'use strict';
 
 
@@ -149,4 +147,3 @@ const XHRInterceptor = {
 };
 
 module.exports = XHRInterceptor;
-Done in 0.51s.

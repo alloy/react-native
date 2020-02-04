@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/JSInspector/InspectorAgent.js
 'use strict';
 
 
@@ -29,4 +27,3 @@ class InspectorAgent {
 }
 
 module.exports = InspectorAgent;
-Done in 0.46s.

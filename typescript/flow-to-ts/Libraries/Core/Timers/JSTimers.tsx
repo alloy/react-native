@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/Timers/JSTimers.js
 'use strict';
 
 
@@ -455,4 +453,3 @@ if (!NativeTiming) {
 BatchedBridge.setImmediatesCallback(ExportedJSTimers.callImmediates.bind(ExportedJSTimers));
 
 module.exports = ExportedJSTimers;
-Done in 0.56s.

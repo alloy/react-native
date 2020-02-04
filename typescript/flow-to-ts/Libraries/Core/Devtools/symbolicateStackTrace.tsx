@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/Devtools/symbolicateStackTrace.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -97,4 +95,3 @@ async function symbolicateStackTrace(stack: Array<StackFrame>): Promise<Symbolic
 }
 
 module.exports = symbolicateStackTrace;
-Done in 0.48s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/DeprecatedPropTypes/DeprecatedEdgeInsetsPropType.js
 'use strict';
 
 
@@ -29,4 +27,3 @@ const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{
 });
 
 module.exports = DeprecatedEdgeInsetsPropType;
-Done in 0.48s.

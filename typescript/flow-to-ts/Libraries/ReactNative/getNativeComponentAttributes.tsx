@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/getNativeComponentAttributes.js
 'use strict';
 
 
@@ -173,4 +171,3 @@ function getProcessorForType(typeName: string): (nextProp: any) => any | null | 
 }
 
 module.exports = getNativeComponentAttributes;
-Done in 0.55s.

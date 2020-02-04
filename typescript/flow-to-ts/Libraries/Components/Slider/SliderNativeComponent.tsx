@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Slider/SliderNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -54,4 +52,3 @@ export default (codegenNativeComponent<NativeProps>('Slider', {
   interfaceOnly: true,
   paperComponentName: 'RCTSlider'
 }) as HostComponent<NativeProps>);
-Done in 0.52s.

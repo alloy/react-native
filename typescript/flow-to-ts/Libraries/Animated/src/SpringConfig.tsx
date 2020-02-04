@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/SpringConfig.js
 'use strict';
 
 
@@ -89,4 +87,3 @@ module.exports = {
   fromOrigamiTensionAndFriction,
   fromBouncinessAndSpeed
 };
-Done in 0.52s.

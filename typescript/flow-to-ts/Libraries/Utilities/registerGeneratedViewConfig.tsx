@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/registerGeneratedViewConfig.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -80,4 +78,3 @@ function registerGeneratedViewConfig(componentName: string, viewConfig: Generate
 }
 
 module.exports = registerGeneratedViewConfig;
-Done in 0.48s.

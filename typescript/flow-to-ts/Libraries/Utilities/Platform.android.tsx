@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/Platform.android.js
 'use strict';
 
 
@@ -62,4 +60,3 @@ const Platform = {
 };
 
 module.exports = Platform;
-Done in 0.47s.

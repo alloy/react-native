@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Interaction/PanResponder.js
 'use strict';
 import { $ReadOnly, $PropertyType, $Call } from "utility-types";
 
@@ -511,4 +509,3 @@ function clearInteractionHandle(interactionState: {handle: number | null | undef
 export type PanResponderInstance = $Call<$PropertyType<typeof PanResponder, "create">, PanResponderConfig>;
 
 module.exports = PanResponder;
-Done in 0.58s.

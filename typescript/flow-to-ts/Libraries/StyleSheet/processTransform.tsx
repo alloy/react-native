@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/StyleSheet/processTransform.js
 'use strict';
 
 
@@ -175,4 +173,3 @@ function _validateTransform(key, value, transformation) {
 }
 
 module.exports = processTransform;
-Done in 0.49s.

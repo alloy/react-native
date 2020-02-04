@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/mergeIntoFast.js
 'use strict';
 
 
@@ -27,4 +25,3 @@ const mergeIntoFast = function (one: Object, two: Object): void {
 };
 
 module.exports = mergeIntoFast;
-Done in 0.51s.

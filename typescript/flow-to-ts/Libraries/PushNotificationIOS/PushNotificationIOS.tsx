@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/PushNotificationIOS/PushNotificationIOS.js
 'use strict';
 import { $Keys } from "utility-types";
 
@@ -437,4 +435,3 @@ class PushNotificationIOS {
 }
 
 module.exports = PushNotificationIOS;
-Done in 0.54s.

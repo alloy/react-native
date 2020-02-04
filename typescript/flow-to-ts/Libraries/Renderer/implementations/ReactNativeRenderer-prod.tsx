@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Renderer/implementations/ReactNativeRenderer-prod.js
 "use strict";
 
 
@@ -4416,4 +4414,3 @@ var roots = new Map(),
 var ReactNativeRenderer$2 = { default: ReactNativeRenderer },
     ReactNativeRenderer$3 = ReactNativeRenderer$2 && ReactNativeRenderer || ReactNativeRenderer$2;
 module.exports = ReactNativeRenderer$3.default || ReactNativeRenderer$3;
-Done in 1.18s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/HMRClientProdShim.js
 'use strict';
 
 
@@ -28,4 +26,3 @@ const HMRClientProdShim: HMRClientNativeInterface = {
 };
 
 module.exports = HMRClientProdShim;
-Done in 0.51s.

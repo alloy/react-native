@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/ScrollView/ScrollViewNativeComponentType.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -79,4 +77,3 @@ export type ScrollViewNativeProps = $ReadOnly<ViewProps & {
 }>;
 
 export type ScrollViewNativeComponentType = HostComponent<ScrollViewNativeProps>;
-Done in 0.51s.

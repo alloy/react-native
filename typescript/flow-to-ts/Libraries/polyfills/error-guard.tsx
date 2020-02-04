@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/polyfills/error-guard.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -92,4 +90,3 @@ const ErrorUtils = {
 global.ErrorUtils = ErrorUtils;
 
 export type ErrorUtilsT = typeof ErrorUtils;
-Done in 0.47s.

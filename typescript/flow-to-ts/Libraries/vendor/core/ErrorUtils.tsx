@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/vendor/core/ErrorUtils.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -25,4 +23,3 @@ import { ErrorUtilsT } from "../../polyfills/error-guard.js";
  * variable here. ErrorUtils is originally defined in a file named error-guard.js.
  */
 module.exports = (global.ErrorUtils as ErrorUtilsT);
-Done in 0.50s.

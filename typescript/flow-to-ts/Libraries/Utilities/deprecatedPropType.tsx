@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/deprecatedPropType.js
 'use strict';
 
 
@@ -30,4 +28,3 @@ function deprecatedPropType(propType: ReactPropsCheckType, explanation: string):
 }
 
 module.exports = deprecatedPropType;
-Done in 0.46s.

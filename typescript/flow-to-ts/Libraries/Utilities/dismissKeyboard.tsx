@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Utilities/dismissKeyboard.js
 'use strict';
 
 
@@ -22,4 +20,3 @@ function dismissKeyboard() {
 }
 
 module.exports = dismissKeyboard;
-Done in 0.48s.

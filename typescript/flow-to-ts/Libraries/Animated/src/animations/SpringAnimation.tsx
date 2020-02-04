@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/animations/SpringAnimation.js
 'use strict';
 
 
@@ -313,4 +311,3 @@ class SpringAnimation extends Animation {
 }
 
 module.exports = SpringAnimation;
-Done in 0.62s.

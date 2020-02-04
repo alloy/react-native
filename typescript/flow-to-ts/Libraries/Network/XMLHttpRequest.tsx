@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Network/XMLHttpRequest.js
 'use strict';
 
 
@@ -493,4 +491,3 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
 }
 
 module.exports = XMLHttpRequest;
-Done in 0.58s.

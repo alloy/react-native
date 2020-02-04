@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/TextInput/AndroidTextInputNativeComponent.js
 'use strict';
 import { $ReadOnly, $Diff } from "utility-types";
 
@@ -495,4 +493,3 @@ if (global.RN$Bridgeless) {
 
 // flowlint-next-line unclear-type:off
 export default ((AndroidTextInputNativeComponent as any) as HostComponent<NativeProps>);
-Done in 0.55s.

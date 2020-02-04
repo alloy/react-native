@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/NativeExceptionsManager.js
 'use strict';
 
 
@@ -83,4 +81,3 @@ const ExceptionsManager = {
 };
 
 export default ExceptionsManager;
-Done in 0.49s.

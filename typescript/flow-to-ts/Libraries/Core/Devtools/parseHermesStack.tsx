@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Core/Devtools/parseHermesStack.js
 'use strict';
 
 
@@ -113,4 +111,3 @@ module.exports = function parseHermesStack(stack: string): HermesParsedStack {
   const message = lines.slice(0, lastMessageLine + 1).join('\n');
   return { message, entries };
 };
-Done in 0.51s.

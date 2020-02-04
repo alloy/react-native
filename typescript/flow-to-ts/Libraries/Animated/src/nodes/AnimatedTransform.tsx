@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Animated/src/nodes/AnimatedTransform.js
 'use strict';
 
 
@@ -123,4 +121,3 @@ class AnimatedTransform extends AnimatedWithChildren {
 }
 
 module.exports = AnimatedTransform;
-Done in 0.55s.

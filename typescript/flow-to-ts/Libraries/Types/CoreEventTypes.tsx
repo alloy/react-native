@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Types/CoreEventTypes.js
 'use strict';
 import { $ReadOnly, $PropertyType } from "utility-types";
 
@@ -140,4 +138,3 @@ export type MouseEvent = React.SyntheticEvent<$ReadOnly<{
   pageY: number;
   timestamp: number;
 }>>;
-Done in 0.71s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/WebSocket/WebSocketInterceptor.js
 'use strict';
 
 
@@ -209,4 +207,3 @@ const WebSocketInterceptor = {
 };
 
 module.exports = WebSocketInterceptor;
-Done in 0.50s.

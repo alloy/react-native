@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/ReactNative/UIManagerProperties.js
 'use strict';
 
 
@@ -30,4 +28,3 @@ $ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Librari
  * deprecated, this file will also be removed.
  */
 module.exports = ['clearJSResponder', 'configureNextLayoutAnimation', 'createView', 'dismissPopupMenu', 'dispatchViewManagerCommand', 'findSubviewIn', 'getConstantsForViewManager', 'getDefaultEventTypes', 'manageChildren', 'measure', 'measureInWindow', 'measureLayout', 'measureLayoutRelativeToParent', 'playTouchSound', 'removeRootView', 'removeSubviewsFromContainerWithID', 'replaceExistingNonRootView', 'sendAccessibilityEvent', 'setChildren', 'setJSResponder', 'setLayoutAnimationEnabledExperimental', 'showPopupMenu', 'updateView', 'viewIsDescendantOf', 'PopupMenu', 'LazyViewManagersEnabled', 'ViewManagerNames', 'StyleConstants', 'AccessibilityEventTypes', 'UIView', 'getViewManagerConfig', 'blur', 'focus', 'genericBubblingEventTypes', 'genericDirectEventTypes', 'lazilyLoadView'];
-Done in 0.47s.

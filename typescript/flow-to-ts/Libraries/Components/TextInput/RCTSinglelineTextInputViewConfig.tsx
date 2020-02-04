@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/TextInput/RCTSinglelineTextInputViewConfig.js
 'use strict';
 
 
@@ -135,4 +133,3 @@ const RCTSinglelineTextInputViewConfig = {
 };
 
 module.exports = (RCTSinglelineTextInputViewConfig as ReactNativeBaseComponentViewConfig<>);
-Done in 0.53s.

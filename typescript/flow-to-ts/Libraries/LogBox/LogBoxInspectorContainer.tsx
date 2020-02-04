@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/LogBox/LogBoxInspectorContainer.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -64,4 +62,3 @@ export class _LogBoxInspectorContainer extends React.Component<Props> {
 }
 
 export default (LogBoxData.withSubscription(_LogBoxInspectorContainer) as React.AbstractComponent<{}>);
-Done in 0.48s.

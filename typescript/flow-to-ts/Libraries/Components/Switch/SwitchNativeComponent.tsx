@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Components/Switch/SwitchNativeComponent.js
 'use strict';
 import { $ReadOnly } from "utility-types";
 
@@ -56,4 +54,3 @@ export default (codegenNativeComponent<NativeProps>('Switch', {
   paperComponentName: 'RCTSwitch',
   excludedPlatform: 'android'
 }) as ComponentType);
-Done in 0.57s.

@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Blob/FileReader.js
 'use strict';
 
 
@@ -150,4 +148,3 @@ class FileReader extends (EventTarget(...READER_EVENTS) as any) {
 }
 
 module.exports = FileReader;
-Done in 0.52s.

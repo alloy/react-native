@@ -1,5 +1,3 @@
-yarn run v1.21.1
-$ /Users/eloy/Code/ReactNative/react-native/node_modules/.bin/flow-to-ts Libraries/Settings/Settings.ios.js
 'use strict';
 
 
@@ -75,4 +73,3 @@ const Settings = {
 RCTDeviceEventEmitter.addListener('settingsUpdated', Settings._sendObservations.bind(Settings));
 
 module.exports = Settings;
-Done in 0.53s.
