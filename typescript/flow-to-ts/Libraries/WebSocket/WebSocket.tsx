@@ -1,13 +1,12 @@
 'use strict';;
-const Blob = require('../Blob/Blob');
-const BlobManager = require('../Blob/BlobManager');
-const EventTarget = require('event-target-shim');
-const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
-const WebSocketEvent = require('./WebSocketEvent');
-
-const base64 = require('base64-js');
-const binaryToBase64 = require('../Utilities/binaryToBase64');
-const invariant = require('invariant');
+import Blob from '../Blob/Blob';
+import BlobManager from '../Blob/BlobManager';
+import EventTarget from 'event-target-shim';
+import NativeEventEmitter from '../EventEmitter/NativeEventEmitter';
+import WebSocketEvent from './WebSocketEvent';
+import base64 from 'base64-js';
+import binaryToBase64 from '../Utilities/binaryToBase64';
+import invariant from 'invariant';
 
 import EventSubscription from "../vendor/emitter/EventSubscription";
 import NativeWebSocketModule from "./NativeWebSocketModule";

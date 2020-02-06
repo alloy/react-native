@@ -1,7 +1,6 @@
 'use strict';;
-const Platform = require('../Utilities/Platform');
-
-const normalizeColor = require('./normalizeColor');
+import Platform from '../Utilities/Platform';
+import normalizeColor from './normalizeColor';
 
 /* eslint no-bitwise: 0 */
 function processColor(color?: (string | number) | null | undefined): number | null | undefined {

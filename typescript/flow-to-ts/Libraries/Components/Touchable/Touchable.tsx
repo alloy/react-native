@@ -1,17 +1,16 @@
 'use strict';;
-const BoundingDimensions = require('./BoundingDimensions');
-const Platform = require('../../Utilities/Platform');
-const Position = require('./Position');
-const React = require('react');
-const ReactNative = require('../../Renderer/shims/ReactNative');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const TVEventHandler = require('../AppleTV/TVEventHandler');
-const UIManager = require('../../ReactNative/UIManager');
-const View = require('../View/View');
-const SoundManager = require('../Sound/SoundManager');
-
-const keyMirror = require('fbjs/lib/keyMirror');
-const normalizeColor = require('../../StyleSheet/normalizeColor');
+import BoundingDimensions from './BoundingDimensions';
+import Platform from '../../Utilities/Platform';
+import Position from './Position';
+import React from 'react';
+import ReactNative from '../../Renderer/shims/ReactNative';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import TVEventHandler from '../AppleTV/TVEventHandler';
+import UIManager from '../../ReactNative/UIManager';
+import View from '../View/View';
+import SoundManager from '../Sound/SoundManager';
+import keyMirror from 'fbjs/lib/keyMirror';
+import normalizeColor from '../../StyleSheet/normalizeColor';
 
 import { EdgeInsetsProp } from "../../StyleSheet/EdgeInsetsPropType";
 import { PressEvent } from "../../Types/CoreEventTypes";

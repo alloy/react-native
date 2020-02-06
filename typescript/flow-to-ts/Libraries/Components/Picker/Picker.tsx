@@ -1,4 +1,9 @@
 'use strict';;
+import PickerAndroid from './PickerAndroid';
+import PickerIOS from './PickerIOS';
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import UnimplementedView from '../UnimplementedViews/UnimplementedView';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,12 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const PickerAndroid = require('./PickerAndroid');
-const PickerIOS = require('./PickerIOS');
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const UnimplementedView = require('../UnimplementedViews/UnimplementedView');
 
 import { TextStyleProp } from "../../StyleSheet/StyleSheet";
 import { ColorValue } from "../../StyleSheet/StyleSheetTypes";

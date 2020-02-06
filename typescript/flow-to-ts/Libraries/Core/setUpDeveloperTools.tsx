@@ -1,4 +1,6 @@
-'use strict';
+'use strict';;
+import JSInspector from '../JSInspector/JSInspector';
+import HMRClient from '../Utilities/HMRClient';
 
 
 
@@ -25,8 +27,6 @@ if (__DEV__) {
     if (!global.__RCTProfileIsProfiling) {
       require('./setUpReactDevTools');
 
-      // Set up inspector
-      const JSInspector = require('../JSInspector/JSInspector');
       JSInspector.registerAgent(require('../JSInspector/NetworkAgent'));
     }
 
@@ -46,8 +46,6 @@ if (__DEV__) {
     global.navigator.appName === 'Netscape'; // Any real browser
 
     if (!Platform.isTesting) {
-      const HMRClient = require('../Utilities/HMRClient');
-
       if (console._isPolyfilled) {
         // We assume full control over the console and send JavaScript logs to Metro.
         ['trace', 'info', 'warn', 'log', 'group', 'groupCollapsed', 'groupEnd', 'debug'].forEach(level => {

@@ -1,4 +1,5 @@
 'use strict';;
+import getDevServer from './getDevServer';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const getDevServer = require('./getDevServer');
 
 import NativeSourceCode from "../../NativeModules/specs/NativeSourceCode";
 

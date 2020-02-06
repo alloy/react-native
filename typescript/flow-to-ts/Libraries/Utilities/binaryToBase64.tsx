@@ -1,5 +1,5 @@
 'use strict';;
-const base64 = require('base64-js');
+import base64 from 'base64-js';
 
 function binaryToBase64(data: ArrayBuffer | $ArrayBufferView): any {
   if (data instanceof ArrayBuffer) {

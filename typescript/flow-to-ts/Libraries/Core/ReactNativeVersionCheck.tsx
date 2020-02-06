@@ -1,6 +1,6 @@
 'use strict';;
+import ReactNativeVersion from './ReactNativeVersion';
 import Platform from "../Utilities/Platform";
-const ReactNativeVersion = require('./ReactNativeVersion');
 
 /**
  * Checks that the version of this React Native JS is compatible with the native

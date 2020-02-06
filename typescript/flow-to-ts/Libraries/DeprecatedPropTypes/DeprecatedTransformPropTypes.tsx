@@ -1,7 +1,6 @@
 'use strict';;
-const ReactPropTypes = require('prop-types');
-
-const deprecatedPropType = require('../Utilities/deprecatedPropType');
+import ReactPropTypes from 'prop-types';
+import deprecatedPropType from '../Utilities/deprecatedPropType';
 
 const TransformMatrixPropType = function (props: Object, propName: string, componentName: string): Error | null | undefined {
   if (props[propName]) {

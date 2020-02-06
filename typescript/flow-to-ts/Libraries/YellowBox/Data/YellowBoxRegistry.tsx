@@ -1,4 +1,5 @@
 'use strict';;
+import YellowBoxWarning from './YellowBoxWarning';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const YellowBoxWarning = require('./YellowBoxWarning');
 
 import { Category, Message } from "./YellowBoxCategory";
 import { Stack } from "./YellowBoxSymbolication";

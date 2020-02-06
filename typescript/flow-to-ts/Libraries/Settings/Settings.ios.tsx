@@ -1,7 +1,6 @@
 'use strict';;
-const RCTDeviceEventEmitter = require('../EventEmitter/RCTDeviceEventEmitter');
-
-const invariant = require('invariant');
+import RCTDeviceEventEmitter from '../EventEmitter/RCTDeviceEventEmitter';
+import invariant from 'invariant';
 
 import NativeSettingsManager from "./NativeSettingsManager";
 

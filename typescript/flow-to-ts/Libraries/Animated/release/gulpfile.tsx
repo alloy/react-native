@@ -1,27 +1,16 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-var babel = require('gulp-babel');
-var babelPluginDEV = require('fbjs-scripts/babel/dev-expression');
-var babelPluginModules = require('fbjs-scripts/babel/rewrite-modules');
-var del = require('del');
-var derequire = require('gulp-derequire');
-var flatten = require('gulp-flatten');
-var gulp = require('gulp');
-var gulpUtil = require('gulp-util');
-var header = require('gulp-header');
-var objectAssign = require('object-assign');
-var runSequence = require('run-sequence');
-var webpackStream = require('webpack-stream');
+'use strict';;
+import babel from 'gulp-babel';
+import babelPluginDEV from 'fbjs-scripts/babel/dev-expression';
+import babelPluginModules from 'fbjs-scripts/babel/rewrite-modules';
+import del from 'del';
+import derequire from 'gulp-derequire';
+import flatten from 'gulp-flatten';
+import gulp from 'gulp';
+import gulpUtil from 'gulp-util';
+import header from 'gulp-header';
+import objectAssign from 'object-assign';
+import runSequence from 'run-sequence';
+import webpackStream from 'webpack-stream';
 
 var DEVELOPMENT_HEADER = ['/**', ' * Animated v<%= version %>', ' */'].join('\n') + '\n';
 var PRODUCTION_HEADER = ['/**', ' * Animated v<%= version %>', ' *', ' * Copyright (c) 2013-present, Facebook, Inc.', ' *', ' * This source code is licensed under the MIT license found in the', ' * LICENSE file in the root directory of this source tree.', ' */'].join('\n') + '\n';

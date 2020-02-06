@@ -1,5 +1,5 @@
 'use strict';;
-const invariant = require('invariant');
+import invariant from 'invariant';
 
 const TRACE_TAG_REACT_APPS = 1 << 17; // eslint-disable-line no-bitwise
 const TRACE_TAG_JS_VM_CALLS = 1 << 27; // eslint-disable-line no-bitwise

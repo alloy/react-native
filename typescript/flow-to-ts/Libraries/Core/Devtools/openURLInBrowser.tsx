@@ -1,5 +1,5 @@
 'use strict';;
-const getDevServer = require('./getDevServer');
+import getDevServer from './getDevServer';
 
 function openURLInBrowser(url: string) {
   fetch(getDevServer().url + 'open-url', {

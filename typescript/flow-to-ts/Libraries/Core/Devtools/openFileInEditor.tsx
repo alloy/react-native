@@ -1,5 +1,5 @@
 'use strict';;
-const getDevServer = require('./getDevServer');
+import getDevServer from './getDevServer';
 
 function openFileInEditor(file: string, lineNumber: number) {
   fetch(getDevServer().url + 'open-stack-frame', {

@@ -1,6 +1,6 @@
 'use strict';;
-const Blob = require('./Blob');
-const BlobRegistry = require('./BlobRegistry');
+import Blob from './Blob';
+import BlobRegistry from './BlobRegistry';
 
 import { BlobData, BlobOptions, BlobCollector } from "./BlobTypes";
 import NativeBlobModule from "./NativeBlobModule";

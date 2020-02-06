@@ -1,9 +1,8 @@
 'use strict';;
-const NativeModules = require('../BatchedBridge/NativeModules');
-const Platform = require('../Utilities/Platform');
-const UIManagerProperties = require('./UIManagerProperties');
-
-const defineLazyObjectProperty = require('../Utilities/defineLazyObjectProperty');
+import NativeModules from '../BatchedBridge/NativeModules';
+import Platform from '../Utilities/Platform';
+import UIManagerProperties from './UIManagerProperties';
+import defineLazyObjectProperty from '../Utilities/defineLazyObjectProperty';
 
 import NativeUIManager from "./NativeUIManager";
 

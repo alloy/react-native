@@ -1,4 +1,11 @@
 'use strict';;
+import React from 'react';
+import SafeAreaView from '../../Components/SafeAreaView/SafeAreaView';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import View from '../../Components/View/View';
+import YellowBoxPressable from './YellowBoxPressable';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,14 +18,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const SafeAreaView = require('../../Components/SafeAreaView/SafeAreaView');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const View = require('../../Components/View/View');
-const YellowBoxPressable = require('./YellowBoxPressable');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 type Props = $ReadOnly<{
   onDismiss: () => void;

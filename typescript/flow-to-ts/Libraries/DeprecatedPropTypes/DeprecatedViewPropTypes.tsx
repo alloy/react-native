@@ -1,12 +1,13 @@
 'use strict';;
-const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
-const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
-const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
-const PropTypes = require('prop-types');
+import DeprecatedEdgeInsetsPropType from './DeprecatedEdgeInsetsPropType';
+import DeprecatedStyleSheetPropType from './DeprecatedStyleSheetPropType';
+import DeprecatedViewStylePropTypes from './DeprecatedViewStylePropTypes';
+import PropTypes from 'prop-types';
+import _Import0 from './DeprecatedViewAccessibility';
 
 const {
   DeprecatedAccessibilityRoles
-} = require('./DeprecatedViewAccessibility');
+} = _Import0;
 
 const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(DeprecatedViewStylePropTypes);
 

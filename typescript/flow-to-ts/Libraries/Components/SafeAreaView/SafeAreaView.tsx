@@ -1,18 +1,7 @@
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import View from '../View/View';
 import { $ReadOnly } from "utility-types";
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict-local
- * @format
- */
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const View = require('../View/View');
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ViewProps } from "../View/ViewPropTypes";

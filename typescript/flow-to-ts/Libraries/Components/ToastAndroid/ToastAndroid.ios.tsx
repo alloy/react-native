@@ -1,5 +1,5 @@
 'use strict';;
-const warning = require('fbjs/lib/warning');
+import warning from 'fbjs/lib/warning';
 
 const ToastAndroid = {
   show: function (message: string, duration: number): void {

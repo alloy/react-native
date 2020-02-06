@@ -1,13 +1,13 @@
 'use strict';;
-const AnimatedValue = require('./nodes/AnimatedValue');
-const NativeAnimatedHelper = require('./NativeAnimatedHelper');
-const ReactNative = require('../../Renderer/shims/ReactNative');
-
-const invariant = require('invariant');
+import AnimatedValue from './nodes/AnimatedValue';
+import NativeAnimatedHelper from './NativeAnimatedHelper';
+import ReactNative from '../../Renderer/shims/ReactNative';
+import invariant from 'invariant';
+import _Import0 from './NativeAnimatedHelper';
 
 const {
   shouldUseNativeDriver
-} = require('./NativeAnimatedHelper');
+} = _Import0;
 
 export type Mapping = {
   [key: string]: Mapping;

@@ -1,4 +1,6 @@
 'use strict';;
+import InteractionManager from './InteractionManager';
+import TouchHistoryMath from './TouchHistoryMath';
 import { $ReadOnly, $PropertyType, $Call } from "utility-types";
 
 
@@ -11,9 +13,6 @@ import { $ReadOnly, $PropertyType, $Call } from "utility-types";
 
 
 
-
-const InteractionManager = require('./InteractionManager');
-const TouchHistoryMath = require('./TouchHistoryMath');
 
 import { PressEvent } from "../Types/CoreEventTypes";
 

@@ -1,5 +1,5 @@
 'use strict';;
-const PropTypes = require('prop-types');
+import PropTypes from 'prop-types';
 
 const PointPropType: React$PropType$Primitive<{
   x?: number;

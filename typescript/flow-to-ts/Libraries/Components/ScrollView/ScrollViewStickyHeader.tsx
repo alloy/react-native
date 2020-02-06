@@ -1,8 +1,8 @@
 'use strict';;
-const AnimatedImplementation = require('../../Animated/src/AnimatedImplementation');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
+import AnimatedImplementation from '../../Animated/src/AnimatedImplementation';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
 
 import { LayoutEvent } from "../../Types/CoreEventTypes";
 

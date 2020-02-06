@@ -1,5 +1,5 @@
 'use strict';;
-const invariant = require('invariant');
+import invariant from 'invariant';
 
 const ensurePositiveDelayProps = function (props: any) {
   invariant(!(props.delayPressIn < 0 || props.delayPressOut < 0 || props.delayLongPress < 0), 'Touchable components cannot have negative delay properties');

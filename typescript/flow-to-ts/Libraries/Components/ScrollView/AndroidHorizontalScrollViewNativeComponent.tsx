@@ -1,18 +1,6 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-const registerGeneratedViewConfig = require('../../Utilities/registerGeneratedViewConfig');
-const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
+'use strict';;
+import registerGeneratedViewConfig from '../../Utilities/registerGeneratedViewConfig';
+import requireNativeComponent from '../../ReactNative/requireNativeComponent';
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ScrollViewNativeProps } from "./ScrollViewNativeComponentType";

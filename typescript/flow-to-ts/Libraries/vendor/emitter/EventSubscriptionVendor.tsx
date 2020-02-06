@@ -1,5 +1,5 @@
 'use strict';;
-const invariant = require('invariant');
+import invariant from 'invariant';
 
 import EventSubscription from "./EventSubscription";
 

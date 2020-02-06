@@ -1,5 +1,5 @@
 'use strict';;
-const Platform = require('../Utilities/Platform');
+import Platform from '../Utilities/Platform';
 
 import NativeDialogManagerAndroid from "../NativeModules/specs/NativeDialogManagerAndroid";
 import NativePermissionsAndroid from "./NativePermissionsAndroid";

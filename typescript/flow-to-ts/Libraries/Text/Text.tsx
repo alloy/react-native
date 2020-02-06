@@ -1,4 +1,13 @@
 'use strict';;
+import DeprecatedTextPropTypes from '../DeprecatedPropTypes/DeprecatedTextPropTypes';
+import React from 'react';
+import ReactNativeViewAttributes from '../Components/View/ReactNativeViewAttributes';
+import TextAncestor from './TextAncestor';
+import Touchable from '../Components/Touchable/Touchable';
+import UIManager from '../ReactNative/UIManager';
+import createReactNativeComponentClass from '../Renderer/shims/createReactNativeComponentClass';
+import nullthrows from 'nullthrows';
+import processColor from '../StyleSheet/processColor';
 import { $ReadOnly, $Shape } from "utility-types";
 
 
@@ -11,17 +20,6 @@ import { $ReadOnly, $Shape } from "utility-types";
 
 
 
-
-const DeprecatedTextPropTypes = require('../DeprecatedPropTypes/DeprecatedTextPropTypes');
-const React = require('react');
-const ReactNativeViewAttributes = require('../Components/View/ReactNativeViewAttributes');
-const TextAncestor = require('./TextAncestor');
-const Touchable = require('../Components/Touchable/Touchable');
-const UIManager = require('../ReactNative/UIManager');
-
-const createReactNativeComponentClass = require('../Renderer/shims/createReactNativeComponentClass');
-const nullthrows = require('nullthrows');
-const processColor = require('../StyleSheet/processColor');
 
 import { PressEvent } from "../Types/CoreEventTypes";
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";

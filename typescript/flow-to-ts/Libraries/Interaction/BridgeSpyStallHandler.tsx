@@ -1,8 +1,7 @@
 'use strict';;
-const JSEventLoopWatchdog = require('./JSEventLoopWatchdog');
-const MessageQueue = require('../BatchedBridge/MessageQueue');
-
-const infoLog = require('../Utilities/infoLog');
+import JSEventLoopWatchdog from './JSEventLoopWatchdog';
+import MessageQueue from '../BatchedBridge/MessageQueue';
+import infoLog from '../Utilities/infoLog';
 
 const BridgeSpyStallHandler = {
   register: function () {

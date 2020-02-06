@@ -1,10 +1,9 @@
 'use strict';;
-const AnimatedNode = require('./AnimatedNode');
-const AnimatedWithChildren = require('./AnimatedWithChildren');
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
-
-const invariant = require('invariant');
-const normalizeColor = require('../../../StyleSheet/normalizeColor');
+import AnimatedNode from './AnimatedNode';
+import AnimatedWithChildren from './AnimatedWithChildren';
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
+import invariant from 'invariant';
+import normalizeColor from '../../../StyleSheet/normalizeColor';
 
 type ExtrapolateType = "extend" | "identity" | "clamp";
 

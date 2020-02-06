@@ -1,15 +1,15 @@
 'use strict';;
-const AnimatedValue = require('../nodes/AnimatedValue');
-const AnimatedValueXY = require('../nodes/AnimatedValueXY');
-const AnimatedInterpolation = require('../nodes/AnimatedInterpolation');
-const Animation = require('./Animation');
-const SpringConfig = require('../SpringConfig');
-
-const invariant = require('invariant');
+import AnimatedValue from '../nodes/AnimatedValue';
+import AnimatedValueXY from '../nodes/AnimatedValueXY';
+import AnimatedInterpolation from '../nodes/AnimatedInterpolation';
+import Animation from './Animation';
+import SpringConfig from '../SpringConfig';
+import invariant from 'invariant';
+import _Import0 from '../NativeAnimatedHelper';
 
 const {
   shouldUseNativeDriver
-} = require('../NativeAnimatedHelper');
+} = _Import0;
 
 import { AnimationConfig, EndCallback } from "./Animation";
 

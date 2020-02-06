@@ -1,9 +1,8 @@
 'use strict';;
-const DeprecatedImageStylePropTypes = require('../DeprecatedPropTypes/DeprecatedImageStylePropTypes');
-const DeprecatedTextStylePropTypes = require('../DeprecatedPropTypes/DeprecatedTextStylePropTypes');
-const DeprecatedViewStylePropTypes = require('../DeprecatedPropTypes/DeprecatedViewStylePropTypes');
-
-const invariant = require('invariant');
+import DeprecatedImageStylePropTypes from '../DeprecatedPropTypes/DeprecatedImageStylePropTypes';
+import DeprecatedTextStylePropTypes from '../DeprecatedPropTypes/DeprecatedTextStylePropTypes';
+import DeprecatedViewStylePropTypes from '../DeprecatedPropTypes/DeprecatedViewStylePropTypes';
+import invariant from 'invariant';
 
 // Hardcoded because this is a legit case but we don't want to load it from
 // a private API. We might likely want to unify style sheet creation with how it

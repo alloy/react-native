@@ -1,12 +1,15 @@
 'use strict';;
-const AnimatedValue = require('../nodes/AnimatedValue');
-const AnimatedValueXY = require('../nodes/AnimatedValueXY');
-const AnimatedInterpolation = require('../nodes/AnimatedInterpolation');
-const Animation = require('./Animation');
+import AnimatedValue from '../nodes/AnimatedValue';
+import AnimatedValueXY from '../nodes/AnimatedValueXY';
+import AnimatedInterpolation from '../nodes/AnimatedInterpolation';
+import Animation from './Animation';
+import _Import0 from '../NativeAnimatedHelper';
 
 const {
   shouldUseNativeDriver
-} = require('../NativeAnimatedHelper');
+} = _Import0;
+
+import Easing from '../Easing';
 
 import { AnimationConfig, EndCallback } from "./Animation";
 
@@ -33,7 +36,6 @@ export type TimingAnimationConfigSingle = AnimationConfig & {
 let _easeInOut;
 function easeInOut() {
   if (!_easeInOut) {
-    const Easing = require('../Easing');
     _easeInOut = Easing.inOut(Easing.ease);
   }
   return _easeInOut;

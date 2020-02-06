@@ -1,4 +1,14 @@
 'use strict';;
+import Image from '../../Image/Image';
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import SafeAreaView from '../../Components/SafeAreaView/SafeAreaView';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import View from '../../Components/View/View';
+import YellowBoxImageSource from './YellowBoxImageSource';
+import YellowBoxPressable from './YellowBoxPressable';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,17 +21,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Image = require('../../Image/Image');
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const SafeAreaView = require('../../Components/SafeAreaView/SafeAreaView');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const View = require('../../Components/View/View');
-const YellowBoxImageSource = require('./YellowBoxImageSource');
-const YellowBoxPressable = require('./YellowBoxPressable');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 import YellowBoxWarning from "../Data/YellowBoxWarning";
 

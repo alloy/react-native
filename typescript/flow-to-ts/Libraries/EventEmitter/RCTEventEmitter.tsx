@@ -1,5 +1,5 @@
 'use strict';;
-const BatchedBridge = require('../BatchedBridge/BatchedBridge');
+import BatchedBridge from '../BatchedBridge/BatchedBridge';
 
 const RCTEventEmitter = {
   register(eventEmitter: any) {

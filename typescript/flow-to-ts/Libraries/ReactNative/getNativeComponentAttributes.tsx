@@ -1,16 +1,15 @@
 'use strict';;
-const ReactNativeStyleAttributes = require('../Components/View/ReactNativeStyleAttributes');
-const UIManager = require('./UIManager');
-
-const insetsDiffer = require('../Utilities/differ/insetsDiffer');
-const invariant = require('invariant');
-const matricesDiffer = require('../Utilities/differ/matricesDiffer');
-const pointsDiffer = require('../Utilities/differ/pointsDiffer');
-const processColor = require('../StyleSheet/processColor');
-const processColorArray = require('../StyleSheet/processColorArray');
-const resolveAssetSource = require('../Image/resolveAssetSource');
-const sizesDiffer = require('../Utilities/differ/sizesDiffer');
-const warning = require('fbjs/lib/warning');
+import ReactNativeStyleAttributes from '../Components/View/ReactNativeStyleAttributes';
+import UIManager from './UIManager';
+import insetsDiffer from '../Utilities/differ/insetsDiffer';
+import invariant from 'invariant';
+import matricesDiffer from '../Utilities/differ/matricesDiffer';
+import pointsDiffer from '../Utilities/differ/pointsDiffer';
+import processColor from '../StyleSheet/processColor';
+import processColorArray from '../StyleSheet/processColorArray';
+import resolveAssetSource from '../Image/resolveAssetSource';
+import sizesDiffer from '../Utilities/differ/sizesDiffer';
+import warning from 'fbjs/lib/warning';
 
 function getNativeComponentAttributes(uiViewClassName: string): any {
   const viewConfig = UIManager.getViewManagerConfig(uiViewClassName);

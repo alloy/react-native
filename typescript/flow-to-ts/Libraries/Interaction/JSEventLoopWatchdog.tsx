@@ -1,6 +1,6 @@
 'use strict';;
-const infoLog = require('../Utilities/infoLog');
-const performanceNow = require('fbjs/lib/performanceNow');
+import infoLog from '../Utilities/infoLog';
+import performanceNow from 'fbjs/lib/performanceNow';
 
 type Handler = {
   onIterate?: () => void;

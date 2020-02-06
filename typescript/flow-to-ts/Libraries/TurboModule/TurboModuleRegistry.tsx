@@ -1,17 +1,5 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-const NativeModules = require('../BatchedBridge/NativeModules');
+'use strict';;
+import NativeModules from '../BatchedBridge/NativeModules';
 import { TurboModule } from "./RCTExport";
 import invariant from "invariant";
 

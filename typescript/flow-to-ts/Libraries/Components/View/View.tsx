@@ -1,9 +1,9 @@
 'use strict';;
+import React from 'react';
+import TextAncestor from '../../Text/TextAncestor';
 import { ViewProps } from "./ViewPropTypes";
 
-const React = require('react');
 import ViewNativeComponent from "./ViewNativeComponent";
-const TextAncestor = require('../../Text/TextAncestor');
 
 export type Props = ViewProps;
 

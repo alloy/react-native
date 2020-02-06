@@ -1,9 +1,10 @@
 'use strict';;
-const Animation = require('./Animation');
+import Animation from './Animation';
+import _Import0 from '../NativeAnimatedHelper';
 
 const {
   shouldUseNativeDriver
-} = require('../NativeAnimatedHelper');
+} = _Import0;
 
 import AnimatedValue from "../nodes/AnimatedValue";
 import { AnimationConfig, EndCallback } from "./Animation";

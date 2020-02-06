@@ -1,7 +1,7 @@
 'use strict';;
-const InspectorAgent = require('./InspectorAgent');
-const JSInspector = require('./JSInspector');
-const XMLHttpRequest = require('../Network/XMLHttpRequest');
+import InspectorAgent from './InspectorAgent';
+import JSInspector from './JSInspector';
+import XMLHttpRequest from '../Network/XMLHttpRequest';
 
 import EventSender from "./InspectorAgent";
 

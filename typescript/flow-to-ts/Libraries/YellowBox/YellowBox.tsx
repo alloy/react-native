@@ -1,4 +1,9 @@
 'use strict';;
+import React from 'react';
+import Platform from '../Utilities/Platform';
+import RCTLog from '../Utilities/RCTLog';
+import LogBox from '../LogBox/LogBox';
+import YellowBoxRegistry from './Data/YellowBoxRegistry';
 import { $ReadOnly, Class } from "utility-types";
 
 
@@ -11,8 +16,6 @@ import { $ReadOnly, Class } from "utility-types";
 
 
 
-
-const React = require('react');
 
 import { Registry, IgnorePattern } from "./Data/YellowBoxRegistry";
 import YellowBoxWarning from "./Data/YellowBoxWarning";
@@ -46,11 +49,7 @@ let YellowBox;
  * the ignored warning messages.
  */
 if (__DEV__) {
-  const Platform = require('../Utilities/Platform');
-  const RCTLog = require('../Utilities/RCTLog');
   const YellowBoxContainer = require('./YellowBoxContainer').default;
-  const LogBox = require('../LogBox/LogBox');
-  const YellowBoxRegistry = require('./Data/YellowBoxRegistry');
   const LogBoxNotificationContainer = require('../LogBox/LogBoxNotificationContainer').default;
 
   // YellowBox needs to insert itself early,

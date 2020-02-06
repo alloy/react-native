@@ -1,4 +1,9 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import TouchableWithoutFeedback from '../../Components/Touchable/TouchableWithoutFeedback';
+import View from '../../Components/View/View';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,12 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const TouchableWithoutFeedback = require('../../Components/Touchable/TouchableWithoutFeedback');
-const View = require('../../Components/View/View');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 import { EdgeInsetsProp } from "../../StyleSheet/EdgeInsetsPropType";
 import { ViewStyleProp } from "../../StyleSheet/StyleSheet";

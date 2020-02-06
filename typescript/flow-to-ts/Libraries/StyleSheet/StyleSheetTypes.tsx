@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import AnimatedNode from '../Animated/src/nodes/AnimatedNode';
 import { $ReadOnly, $Shape } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly, $Shape } from "utility-types";
 
 
 
-
-const AnimatedNode = require('../Animated/src/nodes/AnimatedNode');
 
 export type ColorValue = null | string;
 export type ColorArrayValue = null | ReadonlyArray<ColorValue>;

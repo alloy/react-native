@@ -1,8 +1,5 @@
 'use strict';;
-// This is a stub for flow to make it understand require('./icon.png')
-// See metro/src/Bundler/index.js
-
-const AssetRegistry = require('./AssetRegistry');
+import AssetRegistry from './AssetRegistry';
 
 export default AssetRegistry.registerAsset({
   __packager_asset: true,

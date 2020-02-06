@@ -1,7 +1,6 @@
 'use strict';;
-const Systrace = require('../Performance/Systrace');
-
-const infoLog = require('./infoLog');
+import Systrace from '../Performance/Systrace';
+import infoLog from './infoLog';
 const performanceNow = global.nativeQPLTimestamp || global.nativePerformanceNow || require('fbjs/lib/performanceNow');
 
 type Timespan = {

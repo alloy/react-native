@@ -1,16 +1,5 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-const Blob = require('./Blob');
+'use strict';;
+import Blob from './Blob';
 
 import NativeBlobModule from "./NativeBlobModule";
 

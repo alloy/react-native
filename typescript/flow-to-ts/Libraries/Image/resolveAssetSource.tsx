@@ -1,6 +1,6 @@
 'use strict';;
-const AssetRegistry = require('./AssetRegistry');
-const AssetSourceResolver = require('./AssetSourceResolver');
+import AssetRegistry from './AssetRegistry';
+import AssetSourceResolver from './AssetSourceResolver';
 
 import { ResolvedAssetSource } from "./AssetSourceResolver";
 

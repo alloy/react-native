@@ -1,4 +1,7 @@
 'use strict';;
+import BlobManager from './BlobManager';
+import BlobManager from './BlobManager';
+import BlobManager from './BlobManager';
 import { BlobData, BlobOptions } from "./BlobTypes";
 
 /**
@@ -48,7 +51,6 @@ class Blob {
    * Reference: https://developer.mozilla.org/en-US/docs/Web/API/Blob/Blob
    */
   constructor(parts: Array<Blob | string> = [], options?: BlobOptions) {
-    const BlobManager = require('./BlobManager');
     this.data = BlobManager.createFromParts(parts, options).data;
   }
 
@@ -70,7 +72,6 @@ class Blob {
   }
 
   slice(start?: number, end?: number): Blob {
-    const BlobManager = require('./BlobManager');
     let {
       offset,
       size
@@ -110,7 +111,6 @@ class Blob {
    * `new Blob([blob, ...])` actually copies the data in memory.
    */
   close() {
-    const BlobManager = require('./BlobManager');
     BlobManager.release(this.data.blobId);
     this.data = null;
   }

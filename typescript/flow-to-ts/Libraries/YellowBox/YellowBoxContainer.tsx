@@ -1,4 +1,7 @@
-'use strict';
+'use strict';;
+import React from 'react';
+import YellowBoxList from './UI/YellowBoxList';
+import YellowBoxRegistry from './Data/YellowBoxRegistry';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,8 +15,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const React = require('react');
-
 import { Category } from "./Data/YellowBoxCategory";
 import { Registry, Subscription } from "./Data/YellowBoxRegistry";
 
@@ -21,9 +22,6 @@ type Props = $ReadOnly<{}>;
 type State = $ReadOnly<{
   registry: Registry | null | undefined;
 }>;
-
-const YellowBoxList = require('./UI/YellowBoxList');
-const YellowBoxRegistry = require('./Data/YellowBoxRegistry');
 
 class YellowBoxContainer extends React.Component<Props, State> {
 

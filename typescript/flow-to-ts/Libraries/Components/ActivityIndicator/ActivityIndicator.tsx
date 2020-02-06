@@ -1,4 +1,8 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,10 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ViewProps } from "../View/ViewPropTypes";
 

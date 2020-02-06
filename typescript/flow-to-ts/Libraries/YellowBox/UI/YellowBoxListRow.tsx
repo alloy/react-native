@@ -1,4 +1,12 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import View from '../../Components/View/View';
+import YellowBoxCategory from '../Data/YellowBoxCategory';
+import YellowBoxPressable from './YellowBoxPressable';
+import YellowBoxStyle from './YellowBoxStyle';
+import YellowBoxWarning from '../Data/YellowBoxWarning';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,15 +19,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const View = require('../../Components/View/View');
-const YellowBoxCategory = require('../Data/YellowBoxCategory');
-const YellowBoxPressable = require('./YellowBoxPressable');
-const YellowBoxStyle = require('./YellowBoxStyle');
-const YellowBoxWarning = require('../Data/YellowBoxWarning');
 
 import { Category } from "../Data/YellowBoxCategory";
 

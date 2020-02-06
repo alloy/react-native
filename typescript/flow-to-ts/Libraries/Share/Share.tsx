@@ -1,8 +1,7 @@
 'use strict';;
-const Platform = require('../Utilities/Platform');
-
-const invariant = require('invariant');
-const processColor = require('../StyleSheet/processColor');
+import Platform from '../Utilities/Platform';
+import invariant from 'invariant';
+import processColor from '../StyleSheet/processColor';
 
 import NativeActionSheetManager from "../ActionSheetIOS/NativeActionSheetManager";
 import NativeShareModule from "./NativeShareModule";

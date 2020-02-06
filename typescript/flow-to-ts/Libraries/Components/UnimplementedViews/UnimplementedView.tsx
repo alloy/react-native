@@ -1,6 +1,7 @@
 'use strict';;
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
 
 /**
  * Common implementation for a simple stubbed view. Simply applies the view's styles to the inner
@@ -9,8 +10,6 @@ const StyleSheet = require('../../StyleSheet/StyleSheet');
 class UnimplementedView extends React.Component<$FlowFixMeProps> {
 
   render(): React.ReactNode {
-    // Workaround require cycle from requireNativeComponent
-    const View = require('../View/View');
     return <View style={[styles.unimplementedView, this.props.style]}>
         {this.props.children}
       </View>;

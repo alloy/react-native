@@ -1,9 +1,9 @@
 'use strict';;
-const DeprecatedColorPropType = require('./DeprecatedColorPropType');
-const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
-const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
-const PropTypes = require('prop-types');
-const DeprecatedTextStylePropTypes = require('./DeprecatedTextStylePropTypes');
+import DeprecatedColorPropType from './DeprecatedColorPropType';
+import DeprecatedEdgeInsetsPropType from './DeprecatedEdgeInsetsPropType';
+import DeprecatedStyleSheetPropType from './DeprecatedStyleSheetPropType';
+import PropTypes from 'prop-types';
+import DeprecatedTextStylePropTypes from './DeprecatedTextStylePropTypes';
 
 const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(DeprecatedTextStylePropTypes);
 

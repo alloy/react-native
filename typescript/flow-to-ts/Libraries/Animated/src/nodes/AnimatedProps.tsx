@@ -1,13 +1,15 @@
 'use strict';;
+import _Import0 from '../AnimatedEvent';
+
 const {
   AnimatedEvent
-} = require('../AnimatedEvent');
-const AnimatedNode = require('./AnimatedNode');
-const AnimatedStyle = require('./AnimatedStyle');
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
-const ReactNative = require('../../../Renderer/shims/ReactNative');
+} = _Import0;
 
-const invariant = require('invariant');
+import AnimatedNode from './AnimatedNode';
+import AnimatedStyle from './AnimatedStyle';
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
+import ReactNative from '../../../Renderer/shims/ReactNative';
+import invariant from 'invariant';
 
 class AnimatedProps extends AnimatedNode {
 

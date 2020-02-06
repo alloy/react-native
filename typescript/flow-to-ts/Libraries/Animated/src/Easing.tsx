@@ -1,4 +1,5 @@
 'use strict';;
+import _bezier from './bezier';
 let ease;
 
 /**
@@ -200,7 +201,6 @@ class Easing {
    * http://cubic-bezier.com/
    */
   static bezier(x1: number, y1: number, x2: number, y2: number): (t: number) => number {
-    const _bezier = require('./bezier');
     return _bezier(x1, y1, x2, y2);
   }
 

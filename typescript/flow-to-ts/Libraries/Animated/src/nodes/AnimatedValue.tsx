@@ -1,8 +1,8 @@
 'use strict';;
-const AnimatedInterpolation = require('./AnimatedInterpolation');
-const AnimatedWithChildren = require('./AnimatedWithChildren');
-const InteractionManager = require('../../../Interaction/InteractionManager');
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
+import AnimatedInterpolation from './AnimatedInterpolation';
+import AnimatedWithChildren from './AnimatedWithChildren';
+import InteractionManager from '../../../Interaction/InteractionManager';
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
 
 import Animation, { EndCallback } from "../animations/Animation";
 import { InterpolationConfigType } from "./AnimatedInterpolation";

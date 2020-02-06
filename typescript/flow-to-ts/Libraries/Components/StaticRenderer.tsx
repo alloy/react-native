@@ -1,4 +1,5 @@
 'use strict';;
+import React from 'react';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
 
 type Props = $ReadOnly<{
   /**

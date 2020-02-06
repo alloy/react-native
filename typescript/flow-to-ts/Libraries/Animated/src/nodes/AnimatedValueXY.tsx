@@ -1,8 +1,7 @@
 'use strict';;
-const AnimatedValue = require('./AnimatedValue');
-const AnimatedWithChildren = require('./AnimatedWithChildren');
-
-const invariant = require('invariant');
+import AnimatedValue from './AnimatedValue';
+import AnimatedWithChildren from './AnimatedWithChildren';
+import invariant from 'invariant';
 
 type ValueXYListenerCallback = (value: {
   x: number;

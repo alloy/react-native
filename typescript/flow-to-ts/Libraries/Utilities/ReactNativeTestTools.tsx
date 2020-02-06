@@ -1,23 +1,8 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const React = require('react');
-
-const ReactTestRenderer = require('react-test-renderer');
-const ShallowRenderer = require('react-test-renderer/shallow');
-const shallowRenderer = new ShallowRenderer();
+'use strict';;
+import React from 'react';
+import ReactTestRenderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import _Import0 from 'react-native';
 
 const {
   Switch,
@@ -25,7 +10,9 @@ const {
   TextInput,
   View,
   VirtualizedList
-} = require('react-native');
+} = _Import0;
+
+const shallowRenderer = new ShallowRenderer();
 
 import { ReactTestInstance, ReactTestRendererNode, Predicate } from "react-test-renderer";
 

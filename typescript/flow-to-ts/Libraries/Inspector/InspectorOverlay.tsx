@@ -1,4 +1,11 @@
 'use strict';;
+import Dimensions from '../Utilities/Dimensions';
+import ElementBox from './ElementBox';
+import React from 'react';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import ReactNative from '../Renderer/shims/ReactNative';
+import UIManager from '../ReactNative/UIManager';
+import View from '../Components/View/View';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,14 +18,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Dimensions = require('../Utilities/Dimensions');
-const ElementBox = require('./ElementBox');
-const React = require('react');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const ReactNative = require('../Renderer/shims/ReactNative');
-const UIManager = require('../ReactNative/UIManager');
-const View = require('../Components/View/View');
 
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 import { ViewStyleProp } from "../StyleSheet/StyleSheet";

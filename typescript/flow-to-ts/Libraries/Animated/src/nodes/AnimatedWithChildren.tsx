@@ -1,6 +1,6 @@
 'use strict';;
-const AnimatedNode = require('./AnimatedNode');
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
+import AnimatedNode from './AnimatedNode';
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
 
 class AnimatedWithChildren extends AnimatedNode {
 

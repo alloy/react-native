@@ -1,5 +1,5 @@
 'use strict';;
-const UIManager = require('../ReactNative/UIManager');
+import UIManager from '../ReactNative/UIManager';
 
 /**
  * Adds a deprecation warning when the prop is used.

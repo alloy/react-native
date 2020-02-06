@@ -1,4 +1,8 @@
 'use strict';;
+import DeprecatedColorPropType from '../../DeprecatedPropTypes/DeprecatedColorPropType';
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,11 +15,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const DeprecatedColorPropType = require('../../DeprecatedPropTypes/DeprecatedColorPropType');
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
 
 import RCTInputAccessoryViewNativeComponent from "./RCTInputAccessoryViewNativeComponent";
 

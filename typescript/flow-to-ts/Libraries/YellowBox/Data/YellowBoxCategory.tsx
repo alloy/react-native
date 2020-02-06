@@ -1,4 +1,8 @@
 'use strict';;
+import React from 'react';
+import Text from '../../Text/Text';
+import UTFSequence from '../../UTFSequence';
+import stringifySafe from '../../Utilities/stringifySafe';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,12 +15,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const Text = require('../../Text/Text');
-const UTFSequence = require('../../UTFSequence');
-
-const stringifySafe = require('../../Utilities/stringifySafe');
 
 import { TextStyleProp } from "../../StyleSheet/StyleSheet";
 

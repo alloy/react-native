@@ -1,19 +1,9 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
+import _Import0 from '../Utilities/PolyfillFunctions';
 
 const {
   polyfillObjectProperty
-} = require('../Utilities/PolyfillFunctions');
+} = _Import0;
 
 let navigator = global.navigator;
 if (navigator === undefined) {

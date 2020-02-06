@@ -1,9 +1,8 @@
 'use strict';;
-const InteractionManager = require('../Interaction/InteractionManager');
-const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
-const Platform = require('../Utilities/Platform');
-
-const invariant = require('invariant');
+import InteractionManager from '../Interaction/InteractionManager';
+import NativeEventEmitter from '../EventEmitter/NativeEventEmitter';
+import Platform from '../Utilities/Platform';
+import invariant from 'invariant';
 
 import NativeLinking from "./NativeLinking";
 

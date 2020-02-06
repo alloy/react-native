@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import requireNativeComponent from '../../ReactNative/requireNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { SyntheticEvent } from "../../Types/CoreEventTypes";

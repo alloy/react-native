@@ -1,4 +1,7 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import processColor from '../../StyleSheet/processColor';
 import { $Keys, $ReadOnly } from "utility-types";
 
 
@@ -11,11 +14,6 @@ import { $Keys, $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-
-const processColor = require('../../StyleSheet/processColor');
 
 import NativeStatusBarManagerAndroid from "./NativeStatusBarManagerAndroid";
 import NativeStatusBarManagerIOS from "./NativeStatusBarManagerIOS";

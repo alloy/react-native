@@ -1,4 +1,11 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StatusBar from '../StatusBar/StatusBar';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
+import dismissKeyboard from '../../Utilities/dismissKeyboard';
+import nullthrows from 'nullthrows';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,15 +18,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const StatusBar = require('../StatusBar/StatusBar');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
-
-const dismissKeyboard = require('../../Utilities/dismissKeyboard');
-const nullthrows = require('nullthrows');
 
 import AndroidDrawerLayoutNativeComponent, { Commands } from "./AndroidDrawerLayoutNativeComponent";
 

@@ -1,8 +1,8 @@
 'use strict';;
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
+import invariant from 'invariant';
 
 const NativeAnimatedAPI = NativeAnimatedHelper.API;
-const invariant = require('invariant');
 
 type ValueListenerCallback = (state: {value: number;}) => unknown;
 

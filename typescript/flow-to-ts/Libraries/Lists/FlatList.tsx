@@ -1,4 +1,11 @@
 'use strict';;
+import Platform from '../Utilities/Platform';
+import deepDiffer from '../Utilities/differ/deepDiffer';
+import React from 'react';
+import View from '../Components/View/View';
+import VirtualizedList from './VirtualizedList';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import invariant from 'invariant';
 import { $PropertyType, $Diff } from "utility-types";
 
 
@@ -11,15 +18,6 @@ import { $PropertyType, $Diff } from "utility-types";
 
 
 
-
-const Platform = require('../Utilities/Platform');
-const deepDiffer = require('../Utilities/differ/deepDiffer');
-const React = require('react');
-const View = require('../Components/View/View');
-const VirtualizedList = require('./VirtualizedList');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-
-const invariant = require('invariant');
 
 import ScrollView, { ScrollResponderType } from "../Components/ScrollView/ScrollView";
 import { ScrollViewNativeComponentType } from "../Components/ScrollView/ScrollViewNativeComponentType.js";

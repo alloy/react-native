@@ -1,4 +1,6 @@
 'use strict';;
+import RCTDeviceEventEmitter from '../../EventEmitter/RCTDeviceEventEmitter';
+import UIManager from '../../ReactNative/UIManager';
 import { $Keys } from "utility-types";
 
 
@@ -11,9 +13,6 @@ import { $Keys } from "utility-types";
 
 
 
-
-const RCTDeviceEventEmitter = require('../../EventEmitter/RCTDeviceEventEmitter');
-const UIManager = require('../../ReactNative/UIManager');
 
 import NativeAccessibilityInfo from "./NativeAccessibilityInfo";
 

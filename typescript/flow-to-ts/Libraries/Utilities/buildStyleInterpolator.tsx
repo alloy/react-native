@@ -1,5 +1,5 @@
 'use strict';;
-const keyOf = require('fbjs/lib/keyOf');
+import keyOf from 'fbjs/lib/keyOf';
 
 const X_DIM = keyOf({ x: null });
 const Y_DIM = keyOf({ y: null });

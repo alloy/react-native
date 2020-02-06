@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import requireNativeComponent from '../../ReactNative/requireNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 
@@ -15,8 +16,6 @@ import { $ReadOnly } from "utility-types";
 import * as React from "react";
 
 import codegenNativeCommands from "react-native/Libraries/Utilities/codegenNativeCommands";
-
-const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ViewProps } from "../View/ViewPropTypes";

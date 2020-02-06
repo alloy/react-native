@@ -1,4 +1,8 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
+import processColor from '../../StyleSheet/processColor';
 import { $ReadOnly } from "utility-types";
 
 
@@ -13,12 +17,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
-
-const processColor = require('../../StyleSheet/processColor');
 
 import RCTPickerNativeComponent, { Commands as PickerCommands } from "./RCTPickerNativeComponent";
 import { TextStyleProp } from "../../StyleSheet/StyleSheet";

@@ -1,5 +1,5 @@
 'use strict';;
-const Dimensions = require('./Dimensions');
+import Dimensions from './Dimensions';
 
 /**
  * PixelRatio class gives access to the device pixel density.

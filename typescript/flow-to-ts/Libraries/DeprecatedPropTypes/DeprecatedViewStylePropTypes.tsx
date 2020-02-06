@@ -1,9 +1,9 @@
 'use strict';;
-const DeprecatedColorPropType = require('./DeprecatedColorPropType');
-const DeprecatedLayoutPropTypes = require('./DeprecatedLayoutPropTypes');
-const DeprecatedShadowPropTypesIOS = require('./DeprecatedShadowPropTypesIOS');
-const DeprecatedTransformPropTypes = require('./DeprecatedTransformPropTypes');
-const ReactPropTypes = require('prop-types');
+import DeprecatedColorPropType from './DeprecatedColorPropType';
+import DeprecatedLayoutPropTypes from './DeprecatedLayoutPropTypes';
+import DeprecatedShadowPropTypesIOS from './DeprecatedShadowPropTypesIOS';
+import DeprecatedTransformPropTypes from './DeprecatedTransformPropTypes';
+import ReactPropTypes from 'prop-types';
 
 /**
  * Warning: Some of these properties may not be supported in all releases.

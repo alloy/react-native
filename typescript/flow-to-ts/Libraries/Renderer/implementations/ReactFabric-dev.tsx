@@ -1,4 +1,9 @@
-'use strict';
+'use strict';;
+import React from "react";
+import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
+import checkPropTypes from "prop-types/checkPropTypes";
+import Scheduler from "scheduler";
+import tracing from "scheduler/tracing";
 
 
 
@@ -16,12 +21,7 @@
 if (__DEV__) {
   (function () {
     "use strict";
-    var React = require("react");
     require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
-    var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface");
-    var checkPropTypes = require("prop-types/checkPropTypes");
-    var Scheduler = require("scheduler");
-    var tracing = require("scheduler/tracing");
 
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
     // Current owner and dispatcher used to share the same ref,

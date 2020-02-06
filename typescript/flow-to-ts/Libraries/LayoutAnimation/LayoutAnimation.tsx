@@ -1,4 +1,5 @@
 'use strict';;
+import UIManager from '../ReactNative/UIManager';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const UIManager = require('../ReactNative/UIManager');
 
 import Platform from "../Utilities/Platform";
 

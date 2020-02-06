@@ -1,4 +1,8 @@
 'use strict';;
+import PixelRatio from '../Utilities/PixelRatio';
+import ReactNativeStyleAttributes from '../Components/View/ReactNativeStyleAttributes';
+import StyleSheetValidation from './StyleSheetValidation';
+import flatten from './flattenStyle';
 import { $Keys, $ElementType, $ReadOnly } from "utility-types";
 
 
@@ -11,12 +15,6 @@ import { $Keys, $ElementType, $ReadOnly } from "utility-types";
 
 
 
-
-const PixelRatio = require('../Utilities/PixelRatio');
-const ReactNativeStyleAttributes = require('../Components/View/ReactNativeStyleAttributes');
-const StyleSheetValidation = require('./StyleSheetValidation');
-
-const flatten = require('./flattenStyle');
 
 import { ____Styles_Internal, ____DangerouslyImpreciseStyle_Internal, ____DangerouslyImpreciseStyleProp_Internal, ____ViewStyle_Internal, ____ViewStyleProp_Internal, ____TextStyle_Internal, ____TextStyleProp_Internal, ____ImageStyle_Internal, ____ImageStyleProp_Internal } from "./StyleSheetTypes";
 

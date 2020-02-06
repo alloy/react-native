@@ -1,5 +1,5 @@
 'use strict';;
-const UIManager = require('./UIManager');
+import UIManager from './UIManager';
 
 type OnSuccessCallback = (left: number, top: number, width: number, height: number, pageX: number, pageY: number) => void;
 

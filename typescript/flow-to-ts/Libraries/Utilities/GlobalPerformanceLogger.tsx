@@ -1,5 +1,5 @@
 'use strict';;
-const createPerformanceLogger = require('./createPerformanceLogger');
+import createPerformanceLogger from './createPerformanceLogger';
 
 import { IPerformanceLogger } from "./createPerformanceLogger";
 

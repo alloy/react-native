@@ -1,5 +1,5 @@
 'use strict';;
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
 
 import AnimatedValue from "../nodes/AnimatedValue";
 

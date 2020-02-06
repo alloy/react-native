@@ -1,4 +1,8 @@
 'use strict';;
+import React from 'react';
+import View from '../Components/View/View';
+import VirtualizedList from './VirtualizedList';
+import invariant from 'invariant';
 import { $PropertyType, $Diff, $ReadOnly } from "utility-types";
 
 
@@ -11,12 +15,6 @@ import { $PropertyType, $Diff, $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const View = require('../Components/View/View');
-const VirtualizedList = require('./VirtualizedList');
-
-const invariant = require('invariant');
 
 import { ViewToken } from "./ViewabilityHelper";
 

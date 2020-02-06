@@ -1,5 +1,5 @@
 'use strict';;
-const PixelRatio = require('../../Utilities/PixelRatio');
+import PixelRatio from '../../Utilities/PixelRatio';
 
 const scale = PixelRatio.get();
 

@@ -1,8 +1,11 @@
 'use strict';;
+import _Import0 from '../Renderer/shims/ReactFabric';
+
 const {
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
-} = require('../Renderer/shims/ReactFabric');
-const createReactNativeComponentClass = require('../Renderer/shims/createReactNativeComponentClass');
+} = _Import0;
+
+import createReactNativeComponentClass from '../Renderer/shims/createReactNativeComponentClass';
 
 import { NativeMethodsMixinType } from "../Renderer/shims/ReactNativeTypes";
 

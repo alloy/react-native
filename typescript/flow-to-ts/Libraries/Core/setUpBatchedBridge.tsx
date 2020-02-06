@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import BatchedBridge from '../BatchedBridge/BatchedBridge';
 
 
 
@@ -15,7 +16,6 @@ let registerModule;
 if (global.RN$Bridgeless && global.RN$registerCallableModule) {
   registerModule = global.RN$registerCallableModule;
 } else {
-  const BatchedBridge = require('../BatchedBridge/BatchedBridge');
   registerModule = (moduleName, factory) => BatchedBridge.registerLazyCallableModule(moduleName, factory);
 }
 

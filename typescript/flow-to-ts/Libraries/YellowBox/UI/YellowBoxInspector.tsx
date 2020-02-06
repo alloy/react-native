@@ -1,4 +1,17 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import ScrollView from '../../Components/ScrollView/ScrollView';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import View from '../../Components/View/View';
+import YellowBoxCategory from '../Data/YellowBoxCategory';
+import YellowBoxInspectorFooter from './YellowBoxInspectorFooter';
+import YellowBoxInspectorHeader from './YellowBoxInspectorHeader';
+import YellowBoxInspectorSourceMapStatus from './YellowBoxInspectorSourceMapStatus';
+import YellowBoxInspectorStackFrame from './YellowBoxInspectorStackFrame';
+import YellowBoxStyle from './YellowBoxStyle';
+import openFileInEditor from '../../Core/Devtools/openFileInEditor';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,21 +24,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const ScrollView = require('../../Components/ScrollView/ScrollView');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const View = require('../../Components/View/View');
-const YellowBoxCategory = require('../Data/YellowBoxCategory');
-const YellowBoxInspectorFooter = require('./YellowBoxInspectorFooter');
-const YellowBoxInspectorHeader = require('./YellowBoxInspectorHeader');
-const YellowBoxInspectorSourceMapStatus = require('./YellowBoxInspectorSourceMapStatus');
-const YellowBoxInspectorStackFrame = require('./YellowBoxInspectorStackFrame');
-const YellowBoxStyle = require('./YellowBoxStyle');
-
-const openFileInEditor = require('../../Core/Devtools/openFileInEditor');
 
 import YellowBoxWarning from "../Data/YellowBoxWarning";
 import { SymbolicationRequest } from "../Data/YellowBoxWarning";

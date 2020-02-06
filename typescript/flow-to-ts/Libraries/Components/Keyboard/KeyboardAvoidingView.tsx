@@ -1,4 +1,10 @@
 'use strict';;
+import Keyboard from './Keyboard';
+import LayoutAnimation from '../../LayoutAnimation/LayoutAnimation';
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,13 +17,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Keyboard = require('./Keyboard');
-const LayoutAnimation = require('../../LayoutAnimation/LayoutAnimation');
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
 
 import { ViewStyleProp } from "../../StyleSheet/StyleSheet";
 import EmitterSubscription from "../../vendor/emitter/EmitterSubscription";

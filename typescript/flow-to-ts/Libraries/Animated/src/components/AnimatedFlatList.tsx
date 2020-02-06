@@ -1,9 +1,7 @@
 'use strict';;
+import FlatList from '../../../Lists/FlatList';
+import createAnimatedComponent from '../createAnimatedComponent';
 import * as React from "react";
-
-const FlatList = require('../../../Lists/FlatList');
-
-const createAnimatedComponent = require('../createAnimatedComponent');
 
 /**
  * @see https://github.com/facebook/react-native/commit/b8c8562

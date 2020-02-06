@@ -1,4 +1,5 @@
 'use strict';;
+import GlobalPerformanceLogger from '../Utilities/GlobalPerformanceLogger';
 const start = Date.now();
 
 import './setUpGlobals';
@@ -17,7 +18,6 @@ if (__DEV__) {
   require('./setUpDeveloperTools');
 }
 
-const GlobalPerformanceLogger = require('../Utilities/GlobalPerformanceLogger');
 // We could just call GlobalPerformanceLogger.markPoint at the top of the file,
 // but then we'd be excluding the time it took to require the logger.
 // Instead, we just use Date.now and backdate the timestamp.

@@ -1,4 +1,16 @@
 'use strict';;
+import DeprecatedTextInputPropTypes from '../../DeprecatedPropTypes/DeprecatedTextInputPropTypes';
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import ReactNative from '../../Renderer/shims/ReactNative';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import TextAncestor from '../../Text/TextAncestor';
+import TextInputState from './TextInputState';
+import TouchableWithoutFeedback from '../Touchable/TouchableWithoutFeedback';
+import invariant from 'invariant';
+import nullthrows from 'nullthrows';
+import setAndForwardRef from '../../Utilities/setAndForwardRef';
 import { $ReadOnly, $Diff, $PropertyType } from "utility-types";
 
 
@@ -11,20 +23,6 @@ import { $ReadOnly, $Diff, $PropertyType } from "utility-types";
 
 
 
-
-const DeprecatedTextInputPropTypes = require('../../DeprecatedPropTypes/DeprecatedTextInputPropTypes');
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const ReactNative = require('../../Renderer/shims/ReactNative');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const TextAncestor = require('../../Text/TextAncestor');
-const TextInputState = require('./TextInputState');
-const TouchableWithoutFeedback = require('../Touchable/TouchableWithoutFeedback');
-
-const invariant = require('invariant');
-const nullthrows = require('nullthrows');
-const setAndForwardRef = require('../../Utilities/setAndForwardRef');
 
 import { TextStyleProp, ViewStyleProp } from "../../StyleSheet/StyleSheet";
 import { ColorValue } from "../../StyleSheet/StyleSheetTypes";

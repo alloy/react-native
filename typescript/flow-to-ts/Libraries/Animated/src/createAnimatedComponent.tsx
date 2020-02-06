@@ -1,12 +1,14 @@
 'use strict';;
+import _Import0 from './AnimatedEvent';
+
 const {
   AnimatedEvent
-} = require('./AnimatedEvent');
-const AnimatedProps = require('./nodes/AnimatedProps');
-const React = require('react');
+} = _Import0;
 
-const invariant = require('invariant');
-const setAndForwardRef = require('../../Utilities/setAndForwardRef');
+import AnimatedProps from './nodes/AnimatedProps';
+import React from 'react';
+import invariant from 'invariant';
+import setAndForwardRef from '../../Utilities/setAndForwardRef';
 
 export type AnimatedComponentType<Props extends {
   readonly [key: string]: unknown;

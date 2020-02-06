@@ -1,4 +1,6 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,9 +13,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
 
 import { ColorValue } from "../../StyleSheet/StyleSheetTypes";
 import { ViewProps } from "../View/ViewPropTypes";

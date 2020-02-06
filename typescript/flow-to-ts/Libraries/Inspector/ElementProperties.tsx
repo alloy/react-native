@@ -1,4 +1,15 @@
 'use strict';;
+import BoxInspector from './BoxInspector';
+import React from 'react';
+import StyleInspector from './StyleInspector';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import Text from '../Text/Text';
+import TouchableHighlight from '../Components/Touchable/TouchableHighlight';
+import TouchableWithoutFeedback from '../Components/Touchable/TouchableWithoutFeedback';
+import View from '../Components/View/View';
+import flattenStyle from '../StyleSheet/flattenStyle';
+import mapWithSeparator from '../Utilities/mapWithSeparator';
+import openFileInEditor from '../Core/Devtools/openFileInEditor';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,19 +22,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const BoxInspector = require('./BoxInspector');
-const React = require('react');
-const StyleInspector = require('./StyleInspector');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const Text = require('../Text/Text');
-const TouchableHighlight = require('../Components/Touchable/TouchableHighlight');
-const TouchableWithoutFeedback = require('../Components/Touchable/TouchableWithoutFeedback');
-const View = require('../Components/View/View');
-
-const flattenStyle = require('../StyleSheet/flattenStyle');
-const mapWithSeparator = require('../Utilities/mapWithSeparator');
-const openFileInEditor = require('../Core/Devtools/openFileInEditor');
 
 import { ViewStyleProp } from "../StyleSheet/StyleSheet";
 

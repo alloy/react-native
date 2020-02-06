@@ -1,4 +1,9 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import YellowBoxPressable from './YellowBoxPressable';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,12 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const YellowBoxPressable = require('./YellowBoxPressable');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 import { EdgeInsetsProp } from "../../StyleSheet/EdgeInsetsPropType";
 

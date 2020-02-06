@@ -1,19 +1,9 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
+import _Import0 from '../Utilities/PolyfillFunctions';
 
 const {
   polyfillGlobal
-} = require('../Utilities/PolyfillFunctions');
+} = _Import0;
 
 /**
  * Set up XMLHttpRequest. The native XMLHttpRequest in Chrome dev tools is CORS

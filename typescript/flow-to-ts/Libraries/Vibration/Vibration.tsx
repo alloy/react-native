@@ -1,6 +1,6 @@
 'use strict';;
+import Platform from '../Utilities/Platform';
 import NativeVibration from "./NativeVibration";
-const Platform = require('../Utilities/Platform');
 
 /**
  * Vibration API

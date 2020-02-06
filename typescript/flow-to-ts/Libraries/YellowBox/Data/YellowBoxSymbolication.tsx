@@ -1,5 +1,5 @@
 'use strict';;
-const symbolicateStackTrace = require('../../Core/Devtools/symbolicateStackTrace');
+import symbolicateStackTrace from '../../Core/Devtools/symbolicateStackTrace';
 
 import { StackFrame } from "../../Core/NativeExceptionsManager";
 import { SymbolicatedStackTrace } from "../../Core/Devtools/symbolicateStackTrace";

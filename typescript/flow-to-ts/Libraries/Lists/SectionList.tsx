@@ -1,4 +1,7 @@
 'use strict';;
+import Platform from '../Utilities/Platform';
+import React from 'react';
+import VirtualizedSectionList from './VirtualizedSectionList';
 import { $PropertyType, $Diff } from "utility-types";
 
 
@@ -11,10 +14,6 @@ import { $PropertyType, $Diff } from "utility-types";
 
 
 
-
-const Platform = require('../Utilities/Platform');
-const React = require('react');
-const VirtualizedSectionList = require('./VirtualizedSectionList');
 
 import { ScrollResponderType } from "../Components/ScrollView/ScrollView";
 import { SectionBase as _SectionBase, Props as VirtualizedSectionListProps, ScrollToLocationParamsType } from "./VirtualizedSectionList";

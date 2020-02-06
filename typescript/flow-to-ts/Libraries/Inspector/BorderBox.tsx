@@ -1,6 +1,6 @@
 'use strict';;
-const React = require('react');
-const View = require('../Components/View/View');
+import React from 'react';
+import View from '../Components/View/View';
 
 class BorderBox extends React.Component<$FlowFixMeProps> {
 

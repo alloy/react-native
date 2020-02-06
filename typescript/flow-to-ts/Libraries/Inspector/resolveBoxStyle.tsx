@@ -1,4 +1,5 @@
 'use strict';;
+import I18nManager from '../ReactNative/I18nManager';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const I18nManager = require('../ReactNative/I18nManager');
 
 /**
  * Resolve a style property into its component parts.

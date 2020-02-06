@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import ReactNativeViewConfigRegistry from '../../Renderer/shims/ReactNativeViewConfigRegistry';
 import { $ReadOnly, $Diff } from "utility-types";
 
 
@@ -21,7 +22,6 @@ import requireNativeComponent from "../../ReactNative/requireNativeComponent";
 import codegenNativeCommands from "../../Utilities/codegenNativeCommands";
 import * as React from "react";
 import AndroidTextInputViewConfig from "./AndroidTextInputViewConfig";
-const ReactNativeViewConfigRegistry = require('../../Renderer/shims/ReactNativeViewConfigRegistry');
 
 export type KeyboardType = // Cross Platform
 "default" | "email-address" | "numeric" | "phone-pad" | "number-pad" | "decimal-pad" // iOS-only

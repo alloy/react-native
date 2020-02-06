@@ -1,11 +1,6 @@
 "use strict";;
+import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
 import 'react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore';
-var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface"),
-    React = require("react"),
-    Scheduler = require("scheduler"),
-    tracing = require("scheduler/tracing"),
-    eventPluginOrder = null,
-    namesToPlugins = {};
 function recomputePluginOrdering() {
   if (eventPluginOrder) for (var pluginName in namesToPlugins) {
     var pluginModule = namesToPlugins[pluginName],

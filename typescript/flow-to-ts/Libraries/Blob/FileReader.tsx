@@ -1,6 +1,6 @@
 'use strict';;
-const Blob = require('./Blob');
-const EventTarget = require('event-target-shim');
+import Blob from './Blob';
+import EventTarget from 'event-target-shim';
 
 import NativeFileReaderModule from "./NativeFileReaderModule";
 

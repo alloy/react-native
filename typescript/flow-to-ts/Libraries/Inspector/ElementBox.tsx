@@ -1,4 +1,11 @@
 'use strict';;
+import BorderBox from './BorderBox';
+import Dimensions from '../Utilities/Dimensions';
+import React from 'react';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import View from '../Components/View/View';
+import flattenStyle from '../StyleSheet/flattenStyle';
+import resolveBoxStyle from './resolveBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,15 +18,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const BorderBox = require('./BorderBox');
-const Dimensions = require('../Utilities/Dimensions');
-const React = require('react');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const View = require('../Components/View/View');
-
-const flattenStyle = require('../StyleSheet/flattenStyle');
-const resolveBoxStyle = require('./resolveBoxStyle');
 
 class ElementBox extends React.Component<$FlowFixMeProps> {
 

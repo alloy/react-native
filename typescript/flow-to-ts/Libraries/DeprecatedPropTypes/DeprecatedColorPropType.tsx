@@ -1,5 +1,5 @@
 'use strict';;
-const normalizeColor = require('../StyleSheet/normalizeColor');
+import normalizeColor from '../StyleSheet/normalizeColor';
 
 const colorPropType = function (isRequired, props, propName, componentName, location, propFullName) {
   const color = props[propName];

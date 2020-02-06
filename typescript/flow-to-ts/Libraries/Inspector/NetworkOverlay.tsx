@@ -1,4 +1,13 @@
 'use strict';;
+import FlatList from '../Lists/FlatList';
+import React from 'react';
+import ScrollView from '../Components/ScrollView/ScrollView';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import Text from '../Text/Text';
+import TouchableHighlight from '../Components/Touchable/TouchableHighlight';
+import View from '../Components/View/View';
+import WebSocketInterceptor from '../WebSocket/WebSocketInterceptor';
+import XHRInterceptor from '../Network/XHRInterceptor';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,16 +20,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const FlatList = require('../Lists/FlatList');
-const React = require('react');
-const ScrollView = require('../Components/ScrollView/ScrollView');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const Text = require('../Text/Text');
-const TouchableHighlight = require('../Components/Touchable/TouchableHighlight');
-const View = require('../Components/View/View');
-const WebSocketInterceptor = require('../WebSocket/WebSocketInterceptor');
-const XHRInterceptor = require('../Network/XHRInterceptor');
 
 const LISTVIEW_CELL_HEIGHT = 15;
 

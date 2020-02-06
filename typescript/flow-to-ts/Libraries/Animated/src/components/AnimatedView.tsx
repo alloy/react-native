@@ -1,9 +1,7 @@
 'use strict';;
-const View = require('../../../Components/View/View');
-
-const createAnimatedComponent = require('../createAnimatedComponent');
-
-const React = require('react');
+import View from '../../../Components/View/View';
+import createAnimatedComponent from '../createAnimatedComponent';
+import React from 'react';
 
 import { AnimatedComponentType } from "../createAnimatedComponent";
 

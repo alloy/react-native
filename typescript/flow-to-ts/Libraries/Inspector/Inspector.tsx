@@ -1,15 +1,15 @@
 'use strict';;
-const Dimensions = require('../Utilities/Dimensions');
-const InspectorOverlay = require('./InspectorOverlay');
-const InspectorPanel = require('./InspectorPanel');
-const Platform = require('../Utilities/Platform');
-const React = require('react');
-const ReactNative = require('../Renderer/shims/ReactNative');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const Touchable = require('../Components/Touchable/Touchable');
-const View = require('../Components/View/View');
-
-const invariant = require('invariant');
+import Dimensions from '../Utilities/Dimensions';
+import InspectorOverlay from './InspectorOverlay';
+import InspectorPanel from './InspectorPanel';
+import Platform from '../Utilities/Platform';
+import React from 'react';
+import ReactNative from '../Renderer/shims/ReactNative';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import Touchable from '../Components/Touchable/Touchable';
+import View from '../Components/View/View';
+import invariant from 'invariant';
+import viewConfig from '../Components/View/ReactNativeViewViewConfig.js';
 
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 
@@ -24,7 +24,6 @@ const renderers = findRenderers();
 // Required for React DevTools to view/edit React Native styles in Flipper.
 // Flipper doesn't inject these values when initializing DevTools.
 hook.resolveRNStyle = require('../StyleSheet/flattenStyle');
-const viewConfig = require('../Components/View/ReactNativeViewViewConfig.js');
 hook.nativeStyleEditorValidAttributes = Object.keys(viewConfig.validAttributes.style);
 
 function findRenderers(): ReadonlyArray<ReactRenderer> {

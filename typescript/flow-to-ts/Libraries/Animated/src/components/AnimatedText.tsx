@@ -1,6 +1,5 @@
 'use strict';;
-const Text = require('../../../Text/Text');
-
-const createAnimatedComponent = require('../createAnimatedComponent');
+import Text from '../../../Text/Text';
+import createAnimatedComponent from '../createAnimatedComponent';
 
 export default createAnimatedComponent(Text) as $FlowFixMe;

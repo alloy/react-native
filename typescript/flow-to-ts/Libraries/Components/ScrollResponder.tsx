@@ -1,4 +1,14 @@
 'use strict';;
+import React from 'react';
+import Dimensions from '../Utilities/Dimensions';
+import FrameRateLogger from '../Interaction/FrameRateLogger';
+import Keyboard from './Keyboard/Keyboard';
+import ReactNative from '../Renderer/shims/ReactNative';
+import TextInputState from './TextInput/TextInputState';
+import UIManager from '../ReactNative/UIManager';
+import Platform from '../Utilities/Platform';
+import invariant from 'invariant';
+import performanceNow from 'fbjs/lib/performanceNow';
 import { Class } from "utility-types";
 
 
@@ -12,18 +22,7 @@ import { Class } from "utility-types";
 
 
 
-const React = require('react');
-const Dimensions = require('../Utilities/Dimensions');
-const FrameRateLogger = require('../Interaction/FrameRateLogger');
-const Keyboard = require('./Keyboard/Keyboard');
-const ReactNative = require('../Renderer/shims/ReactNative');
-const TextInputState = require('./TextInput/TextInputState');
-const UIManager = require('../ReactNative/UIManager');
-const Platform = require('../Utilities/Platform');
 import Commands from "./ScrollView/ScrollViewCommands";
-
-const invariant = require('invariant');
-const performanceNow = require('fbjs/lib/performanceNow');
 
 import { PressEvent, ScrollEvent } from "../Types/CoreEventTypes";
 import ScrollView from "./ScrollView/ScrollView";

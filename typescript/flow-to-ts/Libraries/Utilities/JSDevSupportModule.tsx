@@ -1,6 +1,6 @@
 'use strict';;
+import ReactNative from '../Renderer/shims/ReactNative';
 import NativeJSDevSupport from "./NativeJSDevSupport";
-const ReactNative = require('../Renderer/shims/ReactNative');
 
 const JSDevSupportModule = {
   getJSHierarchy: function (tag: number) {

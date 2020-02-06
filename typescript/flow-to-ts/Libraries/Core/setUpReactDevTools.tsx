@@ -1,4 +1,10 @@
-'use strict';
+'use strict';;
+import reactDevTools from 'react-devtools-core';
+import AppState from '../AppState/AppState';
+import getDevServer from './Devtools/getDevServer';
+import WebSocket from '../WebSocket/WebSocket';
+import viewConfig from '../Components/View/ReactNativeViewViewConfig.js';
+import RCTNativeAppEventEmitter from '../EventEmitter/RCTNativeAppEventEmitter';
 
 
 
@@ -12,14 +18,10 @@
 
 
 if (__DEV__) {
-  const reactDevTools = require('react-devtools-core');
   const connectToDevTools = () => {
     // not when debugging in chrome
     // TODO(t12832058) This check is broken
     if (!window.document) {
-      const AppState = require('../AppState/AppState');
-      const getDevServer = require('./Devtools/getDevServer');
-
       // Don't steal the DevTools from currently active app.
       // Note: if you add any AppState subscriptions to this file,
       // you will also need to guard against `AppState.isAvailable`,
@@ -34,10 +36,8 @@ if (__DEV__) {
       // It was added in https://github.com/facebook/react-native/commit/bf2b435322e89d0aeee8792b1c6e04656c2719a0.
       const port = window.__REACT_DEVTOOLS_PORT__ != null ? window.__REACT_DEVTOOLS_PORT__ : 8097;
 
-      const WebSocket = require('../WebSocket/WebSocket');
       const ws = new WebSocket('ws://' + host + ':' + port);
 
-      const viewConfig = require('../Components/View/ReactNativeViewViewConfig.js');
       reactDevTools.connectToDevTools({
         isAppActive,
         resolveRNStyle: require('../StyleSheet/flattenStyle'),
@@ -47,7 +47,6 @@ if (__DEV__) {
     }
   };
 
-  const RCTNativeAppEventEmitter = require('../EventEmitter/RCTNativeAppEventEmitter');
   RCTNativeAppEventEmitter.addListener('RCTDevMenuShown', connectToDevTools);
   connectToDevTools(); // Try connecting once on load
 }

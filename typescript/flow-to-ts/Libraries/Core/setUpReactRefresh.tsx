@@ -1,4 +1,6 @@
-'use strict';
+'use strict';;
+import DevSettings from '../Utilities/DevSettings';
+import ReactRefreshRuntime from 'react-refresh/runtime';
 
 
 
@@ -12,14 +14,10 @@
 
 
 if (__DEV__) {
-  const DevSettings = require('../Utilities/DevSettings');
-
   if (typeof DevSettings.reload !== 'function') {
     throw new Error('Could not find the reload() implementation.');
   }
 
-  // This needs to run before the renderer initializes.
-  const ReactRefreshRuntime = require('react-refresh/runtime');
   ReactRefreshRuntime.injectIntoGlobalHook(global);
 
   const Refresh = {

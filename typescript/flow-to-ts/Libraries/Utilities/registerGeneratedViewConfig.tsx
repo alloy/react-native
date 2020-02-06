@@ -1,4 +1,6 @@
 'use strict';;
+import ReactNativeViewConfigRegistry from '../Renderer/shims/ReactNativeViewConfigRegistry';
+import ReactNativeViewViewConfig from '../Components/View/ReactNativeViewViewConfig';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,8 +14,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const ReactNativeViewConfigRegistry = require('../Renderer/shims/ReactNativeViewConfigRegistry');
-const ReactNativeViewViewConfig = require('../Components/View/ReactNativeViewViewConfig');
 import verifyComponentAttributeEquivalence from "./verifyComponentAttributeEquivalence";
 
 export type GeneratedViewConfig = {

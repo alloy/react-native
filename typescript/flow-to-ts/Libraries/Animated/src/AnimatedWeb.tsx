@@ -1,5 +1,5 @@
 'use strict';;
-const AnimatedImplementation = require('./AnimatedImplementation');
+import AnimatedImplementation from './AnimatedImplementation';
 
 export default {
   ...AnimatedImplementation,

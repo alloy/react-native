@@ -1,6 +1,6 @@
 'use strict';;
-const performanceNow = require('fbjs/lib/performanceNow');
-const warning = require('fbjs/lib/warning');
+import performanceNow from 'fbjs/lib/performanceNow';
+import warning from 'fbjs/lib/warning';
 
 export type FillRateInfo = Info;
 

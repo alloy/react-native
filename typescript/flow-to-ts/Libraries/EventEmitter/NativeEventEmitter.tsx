@@ -1,9 +1,8 @@
 'use strict';;
-const EventEmitter = require('../vendor/emitter/EventEmitter');
-const Platform = require('../Utilities/Platform');
-const RCTDeviceEventEmitter = require('./RCTDeviceEventEmitter');
-
-const invariant = require('invariant');
+import EventEmitter from '../vendor/emitter/EventEmitter';
+import Platform from '../Utilities/Platform';
+import RCTDeviceEventEmitter from './RCTDeviceEventEmitter';
+import invariant from 'invariant';
 
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
 

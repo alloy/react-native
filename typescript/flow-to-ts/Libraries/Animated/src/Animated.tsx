@@ -1,11 +1,10 @@
 'use strict';;
+import View from '../../Components/View/View';
+import React from 'react';
+import AnimatedMock from './AnimatedMock';
+import AnimatedImplementation from './AnimatedImplementation';
 import Platform from "../../Utilities/Platform";
-const View = require('../../Components/View/View');
-const React = require('react');
 import { AnimatedComponentType } from "./createAnimatedComponent";
-
-const AnimatedMock = require('./AnimatedMock');
-const AnimatedImplementation = require('./AnimatedImplementation');
 
 const Animated = ((Platform.isTesting ? AnimatedMock : AnimatedImplementation) as typeof AnimatedMock);
 

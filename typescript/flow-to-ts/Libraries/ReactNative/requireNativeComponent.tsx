@@ -1,6 +1,6 @@
 'use strict';;
-const createReactNativeComponentClass = require('../Renderer/shims/createReactNativeComponentClass');
-const getNativeComponentAttributes = require('./getNativeComponentAttributes');
+import createReactNativeComponentClass from '../Renderer/shims/createReactNativeComponentClass';
+import getNativeComponentAttributes from './getNativeComponentAttributes';
 
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 

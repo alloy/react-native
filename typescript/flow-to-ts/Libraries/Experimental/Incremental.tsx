@@ -1,9 +1,8 @@
 'use strict';;
-const InteractionManager = require('../Interaction/InteractionManager');
-const PropTypes = require('prop-types');
-const React = require('react');
-
-const infoLog = require('../Utilities/infoLog');
+import InteractionManager from '../Interaction/InteractionManager';
+import PropTypes from 'prop-types';
+import React from 'react';
+import infoLog from '../Utilities/infoLog';
 
 const DEBUG = false;
 

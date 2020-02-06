@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import Systrace from '../Performance/Systrace';
 
 
 
@@ -16,7 +17,6 @@
  * You can use this module directly, or just require InitializeCore.
  */
 if (global.__RCTProfileIsProfiling) {
-  const Systrace = require('../Performance/Systrace');
-  Systrace.installReactHook();
-  Systrace.setEnabled(true);
+ Systrace.installReactHook();
+ Systrace.setEnabled(true);
 }

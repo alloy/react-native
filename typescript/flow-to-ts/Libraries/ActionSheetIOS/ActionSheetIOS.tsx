@@ -1,8 +1,7 @@
 'use strict';;
+import invariant from 'invariant';
+import processColor from '../StyleSheet/processColor';
 import RCTActionSheetManager from "./NativeActionSheetManager";
-
-const invariant = require('invariant');
-const processColor = require('../StyleSheet/processColor');
 
 /**
  * Display action sheets and share sheets on iOS.

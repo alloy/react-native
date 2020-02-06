@@ -1,5 +1,5 @@
 'use strict';;
-const ReactPropTypes = require('prop-types');
+import ReactPropTypes from 'prop-types';
 
 const LayoutPropTypes = {
   display: (ReactPropTypes.oneOf(['none', 'flex']) as React$PropType$Primitive<"none" | "flex">),

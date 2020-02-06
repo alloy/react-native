@@ -1,9 +1,9 @@
 'use strict';;
-const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
-const DeprecatedImageSourcePropType = require('./DeprecatedImageSourcePropType');
-const DeprecatedImageStylePropTypes = require('./DeprecatedImageStylePropTypes');
-const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
-const PropTypes = require('prop-types');
+import DeprecatedEdgeInsetsPropType from './DeprecatedEdgeInsetsPropType';
+import DeprecatedImageSourcePropType from './DeprecatedImageSourcePropType';
+import DeprecatedImageStylePropTypes from './DeprecatedImageStylePropTypes';
+import DeprecatedStyleSheetPropType from './DeprecatedStyleSheetPropType';
+import PropTypes from 'prop-types';
 
 export default {
   style: (DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes) as ReactPropsCheckType),

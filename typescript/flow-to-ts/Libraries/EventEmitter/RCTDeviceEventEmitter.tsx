@@ -1,6 +1,6 @@
 'use strict';;
-const EventEmitter = require('../vendor/emitter/EventEmitter');
-const EventSubscriptionVendor = require('../vendor/emitter/EventSubscriptionVendor');
+import EventEmitter from '../vendor/emitter/EventEmitter';
+import EventSubscriptionVendor from '../vendor/emitter/EventSubscriptionVendor';
 
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
 

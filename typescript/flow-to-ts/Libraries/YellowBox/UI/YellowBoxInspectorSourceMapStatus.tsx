@@ -1,4 +1,12 @@
 'use strict';;
+import Animated from '../../Animated/src/Animated';
+import Easing from '../../Animated/src/Easing';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import Text from '../../Text/Text';
+import YellowBoxImageSource from './YellowBoxImageSource';
+import YellowBoxPressable from './YellowBoxPressable';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,15 +19,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Animated = require('../../Animated/src/Animated');
-const Easing = require('../../Animated/src/Easing');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const Text = require('../../Text/Text');
-const YellowBoxImageSource = require('./YellowBoxImageSource');
-const YellowBoxPressable = require('./YellowBoxPressable');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 import { CompositeAnimation } from "../../Animated/src/AnimatedImplementation";
 import AnimatedInterpolation from "../../Animated/src/nodes/AnimatedInterpolation";

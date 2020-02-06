@@ -1,4 +1,14 @@
 'use strict';;
+import EmitterSubscription from '../vendor/emitter/EmitterSubscription';
+import PropTypes from 'prop-types';
+import RCTDeviceEventEmitter from '../EventEmitter/RCTDeviceEventEmitter';
+import React from 'react';
+import RootTagContext from './RootTagContext';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import View from '../Components/View/View';
+import Inspector from '../Inspector/Inspector';
+import YellowBox from '../YellowBox/YellowBox';
+import YellowBox from '../YellowBox/YellowBox';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,14 +21,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const EmitterSubscription = require('../vendor/emitter/EmitterSubscription');
-const PropTypes = require('prop-types');
-const RCTDeviceEventEmitter = require('../EventEmitter/RCTDeviceEventEmitter');
-const React = require('react');
-const RootTagContext = require('./RootTagContext');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const View = require('../Components/View/View');
 
 type Context = {rootTag: number;};
 
@@ -63,7 +65,6 @@ class AppContainer extends React.Component<Props, State> {
     if (__DEV__) {
       if (!global.__RCTProfileIsProfiling) {
         this._subscription = RCTDeviceEventEmitter.addListener('toggleElementInspector', () => {
-          const Inspector = require('../Inspector/Inspector');
           const inspector = this.state.inspector ? null : <Inspector isFabric={this.props.fabric === true} inspectedView={this._mainRef} onRequestRerenderApp={updateInspectedView => {
             this.setState(s => ({ mainKey: s.mainKey + 1 }), () => updateInspectedView(this._mainRef));
           }} />;
@@ -83,7 +84,6 @@ class AppContainer extends React.Component<Props, State> {
     let yellowBox = null;
     if (__DEV__) {
       if (!global.__RCTProfileIsProfiling && !this.props.internal_excludeLogBox) {
-        const YellowBox = require('../YellowBox/YellowBox');
         yellowBox = <YellowBox />;
       }
     }
@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
 
 if (__DEV__) {
   if (!global.__RCTProfileIsProfiling) {
-    const YellowBox = require('../YellowBox/YellowBox');
     YellowBox.install();
   }
 }

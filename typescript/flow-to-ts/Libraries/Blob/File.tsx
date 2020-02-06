@@ -1,7 +1,6 @@
 'use strict';;
-const Blob = require('./Blob');
-
-const invariant = require('invariant');
+import Blob from './Blob';
+import invariant from 'invariant';
 
 import { BlobOptions } from "./BlobTypes";
 

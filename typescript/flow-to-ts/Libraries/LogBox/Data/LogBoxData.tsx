@@ -1,3 +1,4 @@
+import ExceptionsManager from '../../Core/ExceptionsManager';
 import { $ReadOnly } from "utility-types";
 
 /**
@@ -89,8 +90,6 @@ function getNextState() {
 }
 
 export function reportLogBoxError(error: ExtendedError, componentStack?: string): void {
-  const ExceptionsManager = require('../../Core/ExceptionsManager');
-
   error.forceRedbox = true;
   error.message = `${LOGBOX_ERROR_MESSAGE}\n\n${error.message}`;
   if (componentStack != null) {

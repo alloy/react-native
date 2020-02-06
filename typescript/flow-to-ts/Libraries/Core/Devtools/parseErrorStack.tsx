@@ -1,8 +1,8 @@
 'use strict';;
+import parseHermesStack from './parseHermesStack';
+import stacktraceParser from 'stacktrace-parser';
 import { StackFrame } from "../NativeExceptionsManager";
 import { HermesParsedStack } from "./parseHermesStack";
-
-const parseHermesStack = require('./parseHermesStack');
 
 export type ExtendedError = Error & {
   jsEngine?: string;
@@ -41,7 +41,6 @@ function parseErrorStack(e: ExtendedError): Array<StackFrame> {
     return [];
   }
 
-  const stacktraceParser = require('stacktrace-parser');
   const stack = Array.isArray(e.stack) ? e.stack : global.HermesInternal ? convertHermesStack(parseHermesStack(e.stack)) : stacktraceParser.parse(e.stack).map(frame => ({
     ...frame,
     column: frame.column != null ? frame.column - 1 : null

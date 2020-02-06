@@ -1,7 +1,6 @@
 'use strict';;
+import invariant from 'invariant';
 import NativeFrameRateLogger from "./NativeFrameRateLogger";
-
-const invariant = require('invariant');
 
 /**
  * Flow API for native FrameRateLogger module. If the native module is not installed, function calls

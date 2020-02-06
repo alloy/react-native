@@ -1,4 +1,10 @@
-'use strict';
+'use strict';;
+import React from "react";
+import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
+import checkPropTypes from "prop-types/checkPropTypes";
+import Scheduler from "scheduler";
+import tracing from "scheduler/tracing";
+import _require from "../shims/ReactFeatureFlags";
 
 
 
@@ -15,12 +21,7 @@
 if (__DEV__) {
   (function () {
     "use strict";
-    var React = require("react");
     require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
-    var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface");
-    var checkPropTypes = require("prop-types/checkPropTypes");
-    var Scheduler = require("scheduler");
-    var tracing = require("scheduler/tracing");
 
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
     // Current owner and dispatcher used to share the same ref,
@@ -2227,8 +2228,6 @@ if (__DEV__) {
       ReactNativeBridgeEventPlugin: ReactNativeBridgeEventPlugin
     });
 
-    // Uncomment to re-export dynamic flags from the fbsource version.
-    var _require = require("../shims/ReactFeatureFlags");
     var enableNativeTargetAsInstance = _require.enableNativeTargetAsInstance; // The rest of the flags are static for better dead code elimination.
 
     var enableUserTimingAPI = true;

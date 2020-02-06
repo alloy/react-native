@@ -1,4 +1,6 @@
-'use strict';
+'use strict';;
+import requireNativeComponent from '../ReactNative/requireNativeComponent';
+import ReactNativeViewConfigRegistry from '../Renderer/shims/ReactNativeViewConfigRegistry';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,8 +14,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const requireNativeComponent = require('../ReactNative/requireNativeComponent');
-
 import { DangerouslyImpreciseStyle } from "../StyleSheet/StyleSheet";
 import { ResolvedAssetSource } from "./AssetSourceResolver";
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
@@ -23,7 +23,6 @@ import { ImageStyleProp } from "../StyleSheet/StyleSheet";
 import { ColorValue } from "../StyleSheet/StyleSheetTypes";
 
 import ImageViewViewConfig from "./ImageViewViewConfig";
-const ReactNativeViewConfigRegistry = require('../Renderer/shims/ReactNativeViewConfigRegistry');
 
 type NativeProps = $ReadOnly<ImageProps & ViewProps & {
   style?: ImageStyleProp | DangerouslyImpreciseStyle;

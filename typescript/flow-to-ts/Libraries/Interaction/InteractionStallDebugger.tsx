@@ -1,6 +1,6 @@
 'use strict';;
-const BridgeSpyStallHandler = require('./BridgeSpyStallHandler');
-const JSEventLoopWatchdog = require('./JSEventLoopWatchdog');
+import BridgeSpyStallHandler from './BridgeSpyStallHandler';
+import JSEventLoopWatchdog from './JSEventLoopWatchdog';
 
 const InteractionStallDebugger = {
   install(options: {thresholdMS: number;}): void {

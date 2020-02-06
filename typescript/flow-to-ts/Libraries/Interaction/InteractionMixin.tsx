@@ -1,5 +1,5 @@
 'use strict';;
-const InteractionManager = require('./InteractionManager');
+import InteractionManager from './InteractionManager';
 import { Handle } from "./InteractionManager";
 
 /**

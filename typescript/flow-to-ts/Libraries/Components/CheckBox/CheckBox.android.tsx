@@ -1,4 +1,9 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import processColor from '../../StyleSheet/processColor';
+import nullthrows from 'nullthrows';
+import setAndForwardRef from '../../Utilities/setAndForwardRef';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,13 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const processColor = require('../../StyleSheet/processColor');
-
-const nullthrows = require('nullthrows');
-const setAndForwardRef = require('../../Utilities/setAndForwardRef');
 
 import AndroidCheckBoxNativeComponent, { Commands as AndroidCheckBoxCommands } from "./AndroidCheckBoxNativeComponent";
 

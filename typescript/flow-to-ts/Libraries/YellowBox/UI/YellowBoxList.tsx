@@ -1,4 +1,14 @@
 'use strict';;
+import Dimensions from '../../Utilities/Dimensions';
+import FlatList from '../../Lists/FlatList';
+import React from 'react';
+import SafeAreaView from '../../Components/SafeAreaView/SafeAreaView';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../../Components/View/View';
+import YellowBoxButton from './YellowBoxButton';
+import YellowBoxInspector from './YellowBoxInspector';
+import YellowBoxListRow from './YellowBoxListRow';
+import YellowBoxStyle from './YellowBoxStyle';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,17 +21,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Dimensions = require('../../Utilities/Dimensions');
-const FlatList = require('../../Lists/FlatList');
-const React = require('react');
-const SafeAreaView = require('../../Components/SafeAreaView/SafeAreaView');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../../Components/View/View');
-const YellowBoxButton = require('./YellowBoxButton');
-const YellowBoxInspector = require('./YellowBoxInspector');
-const YellowBoxListRow = require('./YellowBoxListRow');
-const YellowBoxStyle = require('./YellowBoxStyle');
 
 import { Category } from "../Data/YellowBoxCategory";
 import { Registry } from "../Data/YellowBoxRegistry";

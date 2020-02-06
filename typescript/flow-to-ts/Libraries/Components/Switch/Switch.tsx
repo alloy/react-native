@@ -1,4 +1,7 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,10 +15,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
 
 import AndroidSwitchNativeComponent, { Commands as AndroidSwitchCommands } from "./AndroidSwitchNativeComponent";
 import SwitchNativeComponent, { Commands as SwitchCommands } from "./SwitchNativeComponent";

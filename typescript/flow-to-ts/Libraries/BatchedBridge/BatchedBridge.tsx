@@ -1,5 +1,5 @@
 'use strict';;
-const MessageQueue = require('./MessageQueue');
+import MessageQueue from './MessageQueue';
 
 const BatchedBridge: MessageQueue = new MessageQueue();
 

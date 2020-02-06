@@ -1,17 +1,5 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-const getNativeComponentAttributes = require('../ReactNative/getNativeComponentAttributes');
+'use strict';;
+import getNativeComponentAttributes from '../ReactNative/getNativeComponentAttributes';
 
 import ReactNativeViewViewConfig from "../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../Renderer/shims/ReactNativeTypes";

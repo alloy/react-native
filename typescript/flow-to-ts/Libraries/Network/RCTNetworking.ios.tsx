@@ -1,7 +1,6 @@
 'use strict';;
-const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
-
-const convertRequestBody = require('./convertRequestBody');
+import NativeEventEmitter from '../EventEmitter/NativeEventEmitter';
+import convertRequestBody from './convertRequestBody';
 
 import NativeNetworkingIOS from "./NativeNetworkingIOS";
 import { NativeResponseType } from "./XMLHttpRequest";

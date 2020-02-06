@@ -1,5 +1,5 @@
 'use strict';;
-const React = require('react');
+import React from 'react';
 
 /**
  * Whether the current element is the descendant of a <Text> element.

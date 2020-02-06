@@ -1,11 +1,10 @@
 'use strict';;
-const ErrorUtils = require('../vendor/core/ErrorUtils');
-const Systrace = require('../Performance/Systrace');
-
-const deepFreezeAndThrowOnMutationInDev = require('../Utilities/deepFreezeAndThrowOnMutationInDev');
-const invariant = require('invariant');
-const stringifySafe = require('../Utilities/stringifySafe');
-const warnOnce = require('../Utilities/warnOnce');
+import ErrorUtils from '../vendor/core/ErrorUtils';
+import Systrace from '../Performance/Systrace';
+import deepFreezeAndThrowOnMutationInDev from '../Utilities/deepFreezeAndThrowOnMutationInDev';
+import invariant from 'invariant';
+import stringifySafe from '../Utilities/stringifySafe';
+import warnOnce from '../Utilities/warnOnce';
 
 export type SpyData = {
   type: number;

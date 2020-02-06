@@ -1,6 +1,5 @@
 'use strict';;
-const Image = require('../../../Image/Image');
-
-const createAnimatedComponent = require('../createAnimatedComponent');
+import Image from '../../../Image/Image';
+import createAnimatedComponent from '../createAnimatedComponent';
 
 export default createAnimatedComponent(Image) as $FlowFixMe;

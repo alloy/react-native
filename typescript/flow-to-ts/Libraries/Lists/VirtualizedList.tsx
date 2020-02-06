@@ -1,4 +1,24 @@
 'use strict';;
+import Batchinator from '../Interaction/Batchinator';
+import FillRateHelper from './FillRateHelper';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactNative from '../Renderer/shims/ReactNative';
+import RefreshControl from '../Components/RefreshControl/RefreshControl';
+import ScrollView from '../Components/ScrollView/ScrollView';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import View from '../Components/View/View';
+import ViewabilityHelper from './ViewabilityHelper';
+import flattenStyle from '../StyleSheet/flattenStyle';
+import infoLog from '../Utilities/infoLog';
+import invariant from 'invariant';
+import warning from 'fbjs/lib/warning';
+import _Import0 from './VirtualizeUtils';
+
+const {
+  computeWindowedRenderLimits
+} = _Import0;
+
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,26 +31,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Batchinator = require('../Interaction/Batchinator');
-const FillRateHelper = require('./FillRateHelper');
-const PropTypes = require('prop-types');
-const React = require('react');
-const ReactNative = require('../Renderer/shims/ReactNative');
-const RefreshControl = require('../Components/RefreshControl/RefreshControl');
-const ScrollView = require('../Components/ScrollView/ScrollView');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const View = require('../Components/View/View');
-const ViewabilityHelper = require('./ViewabilityHelper');
-
-const flattenStyle = require('../StyleSheet/flattenStyle');
-const infoLog = require('../Utilities/infoLog');
-const invariant = require('invariant');
-const warning = require('fbjs/lib/warning');
-
-const {
-  computeWindowedRenderLimits
-} = require('./VirtualizeUtils');
 
 import { ScrollResponderType } from "../Components/ScrollView/ScrollView";
 import { ViewStyleProp } from "../StyleSheet/StyleSheet";

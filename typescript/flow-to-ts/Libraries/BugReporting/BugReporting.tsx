@@ -1,5 +1,5 @@
 'use strict';;
-const RCTDeviceEventEmitter = require('../EventEmitter/RCTDeviceEventEmitter');
+import RCTDeviceEventEmitter from '../EventEmitter/RCTDeviceEventEmitter';
 
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
 import NativeBugReporting from "./NativeBugReporting";

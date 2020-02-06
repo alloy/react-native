@@ -1,4 +1,8 @@
 'use strict';;
+import PixelRatio from '../Utilities/PixelRatio';
+import Platform from '../Utilities/Platform';
+import assetPathUtils from './assetPathUtils';
+import invariant from 'invariant';
 export type ResolvedAssetSource = {
   readonly __packager_asset: boolean;
   readonly width: number | null | undefined;
@@ -8,12 +12,6 @@ export type ResolvedAssetSource = {
 };
 
 import { PackagerAsset } from "./AssetRegistry";
-
-const PixelRatio = require('../Utilities/PixelRatio');
-const Platform = require('../Utilities/Platform');
-
-const assetPathUtils = require('./assetPathUtils');
-const invariant = require('invariant');
 
 /**
  * Returns a path like 'assets/AwesomeModule/icon@2x.png'

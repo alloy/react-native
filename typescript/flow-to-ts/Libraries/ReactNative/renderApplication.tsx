@@ -1,11 +1,10 @@
 'use strict';;
-const AppContainer = require('./AppContainer');
+import AppContainer from './AppContainer';
+import React from 'react';
+import invariant from 'invariant';
 import GlobalPerformanceLogger from "../Utilities/GlobalPerformanceLogger";
 import { IPerformanceLogger } from "../Utilities/createPerformanceLogger";
 import PerformanceLoggerContext from "../Utilities/PerformanceLoggerContext";
-const React = require('react');
-
-const invariant = require('invariant');
 
 // require BackHandler so it sets the default handler that exits the app if no listeners respond
 import '../Utilities/BackHandler';

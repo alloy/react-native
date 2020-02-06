@@ -1,4 +1,7 @@
 'use strict';;
+import Platform from '../../Utilities/Platform';
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,10 +15,7 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const Platform = require('../../Utilities/Platform');
 import SliderNativeComponent from "./SliderNativeComponent";
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
 
 import { ImageSource } from "../../Image/ImageSource";
 import { ViewStyleProp } from "../../StyleSheet/StyleSheet";

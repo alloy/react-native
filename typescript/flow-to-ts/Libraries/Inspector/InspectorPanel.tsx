@@ -1,4 +1,13 @@
 'use strict';;
+import ElementProperties from './ElementProperties';
+import NetworkOverlay from './NetworkOverlay';
+import PerformanceOverlay from './PerformanceOverlay';
+import React from 'react';
+import ScrollView from '../Components/ScrollView/ScrollView';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import Text from '../Text/Text';
+import TouchableHighlight from '../Components/Touchable/TouchableHighlight';
+import View from '../Components/View/View';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,16 +20,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const ElementProperties = require('./ElementProperties');
-const NetworkOverlay = require('./NetworkOverlay');
-const PerformanceOverlay = require('./PerformanceOverlay');
-const React = require('react');
-const ScrollView = require('../Components/ScrollView/ScrollView');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const Text = require('../Text/Text');
-const TouchableHighlight = require('../Components/Touchable/TouchableHighlight');
-const View = require('../Components/View/View');
 
 import { ViewStyleProp } from "../StyleSheet/StyleSheet";
 

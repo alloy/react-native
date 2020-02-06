@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import Platform from '../Utilities/Platform';
 
 
 
@@ -46,8 +47,6 @@ export interface Spec extends TurboModule {
   // TODO(T53311281): This is a noop on iOS now. Implement it.
   readonly dismissRedbox?: () => void;
 }
-
-const Platform = require('../Utilities/Platform');
 
 const NativeModule = TurboModuleRegistry.getEnforcing<Spec>('ExceptionsManager');
 

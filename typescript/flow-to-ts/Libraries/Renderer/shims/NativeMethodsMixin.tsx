@@ -1,7 +1,9 @@
 'use strict';;
+import _Import0 from './ReactNative';
+
 const {
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED
-} = require('./ReactNative');
+} = _Import0;
 
 import { NativeMethodsMixinType } from "./ReactNativeTypes";
 

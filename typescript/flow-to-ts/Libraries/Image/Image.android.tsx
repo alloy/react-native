@@ -1,4 +1,15 @@
 'use strict';;
+import DeprecatedImageStylePropTypes from '../DeprecatedPropTypes/DeprecatedImageStylePropTypes';
+import DeprecatedStyleSheetPropType from '../DeprecatedPropTypes/DeprecatedStyleSheetPropType';
+import DeprecatedViewPropTypes from '../DeprecatedPropTypes/DeprecatedViewPropTypes';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactNative from '../Renderer/shims/ReactNative';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import TextAncestor from '../Text/TextAncestor';
+import flattenStyle from '../StyleSheet/flattenStyle';
+import resolveAssetSource from './resolveAssetSource';
+import TextInlineImageNativeComponent from './TextInlineImageNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 
@@ -12,22 +23,9 @@ import { $ReadOnly } from "utility-types";
 
 
 
-const DeprecatedImageStylePropTypes = require('../DeprecatedPropTypes/DeprecatedImageStylePropTypes');
-const DeprecatedStyleSheetPropType = require('../DeprecatedPropTypes/DeprecatedStyleSheetPropType');
-const DeprecatedViewPropTypes = require('../DeprecatedPropTypes/DeprecatedViewPropTypes');
 import ImageViewNativeComponent from "./ImageViewNativeComponent";
-const PropTypes = require('prop-types');
-const React = require('react');
-const ReactNative = require('../Renderer/shims/ReactNative'); // eslint-disable-line no-unused-vars
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const TextAncestor = require('../Text/TextAncestor');
-
-const flattenStyle = require('../StyleSheet/flattenStyle');
-const resolveAssetSource = require('./resolveAssetSource');
 
 import NativeImageLoaderAndroid from "./NativeImageLoaderAndroid";
-
-const TextInlineImageNativeComponent = require('./TextInlineImageNativeComponent');
 
 import { ImageProps as ImagePropsType } from "./ImageProps";
 

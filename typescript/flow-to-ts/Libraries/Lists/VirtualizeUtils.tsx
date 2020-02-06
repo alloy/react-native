@@ -1,5 +1,5 @@
 'use strict';;
-const invariant = require('invariant');
+import invariant from 'invariant';
 
 /**
  * Used to find the indices of the frames that overlap the given offsets. Useful for finding the

@@ -1,18 +1,7 @@
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
 import { $ReadOnly } from "utility-types";
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @format
- * @flow
- */
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
 
 import { ViewProps } from "../View/ViewPropTypes";
 import RCTMaskedViewNativeComponent from "./RCTMaskedViewNativeComponent";

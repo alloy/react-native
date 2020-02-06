@@ -1,4 +1,11 @@
 'use strict';;
+import AppContainer from '../ReactNative/AppContainer';
+import I18nManager from '../ReactNative/I18nManager';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ScrollView from '../Components/ScrollView/ScrollView';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import View from '../Components/View/View';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,14 +18,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const AppContainer = require('../ReactNative/AppContainer');
-const I18nManager = require('../ReactNative/I18nManager');
-const PropTypes = require('prop-types');
-const React = require('react');
-const ScrollView = require('../Components/ScrollView/ScrollView');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const View = require('../Components/View/View');
 
 import { ViewProps } from "../Components/View/ViewPropTypes";
 import { DirectEventHandler } from "../Types/CodegenTypes";

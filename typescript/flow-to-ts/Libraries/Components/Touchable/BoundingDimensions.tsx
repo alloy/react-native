@@ -1,5 +1,5 @@
 'use strict';;
-const PooledClass = require('./PooledClass');
+import PooledClass from './PooledClass';
 
 const twoArgumentPooler = PooledClass.twoArgumentPooler;
 

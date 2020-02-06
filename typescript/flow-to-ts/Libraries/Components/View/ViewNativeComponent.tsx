@@ -1,4 +1,8 @@
-'use strict';
+'use strict';;
+import Platform from '../../Utilities/Platform';
+import ReactNativeViewViewConfigAndroid from './ReactNativeViewViewConfigAndroid';
+import registerGeneratedViewConfig from '../../Utilities/registerGeneratedViewConfig';
+import requireNativeComponent from '../../ReactNative/requireNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,12 +15,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const Platform = require('../../Utilities/Platform');
-const ReactNativeViewViewConfigAndroid = require('./ReactNativeViewViewConfigAndroid');
-
-const registerGeneratedViewConfig = require('../../Utilities/registerGeneratedViewConfig');
-const requireNativeComponent = require('../../ReactNative/requireNativeComponent');
 
 import * as React from "react";
 

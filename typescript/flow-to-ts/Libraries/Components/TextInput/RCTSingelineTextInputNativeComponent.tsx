@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import ReactNativeViewConfigRegistry from '../../Renderer/shims/ReactNativeViewConfigRegistry';
 
 
 
@@ -17,7 +18,6 @@ import codegenNativeCommands from "../../Utilities/codegenNativeCommands";
 import { Int32 } from "../../Types/CodegenTypes";
 import * as React from "react";
 import RCTSinglelineTextInputViewConfig from "./RCTSinglelineTextInputViewConfig";
-const ReactNativeViewConfigRegistry = require('../../Renderer/shims/ReactNativeViewConfigRegistry');
 
 type NativeType = HostComponent<unknown>;
 

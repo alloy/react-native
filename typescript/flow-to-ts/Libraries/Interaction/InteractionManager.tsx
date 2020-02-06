@@ -1,11 +1,10 @@
 'use strict';;
-const BatchedBridge = require('../BatchedBridge/BatchedBridge');
-const EventEmitter = require('../vendor/emitter/EventEmitter');
-const TaskQueue = require('./TaskQueue');
-
-const infoLog = require('../Utilities/infoLog');
-const invariant = require('invariant');
-const keyMirror = require('fbjs/lib/keyMirror');
+import BatchedBridge from '../BatchedBridge/BatchedBridge';
+import EventEmitter from '../vendor/emitter/EventEmitter';
+import TaskQueue from './TaskQueue';
+import infoLog from '../Utilities/infoLog';
+import invariant from 'invariant';
+import keyMirror from 'fbjs/lib/keyMirror';
 
 export type Handle = number;
 import { Task } from "./TaskQueue";

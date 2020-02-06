@@ -1,4 +1,7 @@
 'use strict';;
+import parseErrorStack from './Devtools/parseErrorStack';
+import symbolicateStackTrace from './Devtools/symbolicateStackTrace';
+import stringifySafe from '../Utilities/stringifySafe';
 import { ExtendedError } from "./Devtools/parseErrorStack";
 import * as LogBoxData from "../LogBox/Data/LogBoxData";
 import { ExceptionData } from "./NativeExceptionsManager";
@@ -41,7 +44,6 @@ let exceptionID = 0;
 function reportException(e: ExtendedError, isFatal: boolean) {
   const NativeExceptionsManager = require('./NativeExceptionsManager').default;
   if (NativeExceptionsManager) {
-    const parseErrorStack = require('./Devtools/parseErrorStack');
     const stack = parseErrorStack(e);
     const currentExceptionID = ++exceptionID;
     const originalMessage = e.message || '';
@@ -100,7 +102,6 @@ function reportException(e: ExtendedError, isFatal: boolean) {
       if (e.preventSymbolication === true) {
         return;
       }
-      const symbolicateStackTrace = require('./Devtools/symbolicateStackTrace');
       symbolicateStackTrace(stack).then(({
         stack: prettyStack
       }) => {
@@ -152,7 +153,6 @@ function reactConsoleErrorHandler() {
     false);
   } else {
     console._errorOriginal.apply(console, arguments);
-    const stringifySafe = require('../Utilities/stringifySafe');
     const str = Array.prototype.map.call(arguments, value => typeof value === 'string' ? value : stringifySafe(value)).join(' ');
 
     if (str.slice(0, 9) === 'Warning: ') {

@@ -1,4 +1,10 @@
 'use strict';;
+import DeprecatedImagePropType from '../DeprecatedPropTypes/DeprecatedImagePropType';
+import React from 'react';
+import ReactNative from '../Renderer/shims/ReactNative';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import flattenStyle from '../StyleSheet/flattenStyle';
+import resolveAssetSource from './resolveAssetSource';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,14 +17,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const DeprecatedImagePropType = require('../DeprecatedPropTypes/DeprecatedImagePropType');
-const React = require('react');
-const ReactNative = require('../Renderer/shims/ReactNative'); // eslint-disable-line no-unused-vars
-const StyleSheet = require('../StyleSheet/StyleSheet');
-
-const flattenStyle = require('../StyleSheet/flattenStyle');
-const resolveAssetSource = require('./resolveAssetSource');
 
 import { ImageProps as ImagePropsType } from "./ImageProps";
 

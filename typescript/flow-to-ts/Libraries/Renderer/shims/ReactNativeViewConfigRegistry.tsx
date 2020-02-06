@@ -1,4 +1,5 @@
 'use strict';;
+import invariant from 'invariant';
 import { $ReadOnly } from "utility-types";
 
 
@@ -15,8 +16,6 @@ import { $ReadOnly } from "utility-types";
 
 
 import { ReactNativeBaseComponentViewConfig, ViewConfigGetter } from "./ReactNativeTypes";
-
-const invariant = require('invariant');
 
 // Event configs
 const customBubblingEventTypes: {

@@ -1,8 +1,8 @@
 'use strict';;
-const Image = require('./Image');
-const React = require('react');
-const StyleSheet = require('../StyleSheet/StyleSheet');
-const View = require('../Components/View/View');
+import Image from './Image';
+import React from 'react';
+import StyleSheet from '../StyleSheet/StyleSheet';
+import View from '../Components/View/View';
 
 /**
  * Very simple drop-in replacement for <Image> which supports nesting views.

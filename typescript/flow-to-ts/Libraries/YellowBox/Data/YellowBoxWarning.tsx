@@ -1,4 +1,7 @@
 'use strict';;
+import YellowBoxCategory from './YellowBoxCategory';
+import YellowBoxSymbolication from './YellowBoxSymbolication';
+import parseErrorStack from '../../Core/Devtools/parseErrorStack';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,11 +14,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const YellowBoxCategory = require('./YellowBoxCategory');
-const YellowBoxSymbolication = require('./YellowBoxSymbolication');
-
-const parseErrorStack = require('../../Core/Devtools/parseErrorStack');
 
 import { Category, Message } from "./YellowBoxCategory";
 import { Stack } from "./YellowBoxSymbolication";

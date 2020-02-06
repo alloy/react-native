@@ -1,4 +1,8 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
+import View from '../View/View';
+import invariant from 'invariant';
 import { $ReadOnly } from "utility-types";
 
 
@@ -15,11 +19,6 @@ import { $ReadOnly } from "utility-types";
 
 
 import RCTDatePickerNativeComponent, { Commands as DatePickerCommands } from "./RCTDatePickerNativeComponent";
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
-const View = require('../View/View');
-
-const invariant = require('invariant');
 
 import { SyntheticEvent } from "../../Types/CoreEventTypes";
 import { ViewProps } from "../View/ViewPropTypes";

@@ -1,6 +1,6 @@
 'use strict';;
-const infoLog = require('../Utilities/infoLog');
-const invariant = require('invariant');
+import infoLog from '../Utilities/infoLog';
+import invariant from 'invariant';
 
 type SimpleTask = {
   name: string;

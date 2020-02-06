@@ -1,4 +1,6 @@
 'use strict';;
+import Promise from '../../Promise';
+import RCTDeviceEventEmitter from '../../EventEmitter/RCTDeviceEventEmitter';
 import { $Keys } from "utility-types";
 
 
@@ -11,9 +13,6 @@ import { $Keys } from "utility-types";
 
 
 
-
-const Promise = require('../../Promise');
-const RCTDeviceEventEmitter = require('../../EventEmitter/RCTDeviceEventEmitter');
 
 import NativeAccessibilityManager from "./NativeAccessibilityManager";
 

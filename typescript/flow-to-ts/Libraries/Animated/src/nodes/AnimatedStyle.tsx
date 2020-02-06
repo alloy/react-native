@@ -1,10 +1,9 @@
 'use strict';;
-const AnimatedNode = require('./AnimatedNode');
-const AnimatedTransform = require('./AnimatedTransform');
-const AnimatedWithChildren = require('./AnimatedWithChildren');
-const NativeAnimatedHelper = require('../NativeAnimatedHelper');
-
-const flattenStyle = require('../../../StyleSheet/flattenStyle');
+import AnimatedNode from './AnimatedNode';
+import AnimatedTransform from './AnimatedTransform';
+import AnimatedWithChildren from './AnimatedWithChildren';
+import NativeAnimatedHelper from '../NativeAnimatedHelper';
+import flattenStyle from '../../../StyleSheet/flattenStyle';
 
 class AnimatedStyle extends AnimatedWithChildren {
 

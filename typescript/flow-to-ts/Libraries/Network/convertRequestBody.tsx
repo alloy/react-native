@@ -1,8 +1,7 @@
 'use strict';;
-const binaryToBase64 = require('../Utilities/binaryToBase64');
-
-const Blob = require('../Blob/Blob');
-const FormData = require('./FormData');
+import binaryToBase64 from '../Utilities/binaryToBase64';
+import Blob from '../Blob/Blob';
+import FormData from './FormData';
 
 export type RequestBody = string | Blob | FormData | {uri: string;} | ArrayBuffer | $ArrayBufferView;
 

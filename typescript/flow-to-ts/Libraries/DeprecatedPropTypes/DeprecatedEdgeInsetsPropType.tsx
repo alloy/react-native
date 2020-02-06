@@ -1,5 +1,5 @@
 'use strict';;
-const PropTypes = require('prop-types');
+import PropTypes from 'prop-types';
 
 const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{
   bottom?: number;

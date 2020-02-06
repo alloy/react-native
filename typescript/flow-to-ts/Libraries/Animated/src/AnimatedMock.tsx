@@ -1,16 +1,18 @@
 'use strict';;
+import _Import0 from './AnimatedEvent';
+
 const {
   AnimatedEvent,
   attachNativeEvent
-} = require('./AnimatedEvent');
-const AnimatedImplementation = require('./AnimatedImplementation');
-const AnimatedInterpolation = require('./nodes/AnimatedInterpolation');
-const AnimatedNode = require('./nodes/AnimatedNode');
-const AnimatedProps = require('./nodes/AnimatedProps');
-const AnimatedValue = require('./nodes/AnimatedValue');
-const AnimatedValueXY = require('./nodes/AnimatedValueXY');
+} = _Import0;
 
-const createAnimatedComponent = require('./createAnimatedComponent');
+import AnimatedImplementation from './AnimatedImplementation';
+import AnimatedInterpolation from './nodes/AnimatedInterpolation';
+import AnimatedNode from './nodes/AnimatedNode';
+import AnimatedProps from './nodes/AnimatedProps';
+import AnimatedValue from './nodes/AnimatedValue';
+import AnimatedValueXY from './nodes/AnimatedValueXY';
+import createAnimatedComponent from './createAnimatedComponent';
 
 import { EndCallback } from "./animations/Animation";
 import { TimingAnimationConfig } from "./animations/TimingAnimation";

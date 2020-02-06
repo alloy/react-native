@@ -1,11 +1,10 @@
 'use strict';;
-const BlobManager = require('../Blob/BlobManager');
-const EventTarget = require('event-target-shim');
-const RCTNetworking = require('./RCTNetworking');
-
-const base64 = require('base64-js');
-const invariant = require('invariant');
-const warning = require('fbjs/lib/warning');
+import BlobManager from '../Blob/BlobManager';
+import EventTarget from 'event-target-shim';
+import RCTNetworking from './RCTNetworking';
+import base64 from 'base64-js';
+import invariant from 'invariant';
+import warning from 'fbjs/lib/warning';
 
 const DEBUG_NETWORK_SEND_DELAY: false = false; // Set to a number of milliseconds when debugging
 

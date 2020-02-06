@@ -1,8 +1,8 @@
 'use strict';;
-const DeprecatedColorPropType = require('./DeprecatedColorPropType');
-const DeprecatedViewPropTypes = require('./DeprecatedViewPropTypes');
-const PropTypes = require('prop-types');
-const Text = require('../Text/Text');
+import DeprecatedColorPropType from './DeprecatedColorPropType';
+import DeprecatedViewPropTypes from './DeprecatedViewPropTypes';
+import PropTypes from 'prop-types';
+import Text from '../Text/Text';
 
 const DataDetectorTypes = ['phoneNumber', 'link', 'address', 'calendarEvent', 'none', 'all'];
 

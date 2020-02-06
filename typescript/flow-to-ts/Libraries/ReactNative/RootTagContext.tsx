@@ -1,4 +1,4 @@
 'use strict';;
-const React = require('react');
+import React from 'react';
 
 export default React.createContext<number>(0) as React$Context<number>;

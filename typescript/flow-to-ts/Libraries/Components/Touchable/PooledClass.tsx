@@ -1,4 +1,5 @@
 'use strict';;
+import invariant from 'invariant';
 import { Class } from "utility-types";
 
 
@@ -11,8 +12,6 @@ import { Class } from "utility-types";
 
 
 
-
-const invariant = require('invariant');
 
 /**
  * Static poolers. Several custom versions for each potential number of

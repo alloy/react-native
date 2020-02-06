@@ -1,6 +1,6 @@
 'use strict';;
-const Platform = require('../../Utilities/Platform');
-const UIManager = require('../../ReactNative/UIManager');
+import Platform from '../../Utilities/Platform';
+import UIManager from '../../ReactNative/UIManager';
 
 let currentlyFocusedID: number | null | undefined = null;
 const inputs = new Set();

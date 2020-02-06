@@ -1,4 +1,9 @@
-'use strict';
+'use strict';;
+import _Import0 from '../Utilities/PolyfillFunctions';
+
+const {
+  polyfillGlobal
+} = _Import0;
 
 
 
@@ -13,10 +18,6 @@
 
 // In bridgeless mode, timers are host functions installed from cpp.
 if (!global.RN$Bridgeless) {
-  const {
-    polyfillGlobal
-  } = require('../Utilities/PolyfillFunctions');
-
   /**
    * Set up timers.
    * You can use this module directly, or just require InitializeCore.

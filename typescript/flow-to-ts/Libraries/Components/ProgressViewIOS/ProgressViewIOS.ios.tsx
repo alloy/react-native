@@ -1,4 +1,6 @@
 'use strict';;
+import React from 'react';
+import StyleSheet from '../../StyleSheet/StyleSheet';
 import { $ReadOnly } from "utility-types";
 
 
@@ -11,9 +13,6 @@ import { $ReadOnly } from "utility-types";
 
 
 
-
-const React = require('react');
-const StyleSheet = require('../../StyleSheet/StyleSheet');
 
 import RCTProgressViewNativeComponent from "./RCTProgressViewNativeComponent";
 import { ImageSource } from "../../Image/ImageSource";

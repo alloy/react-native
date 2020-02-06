@@ -1,9 +1,11 @@
 'use strict';;
-const DevSettings = require('./DevSettings');
-const invariant = require('invariant');
-const MetroHMRClient = require('metro/src/lib/bundle-modules/HMRClient');
-const Platform = require('./Platform');
-const prettyFormat = require('pretty-format');
+import DevSettings from './DevSettings';
+import invariant from 'invariant';
+import MetroHMRClient from 'metro/src/lib/bundle-modules/HMRClient';
+import Platform from './Platform';
+import prettyFormat from 'pretty-format';
+import LoadingView from './LoadingView';
+import LoadingView from './LoadingView';
 
 import NativeRedBox from "../NativeModules/specs/NativeRedBox";
 import * as LogBoxData from "../LogBox/Data/LogBoxData";
@@ -41,7 +43,6 @@ const HMRClient: HMRClientNativeInterface = {
     }
 
     invariant(hmrClient, 'Expected HMRClient.setup() call at startup.');
-    const LoadingView = require('./LoadingView');
 
     // We use this for internal logging only.
     // It doesn't affect the logic.
@@ -112,9 +113,6 @@ const HMRClient: HMRClientNativeInterface = {
     invariant(bundleEntry, 'Missing required parameter `bundleEntry`');
     invariant(host, 'Missing required parameter `host`');
     invariant(!hmrClient, 'Cannot initialize hmrClient twice');
-
-    // Moving to top gives errors due to NativeModules not being initialized
-    const LoadingView = require('./LoadingView');
 
     const wsHost = port !== null && port !== '' ? `${host}:${port}` : host;
     const client = new MetroHMRClient(`ws://${wsHost}/hot`);

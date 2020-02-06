@@ -1,9 +1,8 @@
 'use strict';;
-const MatrixMath = require('../Utilities/MatrixMath');
-const Platform = require('../Utilities/Platform');
-
-const invariant = require('invariant');
-const stringifySafe = require('../Utilities/stringifySafe');
+import MatrixMath from '../Utilities/MatrixMath';
+import Platform from '../Utilities/Platform';
+import invariant from 'invariant';
+import stringifySafe from '../Utilities/stringifySafe';
 
 /**
  * Generate a transform matrix based on the provided transforms, and use that

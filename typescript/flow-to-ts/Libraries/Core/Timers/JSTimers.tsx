@@ -1,9 +1,8 @@
 'use strict';;
-const BatchedBridge = require('../../BatchedBridge/BatchedBridge');
-const Platform = require('../../Utilities/Platform');
-const Systrace = require('../../Performance/Systrace');
-
-const invariant = require('invariant');
+import BatchedBridge from '../../BatchedBridge/BatchedBridge';
+import Platform from '../../Utilities/Platform';
+import Systrace from '../../Performance/Systrace';
+import invariant from 'invariant';
 
 import NativeTiming from "./NativeTiming";
 
