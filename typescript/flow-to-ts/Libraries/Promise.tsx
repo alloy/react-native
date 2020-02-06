@@ -1,8 +1,8 @@
 'use strict';;
 const Promise = require('promise/setimmediate/es6-extensions');
 
-require('promise/setimmediate/done');
-require('promise/setimmediate/finally');
+import 'promise/setimmediate/done';
+import 'promise/setimmediate/finally';
 
 if (__DEV__) {
   require('promise/setimmediate/rejection-tracking').enable({

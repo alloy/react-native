@@ -1,5 +1,5 @@
 'use strict';;
-require('./Promise'); // make sure the default rejection handler is installed
+import './Promise'; // make sure the default rejection handler is installed
 const rejectionTracking = require('promise/setimmediate/rejection-tracking');
 
 export default () => {

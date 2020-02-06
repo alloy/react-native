@@ -8,7 +8,7 @@ const React = require('react');
 const invariant = require('invariant');
 
 // require BackHandler so it sets the default handler that exits the app if no listeners respond
-require('../Utilities/BackHandler');
+import '../Utilities/BackHandler';
 
 function renderApplication<Props extends Object>(RootComponent: React.ComponentType<Props>, initialProps: Props, rootTag: any, WrapperComponent?: React.ComponentType<any> | null | undefined, fabric?: boolean, showArchitectureIndicator?: boolean, scopedPerformanceLogger?: IPerformanceLogger, isLogBox?: boolean) {
   invariant(rootTag, 'Expect to have a valid rootTag, instead got ', rootTag);

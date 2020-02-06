@@ -1,45 +1,17 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const start = Date.now();
 
-require('./setUpGlobals');
-require('./setUpSystrace');
-require('./setUpErrorHandling');
-require('./polyfillPromise');
-require('./setUpRegeneratorRuntime');
-require('./setUpTimers');
-require('./setUpXHR');
-require('./setUpAlert');
-require('./setUpNavigator');
-require('./setUpBatchedBridge');
-require('./setUpSegmentFetcher');
+import './setUpGlobals';
+import './setUpSystrace';
+import './setUpErrorHandling';
+import './polyfillPromise';
+import './setUpRegeneratorRuntime';
+import './setUpTimers';
+import './setUpXHR';
+import './setUpAlert';
+import './setUpNavigator';
+import './setUpBatchedBridge';
+import './setUpSegmentFetcher';
 if (__DEV__) {
   require('./checkNativeVersion');
   require('./setUpDeveloperTools');

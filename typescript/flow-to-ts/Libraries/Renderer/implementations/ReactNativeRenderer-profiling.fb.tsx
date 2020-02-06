@@ -1,5 +1,5 @@
 "use strict";;
-require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
+import 'react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore';
 var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface"),
     React = require("react"),
     Scheduler = require("scheduler"),
