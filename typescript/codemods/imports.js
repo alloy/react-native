@@ -1,6 +1,6 @@
 // @ts-check
 
-const { CallExpression, Identifier, ObjectPattern, ObjectProperty, StringLiteral, VariableDeclaration, VariableDeclarator } = require('jscodeshift');
+const { CallExpression, Identifier, ObjectPattern, Program, StringLiteral, VariableDeclaration, VariableDeclarator } = require('jscodeshift');
 
 /**
  * @param { import("jscodeshift").VariableDeclaration } node
@@ -30,43 +30,50 @@ function getRequireExpression(node) {
 }
 
 /**
- * @param { import("jscodeshift").VariableDeclaration } node
- */
-function getRequire(node) {
-    return getRequireExpression(getVariableDeclarator(node).init);
-}
-
-/**
  * @type { import("jscodeshift").Transform }
  */
 const transformer = (file, api, options) => {
     const j = api.jscodeshift;
     let i = 0;
 
-    return j(file.source)
-        .find(VariableDeclaration, node => !!getRequire(node))
-        .replaceWith(({ node }) => {
+    const collection = j(file.source);
+    const expressions = [];
+
+    collection
+        .find(VariableDeclaration, node => {
             const declarator = getVariableDeclarator(node);
-            const req = getRequireExpression(declarator.init);
-            const source = req.arguments[0];
-            if (StringLiteral.check(source)) {
-                if (Identifier.check(declarator.id)) {
-                    const specifiers = [j.importDefaultSpecifier(declarator.id)];
-                    return j.importDeclaration(specifiers, source);
-                } else if (ObjectPattern.check(declarator.id)) {
-                    const tmpVar = j.identifier(`_Import${i++}`);
-                    return [
-                        j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source),
-                        j.variableDeclaration(node.kind, [j.variableDeclarator(declarator.id, tmpVar)]),
-                    ];
+            const requireNode = getRequireExpression(declarator.init);
+            if (requireNode) {
+                const source = requireNode.arguments[0];
+                if (StringLiteral.check(source)) {
+                    if (Identifier.check(declarator.id)) {
+                        const specifiers = [j.importDefaultSpecifier(declarator.id)];
+                        expressions.push(j.importDeclaration(specifiers, source));
+                    } else if (ObjectPattern.check(declarator.id)) {
+                        const tmpVar = j.identifier(`_Import${i++}`);
+                        expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source));
+                        expressions.push(j.variableDeclaration(node.kind, [j.variableDeclarator(declarator.id, tmpVar)]));
+                    } else {
+                        throw new Error('[!] Default import expected');
+                    }
+                    return true;
                 } else {
-                    throw new Error('[!] Default import expected');
+                    throw new Error('[!] String-literal expected');
                 }
-            } else {
-                throw new Error('[!] String-literal expected');
             }
+            return false;
         })
-        .toSource();
+        .remove();
+
+    // Hoist imports to top-level
+    collection.find(Program).forEach(path => {
+        const body = path.node.body;
+        expressions.reverse().forEach(expression => {
+            body.unshift(expression);
+        });
+    });
+
+    return collection.toSource();
 };
 
 module.exports = transformer;
