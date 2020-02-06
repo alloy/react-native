@@ -11,7 +11,7 @@
 
 
 
-export opaque type BlobCollector = {};
+export type BlobCollector = {};
 
 export type BlobData = {
   blobId: string;

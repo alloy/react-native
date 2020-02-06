@@ -13,7 +13,7 @@
 
 const React = require('react');
 
-opaque type DoNotCommitUsageOfPureComponentDebug = {};
+type DoNotCommitUsageOfPureComponentDebug = {};
 
 /**
  * Identifies which prop or state changes triggered a re-render of a PureComponent. Usage:

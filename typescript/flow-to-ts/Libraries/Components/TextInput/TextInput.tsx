@@ -39,7 +39,7 @@ const {
   useState
 } = React;
 
-type ReactRefSetter<T> = {current: null | T;} | (ref: null | T) => unknown;
+type ReactRefSetter<T> = {current: null | T;} | ((ref: null | T) => unknown);
 
 let AndroidTextInput;
 let RCTMultilineTextInputView;

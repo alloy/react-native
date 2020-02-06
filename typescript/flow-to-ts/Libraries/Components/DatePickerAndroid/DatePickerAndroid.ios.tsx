@@ -22,12 +22,12 @@ class DatePickerAndroid {
   /**
    * A date has been selected.
    */
-  static +dateSetAction: "dateSetAction" = 'dateSetAction';
+  static readonly dateSetAction: "dateSetAction" = 'dateSetAction';
 
   /**
    * The dialog has been dismissed.
    */
-  static +dismissedAction: "dismissedAction" = 'dismissedAction';
+  static readonly dismissedAction: "dismissedAction" = 'dismissedAction';
 }
 
 module.exports = DatePickerAndroid;

@@ -96,11 +96,11 @@ export type ReactEventResponder<E, C> = {
   targetEventTypes: null | Array<string>;
   targetPortalPropagation: boolean;
   rootEventTypes: null | Array<string>;
-  getInitialState: null | (props: Object) => Object;
-  onEvent: null | (event: E, context: C, props: Object, state: Object) => void;
-  onRootEvent: null | (event: E, context: C, props: Object, state: Object) => void;
-  onMount: null | (context: C, props: Object, state: Object) => void;
-  onUnmount: null | (context: C, props: Object, state: Object) => void;
+  getInitialState: null | ((props: Object) => Object);
+  onEvent: null | ((event: E, context: C, props: Object, state: Object) => void);
+  onRootEvent: null | ((event: E, context: C, props: Object, state: Object) => void);
+  onMount: null | ((context: C, props: Object, state: Object) => void);
+  onUnmount: null | ((context: C, props: Object, state: Object) => void);
 
 };
 

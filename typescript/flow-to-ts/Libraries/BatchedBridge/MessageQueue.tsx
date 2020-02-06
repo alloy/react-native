@@ -90,7 +90,7 @@ class MessageQueue {
   /**
    * Public APIs
    */
-  static spy(spyOrToggle: boolean | (data: SpyData) => void) {
+  static spy(spyOrToggle: boolean | ((data: SpyData) => void)) {
     if (spyOrToggle === true) {
       MessageQueue.prototype.__spy = info => {
         console.log(`${info.type === TO_JS ? 'N->JS' : 'JS->N'} : ` + `${info.module ? info.module + '.' : ''}${info.method}` + `(${JSON.stringify(info.args)})`);
