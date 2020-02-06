@@ -5,10 +5,10 @@ const { CallExpression, Identifier, ObjectPattern, ObjectProperty, StringLiteral
 /**
  * @param { import("jscodeshift").VariableDeclaration } node
  */
-function getVariableDeclaration(node) {
-    const declaration = node.declarations[0];
-    if (VariableDeclarator.check(declaration)) {
-        return declaration;
+function getVariableDeclarator(node) {
+    const declarator = node.declarations[0];
+    if (VariableDeclarator.check(declarator)) {
+        return declarator;
     } else {
         throw new Error('[!] Expected VariableDeclarator');
     }
@@ -33,7 +33,7 @@ function getRequireExpression(node) {
  * @param { import("jscodeshift").VariableDeclaration } node
  */
 function getRequire(node) {
-    return getRequireExpression(getVariableDeclaration(node).init);
+    return getRequireExpression(getVariableDeclarator(node).init);
 }
 
 /**
@@ -41,35 +41,24 @@ function getRequire(node) {
  */
 const transformer = (file, api, options) => {
     const j = api.jscodeshift;
+    let i = 0;
 
     return j(file.source)
         .find(VariableDeclaration, node => !!getRequire(node))
         .replaceWith(({ node }) => {
-            const declaration = getVariableDeclaration(node);
-            const req = getRequireExpression(declaration.init);
+            const declarator = getVariableDeclarator(node);
+            const req = getRequireExpression(declarator.init);
             const source = req.arguments[0];
             if (StringLiteral.check(source)) {
-                if (Identifier.check(declaration.id)) {
-                    const specifiers = [j.importDefaultSpecifier(declaration.id)];
+                if (Identifier.check(declarator.id)) {
+                    const specifiers = [j.importDefaultSpecifier(declarator.id)];
                     return j.importDeclaration(specifiers, source);
-                } else if (ObjectPattern.check(declaration.id)) {
-                    const specifiers = declaration.id.properties.map(property => {
-                        if (ObjectProperty.check(property)) {
-                            if (!property.shorthand) {
-                                throw new Error('[!] Shorthand property expected');
-                            }
-                            const name = property.key;
-                            if (Identifier.check(name)) {
-                                return j.importSpecifier(name);
-                            } else {
-                                throw new Error('[!] String property key expected');
-                            }
-                        } else {
-                            console.log(property);
-                            throw new Error('[!] ObjectProperty expected');
-                        }
-                    });
-                    return j.importDeclaration(specifiers, source);
+                } else if (ObjectPattern.check(declarator.id)) {
+                    const tmpVar = j.identifier(`_Import${i++}`);
+                    return [
+                        j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source),
+                        j.variableDeclaration(node.kind, [j.variableDeclarator(declarator.id, tmpVar)]),
+                    ];
                 } else {
                     throw new Error('[!] Default import expected');
                 }
