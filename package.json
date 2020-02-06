@@ -123,6 +123,7 @@
     "@react-native-community/eslint-plugin": "file:packages/eslint-plugin-react-native-community",
     "@reactions/component": "^2.0.2",
     "@types/invariant": "^2.2.31",
+    "@types/jscodeshift": "^0.6.3",
     "async": "^2.4.0",
     "babel-eslint": "10.0.1",
     "clang-format": "^1.2.4",
