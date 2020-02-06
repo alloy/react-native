@@ -81,7 +81,7 @@ const ActionSheetIOS = {
    *
    * See http://facebook.github.io/react-native/docs/actionsheetios.html#showshareactionsheetwithoptions
    */
-  showShareActionSheetWithOptions(options: Object, failureCallback: Function, successCallback: Function) {
+  showShareActionSheetWithOptions(options: any, failureCallback: any, successCallback: any) {
     invariant(typeof options === 'object' && options !== null, 'Options must be a valid object');
     invariant(typeof failureCallback === 'function', 'Must provide a valid failureCallback');
     invariant(typeof successCallback === 'function', 'Must provide a valid successCallback');
