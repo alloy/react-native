@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const InteractionManager = require('../Interaction/InteractionManager');
 const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
 const Platform = require('../Utilities/Platform');
@@ -113,4 +101,4 @@ class Linking extends NativeEventEmitter {
   }
 }
 
-module.exports = (new Linking() as Linking);
+export default new Linking() as Linking;

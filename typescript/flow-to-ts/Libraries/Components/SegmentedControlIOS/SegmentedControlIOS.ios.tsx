@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -118,4 +118,4 @@ const SegmentedControlIOSWithRef = React.forwardRef((props: SegmentedControlIOSP
 
 
 
-module.exports = (SegmentedControlIOSWithRef as NativeSegmentedControlIOS);
+export default SegmentedControlIOSWithRef as NativeSegmentedControlIOS;

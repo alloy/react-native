@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { ExtendedError } from "./Devtools/parseErrorStack";
 import * as LogBoxData from "../LogBox/Data/LogBoxData";
 import { ExceptionData } from "./NativeExceptionsManager";
@@ -200,7 +188,7 @@ function installConsoleErrorReporter() {
   }
 }
 
-module.exports = {
+export default {
   handleException,
   installConsoleErrorReporter,
   SyntheticError,

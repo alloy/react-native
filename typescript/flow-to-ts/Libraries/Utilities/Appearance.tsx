@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import EventEmitter from "../vendor/emitter/EventEmitter";
 import NativeEventEmitter from "../EventEmitter/NativeEventEmitter";
 import NativeAppearance, { AppearancePreferences, ColorSchemeName } from "./NativeAppearance";
@@ -30,7 +18,7 @@ if (NativeAppearance) {
   });
 }
 
-module.exports = {
+export default {
   /**
    * Note: Although color scheme is available immediately, it may change at any
    * time. Any rendering logic or styles that depend on this should try to call

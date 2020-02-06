@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BatchedBridge = require('./BatchedBridge');
 
 const invariant = require('invariant');
@@ -151,4 +139,4 @@ if (global.nativeModuleProxy) {
   });
 }
 
-module.exports = NativeModules;
+export default NativeModules;

@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -193,4 +193,4 @@ class RefreshControl extends React.Component<RefreshControlProps> {
   };
 }
 
-module.exports = RefreshControl;
+export default RefreshControl;

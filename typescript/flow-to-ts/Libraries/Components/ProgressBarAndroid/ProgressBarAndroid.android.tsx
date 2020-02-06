@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -83,4 +83,4 @@ ProgressBarAndroidToExport.defaultProps = {
 
 
 
-module.exports = (ProgressBarAndroidToExport as typeof ProgressBarAndroidNativeComponent);
+export default ProgressBarAndroidToExport as typeof ProgressBarAndroidNativeComponent;

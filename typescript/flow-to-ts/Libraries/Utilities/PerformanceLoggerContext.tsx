@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import * as React from "react";
 import GlobalPerformanceLogger from "./GlobalPerformanceLogger";
 import { IPerformanceLogger } from "./createPerformanceLogger";
@@ -22,4 +10,4 @@ import { IPerformanceLogger } from "./createPerformanceLogger";
  * See React docs about using Context: https://reactjs.org/docs/context.html
  */
 const PerformanceLoggerContext: React.Context<IPerformanceLogger> = React.createContext(GlobalPerformanceLogger);
-module.exports = PerformanceLoggerContext;
+export default PerformanceLoggerContext;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 type SpringConfigType = {
   stiffness: number;
   damping: number;
@@ -83,7 +71,7 @@ function fromBouncinessAndSpeed(bounciness: number, speed: number): SpringConfig
   };
 }
 
-module.exports = {
+export default {
   fromOrigamiTensionAndFriction,
   fromBouncinessAndSpeed
 };

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PerformanceLogger = require('../Utilities/GlobalPerformanceLogger');
 const React = require('react');
 const StyleSheet = require('../StyleSheet/StyleSheet');
@@ -60,4 +48,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = PerformanceOverlay;
+export default PerformanceOverlay;

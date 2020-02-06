@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const MatrixMath = require('../Utilities/MatrixMath');
 const Platform = require('../Utilities/Platform');
 
@@ -172,4 +160,4 @@ function _validateTransform(key, value, transformation) {
   }
 }
 
-module.exports = processTransform;
+export default processTransform;

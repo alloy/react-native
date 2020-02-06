@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 let ease;
 
 /**
@@ -245,4 +233,4 @@ class Easing {
   }
 }
 
-module.exports = Easing;
+export default Easing;

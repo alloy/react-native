@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -77,4 +77,4 @@ function registerGeneratedViewConfig(componentName: string, viewConfig: Generate
   });
 }
 
-module.exports = registerGeneratedViewConfig;
+export default registerGeneratedViewConfig;

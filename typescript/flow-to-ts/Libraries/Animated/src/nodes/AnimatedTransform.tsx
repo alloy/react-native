@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
 const NativeAnimatedHelper = require('../NativeAnimatedHelper');
@@ -120,4 +108,4 @@ class AnimatedTransform extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedTransform;
+export default AnimatedTransform;

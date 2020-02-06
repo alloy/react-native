@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -113,4 +113,4 @@ class YellowBoxWarning {
   }
 }
 
-module.exports = YellowBoxWarning;
+export default YellowBoxWarning;

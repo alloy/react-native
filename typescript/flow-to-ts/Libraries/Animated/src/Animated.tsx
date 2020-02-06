@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import Platform from "../../Utilities/Platform";
 const View = require('../../Components/View/View');
 const React = require('react');
@@ -21,7 +9,7 @@ const AnimatedImplementation = require('./AnimatedImplementation');
 
 const Animated = ((Platform.isTesting ? AnimatedMock : AnimatedImplementation) as typeof AnimatedMock);
 
-module.exports = {
+export default {
   get FlatList(): any {
     return require('./components/AnimatedFlatList');
   },

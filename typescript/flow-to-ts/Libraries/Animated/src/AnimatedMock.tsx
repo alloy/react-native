@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const {
   AnimatedEvent,
   attachNativeEvent
@@ -113,7 +101,7 @@ const event = function (argMapping: Array<Mapping | null | undefined>, config: E
   return null;
 };
 
-module.exports = {
+export default {
   Value: AnimatedValue,
   ValueXY: AnimatedValueXY,
   Interpolation: AnimatedInterpolation,

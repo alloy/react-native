@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 type HermesStackLocationNative = {
   readonly type: "NATIVE";
 };
@@ -90,7 +78,7 @@ function parseLine(line: string): HermesStackEntry | null | undefined {
   }
 }
 
-module.exports = function parseHermesStack(stack: string): HermesParsedStack {
+export default function parseHermesStack(stack: string): HermesParsedStack {
   const lines = stack.split(/\n/);
   let entries = [];
   let lastMessageLine = -1;

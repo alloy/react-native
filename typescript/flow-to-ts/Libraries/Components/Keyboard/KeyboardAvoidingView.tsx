@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -192,4 +192,4 @@ class KeyboardAvoidingView extends React.Component<Props, State> {
   }
 }
 
-module.exports = KeyboardAvoidingView;
+export default KeyboardAvoidingView;

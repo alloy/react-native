@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedValue = require('./AnimatedValue');
 const AnimatedNode = require('./AnimatedNode');
 const {
@@ -92,4 +80,4 @@ class AnimatedTracking extends AnimatedNode {
   }
 }
 
-module.exports = AnimatedTracking;
+export default AnimatedTracking;

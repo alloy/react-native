@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('../Utilities/Platform');
 
 const normalizeColor = require('./normalizeColor');
@@ -39,4 +27,4 @@ function processColor(color?: (string | number) | null | undefined): number | nu
   return int32Color;
 }
 
-module.exports = processColor;
+export default processColor;

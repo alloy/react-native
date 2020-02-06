@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { Class } from "utility-types";
 
 
@@ -35,4 +35,4 @@ const JSInspector = {
   }
 };
 
-module.exports = JSInspector;
+export default JSInspector;

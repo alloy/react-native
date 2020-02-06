@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -126,4 +126,4 @@ const LayoutAnimation = {
   spring: (configureNext.bind(null, Presets.spring) as (onAnimationDidEnd?: any) => void)
 };
 
-module.exports = LayoutAnimation;
+export default LayoutAnimation;

@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PooledClass = require('./PooledClass');
 
 const twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -34,4 +23,4 @@ Position.prototype.destructor = function () {
 
 PooledClass.addPoolingTo(Position, twoArgumentPooler);
 
-module.exports = Position;
+export default Position;

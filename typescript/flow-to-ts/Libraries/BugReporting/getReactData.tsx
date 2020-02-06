@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * Convert a react internal instance to a sanitized data object.
  *
@@ -165,4 +153,4 @@ function copyWithSet(obj: Object | Array<any>, path: Array<string | number>, val
   return copyWithSetImpl(obj, path, 0, value);
 }
 
-module.exports = getData;
+export default getData;

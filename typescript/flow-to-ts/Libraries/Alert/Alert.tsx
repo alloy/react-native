@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import Platform from "../Utilities/Platform";
 import NativeDialogManagerAndroid, { DialogOptions } from "../NativeModules/specs/NativeDialogManagerAndroid";
 import RCTAlertManager from "./RCTAlertManager";
@@ -146,4 +134,4 @@ class Alert {
   }
 }
 
-module.exports = Alert;
+export default Alert;

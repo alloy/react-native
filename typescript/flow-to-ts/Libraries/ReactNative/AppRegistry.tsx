@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BatchedBridge = require('../BatchedBridge/BatchedBridge');
 const BugReporting = require('../BugReporting/BugReporting');
 const ReactNative = require('../Renderer/shims/ReactNative');
@@ -247,9 +235,9 @@ if (__DEV__) {
   const LogBoxInspector = require('../LogBox/LogBoxInspectorContainer').default;
   AppRegistry.registerComponent('LogBox', () => LogBoxInspector);
 } else {
-  AppRegistry.registerComponent('LogBox', () => function NoOp() {
+  AppRegistry.registerComponent('LogBox', () => (function NoOp() {
     return null;
-  });
+  }));
 }
 
-module.exports = AppRegistry;
+export default AppRegistry;

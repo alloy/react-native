@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const warning = require('fbjs/lib/warning');
 
 const warnedKeys: {
@@ -34,4 +22,4 @@ function warnOnce(key: string, message: string) {
   warnedKeys[key] = true;
 }
 
-module.exports = warnOnce;
+export default warnOnce;

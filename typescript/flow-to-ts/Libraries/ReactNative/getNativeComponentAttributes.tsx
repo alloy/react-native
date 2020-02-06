@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ReactNativeStyleAttributes = require('../Components/View/ReactNativeStyleAttributes');
 const UIManager = require('./UIManager');
 
@@ -170,4 +158,4 @@ function getProcessorForType(typeName: string): (nextProp: any) => any | null | 
   return null;
 }
 
-module.exports = getNativeComponentAttributes;
+export default getNativeComponentAttributes;

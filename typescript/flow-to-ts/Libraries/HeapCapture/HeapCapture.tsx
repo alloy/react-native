@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeJSCHeapCapture from "./NativeJSCHeapCapture";
 
 const HeapCapture = {
@@ -29,4 +17,4 @@ const HeapCapture = {
   }
 };
 
-module.exports = HeapCapture;
+export default HeapCapture;

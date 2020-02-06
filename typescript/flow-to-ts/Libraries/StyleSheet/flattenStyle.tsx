@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { DangerouslyImpreciseStyle, DangerouslyImpreciseStyleProp } from "./StyleSheet";
 
 function flattenStyle(style: DangerouslyImpreciseStyleProp | null | undefined): DangerouslyImpreciseStyle | null | undefined {
@@ -34,4 +22,4 @@ function flattenStyle(style: DangerouslyImpreciseStyleProp | null | undefined): 
   return result;
 }
 
-module.exports = flattenStyle;
+export default flattenStyle;

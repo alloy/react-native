@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeEventEmitter from "../../EventEmitter/NativeEventEmitter";
 import { EventConfig } from "./AnimatedEvent";
 import NativeAnimatedModule from "./NativeAnimatedModule";
@@ -269,7 +257,7 @@ function transformDataType(value: number | string): number | string {
   }
 }
 
-module.exports = {
+export default {
   API,
   addWhitelistedStyleProp,
   addWhitelistedTransformProp,

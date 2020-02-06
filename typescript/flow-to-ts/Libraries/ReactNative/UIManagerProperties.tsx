@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * The list of non-ViewManager related UIManager properties.
  *
@@ -27,4 +15,4 @@
  * accessed. Once UIManager property accesses for view managers has been fully
  * deprecated, this file will also be removed.
  */
-module.exports = ['clearJSResponder', 'configureNextLayoutAnimation', 'createView', 'dismissPopupMenu', 'dispatchViewManagerCommand', 'findSubviewIn', 'getConstantsForViewManager', 'getDefaultEventTypes', 'manageChildren', 'measure', 'measureInWindow', 'measureLayout', 'measureLayoutRelativeToParent', 'playTouchSound', 'removeRootView', 'removeSubviewsFromContainerWithID', 'replaceExistingNonRootView', 'sendAccessibilityEvent', 'setChildren', 'setJSResponder', 'setLayoutAnimationEnabledExperimental', 'showPopupMenu', 'updateView', 'viewIsDescendantOf', 'PopupMenu', 'LazyViewManagersEnabled', 'ViewManagerNames', 'StyleConstants', 'AccessibilityEventTypes', 'UIView', 'getViewManagerConfig', 'blur', 'focus', 'genericBubblingEventTypes', 'genericDirectEventTypes', 'lazilyLoadView'];
+export default ['clearJSResponder', 'configureNextLayoutAnimation', 'createView', 'dismissPopupMenu', 'dispatchViewManagerCommand', 'findSubviewIn', 'getConstantsForViewManager', 'getDefaultEventTypes', 'manageChildren', 'measure', 'measureInWindow', 'measureLayout', 'measureLayoutRelativeToParent', 'playTouchSound', 'removeRootView', 'removeSubviewsFromContainerWithID', 'replaceExistingNonRootView', 'sendAccessibilityEvent', 'setChildren', 'setJSResponder', 'setLayoutAnimationEnabledExperimental', 'showPopupMenu', 'updateView', 'viewIsDescendantOf', 'PopupMenu', 'LazyViewManagersEnabled', 'ViewManagerNames', 'StyleConstants', 'AccessibilityEventTypes', 'UIView', 'getViewManagerConfig', 'blur', 'focus', 'genericBubblingEventTypes', 'genericDirectEventTypes', 'lazilyLoadView'];

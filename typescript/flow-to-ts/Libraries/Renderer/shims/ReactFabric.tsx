@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { BatchedBridge } from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
 
 // TODO @sema: Adjust types
@@ -26,4 +14,4 @@ if (__DEV__) {
 
 BatchedBridge.registerCallableModule('ReactFabric', ReactFabric);
 
-module.exports = (ReactFabric as ReactNativeType);
+export default ReactFabric as ReactNativeType;

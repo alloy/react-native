@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const NativeAnimatedHelper = require('../NativeAnimatedHelper');
 
 const NativeAnimatedAPI = NativeAnimatedHelper.API;
@@ -170,4 +158,4 @@ class AnimatedNode {
   }
 }
 
-module.exports = AnimatedNode;
+export default AnimatedNode;

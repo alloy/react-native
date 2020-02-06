@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -147,4 +147,4 @@ const YellowBoxRegistry = {
   }
 };
 
-module.exports = YellowBoxRegistry;
+export default YellowBoxRegistry;

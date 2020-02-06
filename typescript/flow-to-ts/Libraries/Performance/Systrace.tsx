@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 const TRACE_TAG_REACT_APPS = 1 << 17; // eslint-disable-line no-bitwise
@@ -163,4 +151,4 @@ if (__DEV__) {
   (require as any).Systrace = Systrace;
 }
 
-module.exports = Systrace;
+export default Systrace;

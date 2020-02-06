@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { Options, DatePickerOpenAction } from "./DatePickerAndroidTypes";
 
 class DatePickerAndroid {
@@ -30,4 +18,4 @@ class DatePickerAndroid {
   static readonly dismissedAction: "dismissedAction" = 'dismissedAction';
 }
 
-module.exports = DatePickerAndroid;
+export default DatePickerAndroid;

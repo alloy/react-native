@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BatchedBridge = require('../../BatchedBridge/BatchedBridge');
 const Platform = require('../../Utilities/Platform');
 const Systrace = require('../../Performance/Systrace');
@@ -452,4 +440,4 @@ if (!NativeTiming) {
 
 BatchedBridge.setImmediatesCallback(ExportedJSTimers.callImmediates.bind(ExportedJSTimers));
 
-module.exports = ExportedJSTimers;
+export default ExportedJSTimers;

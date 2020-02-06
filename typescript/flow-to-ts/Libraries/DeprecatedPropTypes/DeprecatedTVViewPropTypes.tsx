@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PropTypes = require('prop-types');
 
 const DeprecatedTVViewPropTypes = {
@@ -21,4 +9,4 @@ const DeprecatedTVViewPropTypes = {
   tvParallaxMagnification: PropTypes.number
 };
 
-module.exports = DeprecatedTVViewPropTypes;
+export default DeprecatedTVViewPropTypes;

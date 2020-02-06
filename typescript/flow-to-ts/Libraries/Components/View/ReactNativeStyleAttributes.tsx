@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -73,4 +73,4 @@ ReactNativeStyleAttributes.tintColor = colorAttributes;
 ReactNativeStyleAttributes.textShadowColor = colorAttributes;
 ReactNativeStyleAttributes.overlayColor = colorAttributes;
 
-module.exports = ReactNativeStyleAttributes;
+export default ReactNativeStyleAttributes;

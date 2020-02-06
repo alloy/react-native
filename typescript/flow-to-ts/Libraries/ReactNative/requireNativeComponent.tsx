@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const createReactNativeComponentClass = require('../Renderer/shims/createReactNativeComponentClass');
 const getNativeComponentAttributes = require('./getNativeComponentAttributes');
 
@@ -26,4 +14,4 @@ import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
  */
 const requireNativeComponent = <T>(uiViewClassName: string): HostComponent<T> => ((createReactNativeComponentClass(uiViewClassName, () => getNativeComponentAttributes(uiViewClassName)) as any) as HostComponent<T>);
 
-module.exports = requireNativeComponent;
+export default requireNativeComponent;

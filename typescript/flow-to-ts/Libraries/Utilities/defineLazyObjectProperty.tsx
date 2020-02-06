@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * Defines a lazily evaluated property on the supplied `object`.
  */
@@ -62,4 +50,4 @@ function defineLazyObjectProperty<T>(object: Object, name: string, descriptor: {
   });
 }
 
-module.exports = defineLazyObjectProperty;
+export default defineLazyObjectProperty;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeSourceCode from "../../NativeModules/specs/NativeSourceCode";
 
 let _cachedDevServerURL: string | null | undefined;
@@ -38,4 +26,4 @@ function getDevServer(): DevServerInfo {
   };
 }
 
-module.exports = getDevServer;
+export default getDevServer;

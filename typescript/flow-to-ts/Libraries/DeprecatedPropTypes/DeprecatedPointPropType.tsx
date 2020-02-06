@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PropTypes = require('prop-types');
 
 const PointPropType: React$PropType$Primitive<{
@@ -22,4 +10,4 @@ const PointPropType: React$PropType$Primitive<{
   y: PropTypes.number
 });
 
-module.exports = PointPropType;
+export default PointPropType;

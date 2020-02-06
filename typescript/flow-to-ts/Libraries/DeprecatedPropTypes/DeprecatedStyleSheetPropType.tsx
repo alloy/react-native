@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const deprecatedCreateStrictShapeTypeChecker = require('./deprecatedCreateStrictShapeTypeChecker');
 const flattenStyle = require('../StyleSheet/flattenStyle');
 
@@ -29,4 +17,4 @@ function DeprecatedStyleSheetPropType(shape: {
   };
 }
 
-module.exports = DeprecatedStyleSheetPropType;
+export default DeprecatedStyleSheetPropType;

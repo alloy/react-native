@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Blob = require('./Blob');
 const EventTarget = require('event-target-shim');
 
@@ -147,4 +135,4 @@ class FileReader extends (EventTarget(...READER_EVENTS) as any) {
   }
 }
 
-module.exports = FileReader;
+export default FileReader;

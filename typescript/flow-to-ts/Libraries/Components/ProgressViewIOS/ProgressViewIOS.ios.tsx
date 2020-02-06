@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
 
 const ProgressViewIOSWithRef = React.forwardRef(ProgressViewIOS);
 
-module.exports = (ProgressViewIOSWithRef as typeof RCTProgressViewNativeComponent);
+export default ProgressViewIOSWithRef as typeof RCTProgressViewNativeComponent;

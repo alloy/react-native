@@ -1,22 +1,10 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 // This is a stub for flow to make it understand require('./icon.png')
 // See metro/src/Bundler/index.js
 
 const AssetRegistry = require('./AssetRegistry');
 
-module.exports = (AssetRegistry.registerAsset({
+export default AssetRegistry.registerAsset({
   __packager_asset: true,
   fileSystemLocation: '/full/path/to/directory',
   httpServerLocation: '/assets/full/path/to/directory',
@@ -26,4 +14,4 @@ module.exports = (AssetRegistry.registerAsset({
   hash: 'nonsense',
   name: 'icon',
   type: 'png'
-}) as number);
+}) as number;

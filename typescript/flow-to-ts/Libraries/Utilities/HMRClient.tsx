@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DevSettings = require('./DevSettings');
 const invariant = require('invariant');
 const MetroHMRClient = require('metro/src/lib/bundle-modules/HMRClient');
@@ -286,4 +274,4 @@ function showCompileError() {
   throw error;
 }
 
-module.exports = HMRClient;
+export default HMRClient;

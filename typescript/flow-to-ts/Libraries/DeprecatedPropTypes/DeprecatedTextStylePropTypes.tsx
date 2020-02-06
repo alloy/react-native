@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
 const ReactPropTypes = require('prop-types');
@@ -98,4 +86,4 @@ const DeprecatedTextStylePropTypes = {
   , 'ltr', 'rtl']) as React$PropType$Primitive<"auto" | "ltr" | "rtl">)
 };
 
-module.exports = DeprecatedTextStylePropTypes;
+export default DeprecatedTextStylePropTypes;

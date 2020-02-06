@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BatchedBridge = require('../BatchedBridge/BatchedBridge');
 const EventEmitter = require('../vendor/emitter/EventEmitter');
 const TaskQueue = require('./TaskQueue');
@@ -213,4 +201,4 @@ function _processUpdate() {
   _deleteInteractionSet.clear();
 }
 
-module.exports = InteractionManager;
+export default InteractionManager;

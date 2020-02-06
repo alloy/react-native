@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('../../Utilities/Platform');
 const NativeEventEmitter = require('../../EventEmitter/NativeEventEmitter');
 
@@ -46,4 +34,4 @@ class TVEventHandler {
   }
 }
 
-module.exports = TVEventHandler;
+export default TVEventHandler;

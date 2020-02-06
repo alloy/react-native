@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 function deprecatedCreateStrictShapeTypeChecker(shapeTypes: {
@@ -52,4 +40,4 @@ function deprecatedCreateStrictShapeTypeChecker(shapeTypes: {
   return chainedCheckType;
 }
 
-module.exports = deprecatedCreateStrictShapeTypeChecker;
+export default deprecatedCreateStrictShapeTypeChecker;

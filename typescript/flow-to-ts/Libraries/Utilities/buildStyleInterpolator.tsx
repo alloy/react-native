@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const keyOf = require('fbjs/lib/keyOf');
 
 const X_DIM = keyOf({ x: null });
@@ -170,4 +159,4 @@ const buildStyleInterpolator = function (anims) {
   return styleInterpolator;
 };
 
-module.exports = buildStyleInterpolator;
+export default buildStyleInterpolator;

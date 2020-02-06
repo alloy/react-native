@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedValue = require('./nodes/AnimatedValue');
 const NativeAnimatedHelper = require('./NativeAnimatedHelper');
 const ReactNative = require('../../Renderer/shims/ReactNative');
@@ -187,4 +175,4 @@ class AnimatedEvent {
   }
 }
 
-module.exports = { AnimatedEvent, attachNativeEvent };
+export default { AnimatedEvent, attachNativeEvent };

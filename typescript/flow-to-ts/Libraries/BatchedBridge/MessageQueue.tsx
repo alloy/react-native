@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ErrorUtils = require('../vendor/core/ErrorUtils');
 const Systrace = require('../Performance/Systrace');
 
@@ -388,4 +376,4 @@ class MessageQueue {
   }
 }
 
-module.exports = MessageQueue;
+export default MessageQueue;

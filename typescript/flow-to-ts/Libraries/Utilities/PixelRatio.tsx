@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Dimensions = require('./Dimensions');
 
 /**
@@ -125,4 +113,4 @@ class PixelRatio {
   static startDetecting() {}
 }
 
-module.exports = PixelRatio;
+export default PixelRatio;

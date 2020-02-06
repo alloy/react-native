@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -130,4 +130,4 @@ function resolveSizeInPlace(style: Style, direction: string, dimension: string) 
   }
 }
 
-module.exports = ElementBox;
+export default ElementBox;

@@ -1,20 +1,9 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeDialogManagerAndroid from "../NativeModules/specs/NativeDialogManagerAndroid";
 
 function emptyCallback() {}
 
-module.exports = {
+export default {
   alertWithArgs: function (args, callback) {
     // TODO(5998984): Polyfill it correctly with DialogManagerAndroid
     if (!NativeDialogManagerAndroid) {

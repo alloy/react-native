@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const EventEmitter = require('../vendor/emitter/EventEmitter');
 const EventSubscriptionVendor = require('../vendor/emitter/EventSubscriptionVendor');
 
@@ -67,4 +55,4 @@ class RCTDeviceEventEmitter extends EventEmitter {
   }
 }
 
-module.exports = (new RCTDeviceEventEmitter() as RCTDeviceEventEmitter);
+export default new RCTDeviceEventEmitter() as RCTDeviceEventEmitter;

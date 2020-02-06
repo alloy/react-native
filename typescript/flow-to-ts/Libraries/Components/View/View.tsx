@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { ViewProps } from "./ViewPropTypes";
 
 const React = require('react');
@@ -34,4 +22,4 @@ const View: React.AbstractComponent<ViewProps, React.ElementRef<typeof ViewNativ
 
 View.displayName = 'View';
 
-module.exports = View;
+export default View;

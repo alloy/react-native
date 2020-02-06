@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 /**
@@ -194,4 +182,4 @@ const VirtualizeUtils = {
   newRangeCount
 };
 
-module.exports = VirtualizeUtils;
+export default VirtualizeUtils;

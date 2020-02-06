@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeFrameRateLogger from "./NativeFrameRateLogger";
 
 const invariant = require('invariant');
@@ -79,4 +67,4 @@ const FrameRateLogger = {
   }
 };
 
-module.exports = FrameRateLogger;
+export default FrameRateLogger;

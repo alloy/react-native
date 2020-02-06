@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 function SetPolyfill() {
   this._cache = [];
 }
@@ -24,4 +13,4 @@ SetPolyfill.prototype.forEach = function (cb) {
   this._cache.forEach(cb);
 };
 
-module.exports = SetPolyfill;
+export default SetPolyfill;

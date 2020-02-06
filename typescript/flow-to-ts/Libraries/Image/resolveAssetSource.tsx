@@ -1,18 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AssetRegistry = require('./AssetRegistry');
 const AssetSourceResolver = require('./AssetSourceResolver');
 
@@ -97,6 +83,6 @@ function resolveAssetSource(source: any): ResolvedAssetSource | null | undefined
   return resolver.defaultAsset();
 }
 
-module.exports = resolveAssetSource;
-module.exports.pickScale = AssetSourceResolver.pickScale;
-module.exports.setCustomSourceTransformer = setCustomSourceTransformer;
+export default resolveAssetSource;
+export const pickScale = AssetSourceResolver.pickScale;
+export { setCustomSourceTransformer };

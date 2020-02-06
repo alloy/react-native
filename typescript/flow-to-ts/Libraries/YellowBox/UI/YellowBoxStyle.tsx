@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const YellowBoxStyle = {
   getBackgroundColor(opacity: number): string {
     return `rgba(250, 186, 48, ${opacity})`;
@@ -29,4 +17,4 @@ const YellowBoxStyle = {
   }
 };
 
-module.exports = YellowBoxStyle;
+export default YellowBoxStyle;

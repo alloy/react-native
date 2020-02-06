@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 type FormDataValue = any;
 type FormDataNameValuePair = [string, FormDataValue];
 
@@ -91,4 +79,4 @@ class FormData {
   }
 }
 
-module.exports = FormData;
+export default FormData;

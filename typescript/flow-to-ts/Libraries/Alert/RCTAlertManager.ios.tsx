@@ -1,20 +1,8 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeAlertManager from "./NativeAlertManager";
 import { Args } from "./NativeAlertManager";
 
-module.exports = {
+export default {
   alertWithArgs(args: Args, callback: (id: number, value: string) => void): void {
     if (NativeAlertManager == null) {
       return;

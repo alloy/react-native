@@ -1,23 +1,11 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedImageSourcePropType = require('./DeprecatedImageSourcePropType');
 const DeprecatedImageStylePropTypes = require('./DeprecatedImageStylePropTypes');
 const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
 const PropTypes = require('prop-types');
 
-module.exports = {
+export default {
   style: (DeprecatedStyleSheetPropType(DeprecatedImageStylePropTypes) as ReactPropsCheckType),
   source: DeprecatedImageSourcePropType,
   defaultSource: (PropTypes.oneOfType([PropTypes.shape({

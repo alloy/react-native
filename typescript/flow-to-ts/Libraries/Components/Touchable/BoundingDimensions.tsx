@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PooledClass = require('./PooledClass');
 
 const twoArgumentPooler = PooledClass.twoArgumentPooler;
@@ -41,4 +30,4 @@ BoundingDimensions.getPooledFromElement = function (element) {
 
 PooledClass.addPoolingTo(BoundingDimensions, twoArgumentPooler);
 
-module.exports = BoundingDimensions;
+export default BoundingDimensions;

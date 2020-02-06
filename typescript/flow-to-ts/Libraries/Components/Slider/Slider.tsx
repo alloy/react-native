@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -241,4 +241,4 @@ if (Platform.OS === 'ios') {
   });
 }
 
-module.exports = SliderWithRef;
+export default SliderWithRef;

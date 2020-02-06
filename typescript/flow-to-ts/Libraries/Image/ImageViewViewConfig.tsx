@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import ReactNativeViewViewConfig from "../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../Renderer/shims/ReactNativeTypes";
 
@@ -66,4 +54,4 @@ const ImageViewViewConfig = {
   }
 };
 
-module.exports = (ImageViewViewConfig as ReactNativeBaseComponentViewConfig<>);
+export default ImageViewViewConfig as ReactNativeBaseComponentViewConfig<>;

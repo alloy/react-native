@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -1922,4 +1922,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = VirtualizedList;
+export default VirtualizedList;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const InspectorAgent = require('./InspectorAgent');
 const JSInspector = require('./JSInspector');
 const XMLHttpRequest = require('../Network/XMLHttpRequest');
@@ -278,4 +266,4 @@ class NetworkAgent extends InspectorAgent {
   }
 }
 
-module.exports = NetworkAgent;
+export default NetworkAgent;

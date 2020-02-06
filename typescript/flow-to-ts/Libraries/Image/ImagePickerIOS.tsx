@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -90,4 +90,4 @@ const ImagePickerIOS = {
   }
 };
 
-module.exports = ImagePickerIOS;
+export default ImagePickerIOS;

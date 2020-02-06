@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const {
   AnimatedEvent
 } = require('../AnimatedEvent');
@@ -161,4 +149,4 @@ class AnimatedProps extends AnimatedNode {
   }
 }
 
-module.exports = AnimatedProps;
+export default AnimatedProps;

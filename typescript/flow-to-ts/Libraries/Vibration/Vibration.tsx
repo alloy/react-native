@@ -1,17 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeVibration from "./NativeVibration";
 const Platform = require('../Utilities/Platform');
 
@@ -98,4 +85,4 @@ const Vibration = {
   }
 };
 
-module.exports = Vibration;
+export default Vibration;

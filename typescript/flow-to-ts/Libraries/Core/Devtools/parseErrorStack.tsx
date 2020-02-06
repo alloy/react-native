@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { StackFrame } from "../NativeExceptionsManager";
 import { HermesParsedStack } from "./parseHermesStack";
 
@@ -62,4 +50,4 @@ function parseErrorStack(e: ExtendedError): Array<StackFrame> {
   return stack;
 }
 
-module.exports = parseErrorStack;
+export default parseErrorStack;

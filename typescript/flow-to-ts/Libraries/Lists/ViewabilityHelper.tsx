@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 export type ViewToken = {
@@ -254,4 +242,4 @@ function _isEntirelyVisible(top: number, bottom: number, viewportHeight: number)
   return top >= 0 && bottom <= viewportHeight && bottom > top;
 }
 
-module.exports = ViewabilityHelper;
+export default ViewabilityHelper;

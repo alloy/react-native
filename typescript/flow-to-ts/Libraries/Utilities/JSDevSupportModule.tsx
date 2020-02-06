@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeJSDevSupport from "./NativeJSDevSupport";
 const ReactNative = require('../Renderer/shims/ReactNative');
 
@@ -35,4 +23,4 @@ const JSDevSupportModule = {
   }
 };
 
-module.exports = JSDevSupportModule;
+export default JSDevSupportModule;

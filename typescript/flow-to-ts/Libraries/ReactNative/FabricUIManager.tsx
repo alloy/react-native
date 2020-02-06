@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { MeasureOnSuccessCallback, MeasureInWindowOnSuccessCallback, MeasureLayoutOnSuccessCallback } from "../Renderer/shims/ReactNativeTypes";
 
 // TODO: type these properly.
@@ -36,4 +24,4 @@ type Spec = {
 
 const FabricUIManager: Spec | null | undefined = global.nativeFabricUIManager;
 
-module.exports = FabricUIManager;
+export default FabricUIManager;

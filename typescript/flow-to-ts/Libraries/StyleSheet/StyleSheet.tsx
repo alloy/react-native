@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $Keys, $ElementType, $ReadOnly } from "utility-types";
 
 
@@ -202,7 +202,7 @@ if (__DEV__) {
  *  - It also allows to send the style only once through the bridge. All
  * subsequent uses are going to refer an id (not implemented yet).
  */
-module.exports = {
+export default {
   /**
    * This is defined as the width of a thin line on the platform. It can be
    * used as the thickness of a border or division between two elements.

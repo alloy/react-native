@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedValue = require('./AnimatedValue');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
 
@@ -220,4 +208,4 @@ class AnimatedValueXY extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedValueXY;
+export default AnimatedValueXY;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const React = require('react');
 const StyleSheet = require('../StyleSheet/StyleSheet');
 const Text = require('../Text/Text');
@@ -106,4 +94,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = BoxInspector;
+export default BoxInspector;

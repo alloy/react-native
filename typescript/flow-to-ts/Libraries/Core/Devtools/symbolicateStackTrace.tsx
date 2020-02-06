@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -94,4 +94,4 @@ async function symbolicateStackTrace(stack: Array<StackFrame>): Promise<Symbolic
   return await response.json();
 }
 
-module.exports = symbolicateStackTrace;
+export default symbolicateStackTrace;

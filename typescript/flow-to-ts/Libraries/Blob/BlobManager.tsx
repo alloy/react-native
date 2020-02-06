@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Blob = require('./Blob');
 const BlobRegistry = require('./BlobRegistry');
 
@@ -170,4 +158,4 @@ class BlobManager {
   }
 }
 
-module.exports = BlobManager;
+export default BlobManager;

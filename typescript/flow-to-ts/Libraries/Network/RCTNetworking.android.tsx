@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 // Do not require the native RCTNetworking module directly! Use this wrapper module instead.
 // It will add the necessary requestId, so that you don't have to generate it yourself.
 const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
@@ -69,4 +57,4 @@ class RCTNetworking extends NativeEventEmitter {
   }
 }
 
-module.exports = (new RCTNetworking() as RCTNetworking);
+export default new RCTNetworking() as RCTNetworking;

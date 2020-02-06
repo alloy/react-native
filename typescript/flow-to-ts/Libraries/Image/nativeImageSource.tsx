@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -61,4 +61,4 @@ function nativeImageSource(spec: NativeImageSourceSpec): ImageURISource {
   };
 }
 
-module.exports = nativeImageSource;
+export default nativeImageSource;

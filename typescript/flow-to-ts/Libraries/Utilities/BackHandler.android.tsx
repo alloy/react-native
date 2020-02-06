@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeDeviceEventManager from "../../Libraries/NativeModules/specs/NativeDeviceEventManager";
 import RCTDeviceEventEmitter from "../EventEmitter/RCTDeviceEventEmitter";
 
@@ -99,4 +87,4 @@ const BackHandler: TBackHandler = {
   }
 };
 
-module.exports = BackHandler;
+export default BackHandler;

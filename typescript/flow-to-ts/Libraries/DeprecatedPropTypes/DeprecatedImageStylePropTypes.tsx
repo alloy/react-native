@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedLayoutPropTypes = require('./DeprecatedLayoutPropTypes');
 const DeprecatedShadowPropTypesIOS = require('./DeprecatedShadowPropTypesIOS');
@@ -61,4 +49,4 @@ const ImageStylePropTypes = {
   borderBottomRightRadius: ReactPropTypes.number
 };
 
-module.exports = ImageStylePropTypes;
+export default ImageStylePropTypes;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Settings = {
   get(key: string): unknown {
     console.warn('Settings is not yet supported on Android');
@@ -31,4 +19,4 @@ const Settings = {
   }
 };
 
-module.exports = Settings;
+export default Settings;

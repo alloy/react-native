@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const infoLog = require('../Utilities/infoLog');
 const performanceNow = require('fbjs/lib/performanceNow');
 
@@ -91,4 +79,4 @@ let longestStall = 0;
 let lastInterval = 0;
 const handlers: Array<Handler> = [];
 
-module.exports = JSEventLoopWatchdog;
+export default JSEventLoopWatchdog;

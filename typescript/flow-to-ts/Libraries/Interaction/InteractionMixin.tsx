@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const InteractionManager = require('./InteractionManager');
 import { Handle } from "./InteractionManager";
 
@@ -49,4 +37,4 @@ const InteractionMixin = {
   }
 };
 
-module.exports = InteractionMixin;
+export default InteractionMixin;

@@ -1,19 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('./Platform');
 const TVEventHandler = require('../Components/AppleTV/TVEventHandler');
 
@@ -107,4 +92,4 @@ if (Platform.isTV) {
   };
 }
 
-module.exports = BackHandler;
+export default BackHandler;

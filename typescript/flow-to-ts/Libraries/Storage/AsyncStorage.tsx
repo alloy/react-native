@@ -1,18 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeAsyncStorage from "./NativeAsyncStorage";
 import invariant from "invariant";
 
@@ -334,4 +320,4 @@ function convertError(error) {
   return out;
 }
 
-module.exports = AsyncStorage;
+export default AsyncStorage;

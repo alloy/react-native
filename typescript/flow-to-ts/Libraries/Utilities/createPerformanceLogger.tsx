@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Systrace = require('../Performance/Systrace');
 
 const infoLog = require('./infoLog');
@@ -260,4 +248,4 @@ function createPerformanceLogger(): IPerformanceLogger {
   return result;
 }
 
-module.exports = createPerformanceLogger;
+export default createPerformanceLogger;

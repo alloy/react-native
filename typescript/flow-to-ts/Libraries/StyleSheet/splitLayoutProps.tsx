@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ElementType } from "utility-types";
 
 
@@ -61,4 +61,4 @@ function splitLayoutProps(props: DangerouslyImpreciseStyle | null | undefined): 
   return { outer, inner };
 }
 
-module.exports = splitLayoutProps;
+export default splitLayoutProps;

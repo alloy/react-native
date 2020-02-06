@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import * as React from "react";
 
 const FlatList = require('../../../Lists/FlatList');
@@ -22,4 +10,4 @@ const createAnimatedComponent = require('../createAnimatedComponent');
  */
 const FlatListWithEventThrottle = React.forwardRef((props, ref) => <FlatList scrollEventThrottle={0.0001} {...props} ref={ref} />);
 
-module.exports = (createAnimatedComponent(FlatListWithEventThrottle) as $FlowFixMe);
+export default createAnimatedComponent(FlatListWithEventThrottle) as $FlowFixMe;

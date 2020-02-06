@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BlobManager = require('../Blob/BlobManager');
 const EventTarget = require('event-target-shim');
 const RCTNetworking = require('./RCTNetworking');
@@ -490,4 +478,4 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
   }
 }
 
-module.exports = XMLHttpRequest;
+export default XMLHttpRequest;

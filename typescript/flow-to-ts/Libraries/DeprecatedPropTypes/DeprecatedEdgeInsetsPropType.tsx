@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PropTypes = require('prop-types');
 
 const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{
@@ -26,4 +14,4 @@ const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{
   right: PropTypes.number
 });
 
-module.exports = DeprecatedEdgeInsetsPropType;
+export default DeprecatedEdgeInsetsPropType;

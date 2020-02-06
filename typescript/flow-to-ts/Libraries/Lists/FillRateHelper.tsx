@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const performanceNow = require('fbjs/lib/performanceNow');
 const warning = require('fbjs/lib/warning');
 
@@ -227,4 +215,4 @@ class FillRateHelper {
   }
 }
 
-module.exports = FillRateHelper;
+export default FillRateHelper;

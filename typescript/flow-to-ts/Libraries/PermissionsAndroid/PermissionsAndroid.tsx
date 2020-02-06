@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('../Utilities/Platform');
 
 import NativeDialogManagerAndroid from "../NativeModules/specs/NativeDialogManagerAndroid";
@@ -219,4 +207,4 @@ class PermissionsAndroid {
 
 const PermissionsAndroidInstance: PermissionsAndroid = new PermissionsAndroid();
 
-module.exports = PermissionsAndroidInstance;
+export default PermissionsAndroidInstance;

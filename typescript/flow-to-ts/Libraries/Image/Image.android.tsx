@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -323,4 +323,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = ((Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof TextInlineImageNativeComponent> | React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics);
+export default (Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof TextInlineImageNativeComponent> | React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics;

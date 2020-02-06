@@ -33,7 +33,7 @@ const has = (id: string): number | boolean => {
   return registry[id] && registry[id] > 0;
 };
 
-module.exports = {
+export default {
   register,
   unregister,
   has

@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -160,4 +160,4 @@ class Picker extends React.Component<PickerProps> {
   }
 }
 
-module.exports = Picker;
+export default Picker;

@@ -1,22 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 // These values are established by empiricism with tests (tradeoff: performance VS precision)
 const NEWTON_ITERATIONS = 4;
 const NEWTON_MIN_SLOPE = 0.001;
@@ -79,7 +61,7 @@ function newtonRaphsonIterate(aX, _aGuessT, mX1, mX2) {
   return aGuessT;
 }
 
-module.exports = function bezier(mX1: number, mY1: number, mX2: number, mY2: number): (x: number) => number {
+export default function bezier(mX1: number, mY1: number, mX2: number, mY2: number): (x: number) => number {
   if (!(mX1 >= 0 && mX1 <= 1 && mX2 >= 0 && mX2 <= 1)) {
     throw new Error('bezier x values must be in [0, 1] range');
   }

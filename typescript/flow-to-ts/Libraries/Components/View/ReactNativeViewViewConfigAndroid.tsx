@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ReactNativeViewViewConfigAndroid = {
   uiViewClassName: 'RCTView',
   bubblingEventTypes: {
@@ -72,4 +60,4 @@ const ReactNativeViewViewConfigAndroid = {
   }
 };
 
-module.exports = ReactNativeViewViewConfigAndroid;
+export default ReactNativeViewViewConfigAndroid;

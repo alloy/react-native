@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Dimensions = require('../Utilities/Dimensions');
 const InspectorOverlay = require('./InspectorOverlay');
 const InspectorPanel = require('./InspectorPanel');
@@ -270,4 +258,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = Inspector;
+export default Inspector;

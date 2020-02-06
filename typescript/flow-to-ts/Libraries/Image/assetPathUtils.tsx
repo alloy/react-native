@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { PackagerAsset } from "./AssetRegistry";
 
 const androidScaleSuffix = {
@@ -64,7 +52,7 @@ function getBasePath(asset: PackagerAsset): string {
   return basePath;
 }
 
-module.exports = {
+export default {
   getAndroidAssetSuffix: getAndroidAssetSuffix,
   getAndroidResourceFolderName: getAndroidResourceFolderName,
   getAndroidResourceIdentifier: getAndroidResourceIdentifier,

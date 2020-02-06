@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $PropertyType, $ReadOnly } from "utility-types";
 
 
@@ -1122,4 +1122,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = ScrollView;
+export default ScrollView;

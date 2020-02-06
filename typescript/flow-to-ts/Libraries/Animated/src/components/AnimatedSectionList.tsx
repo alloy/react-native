@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import * as React from "react";
 
 const SectionList = require('../../../Lists/SectionList');
@@ -22,4 +10,4 @@ const createAnimatedComponent = require('../createAnimatedComponent');
  */
 const SectionListWithEventThrottle = React.forwardRef((props, ref) => <SectionList scrollEventThrottle={0.0001} {...props} ref={ref} />);
 
-module.exports = (createAnimatedComponent(SectionListWithEventThrottle) as $FlowFixMe);
+export default createAnimatedComponent(SectionListWithEventThrottle) as $FlowFixMe;

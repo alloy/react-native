@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $Keys, $ReadOnly } from "utility-types";
 
 
@@ -445,4 +445,4 @@ class StatusBar extends React.Component<Props> {
   }
 }
 
-module.exports = StatusBar;
+export default StatusBar;

@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const dummySize = { width: undefined, height: undefined };
 
 const sizesDiffer = function (one, two) {
@@ -18,4 +7,4 @@ const sizesDiffer = function (one, two) {
   return one !== two && (one.width !== two.width || one.height !== two.height);
 };
 
-module.exports = sizesDiffer;
+export default sizesDiffer;

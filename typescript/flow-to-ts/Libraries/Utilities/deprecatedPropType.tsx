@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const UIManager = require('../ReactNative/UIManager');
 
 /**
@@ -27,4 +15,4 @@ function deprecatedPropType(propType: ReactPropsCheckType, explanation: string):
   };
 }
 
-module.exports = deprecatedPropType;
+export default deprecatedPropType;

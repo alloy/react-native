@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -72,4 +72,4 @@ class YellowBoxPressable extends React.Component<Props, State> {
   };
 }
 
-module.exports = YellowBoxPressable;
+export default YellowBoxPressable;

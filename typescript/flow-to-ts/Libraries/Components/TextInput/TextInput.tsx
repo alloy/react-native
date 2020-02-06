@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly, $Diff, $PropertyType } from "utility-types";
 
 
@@ -972,4 +972,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = ((ExportedForwardRef as any) as React.AbstractComponent<React.ElementConfig<typeof InternalTextInput>, $ReadOnly<React.ElementRef<HostComponent<unknown>> & ImperativeMethods>> & TextInputComponentStatics);
+export default (ExportedForwardRef as any) as React.AbstractComponent<React.ElementConfig<typeof InternalTextInput>, $ReadOnly<React.ElementRef<HostComponent<unknown>> & ImperativeMethods>> & TextInputComponentStatics;

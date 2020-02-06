@@ -1,18 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * number should be a color processed by `normalizeColor`
  * alpha should be number between 0 and 1
@@ -29,4 +15,4 @@ function setNormalizedColorAlpha(input: number, alpha: number): number {
   return (input & 0xffffff00 | alpha) >>> 0;
 }
 
-module.exports = setNormalizedColorAlpha;
+export default setNormalizedColorAlpha;

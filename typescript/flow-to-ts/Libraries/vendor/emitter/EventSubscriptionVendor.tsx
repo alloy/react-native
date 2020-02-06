@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 import EventSubscription from "./EventSubscription";
@@ -94,4 +82,4 @@ class EventSubscriptionVendor {
   }
 }
 
-module.exports = EventSubscriptionVendor;
+export default EventSubscriptionVendor;

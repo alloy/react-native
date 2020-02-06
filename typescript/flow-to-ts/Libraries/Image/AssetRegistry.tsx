@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 export type PackagerAsset = {
   readonly __packager_asset: boolean;
   readonly fileSystemLocation: string;
@@ -36,4 +24,4 @@ function getAssetByID(assetId: number): PackagerAsset {
   return assets[assetId - 1];
 }
 
-module.exports = { registerAsset, getAssetByID };
+export default { registerAsset, getAssetByID };

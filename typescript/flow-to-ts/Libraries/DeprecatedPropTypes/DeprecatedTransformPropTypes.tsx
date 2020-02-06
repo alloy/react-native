@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ReactPropTypes = require('prop-types');
 
 const deprecatedPropType = require('../Utilities/deprecatedPropType');
@@ -38,4 +26,4 @@ const DeprecatedTransformPropTypes = {
   translateY: (deprecatedPropType(ReactPropTypes.number, 'Use the transform prop instead.') as ReactPropsCheckType)
 };
 
-module.exports = DeprecatedTransformPropTypes;
+export default DeprecatedTransformPropTypes;

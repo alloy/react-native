@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AppContainer = require('./AppContainer');
 import GlobalPerformanceLogger from "../Utilities/GlobalPerformanceLogger";
 import { IPerformanceLogger } from "../Utilities/createPerformanceLogger";
@@ -40,4 +28,4 @@ function renderApplication<Props extends Object>(RootComponent: React.ComponentT
   GlobalPerformanceLogger.stopTimespan('renderApplication_React_render');
 }
 
-module.exports = renderApplication;
+export default renderApplication;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
@@ -21,7 +9,7 @@ const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(Deprecat
 
 const DataDetectorTypes = ['phoneNumber', 'link', 'email', 'none', 'all'];
 
-module.exports = {
+export default {
   /**
    * When `numberOfLines` is set, this prop defines how text will be
    * truncated.

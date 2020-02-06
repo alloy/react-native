@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly, $PropertyType, $Call } from "utility-types";
 
 
@@ -508,4 +508,4 @@ function clearInteractionHandle(interactionState: {handle: number | null | undef
 
 export type PanResponderInstance = $Call<$PropertyType<typeof PanResponder, "create">, PanResponderConfig>;
 
-module.exports = PanResponder;
+export default PanResponder;

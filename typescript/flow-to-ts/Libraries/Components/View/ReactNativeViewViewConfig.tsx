@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import ReactNativeViewViewConfigAndroid from "./ReactNativeViewViewConfigAndroid";
 import { Platform } from "react-native";
 
@@ -341,4 +330,4 @@ const ReactNativeViewConfig = {
   }
 };
 
-module.exports = ReactNativeViewConfig;
+export default ReactNativeViewConfig;

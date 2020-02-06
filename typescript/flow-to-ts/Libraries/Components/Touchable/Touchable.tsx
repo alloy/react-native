@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BoundingDimensions = require('./BoundingDimensions');
 const Platform = require('../../Utilities/Platform');
 const Position = require('./Position');
@@ -781,7 +769,7 @@ const TouchableMixin = {
     if (IsPressingIn[curState] && signal === Signals.RESPONDER_RELEASE) {
       const hasLongPressHandler = !!this.props.onLongPress;
       const pressIsLongButStillCallOnPress = IsLongPressingIn[curState] && ( // We *are* long pressing.. // But either has no long handler
-      !hasLongPressHandler || !this.touchableLongPressCancelsPress()); // or we're told to ignore it.
+      (!hasLongPressHandler || !this.touchableLongPressCancelsPress())); // or we're told to ignore it.
 
       const shouldInvokePress = !IsLongPressingIn[curState] || pressIsLongButStillCallOnPress;
       if (shouldInvokePress && this.touchableHandlePress) {
@@ -885,4 +873,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = Touchable;
+export default Touchable;

@@ -1,18 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
 const NativeAnimatedHelper = require('../NativeAnimatedHelper');
@@ -327,4 +313,4 @@ class AnimatedInterpolation extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedInterpolation;
+export default AnimatedInterpolation;

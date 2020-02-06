@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * Event object passed to the `onopen`, `onclose`, `onmessage`, `onerror`
  * callbacks of `WebSocket`.
@@ -26,4 +15,4 @@ class WebSocketEvent {
   }
 }
 
-module.exports = WebSocketEvent;
+export default WebSocketEvent;

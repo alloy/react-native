@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 let logListeners;
 
 type LogListeners = {
@@ -87,5 +75,5 @@ const deepDiffer = function (one: any, two: any, maxDepthOrOptions: Options | nu
   return false;
 };
 
-module.exports = deepDiffer;
-module.exports.unstable_setLogListeners = unstable_setLogListeners;
+export default deepDiffer;
+export { unstable_setLogListeners };

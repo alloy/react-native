@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedImplementation = require('../../Animated/src/AnimatedImplementation');
 const React = require('react');
 const StyleSheet = require('../../StyleSheet/StyleSheet');
@@ -164,4 +152,4 @@ const styles = StyleSheet.create({
   }
 });
 
-module.exports = ScrollViewStickyHeader;
+export default ScrollViewStickyHeader;

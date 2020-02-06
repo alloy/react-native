@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $Keys } from "utility-types";
 
 
@@ -143,4 +143,4 @@ const AccessibilityInfo = {
   }
 };
 
-module.exports = AccessibilityInfo;
+export default AccessibilityInfo;

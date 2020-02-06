@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const infoLog = require('../Utilities/infoLog');
 const invariant = require('invariant');
 
@@ -165,4 +153,4 @@ class TaskQueue {
   }
 }
 
-module.exports = TaskQueue;
+export default TaskQueue;

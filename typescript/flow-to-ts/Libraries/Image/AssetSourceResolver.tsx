@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 export type ResolvedAssetSource = {
   readonly __packager_asset: boolean;
   readonly width: number | null | undefined;
@@ -156,4 +144,4 @@ class AssetSourceResolver {
   }
 }
 
-module.exports = AssetSourceResolver;
+export default AssetSourceResolver;

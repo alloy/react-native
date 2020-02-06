@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const getDevServer = require('./getDevServer');
 
 function openURLInBrowser(url: string) {
@@ -20,4 +8,4 @@ function openURLInBrowser(url: string) {
   });
 }
 
-module.exports = openURLInBrowser;
+export default openURLInBrowser;

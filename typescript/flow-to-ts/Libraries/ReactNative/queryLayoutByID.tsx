@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const UIManager = require('./UIManager');
 
 type OnSuccessCallback = (left: number, top: number, width: number, height: number, pageX: number, pageY: number) => void;
@@ -45,4 +33,4 @@ const queryLayoutByID = function (tag: number | null | undefined, onError: OnErr
   UIManager.measure(tag, onSuccess);
 };
 
-module.exports = queryLayoutByID;
+export default queryLayoutByID;

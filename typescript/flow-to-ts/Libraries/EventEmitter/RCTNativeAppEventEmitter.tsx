@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const RCTDeviceEventEmitter = require('./RCTDeviceEventEmitter');
 
 /**
@@ -18,4 +6,4 @@ const RCTDeviceEventEmitter = require('./RCTDeviceEventEmitter');
  * adding all event listeners directly to RCTNativeAppEventEmitter.
  */
 const RCTNativeAppEventEmitter = RCTDeviceEventEmitter;
-module.exports = RCTNativeAppEventEmitter;
+export default RCTNativeAppEventEmitter;

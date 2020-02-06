@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * Faster version of `mergeInto` that doesn't check its arguments and
  * also copies over prototype inherited properties.
@@ -24,4 +12,4 @@ const mergeIntoFast = function (one: Object, two: Object): void {
   }
 };
 
-module.exports = mergeIntoFast;
+export default mergeIntoFast;

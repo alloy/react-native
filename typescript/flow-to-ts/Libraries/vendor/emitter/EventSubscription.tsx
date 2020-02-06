@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import EventSubscriptionVendor from "./EventSubscriptionVendor";
 
 /**
@@ -39,4 +27,4 @@ class EventSubscription {
   }
 }
 
-module.exports = EventSubscription;
+export default EventSubscription;

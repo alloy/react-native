@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedEdgeInsetsPropType = require('./DeprecatedEdgeInsetsPropType');
 const DeprecatedStyleSheetPropType = require('./DeprecatedStyleSheetPropType');
 const DeprecatedViewStylePropTypes = require('./DeprecatedViewStylePropTypes');
@@ -22,7 +10,7 @@ const {
 
 const stylePropType: ReactPropsCheckType = DeprecatedStyleSheetPropType(DeprecatedViewStylePropTypes);
 
-module.exports = {
+export default {
   /**
    * When `true`, indicates that the view is an accessibility element.
    * By default, all the touchable elements are accessible.

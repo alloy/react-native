@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 export type Scene = {name: string;};
 
 let _listeners: Array<(scene: Scene) => void> = [];
@@ -37,4 +25,4 @@ const SceneTracker = {
   }
 };
 
-module.exports = SceneTracker;
+export default SceneTracker;

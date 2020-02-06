@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /**
  * Tries to stringify with JSON.stringify and toString, but catches exceptions
  * (e.g. from circular objects) and always returns a string and never throws.
@@ -48,4 +36,4 @@ function stringifySafe(arg: any): string {
   return ret || '["' + type + '" failed to stringify]';
 }
 
-module.exports = stringifySafe;
+export default stringifySafe;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AUTO_SET_TIMESTAMP = -1;
 const DUMMY_INSTANCE_KEY = 0;
 
@@ -59,4 +47,4 @@ const QuickPerformanceLogger = {
   }
 };
 
-module.exports = QuickPerformanceLogger;
+export default QuickPerformanceLogger;

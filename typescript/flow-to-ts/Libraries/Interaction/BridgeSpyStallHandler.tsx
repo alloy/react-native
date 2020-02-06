@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const JSEventLoopWatchdog = require('./JSEventLoopWatchdog');
 const MessageQueue = require('../BatchedBridge/MessageQueue');
 
@@ -52,4 +40,4 @@ const BridgeSpyStallHandler = {
   }
 };
 
-module.exports = BridgeSpyStallHandler;
+export default BridgeSpyStallHandler;

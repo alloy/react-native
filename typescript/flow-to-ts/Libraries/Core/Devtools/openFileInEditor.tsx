@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const getDevServer = require('./getDevServer');
 
 function openFileInEditor(file: string, lineNumber: number) {
@@ -20,4 +8,4 @@ function openFileInEditor(file: string, lineNumber: number) {
   });
 }
 
-module.exports = openFileInEditor;
+export default openFileInEditor;

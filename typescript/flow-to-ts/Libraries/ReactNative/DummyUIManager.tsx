@@ -1,17 +1,5 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = {
+'use strict';;
+export default {
   getViewManagerConfig: (viewManagerName: string): unknown => {
     console.warn('Attempting to get config for view manager: ' + viewManagerName);
     if (viewManagerName === 'RCTVirtualText') {

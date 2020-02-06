@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Blob = require('../Blob/Blob');
 const BlobManager = require('../Blob/BlobManager');
 const EventTarget = require('event-target-shim');
@@ -245,4 +233,4 @@ class WebSocket extends (EventTarget(...WEBSOCKET_EVENTS) as any) {
   }
 }
 
-module.exports = WebSocket;
+export default WebSocket;

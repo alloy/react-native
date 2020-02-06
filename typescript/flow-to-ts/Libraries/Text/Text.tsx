@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly, $Shape } from "utility-types";
 
 
@@ -267,4 +267,4 @@ type TextStatics = $ReadOnly<{
   propTypes: typeof DeprecatedTextPropTypes;
 }>;
 
-module.exports = ((TextToExport as any) as React.AbstractComponent<TextProps, React.ElementRef<HostComponent<TextProps>>> & TextStatics);
+export default (TextToExport as any) as React.AbstractComponent<TextProps, React.ElementRef<HostComponent<TextProps>>> & TextStatics;

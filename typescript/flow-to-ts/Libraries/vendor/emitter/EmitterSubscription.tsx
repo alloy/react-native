@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const EventSubscription = require('./EventSubscription');
 
 import EventEmitter from "./EventEmitter";
@@ -53,4 +41,4 @@ class EmitterSubscription extends EventSubscription {
   }
 }
 
-module.exports = EmitterSubscription;
+export default EmitterSubscription;

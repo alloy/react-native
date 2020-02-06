@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const InteractionManager = require('./InteractionManager');
 
 /**
@@ -76,4 +64,4 @@ class Batchinator {
   }
 }
 
-module.exports = Batchinator;
+export default Batchinator;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const base64 = require('base64-js');
 
 function binaryToBase64(data: ArrayBuffer | $ArrayBufferView): any {
@@ -31,4 +19,4 @@ function binaryToBase64(data: ArrayBuffer | $ArrayBufferView): any {
   return base64.fromByteArray(new Uint8Array(buffer, byteOffset, byteLength));
 }
 
-module.exports = binaryToBase64;
+export default binaryToBase64;

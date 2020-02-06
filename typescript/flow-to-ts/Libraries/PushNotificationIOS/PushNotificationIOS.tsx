@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $Keys } from "utility-types";
 
 
@@ -434,4 +434,4 @@ class PushNotificationIOS {
   }
 }
 
-module.exports = PushNotificationIOS;
+export default PushNotificationIOS;

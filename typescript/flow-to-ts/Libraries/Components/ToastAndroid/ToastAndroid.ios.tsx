@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const warning = require('fbjs/lib/warning');
 
 const ToastAndroid = {
@@ -27,4 +15,4 @@ const ToastAndroid = {
   }
 };
 
-module.exports = ToastAndroid;
+export default ToastAndroid;

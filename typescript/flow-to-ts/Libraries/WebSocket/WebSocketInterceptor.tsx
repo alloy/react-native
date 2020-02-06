@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
 
 import NativeWebSocketModule from "./NativeWebSocketModule";
@@ -206,4 +195,4 @@ const WebSocketInterceptor = {
   }
 };
 
-module.exports = WebSocketInterceptor;
+export default WebSocketInterceptor;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const DeprecatedViewPropTypes = require('./DeprecatedViewPropTypes');
 const PropTypes = require('prop-types');
@@ -18,7 +6,7 @@ const Text = require('../Text/Text');
 
 const DataDetectorTypes = ['phoneNumber', 'link', 'address', 'calendarEvent', 'none', 'all'];
 
-module.exports = {
+export default {
   ...DeprecatedViewPropTypes,
 
   /**

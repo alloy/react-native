@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -123,4 +123,4 @@ if (__DEV__) {
   }
 }
 
-module.exports = AppContainer;
+export default AppContainer;

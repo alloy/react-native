@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly, $Diff } from "utility-types";
 
 
@@ -327,4 +327,4 @@ class TouchableHighlight extends React.Component<Props, State> {
   }
 }
 
-module.exports = (React.forwardRef((props, hostRef) => <TouchableHighlight {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>);
+export default React.forwardRef((props, hostRef) => <TouchableHighlight {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>;

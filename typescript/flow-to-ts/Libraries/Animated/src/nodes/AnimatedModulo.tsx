@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedInterpolation = require('./AnimatedInterpolation');
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
@@ -59,4 +47,4 @@ class AnimatedModulo extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedModulo;
+export default AnimatedModulo;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const InteractionManager = require('../Interaction/InteractionManager');
 const PropTypes = require('prop-types');
 const React = require('react');
@@ -187,4 +175,4 @@ export type Context = {
 
 };
 
-module.exports = Incremental;
+export default Incremental;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { GeneratedViewConfig } from "../../Utilities/registerGeneratedViewConfig";
 
 const ScrollViewViewConfig = {
@@ -75,4 +63,4 @@ const ScrollViewViewConfig = {
   }
 };
 
-module.exports = (ScrollViewViewConfig as GeneratedViewConfig);
+export default ScrollViewViewConfig as GeneratedViewConfig;

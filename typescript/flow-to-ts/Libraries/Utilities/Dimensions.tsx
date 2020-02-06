@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -137,4 +137,4 @@ if (!initialDims) {
 
 Dimensions.set(initialDims);
 
-module.exports = Dimensions;
+export default Dimensions;

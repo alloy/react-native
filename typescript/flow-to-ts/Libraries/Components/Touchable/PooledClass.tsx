@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { Class } from "utility-types";
 
 
@@ -115,4 +115,4 @@ const PooledClass = {
   fourArgumentPooler: (fourArgumentPooler as Pooler)
 };
 
-module.exports = PooledClass;
+export default PooledClass;

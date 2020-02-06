@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -178,4 +178,4 @@ KeyboardEventEmitter.scheduleLayoutAnimation = function (event: KeyboardEvent) {
   }
 };
 
-module.exports = KeyboardEventEmitter;
+export default KeyboardEventEmitter;

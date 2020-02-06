@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import * as React from "react";
 
 const ScrollView = require('../../../Components/ScrollView/ScrollView');
@@ -22,4 +10,4 @@ const createAnimatedComponent = require('../createAnimatedComponent');
  */
 const ScrollViewWithEventThrottle = React.forwardRef((props, ref) => <ScrollView scrollEventThrottle={0.0001} {...props} ref={ref} />);
 
-module.exports = (createAnimatedComponent(ScrollViewWithEventThrottle) as $FlowFixMe);
+export default createAnimatedComponent(ScrollViewWithEventThrottle) as $FlowFixMe;

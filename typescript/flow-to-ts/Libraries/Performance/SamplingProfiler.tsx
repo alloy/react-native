@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const SamplingProfiler = {
   poke: function (token: number): void {
     let error = null;
@@ -34,4 +22,4 @@ const SamplingProfiler = {
   }
 };
 
-module.exports = SamplingProfiler;
+export default SamplingProfiler;

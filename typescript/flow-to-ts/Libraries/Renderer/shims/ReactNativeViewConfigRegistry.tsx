@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -33,8 +33,7 @@ const customDirectEventTypes: {
   }>;
 } = {};
 
-exports.customBubblingEventTypes = customBubblingEventTypes;
-exports.customDirectEventTypes = customDirectEventTypes;
+export { customBubblingEventTypes, customDirectEventTypes };
 
 const viewConfigCallbacks = new Map();
 const viewConfigs = new Map();
@@ -75,7 +74,7 @@ function processEventTypes(viewConfig: ReactNativeBaseComponentViewConfig<>): vo
  * A callback is provided to load the view config from UIManager.
  * The callback is deferred until the view is actually rendered.
  */
-exports.register = function (name: string, callback: ViewConfigGetter): string {
+export const register = function (name: string, callback: ViewConfigGetter): string {
   invariant(!viewConfigCallbacks.has(name), 'Tried to register two views with the same name %s', name);
   invariant(typeof callback === 'function', 'View config getter callback for component `%s` must be a function (received `%s`)', name, callback === null ? 'null' : typeof callback);
   viewConfigCallbacks.set(name, callback);
@@ -87,7 +86,7 @@ exports.register = function (name: string, callback: ViewConfigGetter): string {
  * If this is the first time the view has been used,
  * This configuration will be lazy-loaded from UIManager.
  */
-exports.get = function (name: string): ReactNativeBaseComponentViewConfig<> {
+export const get = function (name: string): ReactNativeBaseComponentViewConfig<> {
   let viewConfig;
   if (!viewConfigs.has(name)) {
     const callback = viewConfigCallbacks.get(name);

@@ -1,16 +1,4 @@
-"use strict";
-
-
-
-
-
-
-
-
-
-
-
-
+"use strict";;
 require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
 var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface"),
     React = require("react"),
@@ -834,7 +822,7 @@ function dispatchEvent(target, topLevelType, nativeEvent) {
     if (events) {
       forEachAccumulated(events, executeDispatchesAndReleaseTopLevel);
       if (eventQueue) throw Error("processEventQueue(): Additional events were enqueued while processing an event queue. Support for this has not yet been implemented.");
-      if (hasRethrowError) throw events = rethrowError, hasRethrowError = !1, rethrowError = null, events;
+      if (hasRethrowError) throw (events = rethrowError, hasRethrowError = !1, rethrowError = null, events);
     }
   });
 }
@@ -1081,7 +1069,7 @@ function flushSyncCallbackQueueImpl() {
       });
       syncQueue = null;
     } catch (error) {
-      throw null !== syncQueue && (syncQueue = syncQueue.slice(i + 1)), Scheduler_scheduleCallback(Scheduler_ImmediatePriority, flushSyncCallbackQueue), error;
+      throw (null !== syncQueue && (syncQueue = syncQueue.slice(i + 1)), Scheduler_scheduleCallback(Scheduler_ImmediatePriority, flushSyncCallbackQueue), error);
     } finally {
       isFlushingSyncQueue = !1;
     }
@@ -1653,7 +1641,7 @@ function ChildReconciler(shouldTrackSideEffects) {
     isObject && throwOnInvalidObjectType(returnFiber, newChild);
     if ("undefined" === typeof newChild && !isUnkeyedTopLevelFragment) switch (returnFiber.tag) {
       case 1:case 0:
-        throw returnFiber = returnFiber.type, Error((returnFiber.displayName || returnFiber.name || "Component") + "(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null.");
+        throw (returnFiber = returnFiber.type, Error((returnFiber.displayName || returnFiber.name || "Component") + "(...): Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null."));
 
     }
     return deleteRemainingChildren(returnFiber, currentFirstChild);
@@ -2986,7 +2974,7 @@ function computeExpirationForFiber(currentTime, fiber, suspenseConfig) {
   return currentTime;
 }
 function scheduleUpdateOnFiber(fiber, expirationTime) {
-  if (50 < nestedUpdateCount) throw nestedUpdateCount = 0, rootWithNestedUpdates = null, Error("Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.");
+  if (50 < nestedUpdateCount) throw (nestedUpdateCount = 0, rootWithNestedUpdates = null, Error("Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops."));
   fiber = markUpdateTimeFromFiberToRoot(fiber, expirationTime);
   if (null !== fiber) {
     var priorityLevel = getCurrentPriorityLevel();
@@ -3063,7 +3051,7 @@ function performConcurrentWorkOnRoot(root, didTimeout) {
       resetContextDependencies();
       executionContext = prevExecutionContext;
       ReactCurrentDispatcher.current = prevDispatcher;
-      if (workInProgressRootExitStatus === RootFatalErrored) throw didTimeout = workInProgressRootFatalError, prepareFreshStack(root, expirationTime), markRootSuspendedAtTime(root, expirationTime), ensureRootIsScheduled(root), didTimeout;
+      if (workInProgressRootExitStatus === RootFatalErrored) throw (didTimeout = workInProgressRootFatalError, prepareFreshStack(root, expirationTime), markRootSuspendedAtTime(root, expirationTime), ensureRootIsScheduled(root), didTimeout);
       if (null === workInProgress) switch (prevDispatcher = root.finishedWork = root.current.alternate, root.finishedExpirationTime = expirationTime, prevExecutionContext = workInProgressRootExitStatus, workInProgressRoot = null, prevExecutionContext) {
 
 
@@ -3174,7 +3162,7 @@ function performSyncWorkOnRoot(root) {
     resetContextDependencies();
     executionContext = prevExecutionContext;
     ReactCurrentDispatcher.current = prevDispatcher;
-    if (workInProgressRootExitStatus === RootFatalErrored) throw prevExecutionContext = workInProgressRootFatalError, prepareFreshStack(root, lastExpiredTime), markRootSuspendedAtTime(root, lastExpiredTime), ensureRootIsScheduled(root), prevExecutionContext;
+    if (workInProgressRootExitStatus === RootFatalErrored) throw (prevExecutionContext = workInProgressRootFatalError, prepareFreshStack(root, lastExpiredTime), markRootSuspendedAtTime(root, lastExpiredTime), ensureRootIsScheduled(root), prevExecutionContext);
     if (null !== workInProgress) throw Error("Cannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.");
     root.finishedWork = root.current.alternate;
     root.finishedExpirationTime = lastExpiredTime;
@@ -3535,7 +3523,7 @@ function commitRootImpl(root$jscomp$1, renderPriorityLevel$jscomp$1) {
   1073741823 === renderPriorityLevel$jscomp$1 ? root$jscomp$1 === rootWithNestedUpdates ? nestedUpdateCount++ : (nestedUpdateCount = 0, rootWithNestedUpdates = root$jscomp$1) : nestedUpdateCount = 0;
   "function" === typeof onCommitFiberRoot && onCommitFiberRoot(finishedWork.stateNode, expirationTime);
   ensureRootIsScheduled(root$jscomp$1);
-  if (hasUncaughtError) throw hasUncaughtError = !1, root$jscomp$1 = firstUncaughtError, firstUncaughtError = null, root$jscomp$1;
+  if (hasUncaughtError) throw (hasUncaughtError = !1, root$jscomp$1 = firstUncaughtError, firstUncaughtError = null, root$jscomp$1);
   if ((executionContext & LegacyUnbatchedContext) !== NoContext) return null;
   flushSyncCallbackQueue();
   return null;
@@ -4272,4 +4260,4 @@ var roots = new Map(),
 });
 var ReactFabric$2 = { default: ReactFabric },
     ReactFabric$3 = ReactFabric$2 && ReactFabric || ReactFabric$2;
-module.exports = ReactFabric$3.default || ReactFabric$3;
+export default ReactFabric$3.default || ReactFabric$3;

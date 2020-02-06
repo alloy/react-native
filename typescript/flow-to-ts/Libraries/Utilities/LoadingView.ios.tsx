@@ -1,20 +1,8 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import processColor from "../StyleSheet/processColor";
 import NativeDevLoadingView from "./NativeDevLoadingView";
 
-module.exports = {
+export default {
   showMessage(message: string, type: "load" | "refresh") {
     if (NativeDevLoadingView) {
       NativeDevLoadingView.showMessage(message, // Use same colors as iOS "Personal Hotspot" bar.

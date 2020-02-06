@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 export type EventSender = (name: string, params: Object) => void;
 
 class InspectorAgent {
@@ -26,4 +14,4 @@ class InspectorAgent {
   }
 }
 
-module.exports = InspectorAgent;
+export default InspectorAgent;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedColorPropType = require('./DeprecatedColorPropType');
 const ReactPropTypes = require('prop-types');
 
@@ -28,4 +16,4 @@ const DeprecatedShadowPropTypesIOS = {
   shadowRadius: ReactPropTypes.number
 };
 
-module.exports = DeprecatedShadowPropTypesIOS;
+export default DeprecatedShadowPropTypesIOS;

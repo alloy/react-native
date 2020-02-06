@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { ReactNativeViewConfigRegistry } from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
 
 import { ViewConfigGetter } from "./ReactNativeTypes";
@@ -31,4 +19,4 @@ const createReactNativeComponentClass = function (name: string, callback: ViewCo
   return register(name, callback);
 };
 
-module.exports = createReactNativeComponentClass;
+export default createReactNativeComponentClass;

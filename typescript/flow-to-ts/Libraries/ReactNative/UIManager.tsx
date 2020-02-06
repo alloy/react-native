@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { Spec } from "./NativeUIManager";
 
 interface UIManagerJSInterface extends Spec {
@@ -23,4 +11,4 @@ interface UIManagerJSInterface extends Spec {
 const UIManager: UIManagerJSInterface = global.RN$Bridgeless === true ? require('./DummyUIManager') // No UIManager in bridgeless mode
 : require('./PaperUIManager');
 
-module.exports = UIManager;
+export default UIManager;

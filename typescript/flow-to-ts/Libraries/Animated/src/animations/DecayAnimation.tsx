@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Animation = require('./Animation');
 
 const {
@@ -110,4 +98,4 @@ class DecayAnimation extends Animation {
   }
 }
 
-module.exports = DecayAnimation;
+export default DecayAnimation;

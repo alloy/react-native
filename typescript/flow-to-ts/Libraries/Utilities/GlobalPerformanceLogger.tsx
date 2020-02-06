@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const createPerformanceLogger = require('./createPerformanceLogger');
 
 import { IPerformanceLogger } from "./createPerformanceLogger";
@@ -23,4 +12,4 @@ import { IPerformanceLogger } from "./createPerformanceLogger";
  */
 const GlobalPerformanceLogger: IPerformanceLogger = createPerformanceLogger();
 
-module.exports = GlobalPerformanceLogger;
+export default GlobalPerformanceLogger;

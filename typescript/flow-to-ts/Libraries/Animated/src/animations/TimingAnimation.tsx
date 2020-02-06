@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedValue = require('../nodes/AnimatedValue');
 const AnimatedValueXY = require('../nodes/AnimatedValueXY');
 const AnimatedInterpolation = require('../nodes/AnimatedInterpolation');
@@ -147,4 +135,4 @@ class TimingAnimation extends Animation {
   }
 }
 
-module.exports = TimingAnimation;
+export default TimingAnimation;

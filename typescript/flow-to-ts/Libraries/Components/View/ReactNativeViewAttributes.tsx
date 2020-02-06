@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ReactNativeStyleAttributes = require('./ReactNativeStyleAttributes');
 
 const UIView = {
@@ -54,4 +42,4 @@ const ReactNativeViewAttributes = {
   RCTView: RCTView
 };
 
-module.exports = ReactNativeViewAttributes;
+export default ReactNativeViewAttributes;

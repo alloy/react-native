@@ -1,32 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 function groupByEveryN<T>(array: Array<T>, n: number): Array<Array<T | null | undefined>> {
   const result = [];
   let temp = [];
@@ -49,4 +21,4 @@ function groupByEveryN<T>(array: Array<T>, n: number): Array<Array<T | null | un
   return result;
 }
 
-module.exports = groupByEveryN;
+export default groupByEveryN;

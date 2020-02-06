@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BridgeSpyStallHandler = require('./BridgeSpyStallHandler');
 const JSEventLoopWatchdog = require('./JSEventLoopWatchdog');
 
@@ -21,4 +9,4 @@ const InteractionStallDebugger = {
   }
 };
 
-module.exports = InteractionStallDebugger;
+export default InteractionStallDebugger;

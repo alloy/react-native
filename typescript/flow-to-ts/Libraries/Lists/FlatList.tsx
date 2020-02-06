@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $PropertyType, $Diff } from "utility-types";
 
 
@@ -598,4 +598,4 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' }
 });
 
-module.exports = FlatList;
+export default FlatList;

@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly, Class } from "utility-types";
 
 
@@ -232,11 +232,11 @@ if (__DEV__) {
   };
 }
 
-module.exports = (YellowBox as Class<React.Component<Props, State>> & {
+export default YellowBox as Class<React.Component<Props, State>> & {
   ignoreWarnings(arg0: ReadonlyArray<IgnorePattern>): void;
   install(): void;
   uninstall(): void;
   __unstable_enableLogBox(): void;
   __unstable_isLogBoxEnabled(): boolean;
 
-});
+};

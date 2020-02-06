@@ -56,4 +56,4 @@ function showErrorDialog(capturedError: CapturedError): boolean {
   return false;
 }
 
-module.exports = { showErrorDialog };
+export default { showErrorDialog };

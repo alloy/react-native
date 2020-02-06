@@ -1,20 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('../../Utilities/Platform');
 const UIManager = require('../../ReactNative/UIManager');
 
@@ -85,7 +69,7 @@ function isTextInput(textFieldID: number): boolean {
   return inputs.has(textFieldID);
 }
 
-module.exports = {
+export default {
   currentlyFocusedField,
   focusField,
   blurField,

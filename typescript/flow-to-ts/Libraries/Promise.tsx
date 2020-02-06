@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Promise = require('promise/setimmediate/es6-extensions');
 
 require('promise/setimmediate/done');
@@ -45,4 +33,4 @@ if (__DEV__) {
   });
 }
 
-module.exports = Promise;
+export default Promise;

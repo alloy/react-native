@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const {
   AnimatedEvent
 } = require('./AnimatedEvent');
@@ -164,4 +152,4 @@ function createAnimatedComponent<Props extends {
   });
 }
 
-module.exports = createAnimatedComponent;
+export default createAnimatedComponent;

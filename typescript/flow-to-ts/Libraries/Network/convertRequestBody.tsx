@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const binaryToBase64 = require('../Utilities/binaryToBase64');
 
 const Blob = require('../Blob/Blob');
@@ -35,4 +23,4 @@ function convertRequestBody(body: RequestBody): Object {
   return body;
 }
 
-module.exports = convertRequestBody;
+export default convertRequestBody;

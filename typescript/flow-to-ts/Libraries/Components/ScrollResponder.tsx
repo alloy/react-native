@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { Class } from "utility-types";
 
 
@@ -669,4 +669,4 @@ const ScrollResponder = {
   Mixin: ScrollResponderMixin
 };
 
-module.exports = ScrollResponder;
+export default ScrollResponder;

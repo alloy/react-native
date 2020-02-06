@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -160,4 +160,4 @@ function createPressabilityConfig(props: Props): PressabilityConfig {
   };
 }
 
-module.exports = TouchableWithoutFeedback;
+export default TouchableWithoutFeedback;

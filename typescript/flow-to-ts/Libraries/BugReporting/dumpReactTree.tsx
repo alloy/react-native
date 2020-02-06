@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 /*
 const getReactData = require('getReactData');
 
@@ -150,4 +138,4 @@ function indent(size: number) {
   return ' '.repeat(size * INDENTATION_SIZE);
 }
 */
-module.exports = dumpReactTree;
+export default dumpReactTree;

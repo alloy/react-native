@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const EventEmitter = require('../vendor/emitter/EventEmitter');
 const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
 
@@ -161,4 +149,4 @@ class MissingNativeAppStateShim extends EventEmitter {
 // We reassign the class variable to keep the autodoc generator happy.
 const AppStateInstance: AppState | MissingNativeAppStateShim = NativeAppState ? new AppState() : new MissingNativeAppStateShim();
 
-module.exports = AppStateInstance;
+export default AppStateInstance;

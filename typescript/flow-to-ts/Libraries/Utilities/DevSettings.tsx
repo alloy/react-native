@@ -64,4 +64,4 @@ class NoopDevSettings {
   reload() {}
 }
 
-module.exports = __DEV__ ? new DevSettings() : new NoopDevSettings();
+export default __DEV__ ? new DevSettings() : new NoopDevSettings();

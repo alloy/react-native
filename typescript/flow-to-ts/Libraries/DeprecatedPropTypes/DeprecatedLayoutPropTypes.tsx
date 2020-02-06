@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const ReactPropTypes = require('prop-types');
 
 const LayoutPropTypes = {
@@ -69,4 +57,4 @@ const LayoutPropTypes = {
   direction: (ReactPropTypes.oneOf(['inherit', 'ltr', 'rtl']) as React$PropType$Primitive<"inherit" | "ltr" | "rtl">)
 };
 
-module.exports = LayoutPropTypes;
+export default LayoutPropTypes;

@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $PropertyType, $Diff, $ReadOnly } from "utility-types";
 
 
@@ -528,4 +528,4 @@ class ItemWithSeparator extends React.Component<ItemWithSeparatorProps, ItemWith
   }
 }
 
-module.exports = VirtualizedSectionList;
+export default VirtualizedSectionList;

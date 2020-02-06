@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $PropertyType, $Diff } from "utility-types";
 
 
@@ -243,4 +243,4 @@ class SectionList<SectionT extends SectionBase<any>> extends React.PureComponent
   };
 }
 
-module.exports = SectionList;
+export default SectionList;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const EventEmitter = require('../vendor/emitter/EventEmitter');
 const Platform = require('../Utilities/Platform');
 const RCTDeviceEventEmitter = require('./RCTDeviceEventEmitter');
@@ -65,4 +53,4 @@ class NativeEventEmitter extends EventEmitter {
   }
 }
 
-module.exports = NativeEventEmitter;
+export default NativeEventEmitter;

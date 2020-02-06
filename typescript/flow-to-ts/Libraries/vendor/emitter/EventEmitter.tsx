@@ -1,17 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const EmitterSubscription = require('./EmitterSubscription');
 const EventSubscriptionVendor = require('./EventSubscriptionVendor');
 
@@ -203,4 +190,4 @@ class EventEmitter {
   }
 }
 
-module.exports = EventEmitter;
+export default EventEmitter;

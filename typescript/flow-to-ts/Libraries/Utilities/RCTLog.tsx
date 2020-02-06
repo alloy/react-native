@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const invariant = require('invariant');
 
 const levelsMap = {
@@ -50,4 +38,4 @@ const RCTLog = {
   }
 };
 
-module.exports = RCTLog;
+export default RCTLog;

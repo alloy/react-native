@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 function clamp(min: number, value: number, max: number): number {
   if (value < min) {
     return min;
@@ -21,4 +9,4 @@ function clamp(min: number, value: number, max: number): number {
   return value;
 }
 
-module.exports = clamp;
+export default clamp;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedValue = require('../nodes/AnimatedValue');
 const AnimatedValueXY = require('../nodes/AnimatedValueXY');
 const AnimatedInterpolation = require('../nodes/AnimatedInterpolation');
@@ -310,4 +298,4 @@ class SpringAnimation extends Animation {
   }
 }
 
-module.exports = SpringAnimation;
+export default SpringAnimation;

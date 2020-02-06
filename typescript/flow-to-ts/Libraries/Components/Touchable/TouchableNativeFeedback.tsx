@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -285,4 +285,4 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
 
 const getBackgroundProp = Platform.OS === 'android' ? (background, useForeground) => useForeground && TouchableNativeFeedback.canUseNativeForeground() ? { nativeForegroundAndroid: background } : { nativeBackgroundAndroid: background } : (background, useForeground) => null;
 
-module.exports = TouchableNativeFeedback;
+export default TouchableNativeFeedback;

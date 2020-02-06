@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativePlatformConstantsIOS from "./NativePlatformConstantsIOS";
 
 export type PlatformSelectSpec<D, N, I> = {
@@ -66,4 +54,4 @@ const Platform = {
   select: <D, N, I>(spec: PlatformSelectSpec<D, N, I>): D | N | I => 'ios' in spec ? spec.ios : 'native' in spec ? spec.native : spec.default
 };
 
-module.exports = Platform;
+export default Platform;

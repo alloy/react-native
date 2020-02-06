@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const symbolicateStackTrace = require('../../Core/Devtools/symbolicateStackTrace');
 
 import { StackFrame } from "../../Core/NativeExceptionsManager";
@@ -87,4 +75,4 @@ const sanitize = (data: SymbolicatedStackTrace): Stack => {
   return stack;
 };
 
-module.exports = YellowBoxSymbolication;
+export default YellowBoxSymbolication;

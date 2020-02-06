@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const NativeModules = require('../BatchedBridge/NativeModules');
 const Platform = require('../Utilities/Platform');
 const UIManagerProperties = require('./UIManagerProperties');
@@ -149,4 +137,4 @@ if (!global.nativeCallSyncHook) {
   });
 }
 
-module.exports = UIManagerJS;
+export default UIManagerJS;

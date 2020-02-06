@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const BatchedBridge = require('../BatchedBridge/BatchedBridge');
 
 const RCTEventEmitter = {
@@ -19,4 +7,4 @@ const RCTEventEmitter = {
   }
 };
 
-module.exports = RCTEventEmitter;
+export default RCTEventEmitter;

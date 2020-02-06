@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const RCTDeviceEventEmitter = require('../EventEmitter/RCTDeviceEventEmitter');
 
 const invariant = require('invariant');
@@ -72,4 +60,4 @@ const Settings = {
 
 RCTDeviceEventEmitter.addListener('settingsUpdated', Settings._sendObservations.bind(Settings));
 
-module.exports = Settings;
+export default Settings;

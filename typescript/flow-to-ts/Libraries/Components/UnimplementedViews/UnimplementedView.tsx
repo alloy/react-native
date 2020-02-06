@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const React = require('react');
 const StyleSheet = require('../../StyleSheet/StyleSheet');
 
@@ -37,4 +25,4 @@ const styles = StyleSheet.create({
   } : {}
 });
 
-module.exports = UnimplementedView;
+export default UnimplementedView;

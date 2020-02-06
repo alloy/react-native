@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -206,4 +206,4 @@ class Switch extends React.Component<Props> {
 const returnsFalse = () => false;
 const returnsTrue = () => true;
 
-module.exports = Switch;
+export default Switch;

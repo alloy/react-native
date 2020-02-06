@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 type truncateOptions = {
   breakOnWords: boolean;
   minDelta: number;
@@ -40,4 +28,4 @@ const truncate = function (str: string | null | undefined, maxChars: number, opt
   return str;
 };
 
-module.exports = truncate;
+export default truncate;

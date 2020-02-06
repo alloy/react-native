@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const DeprecatedImageStylePropTypes = require('../DeprecatedPropTypes/DeprecatedImageStylePropTypes');
 const DeprecatedTextStylePropTypes = require('../DeprecatedPropTypes/DeprecatedTextStylePropTypes');
 const DeprecatedViewStylePropTypes = require('../DeprecatedPropTypes/DeprecatedViewStylePropTypes');
@@ -75,4 +63,4 @@ if (__DEV__ && !global.__RCTProfileIsProfiling) {
   StyleSheetValidation.addValidStylePropTypes(DeprecatedViewStylePropTypes);
 }
 
-module.exports = StyleSheetValidation;
+export default StyleSheetValidation;

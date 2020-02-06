@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const RCTDeviceEventEmitter = require('../EventEmitter/RCTDeviceEventEmitter');
 
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
@@ -120,4 +108,4 @@ class BugReporting {
   }
 }
 
-module.exports = BugReporting;
+export default BugReporting;

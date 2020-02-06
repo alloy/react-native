@@ -1,18 +1,6 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Text = require('../../../Text/Text');
 
 const createAnimatedComponent = require('../createAnimatedComponent');
 
-module.exports = (createAnimatedComponent(Text) as $FlowFixMe);
+export default createAnimatedComponent(Text) as $FlowFixMe;

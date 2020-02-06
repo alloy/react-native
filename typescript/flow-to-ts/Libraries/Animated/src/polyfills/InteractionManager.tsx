@@ -1,16 +1,5 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-module.exports = {
+'use strict';;
+export default {
   createInteractionHandle: function () {},
   clearInteractionHandle: function () {}
 };

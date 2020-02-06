@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedInterpolation = require('./AnimatedInterpolation');
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedValue = require('./AnimatedValue');
@@ -67,4 +55,4 @@ class AnimatedDivision extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedDivision;
+export default AnimatedDivision;

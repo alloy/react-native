@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const defineLazyObjectProperty = require('./defineLazyObjectProperty');
 
 /**
@@ -54,4 +42,4 @@ function polyfillGlobal<T>(name: string, getValue: () => T): void {
   polyfillObjectProperty(global, name, getValue);
 }
 
-module.exports = { polyfillObjectProperty, polyfillGlobal };
+export default { polyfillObjectProperty, polyfillGlobal };

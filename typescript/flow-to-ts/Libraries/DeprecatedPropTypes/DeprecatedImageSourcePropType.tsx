@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const PropTypes = require('prop-types');
 
 const ImageURISourcePropType = PropTypes.shape({
@@ -29,4 +17,4 @@ const ImageSourcePropType = PropTypes.oneOfType([ImageURISourcePropType, // Opaq
 PropTypes.number, // Multiple sources
 PropTypes.arrayOf(ImageURISourcePropType)]);
 
-module.exports = ImageSourcePropType;
+export default ImageSourcePropType;

@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import NativeToastAndroid from "./NativeToastAndroid";
 
 /**
@@ -54,4 +43,4 @@ const ToastAndroid = {
   }
 };
 
-module.exports = ToastAndroid;
+export default ToastAndroid;

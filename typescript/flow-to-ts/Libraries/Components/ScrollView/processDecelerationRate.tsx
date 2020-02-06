@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Platform = require('../../Utilities/Platform');
 
 function processDecelerationRate(decelerationRate: number | "normal" | "fast"): number {
@@ -28,4 +16,4 @@ function processDecelerationRate(decelerationRate: number | "normal" | "fast"): 
   return decelerationRate;
 }
 
-module.exports = processDecelerationRate;
+export default processDecelerationRate;

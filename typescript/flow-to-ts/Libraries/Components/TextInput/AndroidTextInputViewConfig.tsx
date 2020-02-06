@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import ReactNativeViewViewConfig from "../../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../../Renderer/shims/ReactNativeTypes";
 
@@ -82,4 +70,4 @@ const AndroidTextInputViewConfig = {
   }
 };
 
-module.exports = (AndroidTextInputViewConfig as ReactNativeBaseComponentViewConfig<>);
+export default AndroidTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const NativeEventEmitter = require('../EventEmitter/NativeEventEmitter');
 
 const convertRequestBody = require('./convertRequestBody');
@@ -48,4 +36,4 @@ class RCTNetworking extends NativeEventEmitter {
   }
 }
 
-module.exports = (new RCTNetworking() as RCTNetworking);
+export default new RCTNetworking() as RCTNetworking;

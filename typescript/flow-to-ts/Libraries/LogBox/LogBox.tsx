@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import Platform from "../Utilities/Platform";
 import RCTLog from "../Utilities/RCTLog";
 import * as LogBoxData from "./Data/LogBoxData";
@@ -189,11 +177,11 @@ if (__DEV__) {
   };
 }
 
-module.exports = (LogBox as {
+export default LogBox as {
   // TODO: deprecated, replace with ignoreLogs
   ignoreWarnings(arg0: ReadonlyArray<IgnorePattern>): void;
   ignoreLogs(arg0: ReadonlyArray<IgnorePattern>): void;
   install(): void;
   uninstall(): void;
 
-});
+};

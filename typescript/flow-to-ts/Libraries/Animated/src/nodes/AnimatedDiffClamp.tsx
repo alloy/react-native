@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedInterpolation = require('./AnimatedInterpolation');
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
@@ -70,4 +58,4 @@ class AnimatedDiffClamp extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedDiffClamp;
+export default AnimatedDiffClamp;

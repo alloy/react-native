@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import ReactNativeViewViewConfig from "../../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../../Renderer/shims/ReactNativeTypes";
 
@@ -132,4 +120,4 @@ const RCTSinglelineTextInputViewConfig = {
   }
 };
 
-module.exports = (RCTSinglelineTextInputViewConfig as ReactNativeBaseComponentViewConfig<>);
+export default RCTSinglelineTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;

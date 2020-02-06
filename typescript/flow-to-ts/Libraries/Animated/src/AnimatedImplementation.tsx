@@ -1,17 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const {
   AnimatedEvent,
   attachNativeEvent
@@ -455,7 +442,7 @@ const event = function (argMapping: ReadonlyArray<Mapping | null | undefined>, c
  *
  * See http://facebook.github.io/react-native/docs/animated.html
  */
-module.exports = {
+export default {
   /**
    * Standard value class for driving animations.  Typically initialized with
    * `new Animated.Value(0);`

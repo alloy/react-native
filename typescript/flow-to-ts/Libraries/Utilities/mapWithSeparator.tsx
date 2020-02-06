@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 function mapWithSeparator<TFrom, TTo>(items: Array<TFrom>, itemRenderer: (item: TFrom, index: number, items: Array<TFrom>) => TTo, spacerRenderer: (index: number) => TTo): Array<TTo> {
   const mapped = [];
   if (items.length > 0) {
@@ -22,4 +10,4 @@ function mapWithSeparator<TFrom, TTo>(items: Array<TFrom>, itemRenderer: (item: 
   return mapped;
 }
 
-module.exports = mapWithSeparator;
+export default mapWithSeparator;

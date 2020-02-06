@@ -1,15 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const normalizeColor = require('../StyleSheet/normalizeColor');
 
 const colorPropType = function (isRequired, props, propName, componentName, location, propFullName) {
@@ -52,4 +41,4 @@ ColorPropType.isRequired = colorPropType.bind(null, true
 /* isRequired */
 );
 
-module.exports = ColorPropType;
+export default ColorPropType;

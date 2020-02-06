@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import { BlobData, BlobOptions } from "./BlobTypes";
 
 /**
@@ -143,4 +131,4 @@ class Blob {
   }
 }
 
-module.exports = Blob;
+export default Blob;

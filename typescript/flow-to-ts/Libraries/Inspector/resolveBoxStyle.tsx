@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -110,4 +110,4 @@ function resolveBoxStyle(prefix: string, style: Object): $ReadOnly<{
   return hasParts ? result : null;
 }
 
-module.exports = resolveBoxStyle;
+export default resolveBoxStyle;

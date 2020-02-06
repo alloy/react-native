@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -38,4 +38,4 @@ class StaticRenderer extends React.Component<Props> {
   }
 }
 
-module.exports = StaticRenderer;
+export default StaticRenderer;

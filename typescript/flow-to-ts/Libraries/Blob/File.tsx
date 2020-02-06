@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Blob = require('./Blob');
 
 const invariant = require('invariant');
@@ -47,4 +35,4 @@ class File extends Blob {
   }
 }
 
-module.exports = File;
+export default File;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const Image = require('./Image');
 const React = require('react');
 const StyleSheet = require('../StyleSheet/StyleSheet');
@@ -82,4 +70,4 @@ class ImageBackground extends React.Component<$FlowFixMeProps> {
   }
 }
 
-module.exports = ImageBackground;
+export default ImageBackground;

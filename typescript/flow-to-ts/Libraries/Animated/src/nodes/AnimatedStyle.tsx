@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const AnimatedNode = require('./AnimatedNode');
 const AnimatedTransform = require('./AnimatedTransform');
 const AnimatedWithChildren = require('./AnimatedWithChildren');
@@ -126,4 +114,4 @@ class AnimatedStyle extends AnimatedWithChildren {
   }
 }
 
-module.exports = AnimatedStyle;
+export default AnimatedStyle;

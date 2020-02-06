@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -69,4 +69,4 @@ function setAndForwardRef({
   };
 }
 
-module.exports = setAndForwardRef;
+export default setAndForwardRef;

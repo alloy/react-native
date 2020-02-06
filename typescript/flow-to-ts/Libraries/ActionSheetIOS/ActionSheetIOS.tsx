@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 import RCTActionSheetManager from "./NativeActionSheetManager";
 
 const invariant = require('invariant');
@@ -103,4 +91,4 @@ const ActionSheetIOS = {
   }
 };
 
-module.exports = ActionSheetIOS;
+export default ActionSheetIOS;

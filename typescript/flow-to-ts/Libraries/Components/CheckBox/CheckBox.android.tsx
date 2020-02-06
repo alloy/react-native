@@ -1,4 +1,4 @@
-'use strict';
+'use strict';;
 import { $ReadOnly } from "utility-types";
 
 
@@ -190,4 +190,4 @@ const CheckBoxWithRef = React.forwardRef<Props, React.ElementRef<typeof AndroidC
   return <CheckBox {...props} forwardedRef={ref} />;
 });
 
-module.exports = (CheckBoxWithRef as CheckBoxType);
+export default CheckBoxWithRef as CheckBoxType;

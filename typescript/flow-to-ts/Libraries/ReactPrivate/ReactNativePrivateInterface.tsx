@@ -21,7 +21,7 @@ import flattenStyle from "../StyleSheet/flattenStyle";
 import ReactFiberErrorDialog from "../Core/ReactFiberErrorDialog";
 
 // flowlint unsafe-getters-setters:off
-module.exports = {
+export default {
   get BatchedBridge(): BatchedBridge {
     return require('../BatchedBridge/BatchedBridge.js');
   },

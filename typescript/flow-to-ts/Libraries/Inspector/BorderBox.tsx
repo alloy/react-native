@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const React = require('react');
 const View = require('../Components/View/View');
 
@@ -31,4 +19,4 @@ class BorderBox extends React.Component<$FlowFixMeProps> {
   }
 }
 
-module.exports = BorderBox;
+export default BorderBox;

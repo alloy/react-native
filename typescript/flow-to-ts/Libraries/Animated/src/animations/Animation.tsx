@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const NativeAnimatedHelper = require('../NativeAnimatedHelper');
 
 import AnimatedValue from "../nodes/AnimatedValue";
@@ -62,4 +50,4 @@ class Animation {
   }
 }
 
-module.exports = Animation;
+export default Animation;

@@ -1,16 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 const React = require('react');
 
 type DoNotCommitUsageOfPureComponentDebug = {};
@@ -59,4 +47,4 @@ class PureComponentDebug<P extends DoNotCommitUsageOfPureComponentDebug, S exten
   }
 }
 
-module.exports = PureComponentDebug;
+export default PureComponentDebug;

@@ -14,10 +14,8 @@
 
 
 if (__DEV__) {
-  (function () {"use strict";
-
-
-
+  (function () {
+    "use strict";
     var React = require("react");
     require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
     var ReactNativePrivateInterface = require("react-native/Libraries/ReactPrivate/ReactNativePrivateInterface");
@@ -2059,7 +2057,7 @@ if (__DEV__) {
       return topLevelInst && ( // responderIgnoreScroll: We are trying to migrate away from specifically
       // tracking native scroll events here and responderIgnoreScroll indicates we
       // will send topTouchCancel to handle canceling touch events instead
-      topLevelType === TOP_SCROLL && !nativeEvent.responderIgnoreScroll || trackedTouchCount > 0 && topLevelType === TOP_SELECTION_CHANGE || isStartish(topLevelType) || isMoveish(topLevelType));
+      (topLevelType === TOP_SCROLL && !nativeEvent.responderIgnoreScroll || trackedTouchCount > 0 && topLevelType === TOP_SELECTION_CHANGE || isStartish(topLevelType) || isMoveish(topLevelType)));
     }
 
     /**
@@ -14896,7 +14894,7 @@ if (__DEV__) {
 
         if (node.child !== null && ( // If we use mutation we drill down into portals using commitUnmount above.
         // If we don't use mutation we drill down into portals here instead.
-        !supportsMutation || node.tag !== HostPortal)) {
+        (!supportsMutation || node.tag !== HostPortal))) {
           node.child.return = node;
           node = node.child;
           continue;
@@ -16103,7 +16101,7 @@ if (__DEV__) {
 
       if ((executionContext & DiscreteEventContext) !== NoContext && ( // Only updates at user-blocking priority or greater are considered
       // discrete, even inside a discrete event.
-      priorityLevel === UserBlockingPriority || priorityLevel === ImmediatePriority)) {
+      (priorityLevel === UserBlockingPriority || priorityLevel === ImmediatePriority))) {
         // This is the result of a discrete event. Track the lowest priority
         // discrete update per root so we can flush them early, if needed.
         if (rootsWithPendingDiscreteUpdates === null) {
@@ -20311,7 +20309,6 @@ if (__DEV__) {
 
     var fabric = ReactFabric$3.default || ReactFabric$3;
 
-    module.exports = fabric;
-
+    export default fabric;
   })();
 }

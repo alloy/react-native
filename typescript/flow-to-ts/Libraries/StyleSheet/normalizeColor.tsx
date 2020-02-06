@@ -1,18 +1,4 @@
-'use strict';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'use strict';;
 function normalizeColor(color: string | number): number | null | undefined {
   const matchers = getMatchers();
   let match;
@@ -340,4 +326,4 @@ const names = {
   yellowgreen: 0x9acd32ff
 };
 
-module.exports = normalizeColor;
+export default normalizeColor;
