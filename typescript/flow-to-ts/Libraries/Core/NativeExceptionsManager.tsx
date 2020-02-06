@@ -1,5 +1,5 @@
 'use strict';;
-import Platform from '../Utilities/Platform';
+import Platform from '../Utilities/Platform.ios';
 
 
 

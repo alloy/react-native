@@ -1,5 +1,5 @@
 'use strict';;
-import Platform from '../Utilities/Platform';
+import Platform from '../Utilities/Platform.ios';
 import normalizeColor from './normalizeColor';
 
 /* eslint no-bitwise: 0 */
