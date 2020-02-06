@@ -116,11 +116,13 @@
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
+    "5to6-codemod": "^1.8.0",
     "@babel/core": "^7.0.0",
     "@babel/generator": "^7.5.0",
     "@khanacademy/flow-to-ts": "^0.1.5",
     "@react-native-community/eslint-plugin": "file:packages/eslint-plugin-react-native-community",
     "@reactions/component": "^2.0.2",
+    "@types/invariant": "^2.2.31",
     "async": "^2.4.0",
     "babel-eslint": "10.0.1",
     "clang-format": "^1.2.4",
@@ -144,7 +146,7 @@
     "flow-remove-types": "1.2.3",
     "jest": "^24.9.0",
     "jest-junit": "^6.3.0",
-    "jscodeshift": "^0.6.2",
+    "jscodeshift": "^0.7.0",
     "mkdirp": "^0.5.1",
     "prettier": "1.17.0",
     "react": "16.12.0",
