@@ -4,7 +4,7 @@ export declare type PlatformSelectSpec<D, N, I> = {
     ios?: I;
 };
 declare const Platform: {
-    __constants: any;
+    __constants: null;
     OS: string;
     readonly Version: string;
     readonly constants: {
@@ -16,7 +16,7 @@ declare const Platform: {
             major: number;
             minor: number;
             patch: number;
-            prerelease: number;
+            prerelease: number | null | undefined;
         };
         systemName: string;
     };

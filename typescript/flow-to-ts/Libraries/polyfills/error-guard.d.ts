@@ -23,10 +23,10 @@ declare const ErrorUtils: {
     getGlobalHandler(): ErrorHandler;
     reportError(error: unknown): void;
     reportFatalError(error: unknown): void;
-    applyWithGuard<TArgs extends readonly unknown[], TOut>(fun: Fn<TArgs, TOut>, context?: unknown, args?: TArgs, unused_onError?: null, unused_name?: string): TOut;
-    applyWithGuardIfNeeded<TArgs_1 extends readonly unknown[], TOut_1>(fun: Fn<TArgs_1, TOut_1>, context?: unknown, args?: TArgs_1): TOut_1;
+    applyWithGuard<TArgs extends readonly unknown[], TOut>(fun: Fn<TArgs, TOut>, context?: unknown, args?: TArgs | null | undefined, unused_onError?: null | undefined, unused_name?: string | null | undefined): TOut | null | undefined;
+    applyWithGuardIfNeeded<TArgs_1 extends readonly unknown[], TOut_1>(fun: Fn<TArgs_1, TOut_1>, context?: unknown, args?: TArgs_1 | null | undefined): TOut_1 | null | undefined;
     inGuard(): boolean;
-    guard<TArgs_2 extends readonly unknown[], TOut_2>(fun: Fn<TArgs_2, TOut_2>, name?: string, context?: unknown): (...args: TArgs_2) => TOut_2;
+    guard<TArgs_2 extends readonly unknown[], TOut_2>(fun: Fn<TArgs_2, TOut_2>, name?: string | null | undefined, context?: unknown): (...args: TArgs_2) => TOut_2 | null | undefined;
 };
 export declare type ErrorUtilsT = typeof ErrorUtils;
 export {};

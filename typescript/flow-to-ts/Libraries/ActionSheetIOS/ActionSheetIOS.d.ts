@@ -21,13 +21,13 @@ declare const ActionSheetIOS: {
      * See http://facebook.github.io/react-native/docs/actionsheetios.html#showactionsheetwithoptions
      */
     showActionSheetWithOptions(options: {
-        readonly title?: string;
-        readonly message?: string;
+        readonly title?: string | null | undefined;
+        readonly message?: string | null | undefined;
         readonly options: string[];
-        readonly destructiveButtonIndex?: number | number[];
-        readonly cancelButtonIndex?: number;
-        readonly anchor?: number;
-        readonly tintColor?: string | number;
+        readonly destructiveButtonIndex?: number | number[] | null | undefined;
+        readonly cancelButtonIndex?: number | null | undefined;
+        readonly anchor?: number | null | undefined;
+        readonly tintColor?: string | number | undefined;
     }, callback: (buttonIndex: number) => void): void;
     /**
      * Display the iOS share sheet. The `options` object should contain

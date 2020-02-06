@@ -24,5 +24,5 @@ export interface Spec extends TurboModule {
         readonly message: string;
     }) => void, successCallback: (completed: boolean, activityType: string | null | undefined) => void) => void;
 }
-declare const _default: Spec;
+declare const _default: Spec | null | undefined;
 export default _default;
