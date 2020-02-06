@@ -1,5 +1,6 @@
 ## General:
 
+* No codemod existed yet for `require` to `import`, so created one which exists in `typescript/codemods/imports.js`.
 * TS doesn't have platform extension support, so perhaps a codemod needs to be used to rename imports and do a pass per platform. E.g. replace `import Platform from '../Utilities/Platform'` with `import Platform from '../Utilities/Platform.ios'`
 
 ## flow-to-ts
