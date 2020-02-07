@@ -1,6 +1,6 @@
 // @ts-check
 
-const { CallExpression, Identifier, Literal, ObjectPattern, Program, Property, VariableDeclaration, VariableDeclarator } = require('jscodeshift');
+const { CallExpression, Identifier, Literal, MemberExpression, ObjectPattern, Program, Property, VariableDeclarator } = require('jscodeshift');
 
 /**
  * @param { import("jscodeshift").VariableDeclaration } node
@@ -62,15 +62,25 @@ const transformer = (file, api, options) => {
 
     collection
         .find(CallExpression, node => Identifier.check(node.callee) && node.callee.name === 'require')
-        .forEach(path => {
-            const source = path.node.arguments[0];
+        .forEach(requirePath => {
+            const source = requirePath.node.arguments[0];
             if (Literal.check(source)) {
-                const declarator = findVariableDeclarator(path);
-                console.log(declarator);
-                if (declarator) {
-                    const id = declarator.node.id;
+                const variableDeclarator = findVariableDeclarator(requirePath);
+                if (!variableDeclarator) {
+                    if (MemberExpression.check(requirePath.parent.node)) {
+                        const tmpVar = j.identifier(`_Import${i++}`);
+                        expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
+                        requirePath.replace(tmpVar);
+                    } else {
+                        expressions.push(j.importDeclaration([], source));
+                        requirePath.replace(null);
+                    }
+                } else {
+                    const id = variableDeclarator.node.id;
                     if (Identifier.check(id)) {
-                        const specifiers = [j.importDefaultSpecifier(id)];
+                        const tmpVar = j.identifier(`_Import${i++}`);
+                        const specifiers = [j.importDefaultSpecifier(tmpVar)];
+                        requirePath.replace(tmpVar);
                         expressions.push(j.importDeclaration(specifiers, source));
                     } else if (ObjectPattern.check(id)) {
                         const specifiers = id.properties.map(property => {
@@ -85,6 +95,7 @@ const transformer = (file, api, options) => {
                             }
                         });
                         expressions.push(j.importDeclaration(specifiers, source));
+                        requirePath.parent.parent.replace(null);
                     } else {
                         throw new Error('[!] Default import expected');
                     }
