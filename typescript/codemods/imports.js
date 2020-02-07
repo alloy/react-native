@@ -1,6 +1,17 @@
 // @ts-check
 
-const { CallExpression, Identifier, Literal, MemberExpression, ObjectPattern, Program, Property, VariableDeclarator } = require('jscodeshift');
+const {
+    AssignmentExpression,
+    CallExpression,
+    Identifier,
+    Literal,
+    MemberExpression,
+    ObjectExpression,
+    ObjectPattern,
+    Program,
+    Property,
+    VariableDeclarator
+} = require('jscodeshift');
 
 /**
  * @param { import("jscodeshift").VariableDeclaration } node
@@ -106,46 +117,6 @@ const transformer = (file, api, options) => {
             }
         });
 
-    // collection
-    //     .find(VariableDeclaration)
-    //     .map(path => {
-    //         const requireNode = getRequire(node);
-
-    //     })
-    //     .replaceWith(({ node }) => {
-            
-    //         const declarator = getVariableDeclarator(node);
-    //         const requireNode = getRequireExpression(declarator.init);
-    //         if (requireNode) {
-    //             const source = requireNode.arguments[0];
-    //             if (Literal.check(source)) {
-    //                 if (Identifier.check(declarator.id)) {
-    //                     const specifiers = [j.importDefaultSpecifier(declarator.id)];
-    //                     expressions.push(j.importDeclaration(specifiers, source));
-    //                 } else if (ObjectPattern.check(declarator.id)) {
-    //                     const specifiers = declarator.id.properties.map(property => {
-    //                         if (Property.check(property)) {
-    //                             if (Identifier.check(property.key)) {
-    //                                 return j.importSpecifier(property.key);
-    //                             } else {
-    //                                 throw new Error('[!] Expected identifier key');
-    //                             }
-    //                         } else {
-    //                             throw new Error('[!] Expected Property');
-    //                         }
-    //                     });
-    //                     expressions.push(j.importDeclaration(specifiers, source));
-    //                 } else {
-    //                     throw new Error('[!] Default import expected');
-    //                 }
-    //                 return true;
-    //             } else {
-    //                 throw new Error('[!] String-literal expected');
-    //             }
-    //         }
-    //         return false;
-    //     });
-
     // Hoist imports to top-level
     collection.find(Program).forEach(path => {
         const body = path.node.body;
@@ -153,6 +124,35 @@ const transformer = (file, api, options) => {
             body.unshift(expression);
         });
     });
+
+    collection
+        .find(AssignmentExpression, node => {
+            const left = node.left;
+            return (
+                MemberExpression.check(left)
+                && Identifier.check(left.object) && left.object.name === 'module'
+                && Identifier.check(left.property) && left.property.name === 'exports'
+            );
+        })
+        .forEach(path => {
+            const right = path.node.right;
+            if (ObjectExpression.check(right)) {
+                const specifiers = right.properties.map(property => {
+                    if (Property.check(property)) {
+                        if (Identifier.check(property.key)) {
+                            return j.exportSpecifier(property.key, property.key);
+                        } else {
+                            throw new Error('[!] Expected identifier key');
+                        }
+                    } else {
+                        throw new Error('[!] Expected Property');
+                    }
+                });
+                path.replace(j.exportNamedDeclaration(null, specifiers))
+            } else {
+                path.replace(j.exportDefaultDeclaration(path.node.right));
+            }
+        });
 
     return collection.toSource();
 };

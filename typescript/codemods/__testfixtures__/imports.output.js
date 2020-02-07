@@ -8,3 +8,6 @@ function someFunction() {
     const baz = _Import0;
     _Import1.foo(foo, bar, baz);
 }
+
+export { someFunction };;
+export default someFunction;;
