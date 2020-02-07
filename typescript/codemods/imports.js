@@ -1,6 +1,6 @@
 // @ts-check
 
-const { CallExpression, Identifier, ObjectPattern, Program, StringLiteral, VariableDeclaration, VariableDeclarator } = require('jscodeshift');
+const { CallExpression, Identifier, Literal, ObjectPattern, Program, Property, VariableDeclaration, VariableDeclarator } = require('jscodeshift');
 
 /**
  * @param { import("jscodeshift").VariableDeclaration } node
@@ -30,6 +30,27 @@ function getRequireExpression(node) {
 }
 
 /**
+ * @param { import("jscodeshift").VariableDeclaration } node
+ */
+function getRequire(node) {
+    const declarator = getVariableDeclarator(node);
+    const requireNode = getRequireExpression(declarator.init);
+    return requireNode;
+}
+
+/**
+ * @param { import("jscodeshift").ASTPath<any> } path
+ * @returns { null | import("jscodeshift").ASTPath<import("jscodeshift").VariableDeclarator> }
+ */
+function findVariableDeclarator(path) {
+    let declarator = path.parent;
+    while (declarator && !VariableDeclarator.check(declarator.node)) {
+        declarator = declarator.parent;
+    }
+    return declarator;
+}
+
+/**
  * @type { import("jscodeshift").Transform }
  */
 const transformer = (file, api, options) => {
@@ -40,30 +61,79 @@ const transformer = (file, api, options) => {
     const expressions = [];
 
     collection
-        .find(VariableDeclaration, node => {
-            const declarator = getVariableDeclarator(node);
-            const requireNode = getRequireExpression(declarator.init);
-            if (requireNode) {
-                const source = requireNode.arguments[0];
-                if (StringLiteral.check(source)) {
-                    if (Identifier.check(declarator.id)) {
-                        const specifiers = [j.importDefaultSpecifier(declarator.id)];
+        .find(CallExpression, node => Identifier.check(node.callee) && node.callee.name === 'require')
+        .forEach(path => {
+            const source = path.node.arguments[0];
+            if (Literal.check(source)) {
+                const declarator = findVariableDeclarator(path);
+                console.log(declarator);
+                if (declarator) {
+                    const id = declarator.node.id;
+                    if (Identifier.check(id)) {
+                        const specifiers = [j.importDefaultSpecifier(id)];
                         expressions.push(j.importDeclaration(specifiers, source));
-                    } else if (ObjectPattern.check(declarator.id)) {
-                        const tmpVar = j.identifier(`_Import${i++}`);
-                        expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source));
-                        expressions.push(j.variableDeclaration(node.kind, [j.variableDeclarator(declarator.id, tmpVar)]));
+                    } else if (ObjectPattern.check(id)) {
+                        const specifiers = id.properties.map(property => {
+                            if (Property.check(property)) {
+                                if (Identifier.check(property.key)) {
+                                    return j.importSpecifier(property.key);
+                                } else {
+                                    throw new Error('[!] Expected identifier key');
+                                }
+                            } else {
+                                throw new Error('[!] Expected Property');
+                            }
+                        });
+                        expressions.push(j.importDeclaration(specifiers, source));
                     } else {
                         throw new Error('[!] Default import expected');
                     }
                     return true;
-                } else {
-                    throw new Error('[!] String-literal expected');
                 }
+            } else {
+                throw new Error('[!] String-literal expected');
             }
-            return false;
-        })
-        .remove();
+        });
+
+    // collection
+    //     .find(VariableDeclaration)
+    //     .map(path => {
+    //         const requireNode = getRequire(node);
+
+    //     })
+    //     .replaceWith(({ node }) => {
+            
+    //         const declarator = getVariableDeclarator(node);
+    //         const requireNode = getRequireExpression(declarator.init);
+    //         if (requireNode) {
+    //             const source = requireNode.arguments[0];
+    //             if (Literal.check(source)) {
+    //                 if (Identifier.check(declarator.id)) {
+    //                     const specifiers = [j.importDefaultSpecifier(declarator.id)];
+    //                     expressions.push(j.importDeclaration(specifiers, source));
+    //                 } else if (ObjectPattern.check(declarator.id)) {
+    //                     const specifiers = declarator.id.properties.map(property => {
+    //                         if (Property.check(property)) {
+    //                             if (Identifier.check(property.key)) {
+    //                                 return j.importSpecifier(property.key);
+    //                             } else {
+    //                                 throw new Error('[!] Expected identifier key');
+    //                             }
+    //                         } else {
+    //                             throw new Error('[!] Expected Property');
+    //                         }
+    //                     });
+    //                     expressions.push(j.importDeclaration(specifiers, source));
+    //                 } else {
+    //                     throw new Error('[!] Default import expected');
+    //                 }
+    //                 return true;
+    //             } else {
+    //                 throw new Error('[!] String-literal expected');
+    //             }
+    //         }
+    //         return false;
+    //     });
 
     // Hoist imports to top-level
     collection.find(Program).forEach(path => {
