@@ -1,0 +1,25 @@
+diff --git a/node_modules/@khanacademy/flow-to-ts/src/transform.js b/node_modules/@khanacademy/flow-to-ts/src/transform.js
+index 8ab9470..89e2744 100644
+--- a/node_modules/@khanacademy/flow-to-ts/src/transform.js
++++ b/node_modules/@khanacademy/flow-to-ts/src/transform.js
+@@ -412,6 +412,20 @@ const transform = {
+             typeParameters
+           )
+         );
++      } else if (typeName.name === "Object") {
++        path.replaceWith(t.tsAnyKeyword());
++      } else if (typeName.name === "Function") {
++        const functionType = t.tsFunctionType(
++          null,
++          [{
++            type: "RestElement",
++            argument: t.identifier("args"),
++            decorators: null,
++            typeAnnotation: t.tsTypeAnnotation(t.tsAnyKeyword()),
++          }],
++          t.tsTypeAnnotation(t.tsAnyKeyword())
++        );
++        path.replaceWith(functionType);
+       } else {
+         path.replaceWith(t.tsTypeReference(typeName, typeParameters));
+       }
