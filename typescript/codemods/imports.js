@@ -8,8 +8,10 @@ const {
     MemberExpression,
     ObjectExpression,
     ObjectPattern,
+    ObjectProperty,
     Program,
     Property,
+    ReturnStatement,
     VariableDeclarator
 } = require('jscodeshift');
 
@@ -78,7 +80,7 @@ const transformer = (file, api, options) => {
             if (Literal.check(source)) {
                 const variableDeclarator = findVariableDeclarator(requirePath);
                 if (!variableDeclarator) {
-                    if (MemberExpression.check(requirePath.parent.node)) {
+                    if (MemberExpression.check(requirePath.parent.node) || ReturnStatement.check(requirePath.parent.node)) {
                         const tmpVar = j.identifier(`_Import${i++}`);
                         expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
                         requirePath.replace(tmpVar);
@@ -95,13 +97,14 @@ const transformer = (file, api, options) => {
                         expressions.push(j.importDeclaration(specifiers, source));
                     } else if (ObjectPattern.check(id)) {
                         const specifiers = id.properties.map(property => {
-                            if (Property.check(property)) {
+                            if (ObjectProperty.check(property)) {
                                 if (Identifier.check(property.key)) {
                                     return j.importSpecifier(property.key);
                                 } else {
                                     throw new Error('[!] Expected identifier key');
                                 }
                             } else {
+                                console.log(property);
                                 throw new Error('[!] Expected Property');
                             }
                         });
@@ -110,8 +113,8 @@ const transformer = (file, api, options) => {
                     } else {
                         throw new Error('[!] Default import expected');
                     }
-                    return true;
                 }
+                return true;
             } else {
                 throw new Error('[!] String-literal expected');
             }
@@ -136,16 +139,10 @@ const transformer = (file, api, options) => {
         })
         .forEach(path => {
             const right = path.node.right;
-            if (ObjectExpression.check(right)) {
+            if (ObjectExpression.check(right) && right.properties.every(property => ObjectProperty.check(property))) {
                 const specifiers = right.properties.map(property => {
-                    if (Property.check(property)) {
-                        if (Identifier.check(property.key)) {
-                            return j.exportSpecifier(property.key, property.key);
-                        } else {
-                            throw new Error('[!] Expected identifier key');
-                        }
-                    } else {
-                        throw new Error('[!] Expected Property');
+                    if (ObjectProperty.check(property) && Identifier.check(property.key)) {
+                        return j.exportSpecifier(property.key, property.key);
                     }
                 });
                 path.replace(j.exportNamedDeclaration(null, specifiers))
@@ -158,3 +155,4 @@ const transformer = (file, api, options) => {
 };
 
 module.exports = transformer;
+module.exports.parser = 'tsx';
