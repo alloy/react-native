@@ -1,8 +1,39 @@
+diff --git a/node_modules/@khanacademy/flow-to-ts/babel-generator/lib/printer.js b/node_modules/@khanacademy/flow-to-ts/babel-generator/lib/printer.js
+index 7383d6d..a2e18ab 100644
+--- a/node_modules/@khanacademy/flow-to-ts/babel-generator/lib/printer.js
++++ b/node_modules/@khanacademy/flow-to-ts/babel-generator/lib/printer.js
+@@ -313,7 +313,7 @@ class Printer {
+ 
+     let needsParens = n.needsParens(node, parent, this._printStack);
+ 
+-    if (this.format.retainFunctionParens && node.type === "FunctionExpression" && node.extra && node.extra.parenthesized) {
++    if (this.format.retainFunctionParens && (node.type === "TSFunctionType" || (node.type === "FunctionExpression" && node.extra && node.extra.parenthesized))) {
+       needsParens = true;
+     }
+ 
+diff --git a/node_modules/@khanacademy/flow-to-ts/src/convert.js b/node_modules/@khanacademy/flow-to-ts/src/convert.js
+index dc9c67c..2d609cc 100644
+--- a/node_modules/@khanacademy/flow-to-ts/src/convert.js
++++ b/node_modules/@khanacademy/flow-to-ts/src/convert.js
+@@ -46,7 +46,7 @@ const convert = (flowCode, options) => {
+ 
+   // we pass flowCode so that generate can compute source maps
+   // if we ever decide to
+-  let tsCode = generate(ast, flowCode).code;
++  let tsCode = generate(ast, { retainFunctionParens: true }, flowCode).code;
+   for (let i = 0; i < state.trailingLines; i++) {
+     tsCode += "\n";
+   }
 diff --git a/node_modules/@khanacademy/flow-to-ts/src/transform.js b/node_modules/@khanacademy/flow-to-ts/src/transform.js
-index 8ab9470..134b84a 100644
+index 8ab9470..5b9292e 100644
 --- a/node_modules/@khanacademy/flow-to-ts/src/transform.js
 +++ b/node_modules/@khanacademy/flow-to-ts/src/transform.js
-@@ -412,6 +412,20 @@ const transform = {
+@@ -1,4 +1,3 @@
+-const path = require("path");
+ const t = require("@babel/types");
+ 
+ const computeNewlines = require("./compute-newlines.js");
+@@ -412,6 +411,20 @@ const transform = {
              typeParameters
            )
          );
@@ -23,7 +54,7 @@ index 8ab9470..134b84a 100644
        } else {
          path.replaceWith(t.tsTypeReference(typeName, typeParameters));
        }
-@@ -566,6 +580,14 @@ const transform = {
+@@ -566,6 +579,14 @@ const transform = {
        }
      }
    },
