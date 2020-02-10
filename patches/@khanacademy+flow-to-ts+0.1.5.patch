@@ -1,5 +1,5 @@
 diff --git a/node_modules/@khanacademy/flow-to-ts/src/transform.js b/node_modules/@khanacademy/flow-to-ts/src/transform.js
-index 8ab9470..89e2744 100644
+index 8ab9470..134b84a 100644
 --- a/node_modules/@khanacademy/flow-to-ts/src/transform.js
 +++ b/node_modules/@khanacademy/flow-to-ts/src/transform.js
 @@ -412,6 +412,20 @@ const transform = {
@@ -23,3 +23,18 @@ index 8ab9470..89e2744 100644
        } else {
          path.replaceWith(t.tsTypeReference(typeName, typeParameters));
        }
+@@ -566,6 +580,14 @@ const transform = {
+       }
+     }
+   },
++  // TODO: Should this be replaced with a nominal type?
++  OpaqueType: {
++    exit(path) {
++      const { id, impltype, typeParameters } = path.node;
++
++      path.replaceWith(t.tsTypeAliasDeclaration(id, typeParameters, impltype));
++    }
++  },
+   TypeAlias: {
+     exit(path) {
+       const { id, typeParameters, right } = path.node;
