@@ -114,4 +114,4 @@ const PooledClass = {
   fourArgumentPooler: (fourArgumentPooler as Pooler)
 };
 
-export default PooledClass;
+export default PooledClass;;

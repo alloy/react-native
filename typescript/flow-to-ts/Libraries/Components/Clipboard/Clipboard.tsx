@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeClipboard from "./NativeClipboard";
 
 /**
@@ -29,4 +41,4 @@ export default {
   setString(content: string) {
     NativeClipboard.setString(content);
   }
-};
+};;

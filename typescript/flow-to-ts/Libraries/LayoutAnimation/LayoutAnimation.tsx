@@ -35,7 +35,7 @@ export type LayoutAnimationConfig = $ReadOnly<{
   delete?: AnimationConfig;
 }>;
 
-function configureNext(config: LayoutAnimationConfig, onAnimationDidEnd?: Function) {
+function configureNext(config: LayoutAnimationConfig, onAnimationDidEnd?: ((...args: any) => any)) {
   if (!Platform.isTesting) {
     UIManager.configureNextLayoutAnimation(config, onAnimationDidEnd ?? function () {}, function () {}
     /* unused onError */
@@ -44,12 +44,7 @@ function configureNext(config: LayoutAnimationConfig, onAnimationDidEnd?: Functi
 }
 
 function create(duration: number, type: Type, property: Property): LayoutAnimationConfig {
-  return {
-    duration,
-    create: { type, property },
-    update: { type },
-    delete: { type, property }
-  };
+  return null as any;
 }
 
 const Presets = {
@@ -120,9 +115,9 @@ const LayoutAnimation = {
     console.error('LayoutAnimation.checkConfig(...) has been disabled.');
   },
   Presets,
-  easeInEaseOut: (configureNext.bind(null, Presets.easeInEaseOut) as (onAnimationDidEnd?: any) => void),
-  linear: (configureNext.bind(null, Presets.linear) as (onAnimationDidEnd?: any) => void),
-  spring: (configureNext.bind(null, Presets.spring) as (onAnimationDidEnd?: any) => void)
+  easeInEaseOut: (configureNext.bind(null, Presets.easeInEaseOut) as ((onAnimationDidEnd?: any) => void)),
+  linear: (configureNext.bind(null, Presets.linear) as ((onAnimationDidEnd?: any) => void)),
+  spring: (configureNext.bind(null, Presets.spring) as ((onAnimationDidEnd?: any) => void))
 };
 
-export default LayoutAnimation;
+export default LayoutAnimation;;

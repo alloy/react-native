@@ -34,14 +34,14 @@ export type DialogOptions = {
 };
 
 export interface Spec extends TurboModule {
-  readonly getConstants: () => {
+  readonly getConstants: (() => {
     readonly buttonClicked: DialogAction;
     readonly dismissed: DialogAction;
     readonly buttonPositive: DialogButtonKey;
     readonly buttonNegative: DialogButtonKey;
     readonly buttonNeutral: DialogButtonKey;
-  };
-  readonly showAlert: (config: DialogOptions, onError: (error: string) => void, onAction: (action: DialogAction, buttonKey?: DialogButtonKey) => void) => void;
+  });
+  readonly showAlert: ((config: DialogOptions, onError: ((error: string) => void), onAction: ((action: DialogAction, buttonKey?: DialogButtonKey) => void)) => void);
 }
 
 export default (TurboModuleRegistry.get<Spec>('DialogManagerAndroid') as Spec | null | undefined);

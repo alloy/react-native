@@ -7,4 +7,4 @@ const RCTEventEmitter = {
   }
 };
 
-export default RCTEventEmitter;
+export default RCTEventEmitter;;

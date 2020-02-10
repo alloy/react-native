@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default StyleInspector;
+export default StyleInspector;;

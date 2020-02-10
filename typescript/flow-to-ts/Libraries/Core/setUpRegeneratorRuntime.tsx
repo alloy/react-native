@@ -1,5 +1,17 @@
 'use strict';;
 import _Import0 from '../Utilities/PolyfillFunctions';
+import _Import1 from 'regenerator-runtime/runtime';
+
+
+
+
+
+
+
+
+
+
+
 
 const {
   polyfillGlobal
@@ -16,5 +28,5 @@ polyfillGlobal('regeneratorRuntime', () => {
 
   // regenerator-runtime/runtime exports the regeneratorRuntime object, so we
   // can return it safely.
-  return require('regenerator-runtime/runtime'); // flowlint-line untyped-import:off
+  return _Import1; // flowlint-line untyped-import:off
 });

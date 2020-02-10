@@ -86,4 +86,4 @@ const DeprecatedTextStylePropTypes = {
   , 'ltr', 'rtl']) as React$PropType$Primitive<"auto" | "ltr" | "rtl">)
 };
 
-export default DeprecatedTextStylePropTypes;
+export default DeprecatedTextStylePropTypes;;

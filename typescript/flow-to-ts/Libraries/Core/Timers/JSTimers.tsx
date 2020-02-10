@@ -3,13 +3,15 @@ import BatchedBridge from '../../BatchedBridge/BatchedBridge';
 import Platform from '../../Utilities/Platform';
 import Systrace from '../../Performance/Systrace';
 import invariant from 'invariant';
+import _Import0 from 'fbjs/lib/performanceNow';
+import _Import1 from 'fbjs/lib/warning';
 
 import NativeTiming from "./NativeTiming";
 
 let _performanceNow = null;
 function performanceNow() {
   if (!_performanceNow) {
-    _performanceNow = require('fbjs/lib/performanceNow');
+    _performanceNow = _Import0;
   }
   return _performanceNow();
 }
@@ -31,7 +33,7 @@ const IS_ANDROID = Platform.OS === 'android';
 const ANDROID_LONG_TIMER_MESSAGE = 'Setting a timer for a long period of time, i.e. multiple minutes, is a ' + 'performance and correctness issue on Android as it keeps the timer ' + 'module awake, and timers can only be called when the app is in the foreground. ' + 'See https://github.com/facebook/react-native/issues/12981 for more info.';
 
 // Parallel arrays
-const callbacks: Array<Function | null | undefined> = [];
+const callbacks: Array<((...args: any) => any) | null | undefined> = [];
 const types: Array<JSTimerType | null | undefined> = [];
 const timerIDs: Array<number | null | undefined> = [];
 let immediates: Array<number> = [];
@@ -47,20 +49,11 @@ let hasEmittedTimeDriftWarning = false;
 
 // Returns a free index if one is available, and the next consecutive index otherwise.
 function _getFreeIndex(): number {
-  let freeIndex = timerIDs.indexOf(null);
-  if (freeIndex === -1) {
-    freeIndex = timerIDs.length;
-  }
-  return freeIndex;
+  return null as any;
 }
 
-function _allocateCallback(func: Function, type: JSTimerType): number {
-  const id = GUID++;
-  const freeIndex = _getFreeIndex();
-  timerIDs[freeIndex] = id;
-  callbacks[freeIndex] = func;
-  types[freeIndex] = type;
-  return id;
+function _allocateCallback(func: ((...args: any) => any), type: JSTimerType): number {
+  return null as any;
 }
 
 /**
@@ -69,7 +62,7 @@ function _allocateCallback(func: Function, type: JSTimerType): number {
  * recurring (setInterval).
  */
 function _callTimer(timerID: number, frameTime: number, didTimeout: boolean | null | undefined) {
-  require('fbjs/lib/warning')(timerID <= GUID, 'Tried to call timer with ID %s but no such timer exists.', timerID);
+  _Import1(timerID <= GUID, 'Tried to call timer with ID %s but no such timer exists.', timerID);
 
   // timerIndex of -1 means that no timer with that ID exists. There are
   // two situations when this happens, when a garbage timer ID was given
@@ -191,7 +184,7 @@ const JSTimers = {
    * @param {function} func Callback to be invoked after `duration` ms.
    * @param {number} duration Number of milliseconds.
    */
-  setTimeout: function (func: Function, duration: number, ...args: any): number {
+  setTimeout: function (func: ((...args: any) => any), duration: number, ...args: any): number {
     if (__DEV__ && IS_ANDROID && duration > MAX_TIMER_DURATION_MS) {
       console.warn(ANDROID_LONG_TIMER_MESSAGE + '\n' + '(Saw setTimeout with duration ' + duration + 'ms)');
     }
@@ -206,7 +199,7 @@ const JSTimers = {
    * @param {function} func Callback to be invoked every `duration` ms.
    * @param {number} duration Number of milliseconds.
    */
-  setInterval: function (func: Function, duration: number, ...args: any): number {
+  setInterval: function (func: ((...args: any) => any), duration: number, ...args: any): number {
     if (__DEV__ && IS_ANDROID && duration > MAX_TIMER_DURATION_MS) {
       console.warn(ANDROID_LONG_TIMER_MESSAGE + '\n' + '(Saw setInterval with duration ' + duration + 'ms)');
     }
@@ -221,7 +214,7 @@ const JSTimers = {
    * @param {function} func Callback to be invoked before the end of the
    * current JavaScript execution loop.
    */
-  setImmediate: function (func: Function, ...args: any) {
+  setImmediate: function (func: ((...args: any) => any), ...args: any) {
     const id = _allocateCallback(() => func.apply(undefined, args), 'setImmediate');
     immediates.push(id);
     return id;
@@ -230,7 +223,7 @@ const JSTimers = {
   /**
    * @param {function} func Callback to be invoked every frame.
    */
-  requestAnimationFrame: function (func: Function) {
+  requestAnimationFrame: function (func: ((...args: any) => any)) {
     const id = _allocateCallback(func, 'requestAnimationFrame');
     createTimer(id, 1, Date.now(),
     /* recurring */
@@ -243,7 +236,7 @@ const JSTimers = {
    * with time remaining in frame.
    * @param {?object} options
    */
-  requestIdleCallback: function (func: Function, options: Object | null | undefined) {
+  requestIdleCallback: function (func: ((...args: any) => any), options: any | null | undefined) {
     if (requestIdleCallbacks.length === 0) {
       setSendIdleEvents(true);
     }
@@ -395,36 +388,27 @@ const JSTimers = {
   }
 };
 
-function createTimer(callbackID: number, duration: number, jsSchedulingTime: number, repeats: boolean): void {
-  invariant(NativeTiming, 'NativeTiming is available');
-  NativeTiming.createTimer(callbackID, duration, jsSchedulingTime, repeats);
-}
+function createTimer(callbackID: number, duration: number, jsSchedulingTime: number, repeats: boolean): void {}
 
-function deleteTimer(timerID: number): void {
-  invariant(NativeTiming, 'NativeTiming is available');
-  NativeTiming.deleteTimer(timerID);
-}
+function deleteTimer(timerID: number): void {}
 
-function setSendIdleEvents(sendIdleEvents: boolean): void {
-  invariant(NativeTiming, 'NativeTiming is available');
-  NativeTiming.setSendIdleEvents(sendIdleEvents);
-}
+function setSendIdleEvents(sendIdleEvents: boolean): void {}
 
 let ExportedJSTimers: {
-  callIdleCallbacks: (frameTime: number) => any | void;
-  callImmediates: () => void;
-  callTimers: (timersToCall: Array<number>) => any | void;
-  cancelAnimationFrame: (timerID: number) => void;
-  cancelIdleCallback: (timerID: number) => void;
-  clearImmediate: (timerID: number) => void;
-  clearInterval: (timerID: number) => void;
-  clearTimeout: (timerID: number) => void;
-  emitTimeDriftWarning: (warningMessage: string) => any | void;
-  requestAnimationFrame: (func: any) => any | number;
-  requestIdleCallback: (func: any, options: any | null | undefined) => any | number;
-  setImmediate: (func: any, ...args: any) => number;
-  setInterval: (func: any, duration: number, ...args: any) => number;
-  setTimeout: (func: any, duration: number, ...args: any) => number;
+  callIdleCallbacks: ((frameTime: number) => any | void);
+  callImmediates: (() => void);
+  callTimers: ((timersToCall: Array<number>) => any | void);
+  cancelAnimationFrame: ((timerID: number) => void);
+  cancelIdleCallback: ((timerID: number) => void);
+  clearImmediate: ((timerID: number) => void);
+  clearInterval: ((timerID: number) => void);
+  clearTimeout: ((timerID: number) => void);
+  emitTimeDriftWarning: ((warningMessage: string) => any | void);
+  requestAnimationFrame: ((func: any) => any | number);
+  requestIdleCallback: ((func: any, options: any | null | undefined) => any | number);
+  setImmediate: ((func: any, ...args: any) => number);
+  setInterval: ((func: any, duration: number, ...args: any) => number);
+  setTimeout: ((func: any, duration: number, ...args: any) => number);
 };
 if (!NativeTiming) {
   console.warn("Timing native module is not available, can't set timers.");
@@ -439,4 +423,4 @@ if (!NativeTiming) {
 
 BatchedBridge.setImmediatesCallback(ExportedJSTimers.callImmediates.bind(ExportedJSTimers));
 
-export default ExportedJSTimers;
+export default ExportedJSTimers;;

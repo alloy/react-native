@@ -24,7 +24,7 @@ class Linking extends NativeEventEmitter {
    *
    * See https://facebook.github.io/react-native/docs/linking.html#addeventlistener
    */
-  addEventListener(type: string, handler: Function) {
+  addEventListener(type: string, handler: ((...args: any) => any)) {
     this.addListener(type, handler);
   }
 
@@ -33,7 +33,7 @@ class Linking extends NativeEventEmitter {
    *
    * See https://facebook.github.io/react-native/docs/linking.html#removeeventlistener
    */
-  removeEventListener(type: string, handler: Function) {
+  removeEventListener(type: string, handler: ((...args: any) => any)) {
     this.removeListener(type, handler);
   }
 
@@ -100,4 +100,4 @@ class Linking extends NativeEventEmitter {
   }
 }
 
-export default new Linking() as Linking;
+export default new Linking() as Linking;;

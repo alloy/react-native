@@ -1,8 +1,20 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 let logListeners;
 
 type LogListeners = {
-  readonly onDifferentFunctionsIgnored: (nameOne: string | null | undefined, nameTwo: string | null | undefined) => void;
+  readonly onDifferentFunctionsIgnored: ((nameOne: string | null | undefined, nameTwo: string | null | undefined) => void);
 };
 
 type Options = {readonly unsafelyIgnoreFunctions?: boolean;};
@@ -75,5 +87,5 @@ const deepDiffer = function (one: any, two: any, maxDepthOrOptions: Options | nu
   return false;
 };
 
-export default deepDiffer;
-export { unstable_setLogListeners };
+export default deepDiffer;;
+module.exports.unstable_setLogListeners = unstable_setLogListeners;

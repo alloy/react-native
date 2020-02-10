@@ -37,9 +37,9 @@ function emptyFunction(): void {}
  * ```
  */
 type TBackHandler = {
-  readonly exitApp: () => void;
-  readonly addEventListener: (eventName: BackPressEventName, handler: Function) => {remove: () => void;};
-  readonly removeEventListener: (eventName: BackPressEventName, handler: Function) => void;
+  readonly exitApp: (() => void);
+  readonly addEventListener: ((eventName: BackPressEventName, handler: ((...args: any) => any)) => {remove: (() => void);});
+  readonly removeEventListener: ((eventName: BackPressEventName, handler: ((...args: any) => any)) => void);
 };
 
 let BackHandler: TBackHandler;
@@ -69,27 +69,27 @@ if (Platform.isTV) {
   BackHandler = {
     exitApp: emptyFunction,
 
-    addEventListener: function (eventName: BackPressEventName, handler: Function): {remove: () => void;} {
+    addEventListener: function (eventName: BackPressEventName, handler: ((...args: any) => any)): {remove: (() => void);} {
       _backPressSubscriptions.add(handler);
       return {
         remove: () => BackHandler.removeEventListener(eventName, handler)
       };
     },
 
-    removeEventListener: function (eventName: BackPressEventName, handler: Function): void {
+    removeEventListener: function (eventName: BackPressEventName, handler: ((...args: any) => any)): void {
       _backPressSubscriptions.delete(handler);
     }
   };
 } else {
   BackHandler = {
     exitApp: emptyFunction,
-    addEventListener(_eventName: BackPressEventName, _handler: Function) {
+    addEventListener(_eventName: BackPressEventName, _handler: ((...args: any) => any)) {
       return {
         remove: emptyFunction
       };
     },
-    removeEventListener(_eventName: BackPressEventName, _handler: Function) {}
+    removeEventListener(_eventName: BackPressEventName, _handler: ((...args: any) => any)) {}
   };
 }
 
-export default BackHandler;
+export default BackHandler;;

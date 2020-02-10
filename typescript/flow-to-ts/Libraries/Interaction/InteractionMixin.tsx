@@ -32,9 +32,9 @@ const InteractionMixin = {
    *
    * @param {function} callback
    */
-  runAfterInteractions: function (callback: Function): void {
+  runAfterInteractions: function (callback: ((...args: any) => any)): void {
     InteractionManager.runAfterInteractions(callback);
   }
 };
 
-export default InteractionMixin;
+export default InteractionMixin;;

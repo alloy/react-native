@@ -7,8 +7,8 @@ import invariant from 'invariant';
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
 
 type NativeModule = {
-  readonly addListener: (eventType: string) => void;
-  readonly removeListeners: (count: number) => void;
+  readonly addListener: ((eventType: string) => void);
+  readonly removeListeners: ((count: number) => void);
 
 };
 
@@ -28,7 +28,7 @@ class NativeEventEmitter extends EventEmitter {
     }
   }
 
-  addListener(eventType: string, listener: Function, context: Object | null | undefined): EmitterSubscription {
+  addListener(eventType: string, listener: ((...args: any) => any), context: any | null | undefined): EmitterSubscription {
     if (this._nativeModule != null) {
       this._nativeModule.addListener(eventType);
     }
@@ -52,4 +52,4 @@ class NativeEventEmitter extends EventEmitter {
   }
 }
 
-export default NativeEventEmitter;
+export default NativeEventEmitter;;

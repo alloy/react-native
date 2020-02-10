@@ -151,4 +151,4 @@ if (__DEV__) {
   (require as any).Systrace = Systrace;
 }
 
-export default Systrace;
+export default Systrace;;

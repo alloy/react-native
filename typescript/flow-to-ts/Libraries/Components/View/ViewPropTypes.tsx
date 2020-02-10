@@ -22,8 +22,8 @@ export type ViewLayout = Layout;
 export type ViewLayoutEvent = LayoutEvent;
 
 type BubblingEventProps = $ReadOnly<{
-  onBlur?: (event: BlurEvent) => unknown | null | undefined;
-  onFocus?: (event: FocusEvent) => unknown | null | undefined;
+  onBlur?: ((event: BlurEvent) => unknown) | null | undefined;
+  onFocus?: ((event: FocusEvent) => unknown) | null | undefined;
 }>;
 
 type DirectEventProps = $ReadOnly<{
@@ -32,7 +32,7 @@ type DirectEventProps = $ReadOnly<{
    * when the user performs an accessibility custom action.
    *
    */
-  onAccessibilityAction?: (event: AccessibilityActionEvent) => unknown | null | undefined;
+  onAccessibilityAction?: ((event: AccessibilityActionEvent) => unknown) | null | undefined;
 
   /**
    * When `accessible` is true, the system will try to invoke this function
@@ -40,7 +40,7 @@ type DirectEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onaccessibilitytap
    */
-  onAccessibilityTap?: () => unknown | null | undefined;
+  onAccessibilityTap?: (() => unknown) | null | undefined;
 
   /**
    * Invoked on mount and layout changes with:
@@ -53,7 +53,7 @@ type DirectEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onlayout
    */
-  onLayout?: (event: LayoutEvent) => unknown | null | undefined;
+  onLayout?: ((event: LayoutEvent) => unknown) | null | undefined;
 
   /**
    * When `accessible` is `true`, the system will invoke this function when the
@@ -61,7 +61,7 @@ type DirectEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onmagictap
    */
-  onMagicTap?: () => unknown | null | undefined;
+  onMagicTap?: (() => unknown) | null | undefined;
 
   /**
    * When `accessible` is `true`, the system will invoke this function when the
@@ -69,23 +69,23 @@ type DirectEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onaccessibilityescape
    */
-  onAccessibilityEscape?: () => unknown | null | undefined;
+  onAccessibilityEscape?: (() => unknown) | null | undefined;
 }>;
 
 type MouseEventProps = $ReadOnly<{
-  onMouseEnter?: (event: MouseEvent) => void;
-  onMouseLeave?: (event: MouseEvent) => void;
+  onMouseEnter?: ((event: MouseEvent) => void);
+  onMouseLeave?: ((event: MouseEvent) => void);
 }>;
 
 type TouchEventProps = $ReadOnly<{
-  onTouchCancel?: (e: PressEvent) => void | null | undefined;
-  onTouchCancelCapture?: (e: PressEvent) => void | null | undefined;
-  onTouchEnd?: (e: PressEvent) => void | null | undefined;
-  onTouchEndCapture?: (e: PressEvent) => void | null | undefined;
-  onTouchMove?: (e: PressEvent) => void | null | undefined;
-  onTouchMoveCapture?: (e: PressEvent) => void | null | undefined;
-  onTouchStart?: (e: PressEvent) => void | null | undefined;
-  onTouchStartCapture?: (e: PressEvent) => void | null | undefined;
+  onTouchCancel?: ((e: PressEvent) => void) | null | undefined;
+  onTouchCancelCapture?: ((e: PressEvent) => void) | null | undefined;
+  onTouchEnd?: ((e: PressEvent) => void) | null | undefined;
+  onTouchEndCapture?: ((e: PressEvent) => void) | null | undefined;
+  onTouchMove?: ((e: PressEvent) => void) | null | undefined;
+  onTouchMoveCapture?: ((e: PressEvent) => void) | null | undefined;
+  onTouchStart?: ((e: PressEvent) => void) | null | undefined;
+  onTouchStartCapture?: ((e: PressEvent) => void) | null | undefined;
 }>;
 
 /**
@@ -103,7 +103,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onmoveshouldsetresponder
    */
-  onMoveShouldSetResponder?: (e: PressEvent) => boolean | null | undefined;
+  onMoveShouldSetResponder?: ((e: PressEvent) => boolean) | null | undefined;
 
   /**
    * If a parent `View` wants to prevent a child `View` from becoming responder
@@ -114,7 +114,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onMoveShouldsetrespondercapture
    */
-  onMoveShouldSetResponderCapture?: (e: PressEvent) => boolean | null | undefined;
+  onMoveShouldSetResponderCapture?: ((e: PressEvent) => boolean) | null | undefined;
 
   /**
    * The View is now responding for touch events. This is the time to highlight
@@ -128,7 +128,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onrespondergrant
    */
-  onResponderGrant?: (e: PressEvent) => void | boolean | null | undefined;
+  onResponderGrant?: ((e: PressEvent) => void | boolean) | null | undefined;
 
   /**
    * The user is moving their finger.
@@ -138,7 +138,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onrespondermove
    */
-  onResponderMove?: (e: PressEvent) => void | null | undefined;
+  onResponderMove?: ((e: PressEvent) => void) | null | undefined;
 
   /**
    * Another responder is already active and will not release it to that `View`
@@ -149,7 +149,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onresponderreject
    */
-  onResponderReject?: (e: PressEvent) => void | null | undefined;
+  onResponderReject?: ((e: PressEvent) => void) | null | undefined;
 
   /**
    * Fired at the end of the touch.
@@ -159,10 +159,10 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onresponderrelease
    */
-  onResponderRelease?: (e: PressEvent) => void | null | undefined;
+  onResponderRelease?: ((e: PressEvent) => void) | null | undefined;
 
-  onResponderStart?: (e: PressEvent) => void | null | undefined;
-  onResponderEnd?: (e: PressEvent) => void | null | undefined;
+  onResponderStart?: ((e: PressEvent) => void) | null | undefined;
+  onResponderEnd?: ((e: PressEvent) => void) | null | undefined;
 
   /**
    * The responder has been taken from the `View`. Might be taken by other
@@ -175,7 +175,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onresponderterminate
    */
-  onResponderTerminate?: (e: PressEvent) => void | null | undefined;
+  onResponderTerminate?: ((e: PressEvent) => void) | null | undefined;
 
   /**
    * Some other `View` wants to become responder and is asking this `View` to
@@ -186,7 +186,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onresponderterminationrequest
    */
-  onResponderTerminationRequest?: (e: PressEvent) => boolean | null | undefined;
+  onResponderTerminationRequest?: ((e: PressEvent) => boolean) | null | undefined;
 
   /**
    * Does this view want to become responder on the start of a touch?
@@ -196,7 +196,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onstartshouldsetresponder
    */
-  onStartShouldSetResponder?: (e: PressEvent) => boolean | null | undefined;
+  onStartShouldSetResponder?: ((e: PressEvent) => boolean) | null | undefined;
 
   /**
    * If a parent `View` wants to prevent a child `View` from becoming responder
@@ -207,7 +207,7 @@ type GestureResponderEventProps = $ReadOnly<{
    *
    * See http://facebook.github.io/react-native/docs/view.html#onstartshouldsetrespondercapture
    */
-  onStartShouldSetResponderCapture?: (e: PressEvent) => boolean | null | undefined;
+  onStartShouldSetResponderCapture?: ((e: PressEvent) => boolean) | null | undefined;
 }>;
 
 type AndroidDrawableThemeAttr = $ReadOnly<{
@@ -334,7 +334,7 @@ type AndroidViewProps = $ReadOnly<{
    *
    * @platform android
    */
-  onClick?: (event: PressEvent) => unknown | null | undefined;
+  onClick?: ((event: PressEvent) => unknown) | null | undefined;
 }>;
 
 type IOSViewProps = $ReadOnly<{

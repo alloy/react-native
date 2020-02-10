@@ -26,32 +26,13 @@ type Props = $ReadOnly<{
   message: Message;
   level: LogLevel;
   title: string;
-  onPress: () => void;
+  onPress: (() => void);
 }>;
 
 const SHOW_MORE_MESSAGE_LENGTH = 300;
 
 function LogBoxInspectorMessageHeader(props: Props): React.ReactNode {
-  function renderShowMore() {
-    if (props.message.content.length < SHOW_MORE_MESSAGE_LENGTH || !props.collapsed) {
-      return null;
-    }
-    return <Text style={messageStyles.collapse} onPress={() => props.onPress()}>
-        ... See More
-      </Text>;
-  }
-
-  return <View style={messageStyles.body}>
-      <View style={messageStyles.heading}>
-        <Text style={[messageStyles.headingText, messageStyles[props.level]]}>
-          {props.title}
-        </Text>
-      </View>
-      <Text style={messageStyles.bodyText}>
-        <LogBoxMessage maxLength={props.collapsed ? SHOW_MORE_MESSAGE_LENGTH : Infinity} message={props.message} style={messageStyles.messageText} />
-        {renderShowMore()}
-      </Text>
-    </View>;
+  return null as any;
 }
 
 const messageStyles = StyleSheet.create({

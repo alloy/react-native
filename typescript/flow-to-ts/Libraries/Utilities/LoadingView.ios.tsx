@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import processColor from "../StyleSheet/processColor";
 import NativeDevLoadingView from "./NativeDevLoadingView";
 
@@ -12,4 +24,4 @@ export default {
   hide() {
     NativeDevLoadingView && NativeDevLoadingView.hide();
   }
-};
+};;

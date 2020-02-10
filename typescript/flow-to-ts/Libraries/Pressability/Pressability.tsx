@@ -78,53 +78,53 @@ export type PressabilityConfig = $ReadOnly<{
   /**
    * Called after the element loses focus.
    */
-  onBlur?: (event: BlurEvent) => unknown | null | undefined;
+  onBlur?: ((event: BlurEvent) => unknown) | null | undefined;
 
   /**
    * Called after the element is focused.
    */
-  onFocus?: (event: FocusEvent) => unknown | null | undefined;
+  onFocus?: ((event: FocusEvent) => unknown) | null | undefined;
 
   /**
    * Called when the hover is activated to provide visual feedback.
    */
-  onHoverIn?: (event: MouseEvent) => unknown | null | undefined;
+  onHoverIn?: ((event: MouseEvent) => unknown) | null | undefined;
 
   /**
    * Called when the hover is deactivated to undo visual feedback.
    */
-  onHoverOut?: (event: MouseEvent) => unknown | null | undefined;
+  onHoverOut?: ((event: MouseEvent) => unknown) | null | undefined;
 
   /**
    * Called when a long press gesture has been triggered.
    */
-  onLongPress?: (event: PressEvent) => unknown | null | undefined;
+  onLongPress?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * Called when a press gestute has been triggered.
    */
-  onPress?: (event: PressEvent) => unknown | null | undefined;
+  onPress?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * Called when the press is activated to provide visual feedback.
    */
-  onPressIn?: (event: PressEvent) => unknown | null | undefined;
+  onPressIn?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * Called when the press location moves. (This should rarely be used.)
    */
-  onPressMove?: (event: PressEvent) => unknown | null | undefined;
+  onPressMove?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * Called when the press is deactivated to undo visual feedback.
    */
-  onPressOut?: (event: PressEvent) => unknown | null | undefined;
+  onPressOut?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * Returns whether a long press gesture should cancel the press gesture.
    * Defaults to true.
    */
-  onLongPressShouldCancelPress_DEPRECATED?: () => boolean | null | undefined;
+  onLongPressShouldCancelPress_DEPRECATED?: (() => boolean) | null | undefined;
 
   /**
    * If `cancelable` is set, this will be ignored.
@@ -132,7 +132,7 @@ export type PressabilityConfig = $ReadOnly<{
    * Returns whether to yield to a lock termination request (e.g. if a native
    * scroll gesture attempts to steal the responder lock).
    */
-  onResponderTerminationRequest_DEPRECATED?: () => boolean | null | undefined;
+  onResponderTerminationRequest_DEPRECATED?: (() => boolean) | null | undefined;
 
   /**
    * If `disabled` is set, this will be ignored.
@@ -141,21 +141,21 @@ export type PressabilityConfig = $ReadOnly<{
    *
    * @deprecated
    */
-  onStartShouldSetResponder_DEPRECATED?: () => boolean | null | undefined;
+  onStartShouldSetResponder_DEPRECATED?: (() => boolean) | null | undefined;
 }>;
 
 export type EventHandlers = $ReadOnly<{
-  onBlur: (event: BlurEvent) => void;
-  onClick: (event: PressEvent) => void;
-  onFocus: (event: FocusEvent) => void;
-  onMouseEnter?: (event: MouseEvent) => void;
-  onMouseLeave?: (event: MouseEvent) => void;
-  onResponderGrant: (event: PressEvent) => void;
-  onResponderMove: (event: PressEvent) => void;
-  onResponderRelease: (event: PressEvent) => void;
-  onResponderTerminate: (event: PressEvent) => void;
-  onResponderTerminationRequest: () => boolean;
-  onStartShouldSetResponder: () => boolean;
+  onBlur: ((event: BlurEvent) => void);
+  onClick: ((event: PressEvent) => void);
+  onFocus: ((event: FocusEvent) => void);
+  onMouseEnter?: ((event: MouseEvent) => void);
+  onMouseLeave?: ((event: MouseEvent) => void);
+  onResponderGrant: ((event: PressEvent) => void);
+  onResponderMove: ((event: PressEvent) => void);
+  onResponderRelease: ((event: PressEvent) => void);
+  onResponderTerminate: ((event: PressEvent) => void);
+  onResponderTerminationRequest: (() => boolean);
+  onStartShouldSetResponder: (() => boolean);
 }>;
 
 type TouchState = "NOT_RESPONDER" | "RESPONDER_INACTIVE_PRESS_IN" | "RESPONDER_INACTIVE_PRESS_OUT" | "RESPONDER_ACTIVE_PRESS_IN" | "RESPONDER_ACTIVE_PRESS_OUT" | "RESPONDER_ACTIVE_LONG_PRESS_IN" | "RESPONDER_ACTIVE_LONG_PRESS_OUT" | "ERROR";
@@ -792,7 +792,7 @@ export default class Pressability {
 }
 
 function normalizeDelay(delay: number | null | undefined, min = 0, fallback = 0): number {
-  return Math.max(min, delay ?? fallback);
+  return null as any;
 }
 
 const getTouchFromPressEvent = (event: PressEvent) => {

@@ -1,4 +1,15 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
 import NativeSoundManager from "./NativeSoundManager";
 
 const SoundManager = {
@@ -9,4 +20,4 @@ const SoundManager = {
   }
 };
 
-export default SoundManager;
+export default SoundManager;;

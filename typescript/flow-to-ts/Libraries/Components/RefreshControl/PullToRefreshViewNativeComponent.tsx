@@ -51,7 +51,7 @@ type NativeProps = $ReadOnly<ViewProps & {
 type ComponentType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly setNativeRefreshing: (viewRef: React.ElementRef<ComponentType>, refreshing: boolean) => void;
+  readonly setNativeRefreshing: ((viewRef: React.ElementRef<ComponentType>, refreshing: boolean) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

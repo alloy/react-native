@@ -32,12 +32,12 @@ type CommonProps = $ReadOnly<ViewProps & {
   /**
    * Used in case the props change removes the component.
    */
-  onChange?: (event: CheckBoxEvent) => unknown | null | undefined;
+  onChange?: ((event: CheckBoxEvent) => unknown) | null | undefined;
 
   /**
    * Invoked with the new value when the value changes.
    */
-  onValueChange?: (value: boolean) => unknown | null | undefined;
+  onValueChange?: ((value: boolean) => unknown) | null | undefined;
 
   /**
    * Used to locate this view in end-to-end tests.
@@ -188,4 +188,4 @@ const CheckBoxWithRef = React.forwardRef<Props, React.ElementRef<typeof AndroidC
   return <CheckBox {...props} forwardedRef={ref} />;
 });
 
-export default CheckBoxWithRef as CheckBoxType;
+export default CheckBoxWithRef as CheckBoxType;;

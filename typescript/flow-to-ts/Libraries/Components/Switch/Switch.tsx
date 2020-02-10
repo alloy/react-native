@@ -68,7 +68,7 @@ export type Props = $ReadOnly<ViewProps & {
    * Receives the change event as an argument. If you want to only receive the
    * new value, use `onValueChange` instead.
    */
-  onChange?: (event: SwitchChangeEvent) => Promise<void> | void | null | undefined;
+  onChange?: ((event: SwitchChangeEvent) => Promise<void> | void) | null | undefined;
 
   /**
    * Called when the user tries to change the value of the switch.
@@ -76,7 +76,7 @@ export type Props = $ReadOnly<ViewProps & {
    * Receives the new value as an argument. If you want to instead receive an
    * event, use `onChange`.
    */
-  onValueChange?: (value: boolean) => Promise<void> | void | null | undefined;
+  onValueChange?: ((value: boolean) => Promise<void> | void) | null | undefined;
 }>;
 
 /**
@@ -205,4 +205,4 @@ class Switch extends React.Component<Props> {
 const returnsFalse = () => false;
 const returnsTrue = () => true;
 
-export default Switch;
+export default Switch;;

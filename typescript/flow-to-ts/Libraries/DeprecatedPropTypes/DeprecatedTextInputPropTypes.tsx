@@ -472,4 +472,4 @@ export default {
    * @platform android
    */
   showSoftInputOnFocus: PropTypes.bool
-};
+};;

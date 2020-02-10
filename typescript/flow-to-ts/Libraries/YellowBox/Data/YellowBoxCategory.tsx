@@ -134,4 +134,4 @@ const YellowBoxCategory = {
   }
 };
 
-export default YellowBoxCategory;
+export default YellowBoxCategory;;

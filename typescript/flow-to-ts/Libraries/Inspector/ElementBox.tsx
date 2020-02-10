@@ -101,12 +101,7 @@ type Style = {
  * @return a modified copy
  */
 function resolveRelativeSizes(style: $ReadOnly<Style>): Style {
-  let resolvedStyle = Object.assign({}, style);
-  resolveSizeInPlace(resolvedStyle, 'top', 'height');
-  resolveSizeInPlace(resolvedStyle, 'right', 'width');
-  resolveSizeInPlace(resolvedStyle, 'bottom', 'height');
-  resolveSizeInPlace(resolvedStyle, 'left', 'width');
-  return resolvedStyle;
+  return null as any;
 }
 
 /**
@@ -128,4 +123,4 @@ function resolveSizeInPlace(style: Style, direction: string, dimension: string) 
   }
 }
 
-export default ElementBox;
+export default ElementBox;;

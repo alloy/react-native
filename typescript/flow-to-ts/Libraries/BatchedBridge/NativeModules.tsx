@@ -7,7 +7,7 @@ import { ExtendedError } from "../Core/Devtools/parseErrorStack";
 
 export type ModuleConfig = [string
 /* name */
-, Object | null | undefined
+, any | null | undefined
 /* constants */
 , ReadonlyArray<string> | null | undefined
 /* functions */
@@ -21,53 +21,17 @@ export type MethodType = "async" | "promise" | "sync";
 
 function genModule(config: ModuleConfig | null | undefined, moduleID: number): {
   name: string;
-  module?: Object;
+  module?: any;
 
 } | null | undefined {
-  if (!config) {
-    return null;
-  }
-
-  const [moduleName, constants, methods, promiseMethods, syncMethods] = config;
-  invariant(!moduleName.startsWith('RCT') && !moduleName.startsWith('RK'), "Module name prefixes should've been stripped by the native side " + "but wasn't for " + moduleName);
-
-  if (!constants && !methods) {
-    // Module contents will be filled in lazily later
-    return { name: moduleName };
-  }
-
-  const module = {};
-  methods && methods.forEach((methodName, methodID) => {
-    const isPromise = promiseMethods && arrayContains(promiseMethods, methodID);
-    const isSync = syncMethods && arrayContains(syncMethods, methodID);
-    invariant(!isPromise || !isSync, 'Cannot have a method that is both async and a sync hook');
-    const methodType = isPromise ? 'promise' : isSync ? 'sync' : 'async';
-    module[methodName] = genMethod(moduleID, methodID, methodType);
-  });
-
-  Object.assign(module, constants);
-
-  if (module.getConstants == null) {
-    module.getConstants = () => constants || Object.freeze({});
-  } else {
-    console.warn(`Unable to define method 'getConstants()' on NativeModule '${moduleName}'. NativeModule '${moduleName}' already has a constant or method called 'getConstants'. Please remove it.`);
-  }
-
-  if (__DEV__) {
-    BatchedBridge.createDebugLookup(moduleID, moduleName, methods);
-  }
-
-  return { name: moduleName, module };
+  return null as any;
 }
 
 // export this method as a global so we can call it from native
 global.__fbGenNativeModule = genModule;
 
-function loadModule(name: string, moduleID: number): Object | null | undefined {
-  invariant(global.nativeRequireModuleConfig, "Can't lazily create module without nativeRequireModuleConfig");
-  const config = global.nativeRequireModuleConfig(name);
-  const info = genModule(config, moduleID);
-  return info && info.module;
+function loadModule(name: string, moduleID: number): any | null | undefined {
+  return null as any;
 }
 
 function genMethod(moduleID: number, methodID: number, type: MethodType) {
@@ -103,15 +67,15 @@ function genMethod(moduleID: number, methodID: number, type: MethodType) {
 }
 
 function arrayContains<T>(array: ReadonlyArray<T>, value: T): boolean {
-  return array.indexOf(value) !== -1;
+  return null as any;
 }
 
 function updateErrorWithErrorData(errorData: {message: string;}, error: ExtendedError): ExtendedError {
-  return Object.assign(error, errorData || {});
+  return null as any;
 }
 
 let NativeModules: {
-  [moduleName: string]: Object;
+  [moduleName: string]: any;
 } = {};
 if (global.nativeModuleProxy) {
   NativeModules = global.nativeModuleProxy;
@@ -138,4 +102,4 @@ if (global.nativeModuleProxy) {
   });
 }
 
-export default NativeModules;
+export default NativeModules;;

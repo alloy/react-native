@@ -44,49 +44,5 @@ export default function Ansi({
   style: TextStyleProp;
 
 }): React.ReactNode {
-  let commonWhitespaceLength = Infinity;
-  const parsedLines = text.split(/\n/).map(line => ansiToJson(line, {
-    json: true,
-    remove_empty: true,
-    use_classes: true
-  }));
-
-  parsedLines.map(lines => {
-    // The third item on each line includes the whitespace of the source code.
-    // We are looking for the least amount of common whitespace to trim all lines.
-    // Example: Array [" ", " 96 |", "     text", ...]
-    const match = lines[2] && lines[2]?.content?.match(/^ +/);
-    const whitespaceLength = match && match[0]?.length || Infinity;
-    if (whitespaceLength < commonWhitespaceLength) {
-      commonWhitespaceLength = whitespaceLength;
-    }
-  });
-
-  const getText = (content, key) => {
-    if (key === 1) {
-      // Remove the vertical bar after line numbers
-      return content.replace(/\| $/, ' ');
-    } else if (key === 2 && commonWhitespaceLength < Infinity) {
-      // Remove common whitespace at the beginning of the line
-      return content.substr(commonWhitespaceLength);
-    } else {
-      return content;
-    }
-  };
-
-  return <View style={{ flexDirection: 'column' }}>
-      {parsedLines.map((items, i) => <View style={{ flexDirection: 'row' }} key={i}>
-          {items.map((bundle, key) => {
-        const textStyle = bundle.fg && COLORS[bundle.fg] ? {
-          backgroundColor: bundle.bg && COLORS[bundle.bg],
-          color: bundle.fg && COLORS[bundle.fg]
-        } : {
-          backgroundColor: bundle.bg && COLORS[bundle.bg]
-        };
-        return <Text style={[style, textStyle]} key={key}>
-                {getText(bundle.content, key)}
-              </Text>;
-      })}
-        </View>)}
-    </View>;
+  return null as any;
 }

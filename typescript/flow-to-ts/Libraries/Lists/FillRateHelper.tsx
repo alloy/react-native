@@ -27,7 +27,7 @@ type FrameMetrics = {
 
 const DEBUG = false;
 
-let _listeners: Array<(arg0: Info) => void> = [];
+let _listeners: Array<((arg0: Info) => void)> = [];
 let _minSampleCount = 10;
 let _sampleRate = DEBUG ? 1 : null;
 
@@ -43,12 +43,12 @@ class FillRateHelper {
 
   _anyBlankStartTime = (null as number | null | undefined);
   _enabled = false;
-  _getFrameMetrics: (index: number) => FrameMetrics | null | undefined;
+  _getFrameMetrics: ((index: number) => FrameMetrics | null | undefined);
   _info = new Info();
   _mostlyBlankStartTime = (null as number | null | undefined);
   _samplesStartTime = (null as number | null | undefined);
 
-  static addListener(callback: (arg0: FillRateInfo) => void): {remove: () => void;} {
+  static addListener(callback: ((arg0: FillRateInfo) => void)): {remove: (() => void);} {
     warning(_sampleRate !== null, 'Call `FillRateHelper.setSampleRate` before `addListener`.');
     _listeners.push(callback);
     return {
@@ -66,7 +66,7 @@ class FillRateHelper {
     _minSampleCount = minSampleCount;
   }
 
-  constructor(getFrameMetrics: (index: number) => FrameMetrics | null | undefined) {
+  constructor(getFrameMetrics: ((index: number) => FrameMetrics | null | undefined)) {
     this._getFrameMetrics = getFrameMetrics;
     this._enabled = (_sampleRate || 0) > Math.random();
     this._resetData();
@@ -119,7 +119,7 @@ class FillRateHelper {
 
   computeBlankness(props: {
     data: any;
-    getItemCount: (data: any) => number;
+    getItemCount: ((data: any) => number);
     initialNumToRender: number;
 
   }, state: {
@@ -215,4 +215,4 @@ class FillRateHelper {
   }
 }
 
-export default FillRateHelper;
+export default FillRateHelper;;

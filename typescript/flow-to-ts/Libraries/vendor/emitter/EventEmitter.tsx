@@ -47,7 +47,7 @@ class EventEmitter {
    * @param {*} context - Optional context object to use when invoking the
    *   listener
    */
-  addListener(eventType: string, listener: Function, context: Object | null | undefined): EmitterSubscription {
+  addListener(eventType: string, listener: ((...args: any) => any), context: any | null | undefined): EmitterSubscription {
     return (this._subscriber.addSubscription(eventType, new EmitterSubscription(this, this._subscriber, listener, context)) as any);
   }
 
@@ -61,7 +61,7 @@ class EventEmitter {
    * @param {*} context - Optional context object to use when invoking the
    *   listener
    */
-  once(eventType: string, listener: Function, context: Object | null | undefined): EmitterSubscription {
+  once(eventType: string, listener: ((...args: any) => any), context: any | null | undefined): EmitterSubscription {
     return this.addListener(eventType, (...args) => {
       this.removeCurrentListener();
       listener.apply(context, args);
@@ -189,4 +189,4 @@ class EventEmitter {
   }
 }
 
-export default EventEmitter;
+export default EventEmitter;;

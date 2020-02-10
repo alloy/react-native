@@ -1,5 +1,17 @@
-'use strict';;
-export type EventSender = (name: string, params: Object) => void;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+export type EventSender = ((name: string, params: any) => void);
 
 class InspectorAgent {
 
@@ -9,9 +21,9 @@ class InspectorAgent {
     this._eventSender = eventSender;
   }
 
-  sendEvent(name: string, params: Object) {
+  sendEvent(name: string, params: any) {
     this._eventSender(name, params);
   }
 }
 
-export default InspectorAgent;
+export default InspectorAgent;;

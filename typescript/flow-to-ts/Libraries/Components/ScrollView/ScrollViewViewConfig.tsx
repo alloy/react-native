@@ -1,4 +1,20 @@
 'use strict';;
+import _Import0 from '../../Utilities/differ/pointsDiffer';
+import _Import1 from '../../Utilities/differ/pointsDiffer';
+import _Import2 from '../../StyleSheet/processColor';
+import _Import3 from '../../Utilities/differ/pointsDiffer';
+
+
+
+
+
+
+
+
+
+
+
+
 import { GeneratedViewConfig } from "../../Utilities/registerGeneratedViewConfig";
 
 const ScrollViewViewConfig = {
@@ -17,13 +33,13 @@ const ScrollViewViewConfig = {
     bouncesZoom: true,
     canCancelContentTouches: true,
     centerContent: true,
-    contentInset: { diff: require('../../Utilities/differ/pointsDiffer') },
-    contentOffset: { diff: require('../../Utilities/differ/pointsDiffer') },
+    contentInset: { diff: _Import0 },
+    contentOffset: { diff: _Import1 },
     contentInsetAdjustmentBehavior: true,
     decelerationRate: true,
     directionalLockEnabled: true,
     disableIntervalMomentum: true,
-    endFillColor: { process: require('../../StyleSheet/processColor') },
+    endFillColor: { process: _Import2 },
     fadingEdgeLength: true,
     indicatorStyle: true,
     keyboardDismissMode: true,
@@ -44,7 +60,7 @@ const ScrollViewViewConfig = {
     scrollEnabled: true,
     scrollEventThrottle: true,
     scrollIndicatorInsets: {
-      diff: require('../../Utilities/differ/pointsDiffer')
+      diff: _Import3
     },
     scrollPerfTag: true,
     scrollToOverflowEnabled: true,
@@ -63,4 +79,4 @@ const ScrollViewViewConfig = {
   }
 };
 
-export default ScrollViewViewConfig as GeneratedViewConfig;
+export default ScrollViewViewConfig as GeneratedViewConfig;;

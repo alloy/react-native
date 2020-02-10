@@ -15,8 +15,8 @@ import { TurboModule } from "../TurboModule/RCTExport";
 import * as TurboModuleRegistry from "../TurboModule/TurboModuleRegistry";
 
 export interface Spec extends TurboModule {
-  readonly getConstants: () => {};
-  readonly showActionSheetWithOptions: (options: {
+  readonly getConstants: (() => {});
+  readonly showActionSheetWithOptions: ((options: {
     readonly title?: string | null | undefined;
     readonly message?: string | null | undefined;
     readonly options: Array<string> | null | undefined;
@@ -24,20 +24,20 @@ export interface Spec extends TurboModule {
     readonly cancelButtonIndex?: number | null | undefined;
     readonly anchor?: number | null | undefined;
     readonly tintColor?: number | null | undefined;
-  }, callback: (buttonIndex: number) => void) => void;
-  readonly showShareActionSheetWithOptions: (options: {
+  }, callback: ((buttonIndex: number) => void)) => void);
+  readonly showShareActionSheetWithOptions: ((options: {
     readonly message?: string | null | undefined;
     readonly url?: string | null | undefined;
     readonly subject?: string | null | undefined;
     readonly anchor?: number | null | undefined;
     readonly tintColor?: number | null | undefined;
     readonly excludedActivityTypes?: Array<string> | null | undefined;
-  }, failureCallback: (error: {
+  }, failureCallback: ((error: {
     readonly domain: string;
     readonly code: string;
-    readonly userInfo?: Object | null | undefined;
+    readonly userInfo?: any | null | undefined;
     readonly message: string;
-  }) => void, successCallback: (completed: boolean, activityType: string | null | undefined) => void) => void;
+  }) => void), successCallback: ((completed: boolean, activityType: string | null | undefined) => void)) => void);
 }
 
 export default (TurboModuleRegistry.get<Spec>('ActionSheetManager') as Spec | null | undefined);

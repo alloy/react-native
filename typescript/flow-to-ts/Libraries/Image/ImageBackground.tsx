@@ -30,7 +30,7 @@ import View from '../Components/View/View';
  */
 class ImageBackground extends React.Component<$FlowFixMeProps> {
 
-  setNativeProps(props: Object) {
+  setNativeProps(props: any) {
     // Work-around flow
     const viewRef = this._viewRef;
     if (viewRef) {
@@ -70,4 +70,4 @@ class ImageBackground extends React.Component<$FlowFixMeProps> {
   }
 }
 
-export default ImageBackground;
+export default ImageBackground;;

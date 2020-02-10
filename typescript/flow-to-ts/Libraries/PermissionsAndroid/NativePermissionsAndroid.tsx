@@ -48,12 +48,12 @@ export type PermissionType =
   | 'android.permission.WRITE_EXTERNAL_STORAGE';
 */
 export interface Spec extends TurboModule {
-  readonly checkPermission: (permission: PermissionType) => Promise<boolean>;
-  readonly requestPermission: (permission: PermissionType) => Promise<PermissionStatus>;
-  readonly shouldShowRequestPermissionRationale: (permission: string) => Promise<boolean>;
-  readonly requestMultiplePermissions: (permissions: Array<PermissionType>) => Promise<{
+  readonly checkPermission: ((permission: PermissionType) => Promise<boolean>);
+  readonly requestPermission: ((permission: PermissionType) => Promise<PermissionStatus>);
+  readonly shouldShowRequestPermissionRationale: ((permission: string) => Promise<boolean>);
+  readonly requestMultiplePermissions: ((permissions: Array<PermissionType>) => Promise<{
     [permission: PermissionType]: PermissionStatus;
-  }>;
+  }>);
 }
 
 export default (TurboModuleRegistry.get<Spec>('PermissionsAndroid') as Spec | null | undefined);

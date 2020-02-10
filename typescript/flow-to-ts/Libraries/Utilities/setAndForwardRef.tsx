@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -15,8 +15,8 @@ import { $ReadOnly } from "utility-types";
 import { ElementRef, Ref } from "react";
 
 type Args = $ReadOnly<{
-  getForwardedRef: () => Ref<any> | null | undefined;
-  setLocalRef: (ref: ElementRef<any>) => unknown;
+  getForwardedRef: (() => Ref<any> | null | undefined);
+  setLocalRef: ((ref: ElementRef<any>) => unknown);
 }>;
 
 /**
@@ -52,21 +52,8 @@ type Args = $ReadOnly<{
 function setAndForwardRef({
   getForwardedRef,
   setLocalRef
-}: Args): (ref: ElementRef<any>) => void {
-  return function forwardRef(ref: ElementRef<any>) {
-    const forwardedRef = getForwardedRef();
-
-    setLocalRef(ref);
-
-    // Forward to user ref prop (if one has been specified)
-    if (typeof forwardedRef === 'function') {
-      // Handle function-based refs. String-based refs are handled as functions.
-      forwardedRef(ref);
-    } else if (typeof forwardedRef === 'object' && forwardedRef != null) {
-      // Handle createRef-based refs
-      forwardedRef.current = ref;
-    }
-  };
+}: Args): ((ref: ElementRef<any>) => void) {
+  return null as any;
 }
 
-export default setAndForwardRef;
+export default setAndForwardRef;;

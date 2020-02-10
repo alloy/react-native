@@ -10,4 +10,4 @@ const PointPropType: React$PropType$Primitive<{
   y: PropTypes.number
 });
 
-export default PointPropType;
+export default PointPropType;;

@@ -1,4 +1,15 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
 import NativeDialogManagerAndroid from "../NativeModules/specs/NativeDialogManagerAndroid";
 
 function emptyCallback() {}
@@ -12,4 +23,4 @@ export default {
 
     NativeDialogManagerAndroid.showAlert(args, emptyCallback, callback || emptyCallback);
   }
-};
+};;

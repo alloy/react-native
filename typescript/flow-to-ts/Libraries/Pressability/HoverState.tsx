@@ -51,5 +51,5 @@ if (Platform.OS === 'web') {
 }
 
 export function isHoverEnabled(): boolean {
-  return isEnabled;
+  return null as any;
 }

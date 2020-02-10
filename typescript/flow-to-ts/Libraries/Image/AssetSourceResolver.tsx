@@ -3,6 +3,18 @@ import PixelRatio from '../Utilities/PixelRatio';
 import Platform from '../Utilities/Platform';
 import assetPathUtils from './assetPathUtils';
 import invariant from 'invariant';
+
+
+
+
+
+
+
+
+
+
+
+
 export type ResolvedAssetSource = {
   readonly __packager_asset: boolean;
   readonly width: number | null | undefined;
@@ -17,20 +29,14 @@ import { PackagerAsset } from "./AssetRegistry";
  * Returns a path like 'assets/AwesomeModule/icon@2x.png'
  */
 function getScaledAssetPath(asset): string {
-  const scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());
-  const scaleSuffix = scale === 1 ? '' : '@' + scale + 'x';
-  const assetDir = assetPathUtils.getBasePath(asset);
-  return assetDir + '/' + asset.name + scaleSuffix + '.' + asset.type;
+  return null as any;
 }
 
 /**
  * Returns a path like 'drawable-mdpi/icon.png'
  */
 function getAssetPathInDrawableFolder(asset): string {
-  const scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());
-  const drawbleFolder = assetPathUtils.getAndroidResourceFolderName(asset, scale);
-  const fileName = assetPathUtils.getAndroidResourceIdentifier(asset);
-  return drawbleFolder + '/' + fileName + '.' + asset.type;
+  return null as any;
 }
 
 class AssetSourceResolver {
@@ -142,4 +148,4 @@ class AssetSourceResolver {
   }
 }
 
-export default AssetSourceResolver;
+export default AssetSourceResolver;;

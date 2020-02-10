@@ -48,7 +48,7 @@ export type IOSKeyboardEvent = $ReadOnly<BaseKeyboardEvent & {
   isEventFromThisApp: boolean;
 }>;
 
-type KeyboardEventListener = (e: KeyboardEvent) => void;
+type KeyboardEventListener = ((e: KeyboardEvent) => void);
 
 // The following object exists for documentation purposes
 // Actual work happens in
@@ -176,4 +176,4 @@ KeyboardEventEmitter.scheduleLayoutAnimation = function (event: KeyboardEvent) {
   }
 };
 
-export default KeyboardEventEmitter;
+export default KeyboardEventEmitter;;

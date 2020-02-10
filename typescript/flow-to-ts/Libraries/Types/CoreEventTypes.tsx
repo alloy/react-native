@@ -24,13 +24,13 @@ export type SyntheticEvent<T> = $ReadOnly<{
     registrationName: string;
   }>;
   eventPhase: number | null | undefined;
-  preventDefault: () => void;
-  isDefaultPrevented: () => boolean;
-  stopPropagation: () => void;
-  isPropagationStopped: () => boolean;
+  preventDefault: (() => void);
+  isDefaultPrevented: (() => boolean);
+  stopPropagation: (() => void);
+  isPropagationStopped: (() => boolean);
   isTrusted: boolean | null | undefined;
   nativeEvent: T;
-  persist: () => void;
+  persist: (() => void);
   target: (number | null | undefined) | React.ElementRef<HostComponent<unknown>>;
   timeStamp: number;
   type: string | null | undefined;

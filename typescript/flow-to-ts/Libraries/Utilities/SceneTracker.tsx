@@ -1,7 +1,19 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 export type Scene = {name: string;};
 
-let _listeners: Array<(scene: Scene) => void> = [];
+let _listeners: Array<((scene: Scene) => void)> = [];
 
 let _activeScene = { name: 'default' };
 
@@ -15,7 +27,7 @@ const SceneTracker = {
     return _activeScene;
   },
 
-  addActiveSceneChangedListener(callback: (scene: Scene) => void): {remove: () => void;} {
+  addActiveSceneChangedListener(callback: ((scene: Scene) => void)): {remove: (() => void);} {
     _listeners.push(callback);
     return {
       remove: () => {
@@ -25,4 +37,4 @@ const SceneTracker = {
   }
 };
 
-export default SceneTracker;
+export default SceneTracker;;

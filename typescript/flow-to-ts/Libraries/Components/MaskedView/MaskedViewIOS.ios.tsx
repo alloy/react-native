@@ -80,4 +80,4 @@ class MaskedViewIOS extends React.Component<Props> {
   }
 }
 
-export default MaskedViewIOS;
+export default MaskedViewIOS;;

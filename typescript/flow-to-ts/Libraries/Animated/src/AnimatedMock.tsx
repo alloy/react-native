@@ -1,11 +1,5 @@
 'use strict';;
 import _Import0 from './AnimatedEvent';
-
-const {
-  AnimatedEvent,
-  attachNativeEvent
-} = _Import0;
-
 import AnimatedImplementation from './AnimatedImplementation';
 import AnimatedInterpolation from './nodes/AnimatedInterpolation';
 import AnimatedNode from './nodes/AnimatedNode';
@@ -13,6 +7,22 @@ import AnimatedProps from './nodes/AnimatedProps';
 import AnimatedValue from './nodes/AnimatedValue';
 import AnimatedValueXY from './nodes/AnimatedValueXY';
 import createAnimatedComponent from './createAnimatedComponent';
+
+
+
+
+
+
+
+
+
+
+
+
+const {
+  AnimatedEvent,
+  attachNativeEvent
+} = _Import0;
 
 import { EndCallback } from "./animations/Animation";
 import { TimingAnimationConfig } from "./animations/TimingAnimation";
@@ -26,11 +36,11 @@ import { Mapping, EventConfig } from "./AnimatedEvent";
  * predictability in tests.
  */
 export type CompositeAnimation = {
-  start: (callback?: EndCallback | null | undefined) => void;
-  stop: () => void;
-  reset: () => void;
-  _startNativeLoop: (iterations?: number) => void;
-  _isUsingNativeDriver: () => boolean;
+  start: ((callback?: EndCallback | null | undefined) => void);
+  stop: (() => void);
+  reset: (() => void);
+  _startNativeLoop: ((iterations?: number) => void);
+  _isUsingNativeDriver: (() => boolean);
 
 };
 
@@ -129,4 +139,4 @@ export default {
   unforkEvent: AnimatedImplementation.unforkEvent,
   Event: AnimatedEvent,
   __PropsOnlyForTests: AnimatedProps
-};
+};;

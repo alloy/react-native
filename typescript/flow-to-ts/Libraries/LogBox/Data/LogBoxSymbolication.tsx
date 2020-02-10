@@ -50,16 +50,8 @@ const sanitize = ({
   return { stack, codeFrame };
 };
 
-export function deleteStack(stack: Stack): void {
-  cache.delete(stack);
-}
+export function deleteStack(stack: Stack): void {}
 
 export function symbolicate(stack: Stack): Promise<SymbolicatedStackTrace> {
-  let promise = cache.get(stack);
-  if (promise == null) {
-    promise = symbolicateStackTrace(stack).then(sanitize);
-    cache.set(stack, promise);
-  }
-
-  return promise;
+  return null as any;
 }

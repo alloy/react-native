@@ -199,7 +199,7 @@ const AccessibilityInfo = {
    *
    * See http://facebook.github.io/react-native/docs/accessibilityinfo.html#addeventlistener
    */
-  addEventListener: function (eventName: ChangeEventName, handler: Function): Object {
+  addEventListener: function (eventName: ChangeEventName, handler: ((...args: any) => any)): any {
     let listener;
 
     if (eventName === 'change') {
@@ -241,7 +241,7 @@ const AccessibilityInfo = {
    *
    * See http://facebook.github.io/react-native/docs/accessibilityinfo.html#removeeventlistener
    */
-  removeEventListener: function (eventName: ChangeEventName, handler: Function): void {
+  removeEventListener: function (eventName: ChangeEventName, handler: ((...args: any) => any)): void {
     const listener = _subscriptions.get(handler);
     if (!listener) {
       return;
@@ -251,4 +251,4 @@ const AccessibilityInfo = {
   }
 };
 
-export default AccessibilityInfo;
+export default AccessibilityInfo;;

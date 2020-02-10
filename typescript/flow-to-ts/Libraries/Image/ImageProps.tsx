@@ -41,14 +41,14 @@ type IOSImageProps = $ReadOnly<{
    *
    * See https://facebook.github.io/react-native/docs/image.html#onpartialload
    */
-  onPartialLoad?: () => void | null | undefined;
+  onPartialLoad?: (() => void) | null | undefined;
 
   /**
    * Invoked on download progress with `{nativeEvent: {loaded, total}}`.
    *
    * See https://facebook.github.io/react-native/docs/image.html#onprogress
    */
-  onProgress?: (event: React.SyntheticEvent<$ReadOnly<{loaded: number;total: number;}>>) => void | null | undefined;
+  onProgress?: ((event: React.SyntheticEvent<$ReadOnly<{loaded: number;total: number;}>>) => void) | null | undefined;
 }>;
 
 type AndroidImageProps = $ReadOnly<{
@@ -90,9 +90,9 @@ export type ImageProps = $Diff<ViewProps, $ReadOnly<{style: ViewStyleProp | null
    *
    * See https://facebook.github.io/react-native/docs/image.html#onerror
    */
-  onError?: (event: React.SyntheticEvent<$ReadOnly<{
+  onError?: ((event: React.SyntheticEvent<$ReadOnly<{
     error: string;
-  }>>) => void | null | undefined;
+  }>>) => void) | null | undefined;
 
   /**
    * Invoked on mount and layout changes with
@@ -100,28 +100,28 @@ export type ImageProps = $Diff<ViewProps, $ReadOnly<{style: ViewStyleProp | null
    *
    * See https://facebook.github.io/react-native/docs/image.html#onlayout
    */
-  onLayout?: (event: LayoutEvent) => unknown | null | undefined;
+  onLayout?: ((event: LayoutEvent) => unknown) | null | undefined;
 
   /**
    * Invoked when load completes successfully.
    *
    * See https://facebook.github.io/react-native/docs/image.html#onload
    */
-  onLoad?: (event: ImageLoadEvent) => void | null | undefined;
+  onLoad?: ((event: ImageLoadEvent) => void) | null | undefined;
 
   /**
    * Invoked when load either succeeds or fails.
    *
    * See https://facebook.github.io/react-native/docs/image.html#onloadend
    */
-  onLoadEnd?: () => void | null | undefined;
+  onLoadEnd?: (() => void) | null | undefined;
 
   /**
    * Invoked on load start.
    *
    * See https://facebook.github.io/react-native/docs/image.html#onloadstart
    */
-  onLoadStart?: () => void | null | undefined;
+  onLoadStart?: (() => void) | null | undefined;
 
   /**
    * See https://facebook.github.io/react-native/docs/image.html#resizemethod

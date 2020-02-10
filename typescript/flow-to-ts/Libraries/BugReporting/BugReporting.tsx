@@ -1,5 +1,6 @@
 'use strict';;
 import RCTDeviceEventEmitter from '../EventEmitter/RCTDeviceEventEmitter';
+import _Import0 from './dumpReactTree';
 
 import EmitterSubscription from "../vendor/emitter/EmitterSubscription";
 import NativeBugReporting from "./NativeBugReporting";
@@ -8,7 +9,7 @@ import NativeRedBox from "../NativeModules/specs/NativeRedBox";
 type ExtraData = {
   [key: string]: string;
 };
-type SourceCallback = () => string;
+type SourceCallback = (() => string);
 type DebugData = {
   extras: ExtraData;
   files: ExtraData;
@@ -16,7 +17,7 @@ type DebugData = {
 };
 
 function defaultExtras() {
-  BugReporting.addFileSource('react_hierarchy.txt', () => require('./dumpReactTree')());
+  BugReporting.addFileSource('react_hierarchy.txt', () => _Import0());
 }
 
 /**
@@ -51,7 +52,7 @@ class BugReporting {
    *
    * Conflicts trample with a warning.
    */
-  static addSource(key: string, callback: SourceCallback): {remove: () => void;} {
+  static addSource(key: string, callback: SourceCallback): {remove: (() => void);} {
     return this._addSource(key, callback, BugReporting._extraSources);
   }
 
@@ -63,11 +64,11 @@ class BugReporting {
    *
    * Conflicts trample with a warning.
    */
-  static addFileSource(key: string, callback: SourceCallback): {remove: () => void;} {
+  static addFileSource(key: string, callback: SourceCallback): {remove: (() => void);} {
     return this._addSource(key, callback, BugReporting._fileSources);
   }
 
-  static _addSource(key: string, callback: SourceCallback, source: Map<string, SourceCallback>): {remove: () => void;} {
+  static _addSource(key: string, callback: SourceCallback, source: Map<string, SourceCallback>): {remove: (() => void);} {
     BugReporting._maybeInit();
     if (source.has(key)) {
       console.warn(`BugReporting.add* called multiple times for same key '${key}'`);
@@ -108,4 +109,4 @@ class BugReporting {
   }
 }
 
-export default BugReporting;
+export default BugReporting;;

@@ -1,5 +1,18 @@
 'use strict';;
 import Platform from '../Utilities/Platform';
+
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeVibration from "./NativeVibration";
 
 /**
@@ -85,4 +98,4 @@ const Vibration = {
   }
 };
 
-export default Vibration;
+export default Vibration;;

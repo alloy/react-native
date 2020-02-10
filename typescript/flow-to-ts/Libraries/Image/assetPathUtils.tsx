@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import { PackagerAsset } from "./AssetRegistry";
 
 const androidScaleSuffix = {
@@ -15,41 +27,22 @@ const androidScaleSuffix = {
  * floating point numbers imprecision.
  */
 function getAndroidAssetSuffix(scale: number): string {
-  if (scale.toString() in androidScaleSuffix) {
-    return androidScaleSuffix[scale.toString()];
-  }
-
-  throw new Error('no such scale ' + scale.toString());
+  return null as any;
 }
 
 // See https://developer.android.com/guide/topics/resources/drawable-resource.html
 const drawableFileTypes = new Set(['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp', 'xml']);
 
 function getAndroidResourceFolderName(asset: PackagerAsset, scale: number): string | $TEMPORARY$string<"raw"> {
-  if (!drawableFileTypes.has(asset.type)) {
-    return 'raw';
-  }
-  var suffix = getAndroidAssetSuffix(scale);
-  if (!suffix) {
-    throw new Error("Don't know which android drawable suffix to use for scale: " + scale + '\nAsset: ' + JSON.stringify(asset, null, '\t') + '\nPossible scales are:' + JSON.stringify(androidScaleSuffix, null, '\t'));
-  }
-  const androidFolder = 'drawable-' + suffix;
-  return androidFolder;
+  return null as any;
 }
 
 function getAndroidResourceIdentifier(asset: PackagerAsset): string {
-  var folderPath = getBasePath(asset);
-  return (folderPath + '/' + asset.name).toLowerCase().replace(/\//g, '_') // Encode folder structure in file name
-  .replace(/([^a-z0-9_])/g, '') // Remove illegal chars
-  .replace(/^assets_/, ''); // Remove "assets_" prefix
+  return null as any;
 }
 
 function getBasePath(asset: PackagerAsset): string {
-  var basePath = asset.httpServerLocation;
-  if (basePath[0] === '/') {
-    basePath = basePath.substr(1);
-  }
-  return basePath;
+  return null as any;
 }
 
 export default {
@@ -57,4 +50,4 @@ export default {
   getAndroidResourceFolderName: getAndroidResourceFolderName,
   getAndroidResourceIdentifier: getAndroidResourceIdentifier,
   getBasePath: getBasePath
-};
+};;

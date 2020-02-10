@@ -72,7 +72,7 @@ export type Props = {
    * Called when all the descendants have finished rendering and mounting
    * recursively.
    */
-  onDone?: () => void;
+  onDone?: (() => void);
 
   /**
    * Tags instances and associated tasks for easier debugging.
@@ -174,4 +174,4 @@ export type Context = {
 
 };
 
-export default Incremental;
+export default Incremental;;

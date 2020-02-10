@@ -34,4 +34,4 @@ class File extends Blob {
   }
 }
 
-export default File;
+export default File;;

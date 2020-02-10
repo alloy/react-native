@@ -1,5 +1,30 @@
 'use strict';;
 import _Import0 from '../Utilities/PolyfillFunctions';
+import _Import1 from '../Network/XMLHttpRequest';
+import _Import2 from '../Network/FormData';
+import _Import3 from '../Network/fetch';
+import _Import4 from '../Network/fetch';
+import _Import5 from '../Network/fetch';
+import _Import6 from '../Network/fetch';
+import _Import7 from '../WebSocket/WebSocket';
+import _Import8 from '../Blob/Blob';
+import _Import9 from '../Blob/File';
+import _Import10 from '../Blob/FileReader';
+import _Import11 from '../Blob/URL';
+import _Import12 from '../Blob/URL';
+import _Import13 from 'abort-controller/dist/abort-controller';
+import _Import14 from 'abort-controller/dist/abort-controller';
+
+
+
+
+
+
+
+
+
+
+
 
 const {
   polyfillGlobal
@@ -11,20 +36,20 @@ const {
  *
  * You can use this module directly, or just require InitializeCore.
  */
-polyfillGlobal('XMLHttpRequest', () => require('../Network/XMLHttpRequest'));
-polyfillGlobal('FormData', () => require('../Network/FormData'));
+polyfillGlobal('XMLHttpRequest', () => _Import1);
+polyfillGlobal('FormData', () => _Import2);
 
-polyfillGlobal('fetch', () => require('../Network/fetch').fetch); // flowlint-line untyped-import:off
-polyfillGlobal('Headers', () => require('../Network/fetch').Headers); // flowlint-line untyped-import:off
-polyfillGlobal('Request', () => require('../Network/fetch').Request); // flowlint-line untyped-import:off
-polyfillGlobal('Response', () => require('../Network/fetch').Response); // flowlint-line untyped-import:off
-polyfillGlobal('WebSocket', () => require('../WebSocket/WebSocket'));
-polyfillGlobal('Blob', () => require('../Blob/Blob'));
-polyfillGlobal('File', () => require('../Blob/File'));
-polyfillGlobal('FileReader', () => require('../Blob/FileReader'));
-polyfillGlobal('URL', () => require('../Blob/URL').URL); // flowlint-line untyped-import:off
-polyfillGlobal('URLSearchParams', () => require('../Blob/URL').URLSearchParams); // flowlint-line untyped-import:off
-polyfillGlobal('AbortController', () => require('abort-controller/dist/abort-controller').AbortController // flowlint-line untyped-import:off
+polyfillGlobal('fetch', () => _Import3.fetch); // flowlint-line untyped-import:off
+polyfillGlobal('Headers', () => _Import4.Headers); // flowlint-line untyped-import:off
+polyfillGlobal('Request', () => _Import5.Request); // flowlint-line untyped-import:off
+polyfillGlobal('Response', () => _Import6.Response); // flowlint-line untyped-import:off
+polyfillGlobal('WebSocket', () => _Import7);
+polyfillGlobal('Blob', () => _Import8);
+polyfillGlobal('File', () => _Import9);
+polyfillGlobal('FileReader', () => _Import10);
+polyfillGlobal('URL', () => _Import11.URL); // flowlint-line untyped-import:off
+polyfillGlobal('URLSearchParams', () => _Import12.URLSearchParams); // flowlint-line untyped-import:off
+polyfillGlobal('AbortController', () => _Import13.AbortController // flowlint-line untyped-import:off
 );
-polyfillGlobal('AbortSignal', () => require('abort-controller/dist/abort-controller').AbortSignal // flowlint-line untyped-import:off
+polyfillGlobal('AbortSignal', () => _Import14.AbortSignal // flowlint-line untyped-import:off
 );

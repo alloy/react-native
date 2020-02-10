@@ -4,4 +4,4 @@ import React from 'react';
 /**
  * Whether the current element is the descendant of a <Text> element.
  */
-export default React.createContext(false) as React$Context<$FlowFixMe>;
+export default React.createContext(false) as React$Context<$FlowFixMe>;;

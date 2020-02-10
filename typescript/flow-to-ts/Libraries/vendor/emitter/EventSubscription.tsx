@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import EventSubscriptionVendor from "./EventSubscriptionVendor";
 
 /**
@@ -27,4 +39,4 @@ class EventSubscription {
   }
 }
 
-export default EventSubscription;
+export default EventSubscription;;

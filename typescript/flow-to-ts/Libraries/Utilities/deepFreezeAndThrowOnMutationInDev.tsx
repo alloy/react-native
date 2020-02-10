@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * If your application is accepting different values for the same field over
  * time and is doing a diff on them, you can either (1) create a copy or
@@ -16,38 +28,8 @@
  * Freezing the object and adding the throw mechanism is expensive and will
  * only be used in DEV.
  */
-function deepFreezeAndThrowOnMutationInDev<T extends Object>(object: T): T {
-  if (__DEV__) {
-    if (typeof object !== 'object' || object === null || Object.isFrozen(object) || Object.isSealed(object)) {
-      return object;
-    }
-
-    const keys = Object.keys(object);
-    const hasOwnProperty = Object.prototype.hasOwnProperty;
-
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      if (hasOwnProperty.call(object, key)) {
-        Object.defineProperty(object, key, {
-          get: identity.bind(null, object[key])
-        });
-        Object.defineProperty(object, key, {
-          set: throwOnImmutableMutation.bind(null, key)
-        });
-      }
-    }
-
-    Object.freeze(object);
-    Object.seal(object);
-
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      if (hasOwnProperty.call(object, key)) {
-        deepFreezeAndThrowOnMutationInDev(object[key]);
-      }
-    }
-  }
-  return object;
+function deepFreezeAndThrowOnMutationInDev<T extends any>(object: T): T {
+  return null as any;
 }
 
 function throwOnImmutableMutation(key, value) {
@@ -58,4 +40,4 @@ function identity(value) {
   return value;
 }
 
-export default deepFreezeAndThrowOnMutationInDev;
+export default deepFreezeAndThrowOnMutationInDev;;

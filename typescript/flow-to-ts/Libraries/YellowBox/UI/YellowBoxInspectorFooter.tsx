@@ -20,8 +20,8 @@ import { $ReadOnly } from "utility-types";
 
 
 type Props = $ReadOnly<{
-  onDismiss: () => void;
-  onMinimize: () => void;
+  onDismiss: (() => void);
+  onMinimize: (() => void);
 }>;
 
 const YellowBoxInspectorFooter = (props: Props): React.ReactNode => <View style={styles.root}>
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxInspectorFooter;
+export default YellowBoxInspectorFooter;;

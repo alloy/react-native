@@ -9,12 +9,13 @@ import StyleSheet from '../StyleSheet/StyleSheet';
 import Touchable from '../Components/Touchable/Touchable';
 import View from '../Components/View/View';
 import invariant from 'invariant';
+import _Import0 from '../StyleSheet/flattenStyle';
 import viewConfig from '../Components/View/ReactNativeViewViewConfig.js';
 
 import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 
 export type ReactRenderer = {
-  getInspectorDataForViewTag: (viewTag: number) => Object;
+  getInspectorDataForViewTag: ((viewTag: number) => any);
 
 };
 
@@ -23,13 +24,11 @@ const renderers = findRenderers();
 
 // Required for React DevTools to view/edit React Native styles in Flipper.
 // Flipper doesn't inject these values when initializing DevTools.
-hook.resolveRNStyle = require('../StyleSheet/flattenStyle');
+hook.resolveRNStyle = _Import0;
 hook.nativeStyleEditorValidAttributes = Object.keys(viewConfig.validAttributes.style);
 
 function findRenderers(): ReadonlyArray<ReactRenderer> {
-  const allRenderers = Array.from(hook.renderers.values());
-  invariant(allRenderers.length >= 1, 'Expected to find at least one React Native renderer on DevTools hook.');
-  return allRenderers;
+  return null as any;
 }
 
 function getInspectorDataForViewTag(touchedViewTag: number) {
@@ -50,10 +49,10 @@ type HostRef = React.ElementRef<HostComponent<unknown>>;
 class Inspector extends React.Component<{
   isFabric: boolean;
   inspectedView: HostRef | null | undefined;
-  onRequestRerenderApp: (callback: (instance: HostRef | null | undefined) => void) => void;
+  onRequestRerenderApp: ((callback: ((instance: HostRef | null | undefined) => void)) => void);
 
 }, {
-  devtoolsAgent: Object | null | undefined;
+  devtoolsAgent: any | null | undefined;
   hierarchy: any;
   panelPos: string;
   inspecting: boolean;
@@ -66,9 +65,9 @@ class Inspector extends React.Component<{
 }> {
 
   _hideTimeoutID: TimeoutID | null = null;
-  _subs: Array<() => void> | null | undefined;
+  _subs: Array<(() => void)> | null | undefined;
 
-  constructor(props: Object) {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -99,11 +98,11 @@ class Inspector extends React.Component<{
     hook.off('react-devtools', this._attachToDevtools);
   }
 
-  UNSAFE_componentWillReceiveProps(newProps: Object) {
+  UNSAFE_componentWillReceiveProps(newProps: any) {
     this.setState({ inspectedView: newProps.inspectedView });
   }
 
-  _attachToDevtools = (agent: Object) => {
+  _attachToDevtools = (agent: any) => {
     agent.addListener('hideNativeHighlight', this._onAgentHideNativeHighlight);
     agent.addListener('showNativeHighlight', this._onAgentShowNativeHighlight);
     agent.addListener('shutdown', this._onAgentShutdown);
@@ -170,7 +169,7 @@ class Inspector extends React.Component<{
     });
   }
 
-  onTouchViewTag(touchedViewTag: number, frame: Object, pointerY: number) {
+  onTouchViewTag(touchedViewTag: number, frame: any, pointerY: number) {
     // Most likely the touched instance is a native wrapper (like RCTView)
     // which is not very interesting. Most likely user wants a composite
     // instance that contains it (like View)
@@ -257,4 +256,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Inspector;
+export default Inspector;;

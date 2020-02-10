@@ -30,15 +30,15 @@ const DEBUG_INFO_LIMIT = 32;
 class MessageQueue {
 
   _lazyCallableModules: {
-    [key: string]: (arg0: void) => Object;
+    [key: string]: ((arg0: void) => any);
   };
   _queue: [number[], number[], any[], number];
-  _successCallbacks: Map<number, Function | null | undefined>;
-  _failureCallbacks: Map<number, Function | null | undefined>;
+  _successCallbacks: Map<number, ((...args: any) => any) | null | undefined>;
+  _failureCallbacks: Map<number, ((...args: any) => any) | null | undefined>;
   _callID: number;
   _lastFlush: number;
   _eventLoopStartTime: number;
-  _immediatesCallback: () => void | null | undefined;
+  _immediatesCallback: (() => void) | null | undefined;
 
   _debugInfo: {
     [key: number]: [number, number];
@@ -50,7 +50,7 @@ class MessageQueue {
     [key: number]: ReadonlyArray<string>;
   };
 
-  __spy: (data: SpyData) => void | null | undefined;
+  __spy: ((data: SpyData) => void) | null | undefined;
 
   constructor() {
     this._lazyCallableModules = {};
@@ -128,13 +128,13 @@ class MessageQueue {
     return Date.now() - this._eventLoopStartTime;
   }
 
-  registerCallableModule(name: string, module: Object) {
+  registerCallableModule(name: string, module: any) {
     this._lazyCallableModules[name] = () => module;
   }
 
-  registerLazyCallableModule(name: string, factory: (arg0: void) => Object) {
-    let module: Object;
-    let getValue: (arg0: void) => Object | null | undefined = factory;
+  registerLazyCallableModule(name: string, factory: ((arg0: void) => any)) {
+    let module: any;
+    let getValue: ((arg0: void) => any) | null | undefined = factory;
     this._lazyCallableModules[name] = () => {
       if (getValue) {
         module = getValue();
@@ -149,7 +149,7 @@ class MessageQueue {
     return getValue ? getValue() : null;
   }
 
-  callNativeSyncHook(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined): any {
+  callNativeSyncHook(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined): any {
     if (__DEV__) {
       invariant(global.nativeCallSyncHook, 'Calling synchronous methods on native ' + 'modules is not supported in Chrome.\n\n Consider providing alternative ' + 'methods to expose this method in debug mode, e.g. by exposing constants ' + 'ahead-of-time.');
     }
@@ -157,7 +157,7 @@ class MessageQueue {
     return global.nativeCallSyncHook(moduleID, methodID, params);
   }
 
-  processCallbacks(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined) {
+  processCallbacks(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined) {
     if (onFail || onSucc) {
       if (__DEV__) {
         this._debugInfo[this._callID] = [moduleID, methodID];
@@ -190,7 +190,7 @@ class MessageQueue {
     this._callID++;
   }
 
-  enqueueNativeCall(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined) {
+  enqueueNativeCall(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined) {
     this.processCallbacks(moduleID, methodID, params, onFail, onSucc);
 
     this._queue[MODULE_IDS].push(moduleID);
@@ -280,14 +280,14 @@ class MessageQueue {
   // For JSTimers to register its callback. Otherwise a circular dependency
   // between modules is introduced. Note that only one callback may be
   // registered at a time.
-  setImmediatesCallback(fn: () => void) {
+  setImmediatesCallback(fn: (() => void)) {
     this._immediatesCallback = fn;
   }
 
   /**
    * Private methods
    */
-  __guard(fn: () => void) {
+  __guard(fn: (() => void)) {
     if (this.__shouldPauseOnThrow()) {
       fn();
     } else {
@@ -375,4 +375,4 @@ class MessageQueue {
   }
 }
 
-export default MessageQueue;
+export default MessageQueue;;

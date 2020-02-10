@@ -9,4 +9,4 @@ const DeprecatedTVViewPropTypes = {
   tvParallaxMagnification: PropTypes.number
 };
 
-export default DeprecatedTVViewPropTypes;
+export default DeprecatedTVViewPropTypes;;

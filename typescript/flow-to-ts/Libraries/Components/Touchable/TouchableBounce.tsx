@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly, $Diff } from "utility-types";
 
 
@@ -21,8 +21,8 @@ import { Animated, Platform } from "react-native";
 import * as React from "react";
 
 type Props = $ReadOnly<React.ElementConfig<TouchableWithoutFeedback> & {
-  onPressAnimationComplete?: () => void | null | undefined;
-  onPressWithCompletion?: (callback: () => void) => void | null | undefined;
+  onPressAnimationComplete?: (() => void) | null | undefined;
+  onPressWithCompletion?: ((callback: (() => void)) => void) | null | undefined;
   releaseBounciness?: number | null | undefined;
   releaseVelocity?: number | null | undefined;
   style?: ViewStyleProp | null | undefined;
@@ -110,7 +110,7 @@ class TouchableBounce extends React.Component<Props, State> {
     };
   }
 
-  _bounceTo(toValue: number, velocity: number, bounciness: number, callback?: () => void | null | undefined) {
+  _bounceTo(toValue: number, velocity: number, bounciness: number, callback?: (() => void) | null | undefined) {
     Animated.spring(this.state.scale, {
       toValue,
       velocity,
@@ -171,4 +171,4 @@ class TouchableBounce extends React.Component<Props, State> {
   }
 }
 
-export default React.forwardRef((props, hostRef) => <TouchableBounce {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>;
+export default React.forwardRef((props, hostRef) => <TouchableBounce {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>;;

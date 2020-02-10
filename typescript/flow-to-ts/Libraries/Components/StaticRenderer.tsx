@@ -23,7 +23,7 @@ type Props = $ReadOnly<{
    * () => renderable
    * A function that returns a renderable component
    */
-  render: () => React.ReactNode;
+  render: (() => React.ReactNode);
 }>;
 
 class StaticRenderer extends React.Component<Props> {
@@ -37,4 +37,4 @@ class StaticRenderer extends React.Component<Props> {
   }
 }
 
-export default StaticRenderer;
+export default StaticRenderer;;

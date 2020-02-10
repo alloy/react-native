@@ -49,10 +49,10 @@ class WebSocket extends (EventTarget(...WEBSOCKET_EVENTS) as any) {
   _subscriptions: Array<EventSubscription>;
   _binaryType: BinaryType | null | undefined;
 
-  onclose: Function | null | undefined;
-  onerror: Function | null | undefined;
-  onmessage: Function | null | undefined;
-  onopen: Function | null | undefined;
+  onclose: ((...args: any) => any) | null | undefined;
+  onerror: ((...args: any) => any) | null | undefined;
+  onmessage: ((...args: any) => any) | null | undefined;
+  onopen: ((...args: any) => any) | null | undefined;
 
   bufferedAmount: number;
   extension: string | null | undefined;
@@ -232,4 +232,4 @@ class WebSocket extends (EventTarget(...WEBSOCKET_EVENTS) as any) {
   }
 }
 
-export default WebSocket;
+export default WebSocket;;

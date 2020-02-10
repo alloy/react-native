@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ElementType } from "utility-types";
 
 
@@ -46,19 +46,7 @@ function splitLayoutProps(props: DangerouslyImpreciseStyle | null | undefined): 
   inner: DangerouslyImpreciseStyle;
 
 } {
-  const inner = {};
-  const outer = {};
-  if (props) {
-    Object.keys(props).forEach(k => {
-      const value: $ElementType<DangerouslyImpreciseStyle, typeof k> = props[k];
-      if (OUTER_PROPS[k]) {
-        outer[k] = value;
-      } else {
-        inner[k] = value;
-      }
-    });
-  }
-  return { outer, inner };
+  return null as any;
 }
 
-export default splitLayoutProps;
+export default splitLayoutProps;;

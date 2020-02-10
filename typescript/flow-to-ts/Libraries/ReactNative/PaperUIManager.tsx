@@ -12,12 +12,8 @@ const triedLoadingConfig = new Set();
 
 let NativeUIManagerConstants = {};
 let isNativeUIManagerConstantsSet = false;
-function getConstants(): Object {
-  if (!isNativeUIManagerConstantsSet) {
-    NativeUIManagerConstants = NativeUIManager.getConstants();
-    isNativeUIManagerConstantsSet = true;
-  }
-  return NativeUIManagerConstants;
+function getConstants(): any {
+  return null as any;
 }
 
 const UIManagerJS = {
@@ -25,7 +21,7 @@ const UIManagerJS = {
    * error found when Flow v0.111 was deployed. To see the error, delete this
    * comment and run Flow. */
   ...NativeUIManager,
-  getConstants(): Object {
+  getConstants(): any {
     return getConstants();
   },
   getViewManagerConfig: function (viewManagerName: string): any {
@@ -136,4 +132,4 @@ if (!global.nativeCallSyncHook) {
   });
 }
 
-export default UIManagerJS;
+export default UIManagerJS;;

@@ -19,10 +19,10 @@ import Platform from "../../Utilities/Platform";
 import TVEventHandler from "../../Components/AppleTV/TVEventHandler";
 
 type TVTouchableConfig = $ReadOnly<{
-  getDisabled: () => boolean;
-  onBlur: (event: BlurEvent) => unknown;
-  onFocus: (event: FocusEvent) => unknown;
-  onPress: (event: PressEvent) => unknown;
+  getDisabled: (() => boolean);
+  onBlur: ((event: BlurEvent) => unknown);
+  onFocus: ((event: FocusEvent) => unknown);
+  onPress: ((event: PressEvent) => unknown);
 }>;
 
 export default class TVTouchable {

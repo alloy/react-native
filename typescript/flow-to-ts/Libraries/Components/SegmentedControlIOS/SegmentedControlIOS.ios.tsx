@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -49,13 +49,13 @@ type SegmentedControlIOSProps = $ReadOnly<ViewProps & {
   /**
    * Callback that is called when the user taps a segment
    */
-  onChange?: (event: React.SyntheticEvent<OnChangeEvent>) => void | null | undefined;
+  onChange?: ((event: React.SyntheticEvent<OnChangeEvent>) => void) | null | undefined;
 
   /**
    * Callback that is called when the user taps a segment;
    * passes the segment's value as an argument
    */
-  onValueChange?: (value: number) => unknown | null | undefined;
+  onValueChange?: ((value: number) => unknown) | null | undefined;
 }>;
 
 type Props = $ReadOnly<SegmentedControlIOSProps & {
@@ -118,4 +118,4 @@ const SegmentedControlIOSWithRef = React.forwardRef((props: SegmentedControlIOSP
 
 
 
-export default SegmentedControlIOSWithRef as NativeSegmentedControlIOS;
+export default SegmentedControlIOSWithRef as NativeSegmentedControlIOS;;

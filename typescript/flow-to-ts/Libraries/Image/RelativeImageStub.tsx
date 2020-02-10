@@ -11,4 +11,4 @@ export default AssetRegistry.registerAsset({
   hash: 'nonsense',
   name: 'icon',
   type: 'png'
-}) as number;
+}) as number;;

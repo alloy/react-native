@@ -37,4 +37,4 @@ export default {
   register,
   unregister,
   has
-};
+};;

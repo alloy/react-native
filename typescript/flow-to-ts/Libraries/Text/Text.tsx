@@ -26,12 +26,12 @@ import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 import { PressRetentionOffset, TextProps } from "./TextProps";
 
 type ResponseHandlers = $ReadOnly<{
-  onStartShouldSetResponder: () => boolean;
-  onResponderGrant: (event: PressEvent, dispatchID: string) => void;
-  onResponderMove: (event: PressEvent) => void;
-  onResponderRelease: (event: PressEvent) => void;
-  onResponderTerminate: (event: PressEvent) => void;
-  onResponderTerminationRequest: () => boolean;
+  onStartShouldSetResponder: (() => boolean);
+  onResponderGrant: ((event: PressEvent, dispatchID: string) => void);
+  onResponderMove: ((event: PressEvent) => void);
+  onResponderRelease: ((event: PressEvent) => void);
+  onResponderTerminate: ((event: PressEvent) => void);
+  onResponderTerminationRequest: (() => boolean);
 }>;
 
 type Props = $ReadOnly<TextProps & {
@@ -44,7 +44,7 @@ type State = {
     responderID: number | null | undefined;
   };
   isHighlighted: boolean;
-  createResponderHandlers: () => ResponseHandlers;
+  createResponderHandlers: (() => ResponseHandlers);
   responseHandlers: ResponseHandlers | null | undefined;
 };
 
@@ -92,16 +92,16 @@ class TouchableText extends React.Component<Props, State> {
     ellipsizeMode: 'tail'
   };
 
-  touchableGetPressRectOffset: () => PressRetentionOffset | null | undefined;
-  touchableHandleActivePressIn: () => void | null | undefined;
-  touchableHandleActivePressOut: () => void | null | undefined;
-  touchableHandleLongPress: (event: PressEvent) => void | null | undefined;
-  touchableHandlePress: (event: PressEvent) => void | null | undefined;
-  touchableHandleResponderGrant: (event: PressEvent, dispatchID: string) => void | null | undefined;
-  touchableHandleResponderMove: (event: PressEvent) => void | null | undefined;
-  touchableHandleResponderRelease: (event: PressEvent) => void | null | undefined;
-  touchableHandleResponderTerminate: (event: PressEvent) => void | null | undefined;
-  touchableHandleResponderTerminationRequest: () => boolean | null | undefined;
+  touchableGetPressRectOffset: (() => PressRetentionOffset) | null | undefined;
+  touchableHandleActivePressIn: (() => void) | null | undefined;
+  touchableHandleActivePressOut: (() => void) | null | undefined;
+  touchableHandleLongPress: ((event: PressEvent) => void) | null | undefined;
+  touchableHandlePress: ((event: PressEvent) => void) | null | undefined;
+  touchableHandleResponderGrant: ((event: PressEvent, dispatchID: string) => void) | null | undefined;
+  touchableHandleResponderMove: ((event: PressEvent) => void) | null | undefined;
+  touchableHandleResponderRelease: ((event: PressEvent) => void) | null | undefined;
+  touchableHandleResponderTerminate: ((event: PressEvent) => void) | null | undefined;
+  touchableHandleResponderTerminationRequest: (() => boolean) | null | undefined;
 
   state = {
     ...Touchable.Mixin.touchableGetInitialState(),
@@ -265,4 +265,4 @@ type TextStatics = $ReadOnly<{
   propTypes: typeof DeprecatedTextPropTypes;
 }>;
 
-export default (TextToExport as any) as React.AbstractComponent<TextProps, React.ElementRef<HostComponent<TextProps>>> & TextStatics;
+export default (TextToExport as any) as React.AbstractComponent<TextProps, React.ElementRef<HostComponent<TextProps>>> & TextStatics;;

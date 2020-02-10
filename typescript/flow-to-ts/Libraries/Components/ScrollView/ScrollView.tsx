@@ -3,6 +3,7 @@ import AnimatedImplementation from '../../Animated/src/AnimatedImplementation';
 import Platform from '../../Utilities/Platform';
 import React from 'react';
 import ReactNative from '../../Renderer/shims/ReactNative';
+import '../../Renderer/shims/ReactNative';
 import ScrollResponder from '../ScrollResponder';
 import ScrollViewStickyHeader from './ScrollViewStickyHeader';
 import StyleSheet from '../../StyleSheet/StyleSheet';
@@ -26,7 +27,7 @@ import { $PropertyType, $ReadOnly } from "utility-types";
 
 
 
-import '../../Renderer/shims/ReactNative'; // Force side effects to prevent T55744311
+; // Force side effects to prevent T55744311
 
 import { EdgeInsetsProp } from "../../StyleSheet/EdgeInsetsPropType";
 import { PointProp } from "../../StyleSheet/PointPropType";
@@ -262,7 +263,7 @@ type IOSProps = $ReadOnly<{
    * Fires when the scroll view scrolls to top after the status bar has been tapped
    * @platform ios
    */
-  onScrollToTop?: (event: ScrollEvent) => void;
+  onScrollToTop?: ((event: ScrollEvent) => void);
 
   /**
    * When true, shows a horizontal scroll indicator.
@@ -385,7 +386,7 @@ type VRProps = $ReadOnly<{
   scrollBarThumbImage?: ($ReadOnly<{}> | number) | null | undefined; // Opaque type returned by import IMAGE from './image.jpg'
 }>;
 
-type StickyHeaderComponentType = React.AbstractComponent<ScrollViewStickyHeaderProps, $ReadOnly<{setNextHeaderY: (arg0: number) => void;}>>;
+type StickyHeaderComponentType = React.AbstractComponent<ScrollViewStickyHeaderProps, $ReadOnly<{setNextHeaderY: ((arg0: number) => void);}>>;
 
 export type Props = $ReadOnly<ViewProps & IOSProps & AndroidProps & VRProps & {
   /**
@@ -475,29 +476,29 @@ export type Props = $ReadOnly<ViewProps & IOSProps & AndroidProps & VRProps & {
   /**
    * Called when the momentum scroll starts (scroll which occurs as the ScrollView glides to a stop).
    */
-  onMomentumScrollBegin?: (event: ScrollEvent) => void | null | undefined;
+  onMomentumScrollBegin?: ((event: ScrollEvent) => void) | null | undefined;
 
   /**
    * Called when the momentum scroll ends (scroll which occurs as the ScrollView glides to a stop).
    */
-  onMomentumScrollEnd?: (event: ScrollEvent) => void | null | undefined;
+  onMomentumScrollEnd?: ((event: ScrollEvent) => void) | null | undefined;
 
   /**
    * Fires at most once per frame during scrolling. The frequency of the
    * events can be controlled using the `scrollEventThrottle` prop.
    */
-  onScroll?: (event: ScrollEvent) => void | null | undefined;
+  onScroll?: ((event: ScrollEvent) => void) | null | undefined;
 
   /**
    * Called when the user begins to drag the scroll view.
    */
-  onScrollBeginDrag?: (event: ScrollEvent) => void | null | undefined;
+  onScrollBeginDrag?: ((event: ScrollEvent) => void) | null | undefined;
 
   /**
    * Called when the user stops dragging the scroll view and it either stops
    * or begins to glide.
    */
-  onScrollEndDrag?: (event: ScrollEvent) => void | null | undefined;
+  onScrollEndDrag?: ((event: ScrollEvent) => void) | null | undefined;
 
   /**
    * Called when scrollable content view of the ScrollView changes.
@@ -508,8 +509,8 @@ export type Props = $ReadOnly<ViewProps & IOSProps & AndroidProps & VRProps & {
    * It's implemented using onLayout handler attached to the content container
    * which this ScrollView renders.
    */
-  onContentSizeChange?: (contentWidth: number, contentHeight: number) => void;
-  onKeyboardDidShow?: (event: PressEvent) => void;
+  onContentSizeChange?: ((contentWidth: number, contentHeight: number) => void);
+  onKeyboardDidShow?: ((event: PressEvent) => void);
 
   /**
    * When true, the scroll view stops on multiples of the scroll view's size
@@ -614,15 +615,7 @@ type State = ScrollResponderState & {
 };
 
 function createScrollResponder(node: React.ElementRef<typeof ScrollView>): typeof ScrollResponder.Mixin {
-  const scrollResponder = { ...ScrollResponder.Mixin };
-
-  for (const key in scrollResponder) {
-    if (typeof scrollResponder[key] === 'function') {
-      scrollResponder[key] = scrollResponder[key].bind(node);
-    }
-  }
-
-  return scrollResponder;
+  return null as any;
 }
 
 type ContextType = {horizontal: boolean;} | null;
@@ -719,7 +712,7 @@ class ScrollView extends React.Component<Props, State> {
   }
 
   _scrollAnimatedValue: AnimatedImplementation.Value = new AnimatedImplementation.Value(0);
-  _scrollAnimatedValueAttachment: {detach: () => void;} | null | undefined = null;
+  _scrollAnimatedValueAttachment: {detach: (() => void);} | null | undefined = null;
   _stickyHeaderRefs: Map<string, React.ElementRef<StickyHeaderComponentType>> = new Map();
   _headerLayoutYs: Map<string, number> = new Map();
 
@@ -1121,4 +1114,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ScrollView;
+export default ScrollView;;

@@ -12,15 +12,15 @@ import { $ReadOnly, Class } from "utility-types";
 
 import React, { ElementRef, AbstractComponent } from "react";
 
-export type MeasureOnSuccessCallback = (x: number, y: number, width: number, height: number, pageX: number, pageY: number) => void;
+export type MeasureOnSuccessCallback = ((x: number, y: number, width: number, height: number, pageX: number, pageY: number) => void);
 
-export type MeasureInWindowOnSuccessCallback = (x: number, y: number, width: number, height: number) => void;
+export type MeasureInWindowOnSuccessCallback = ((x: number, y: number, width: number, height: number) => void);
 
-export type MeasureLayoutOnSuccessCallback = (left: number, top: number, width: number, height: number) => void;
+export type MeasureLayoutOnSuccessCallback = ((left: number, top: number, width: number, height: number) => void);
 
 type AttributeType = true | $ReadOnly<{
-  diff?: <T>(arg1: T, arg2: T) => boolean;
-  process?: (arg1: any) => any;
+  diff?: (<T>(arg1: T, arg2: T) => boolean);
+  process?: ((arg1: any) => any);
 }>;
 
 export type AttributeConfiguration<TProps = string, TStyleProps = string> = $ReadOnly<{
@@ -56,7 +56,7 @@ export type ReactNativeBaseComponentViewConfig<TProps = string, TStyleProps = st
   validAttributes: AttributeConfiguration<TProps, TStyleProps>;
 }>;
 
-export type ViewConfigGetter = () => ReactNativeBaseComponentViewConfig<>;
+export type ViewConfigGetter = (() => ReactNativeBaseComponentViewConfig<>);
 
 /**
  * Class only exists for its Flow type.
@@ -67,8 +67,8 @@ class ReactNativeComponent<Props> extends React.Component<Props> {
   focus(): void {}
   measure(callback: MeasureOnSuccessCallback): void {}
   measureInWindow(callback: MeasureInWindowOnSuccessCallback): void {}
-  measureLayout(relativeToNativeNode: number | ElementRef<HostComponent<unknown>>, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: () => void): void {}
-  setNativeProps(nativeProps: Object): void {}
+  measureLayout(relativeToNativeNode: number | ElementRef<HostComponent<unknown>>, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: (() => void)): void {}
+  setNativeProps(nativeProps: any): void {}
 }
 
 // This type is only used for FlowTests. It shouldn't be imported directly
@@ -83,8 +83,8 @@ export type NativeMethods = {
   focus(): void;
   measure(callback: MeasureOnSuccessCallback): void;
   measureInWindow(callback: MeasureInWindowOnSuccessCallback): void;
-  measureLayout(relativeToNativeNode: number | ElementRef<HostComponent<unknown>>, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: () => void): void;
-  setNativeProps(nativeProps: Object): void;
+  measureLayout(relativeToNativeNode: number | ElementRef<HostComponent<unknown>>, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: (() => void)): void;
+  setNativeProps(nativeProps: any): void;
 
 };
 
@@ -113,7 +113,7 @@ export type ReactNativeType = {
   findHostInstance_DEPRECATED(componentOrHandle: any): ElementRef<HostComponent<unknown>> | null | undefined;
   findNodeHandle(componentOrHandle: any): number | null | undefined;
   dispatchCommand(handle: any, command: string, args: Array<any>): void;
-  render(element: React$Element<any>, containerTag: any, callback: Function | null | undefined): any;
+  render(element: React$Element<any>, containerTag: any, callback: ((...args: any) => any) | null | undefined): any;
   unmountComponentAtNode(containerTag: number): any;
   unmountComponentAtNodeAndRemoveContainer(containerTag: number): any;
   // TODO (bvaughn) Add types
@@ -127,19 +127,19 @@ export type ReactFabricType = {
   findHostInstance_DEPRECATED(componentOrHandle: any): HostComponent<unknown> | null | undefined;
   findNodeHandle(componentOrHandle: any): number | null | undefined;
   dispatchCommand(handle: any, command: string, args: Array<any>): void;
-  render(element: React$Element<any>, containerTag: any, callback: Function | null | undefined): any;
+  render(element: React$Element<any>, containerTag: any, callback: ((...args: any) => any) | null | undefined): any;
   unmountComponentAtNode(containerTag: number): any;
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: SecretInternalsFabricType;
 
 };
 
 export type ReactNativeEventTarget = {
-  node: Object;
+  node: any;
   canonical: {
     _nativeTag: number;
     viewConfig: ReactNativeBaseComponentViewConfig<>;
-    currentProps: Object;
-    _internalInstanceHandle: Object;
+    currentProps: any;
+    _internalInstanceHandle: any;
 
   };
 

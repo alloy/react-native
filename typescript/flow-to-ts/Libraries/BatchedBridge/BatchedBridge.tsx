@@ -14,4 +14,4 @@ Object.defineProperty(global, '__fbBatchedBridge', {
   value: BatchedBridge
 });
 
-export default BatchedBridge;
+export default BatchedBridge;;

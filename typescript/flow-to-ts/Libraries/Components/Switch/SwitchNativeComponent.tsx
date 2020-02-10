@@ -43,7 +43,7 @@ type NativeProps = $ReadOnly<ViewProps & {
 type ComponentType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly setValue: (viewRef: React.ElementRef<ComponentType>, value: boolean) => void;
+  readonly setValue: ((viewRef: React.ElementRef<ComponentType>, value: boolean) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

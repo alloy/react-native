@@ -1,6 +1,7 @@
 import Platform from '../../Utilities/Platform';
 import React from 'react';
 import View from '../View/View';
+import RCTSafeAreaViewNativeComponent from './RCTSafeAreaViewNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
@@ -30,11 +31,9 @@ if (Platform.OS === 'android') {
     return <View {...localProps} ref={forwardedRef} />;
   });
 } else {
-  const RCTSafeAreaViewNativeComponent = require('./RCTSafeAreaViewNativeComponent').default;
-
   exported = React.forwardRef<Props, React.ElementRef<HostComponent<unknown>>>(function SafeAreaView(props, forwardedRef) {
     return <RCTSafeAreaViewNativeComponent emulateUnlessSupported={true} {...props} ref={forwardedRef} />;
   });
 }
 
-export default exported;
+export default exported;;

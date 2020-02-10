@@ -1,16 +1,40 @@
 'use strict';;
-import babel from 'gulp-babel';
-import babelPluginDEV from 'fbjs-scripts/babel/dev-expression';
-import babelPluginModules from 'fbjs-scripts/babel/rewrite-modules';
-import del from 'del';
-import derequire from 'gulp-derequire';
-import flatten from 'gulp-flatten';
-import gulp from 'gulp';
-import gulpUtil from 'gulp-util';
-import header from 'gulp-header';
-import objectAssign from 'object-assign';
-import runSequence from 'run-sequence';
-import webpackStream from 'webpack-stream';
+import _Import0 from 'gulp-babel';
+import _Import1 from 'fbjs-scripts/babel/dev-expression';
+import _Import2 from 'fbjs-scripts/babel/rewrite-modules';
+import _Import3 from 'del';
+import _Import4 from 'gulp-derequire';
+import _Import5 from 'gulp-flatten';
+import _Import6 from 'gulp';
+import _Import7 from 'gulp-util';
+import _Import8 from 'gulp-header';
+import _Import9 from 'object-assign';
+import _Import10 from 'run-sequence';
+import _Import11 from 'webpack-stream';
+import _Import12 from 'fbjs/module-map';
+
+
+
+
+
+
+
+
+
+
+
+var babel = _Import0;
+var babelPluginDEV = _Import1;
+var babelPluginModules = _Import2;
+var del = _Import3;
+var derequire = _Import4;
+var flatten = _Import5;
+var gulp = _Import6;
+var gulpUtil = _Import7;
+var header = _Import8;
+var objectAssign = _Import9;
+var runSequence = _Import10;
+var webpackStream = _Import11;
 
 var DEVELOPMENT_HEADER = ['/**', ' * Animated v<%= version %>', ' */'].join('\n') + '\n';
 var PRODUCTION_HEADER = ['/**', ' * Animated v<%= version %>', ' *', ' * Copyright (c) 2013-present, Facebook, Inc.', ' *', ' * This source code is licensed under the MIT license found in the', ' * LICENSE file in the root directory of this source tree.', ' */'].join('\n') + '\n';
@@ -20,7 +44,7 @@ var babelOpts = {
   loose: ['es6.classes'],
   stage: 1,
   plugins: [babelPluginDEV, babelPluginModules],
-  _moduleMap: objectAssign({}, require('fbjs/module-map'), {
+  _moduleMap: objectAssign({}, _Import12, {
     React: 'react'
   })
 };

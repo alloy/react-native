@@ -25,13 +25,7 @@ type Props = $ReadOnly<{
 }>;
 
 function LogBoxInspectorSection(props: Props): React.ReactNode {
-  return <View style={styles.section}>
-      <View style={styles.heading}>
-        <Text style={styles.headingText}>{props.heading}</Text>
-        {props.action}
-      </View>
-      <View style={styles.body}>{props.children}</View>
-    </View>;
+  return null as any;
 }
 
 const styles = StyleSheet.create({

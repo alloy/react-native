@@ -1,6 +1,25 @@
 "use strict";;
-import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
-import 'react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore';
+import "react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore";
+import _Import0 from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
+import _Import1 from "react";
+import _Import2 from "scheduler";
+import _Import3 from "../shims/ReactFeatureFlags";
+
+
+
+
+
+
+
+
+
+
+
+
+;
+var ReactNativePrivateInterface = _Import0,
+    React = _Import1,
+    Scheduler = _Import2;
 var eventPluginOrder = null,
     namesToPlugins = {};
 function recomputePluginOrdering() {
@@ -516,7 +535,7 @@ injection.injectEventPluginsByName({
     }
   }
 });
-var enableNativeTargetAsInstance = require("../shims/ReactFeatureFlags").enableNativeTargetAsInstance,
+var enableNativeTargetAsInstance = _Import3.enableNativeTargetAsInstance,
     instanceCache = new Map(),
     instanceProps = new Map();
 function getInstanceFromTag(tag) {
@@ -858,7 +877,7 @@ function mountSafeCallback_NOT_REALLY_SAFE(context, callback) {
     if (callback && ("boolean" !== typeof context.__isMounted || context.__isMounted)) return callback.apply(context, arguments);
   };
 }
-var ReactNativeFiberHostComponent = function () {
+var ReactNativeFiberHostComponent = (function () {
   function ReactNativeFiberHostComponent(tag, viewConfig) {
     this._nativeTag = tag;
     this._children = [];
@@ -886,7 +905,7 @@ var ReactNativeFiberHostComponent = function () {
     null != nativeProps && ReactNativePrivateInterface.UIManager.updateView(this._nativeTag, this.viewConfig.uiViewClassName, nativeProps);
   };
   return ReactNativeFiberHostComponent;
-}();
+})();
 function shim$1() {
   throw Error("The current renderer does not support hydration. This error is likely caused by a bug in React. Please file an issue.");
 }
@@ -4232,8 +4251,8 @@ flushDiscreteUpdatesImpl = function () {
 };
 var roots = new Map(),
     ReactNativeRenderer = {
-  NativeComponent: function (findNodeHandle, findHostInstance) {
-    return function (_React$Component) {
+  NativeComponent: (function (findNodeHandle, findHostInstance) {
+    return (function (_React$Component) {
       function ReactNativeComponent() {
         return _React$Component.apply(this, arguments) || this;
       }
@@ -4278,8 +4297,8 @@ var roots = new Map(),
         }
       };
       return ReactNativeComponent;
-    }(React.Component);
-  }(findNodeHandle, findHostInstance),
+    })(React.Component);
+  })(findNodeHandle, findHostInstance),
   findHostInstance_DEPRECATED: function (componentOrHandle) {
     if (null == componentOrHandle) return null;
     if (componentOrHandle._nativeTag) return componentOrHandle;
@@ -4327,7 +4346,7 @@ var roots = new Map(),
   },
   unstable_batchedUpdates: batchedUpdates,
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: {
-    NativeMethodsMixin: function (findNodeHandle, findHostInstance) {
+    NativeMethodsMixin: (function (findNodeHandle, findHostInstance) {
       return {
         measure: function (callback) {
           try {
@@ -4368,7 +4387,7 @@ var roots = new Map(),
           ReactNativePrivateInterface.TextInputState.blurTextInput(findNodeHandle(this));
         }
       };
-    }(findNodeHandle, findHostInstance),
+    })(findNodeHandle, findHostInstance),
     computeComponentStackForErrorReporting: function (reactTag) {
       return (reactTag = getInstanceFromTag(reactTag)) ? getStackByFiberInDevAndProd(reactTag) : "";
     }
@@ -4406,4 +4425,4 @@ var roots = new Map(),
 });
 var ReactNativeRenderer$2 = { default: ReactNativeRenderer },
     ReactNativeRenderer$3 = ReactNativeRenderer$2 && ReactNativeRenderer || ReactNativeRenderer$2;
-export default ReactNativeRenderer$3.default || ReactNativeRenderer$3;
+export default ReactNativeRenderer$3.default || ReactNativeRenderer$3;;

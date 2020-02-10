@@ -15,4 +15,4 @@ const ToastAndroid = {
   }
 };
 
-export default ToastAndroid;
+export default ToastAndroid;;

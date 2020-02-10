@@ -86,12 +86,12 @@ type OptionalProps<ItemT> = {
    * Remember to include separator length (height or width) in your offset calculation if you
    * specify `ItemSeparatorComponent`.
    */
-  getItemLayout?: (data: Array<ItemT> | null | undefined, index: number) => {
+  getItemLayout?: ((data: Array<ItemT> | null | undefined, index: number) => {
     length: number;
     offset: number;
     index: number;
 
-  };
+  });
 
   /**
    * If true, renders items next to each other horizontally instead of stacked vertically.
@@ -123,7 +123,7 @@ type OptionalProps<ItemT> = {
    * and as the react key to track item re-ordering. The default extractor checks `item.key`, then
    * falls back to using the index, like React does.
    */
-  keyExtractor: (item: ItemT, index: number) => string;
+  keyExtractor: ((item: ItemT, index: number) => string);
 
   /**
    * Multiple columns can only be rendered with `horizontal={false}` and will zig-zag like a
@@ -505,11 +505,11 @@ class FlatList<ItemT> extends React.PureComponent<Props<ItemT>, void> {
     });
   }
 
-  _createOnViewableItemsChanged(onViewableItemsChanged: (info: {
+  _createOnViewableItemsChanged(onViewableItemsChanged: ((info: {
     viewableItems: Array<ViewToken>;
     changed: Array<ViewToken>;
 
-  }) => void | null | undefined) {
+  }) => void) | null | undefined) {
     return (info: {
       viewableItems: Array<ViewToken>;
       changed: Array<ViewToken>;
@@ -596,4 +596,4 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' }
 });
 
-export default FlatList;
+export default FlatList;;

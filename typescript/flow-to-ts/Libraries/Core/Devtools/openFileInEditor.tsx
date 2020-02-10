@@ -8,4 +8,4 @@ function openFileInEditor(file: string, lineNumber: number) {
   });
 }
 
-export default openFileInEditor;
+export default openFileInEditor;;

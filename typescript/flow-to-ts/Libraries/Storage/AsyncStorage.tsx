@@ -1,4 +1,18 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeAsyncStorage from "./NativeAsyncStorage";
 import invariant from "invariant";
 
@@ -22,7 +36,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#getitem
    */
-  getItem: function (key: string, callback?: (error: Error | null | undefined, result: string | null | undefined) => void | null | undefined): Promise {
+  getItem: function (key: string, callback?: ((error: Error | null | undefined, result: string | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiGet([key], function (errors, result) {
@@ -44,7 +58,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#setitem
    */
-  setItem: function (key: string, value: string, callback?: (error: Error | null | undefined) => void | null | undefined): Promise {
+  setItem: function (key: string, value: string, callback?: ((error: Error | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiSet([[key, value]], function (errors) {
@@ -64,7 +78,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#removeitem
    */
-  removeItem: function (key: string, callback?: (error: Error | null | undefined) => void | null | undefined): Promise {
+  removeItem: function (key: string, callback?: ((error: Error | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiRemove([key], function (errors) {
@@ -87,7 +101,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#mergeitem
    */
-  mergeItem: function (key: string, value: string, callback?: (error: Error | null | undefined) => void | null | undefined): Promise {
+  mergeItem: function (key: string, value: string, callback?: ((error: Error | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiMerge([[key, value]], function (errors) {
@@ -109,7 +123,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#clear
    */
-  clear: function (callback?: (error: Error | null | undefined) => void | null | undefined): Promise {
+  clear: function (callback?: ((error: Error | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.clear(function (error) {
@@ -128,7 +142,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#getallkeys
    */
-  getAllKeys: function (callback?: (error: Error | null | undefined, keys: Array<string> | null | undefined) => void | null | undefined): Promise {
+  getAllKeys: function (callback?: ((error: Error | null | undefined, keys: Array<string> | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.getAllKeys(function (error, keys) {
@@ -200,7 +214,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#multiget
    */
-  multiGet: function (keys: Array<string>, callback?: (errors: Array<Error> | null | undefined, result: Array<Array<string>> | null | undefined) => void | null | undefined): Promise {
+  multiGet: function (keys: Array<string>, callback?: ((errors: Array<Error> | null | undefined, result: Array<Array<string>> | null | undefined) => void) | null | undefined): Promise {
     if (!this._immediate) {
       this._immediate = setImmediate(() => {
         this._immediate = null;
@@ -239,7 +253,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#multiset
    */
-  multiSet: function (keyValuePairs: Array<Array<string>>, callback?: (errors: Array<Error> | null | undefined) => void | null | undefined): Promise {
+  multiSet: function (keyValuePairs: Array<Array<string>>, callback?: ((errors: Array<Error> | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiSet(keyValuePairs, function (errors) {
@@ -259,7 +273,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#multiremove
    */
-  multiRemove: function (keys: Array<string>, callback?: (errors: Array<Error> | null | undefined) => void | null | undefined): Promise {
+  multiRemove: function (keys: Array<string>, callback?: ((errors: Array<Error> | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiRemove(keys, function (errors) {
@@ -282,7 +296,7 @@ const AsyncStorage = {
    *
    * See http://facebook.github.io/react-native/docs/asyncstorage.html#multimerge
    */
-  multiMerge: function (keyValuePairs: Array<Array<string>>, callback?: (errors: Array<Error> | null | undefined) => void | null | undefined): Promise {
+  multiMerge: function (keyValuePairs: Array<Array<string>>, callback?: ((errors: Array<Error> | null | undefined) => void) | null | undefined): Promise {
     invariant(RCTAsyncStorage, 'RCTAsyncStorage not available');
     return new Promise((resolve, reject) => {
       RCTAsyncStorage.multiMerge(keyValuePairs, function (errors) {
@@ -320,4 +334,4 @@ function convertError(error) {
   return out;
 }
 
-export default AsyncStorage;
+export default AsyncStorage;;

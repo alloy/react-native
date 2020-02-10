@@ -16,8 +16,8 @@ import { SyntheticEvent } from "./CoreEventTypes";
 // Event types
 // We're not using the PaperName, it is only used to codegen view config settings
 
-export type BubblingEventHandler<T, PaperName extends string | never = never> = (event: React.SyntheticEvent<T>) => void | Promise<void>;
-export type DirectEventHandler<T, PaperName extends string | never = never> = (event: React.SyntheticEvent<T>) => void | Promise<void>;
+export type BubblingEventHandler<T, PaperName extends string | never = never> = ((event: React.SyntheticEvent<T>) => void | Promise<void>);
+export type DirectEventHandler<T, PaperName extends string | never = never> = ((event: React.SyntheticEvent<T>) => void | Promise<void>);
 
 // Prop types
 export type Double = number;

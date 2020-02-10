@@ -33,9 +33,9 @@ type Props = $ReadOnly<{
     lineNumber?: number;
 
   } | null | undefined;
-  frame?: Object | null | undefined;
+  frame?: any | null | undefined;
   selection?: number | null | undefined;
-  setSelection?: (arg0: number) => unknown;
+  setSelection?: ((arg0: number) => unknown);
 }>;
 
 class ElementProperties extends React.Component<Props> {
@@ -131,4 +131,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ElementProperties;
+export default ElementProperties;;

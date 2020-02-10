@@ -28,34 +28,12 @@ type Props = $ReadOnly<{
   log: LogBoxLog;
   totalLogCount: number;
   level: "warn" | "error";
-  onPressOpen: () => void;
-  onPressDismiss: () => void;
+  onPressOpen: (() => void);
+  onPressDismiss: (() => void);
 }>;
 
 function LogBoxLogNotification(props: Props): React.ReactNode {
-  const {
-    totalLogCount,
-    level,
-    log
-  } = props;
-
-  // Eagerly symbolicate so the stack is available when pressing to inspect.
-  React.useEffect(() => {
-    LogBoxData.symbolicateLogLazy(log);
-  }, [log]);
-
-  return <View style={toastStyles.container}>
-      <LogBoxButton onPress={props.onPressOpen} style={toastStyles.press} backgroundColor={{
-      default: LogBoxStyle.getBackgroundColor(1),
-      pressed: LogBoxStyle.getBackgroundColor(0.9)
-    }}>
-        <View style={toastStyles.content}>
-          <CountBadge count={totalLogCount} level={level} />
-          <Message message={log.message} />
-          <DismissButton onPress={props.onPressDismiss} />
-        </View>
-      </LogBoxButton>
-    </View>;
+  return null as any;
 }
 
 function CountBadge(props) {

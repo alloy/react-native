@@ -73,7 +73,7 @@ type PickerProps = $ReadOnly<{
    *   - `itemValue`: the `value` prop of the item that was selected
    *   - `itemIndex`: the index of the selected item in this picker
    */
-  onValueChange?: (itemValue: string | number, itemIndex: number) => unknown | null | undefined;
+  onValueChange?: ((itemValue: string | number, itemIndex: number) => unknown) | null | undefined;
 
   /**
    * If set to false, the picker will be disabled, i.e. the user will not be able to make a
@@ -159,4 +159,4 @@ class Picker extends React.Component<PickerProps> {
   }
 }
 
-export default Picker;
+export default Picker;;

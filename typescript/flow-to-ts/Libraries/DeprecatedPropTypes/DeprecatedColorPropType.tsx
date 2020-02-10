@@ -41,4 +41,4 @@ ColorPropType.isRequired = colorPropType.bind(null, true
 /* isRequired */
 );
 
-export default ColorPropType;
+export default ColorPropType;;

@@ -1,6 +1,18 @@
 'use strict';;
 import React from 'react';
 import TextAncestor from '../../Text/TextAncestor';
+
+
+
+
+
+
+
+
+
+
+
+
 import { ViewProps } from "./ViewPropTypes";
 
 import ViewNativeComponent from "./ViewNativeComponent";
@@ -22,4 +34,4 @@ const View: React.AbstractComponent<ViewProps, React.ElementRef<typeof ViewNativ
 
 View.displayName = 'View';
 
-export default View;
+export default View;;

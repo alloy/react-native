@@ -66,20 +66,20 @@ class LogBoxLog {
     return this.symbolicated.status === 'COMPLETE' ? this.symbolicated.stack : this.stack;
   }
 
-  retrySymbolicate(callback?: (status: SymbolicationStatus) => void): void {
+  retrySymbolicate(callback?: ((status: SymbolicationStatus) => void)): void {
     if (this.symbolicated.status !== 'COMPLETE') {
       LogBoxSymbolication.deleteStack(this.stack);
       this.handleSymbolicate(callback);
     }
   }
 
-  symbolicate(callback?: (status: SymbolicationStatus) => void): void {
+  symbolicate(callback?: ((status: SymbolicationStatus) => void)): void {
     if (this.symbolicated.status === 'NONE') {
       this.handleSymbolicate(callback);
     }
   }
 
-  handleSymbolicate(callback?: (status: SymbolicationStatus) => void): void {
+  handleSymbolicate(callback?: ((status: SymbolicationStatus) => void)): void {
     if (this.symbolicated.status !== 'PENDING') {
       this.updateStatus(null, null, null, callback);
       LogBoxSymbolication.symbolicate(this.stack).then(data => {
@@ -90,7 +90,7 @@ class LogBoxLog {
     }
   }
 
-  updateStatus(error: Error | null | undefined, stack: Stack | null | undefined, codeFrame: CodeFrame | null | undefined, callback?: (status: SymbolicationStatus) => void): void {
+  updateStatus(error: Error | null | undefined, stack: Stack | null | undefined, codeFrame: CodeFrame | null | undefined, callback?: ((status: SymbolicationStatus) => void)): void {
     const lastStatus = this.symbolicated.status;
     if (error != null) {
       this.symbolicated = {

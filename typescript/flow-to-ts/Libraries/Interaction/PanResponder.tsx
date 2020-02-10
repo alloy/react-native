@@ -179,9 +179,9 @@ export type GestureState = {
   _accountsForMovesUpTo: number;
 };
 
-type ActiveCallback = (event: PressEvent, gestureState: GestureState) => boolean;
+type ActiveCallback = ((event: PressEvent, gestureState: GestureState) => boolean);
 
-type PassiveCallback = (event: PressEvent, gestureState: GestureState) => unknown;
+type PassiveCallback = ((event: PressEvent, gestureState: GestureState) => unknown);
 
 type PanResponderConfig = $ReadOnly<{
   onMoveShouldSetPanResponder?: ActiveCallback | null | undefined;
@@ -362,20 +362,20 @@ const PanResponder = {
    *  are the responder.
    */
   create(config: PanResponderConfig): $TEMPORARY$object<{
-    getInteractionHandle: () => number | null | undefined;
+    getInteractionHandle: (() => number | null | undefined);
     panHandlers: $TEMPORARY$object<{
-      onMoveShouldSetResponder: (event: PressEvent) => boolean;
-      onMoveShouldSetResponderCapture: (event: PressEvent) => boolean;
-      onResponderEnd: (event: PressEvent) => void;
-      onResponderGrant: (event: PressEvent) => boolean;
-      onResponderMove: (event: PressEvent) => void;
-      onResponderReject: (event: PressEvent) => void;
-      onResponderRelease: (event: PressEvent) => void;
-      onResponderStart: (event: PressEvent) => void;
-      onResponderTerminate: (event: PressEvent) => void;
-      onResponderTerminationRequest: (event: PressEvent) => boolean;
-      onStartShouldSetResponder: (event: PressEvent) => boolean;
-      onStartShouldSetResponderCapture: (event: PressEvent) => boolean;
+      onMoveShouldSetResponder: ((event: PressEvent) => boolean);
+      onMoveShouldSetResponderCapture: ((event: PressEvent) => boolean);
+      onResponderEnd: ((event: PressEvent) => void);
+      onResponderGrant: ((event: PressEvent) => boolean);
+      onResponderMove: ((event: PressEvent) => void);
+      onResponderReject: ((event: PressEvent) => void);
+      onResponderRelease: ((event: PressEvent) => void);
+      onResponderStart: ((event: PressEvent) => void);
+      onResponderTerminate: ((event: PressEvent) => void);
+      onResponderTerminationRequest: ((event: PressEvent) => boolean);
+      onStartShouldSetResponder: ((event: PressEvent) => boolean);
+      onStartShouldSetResponderCapture: ((event: PressEvent) => boolean);
     }>;
   }> {
     const interactionState = {
@@ -507,4 +507,4 @@ function clearInteractionHandle(interactionState: {handle: number | null | undef
 
 export type PanResponderInstance = $Call<$PropertyType<typeof PanResponder, "create">, PanResponderConfig>;
 
-export default PanResponder;
+export default PanResponder;;

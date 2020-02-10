@@ -4,4 +4,4 @@ import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
 
 const TextInlineImage: HostComponent<unknown> = requireNativeComponent<unknown>('RCTTextInlineImage');
 
-export default TextInlineImage;
+export default TextInlineImage;;

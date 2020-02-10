@@ -9,7 +9,7 @@ import EventSubscription from "./EventSubscription";
  */
 class EventSubscriptionVendor {
 
-  _subscriptionsForType: Object;
+  _subscriptionsForType: any;
   _currentSubscription: EventSubscription | null | undefined;
 
   constructor() {
@@ -55,7 +55,7 @@ class EventSubscriptionVendor {
    *
    * @param {object} subscription
    */
-  removeSubscription(subscription: Object) {
+  removeSubscription(subscription: any) {
     const eventType = subscription.eventType;
     const key = subscription.key;
 
@@ -82,4 +82,4 @@ class EventSubscriptionVendor {
   }
 }
 
-export default EventSubscriptionVendor;
+export default EventSubscriptionVendor;;

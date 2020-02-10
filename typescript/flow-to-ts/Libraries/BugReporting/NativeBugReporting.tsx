@@ -12,9 +12,9 @@ import { TurboModule } from "../TurboModule/RCTExport";
 import * as TurboModuleRegistry from "../TurboModule/TurboModuleRegistry";
 
 export interface Spec extends TurboModule {
-  readonly startReportAProblemFlow: () => void;
-  readonly setExtraData: (extraData: Object, extraFiles: Object) => void;
-  readonly setCategoryID: (categoryID: string) => void;
+  readonly startReportAProblemFlow: (() => void);
+  readonly setExtraData: ((extraData: any, extraFiles: any) => void);
+  readonly setCategoryID: ((categoryID: string) => void);
 }
 
 export default (TurboModuleRegistry.get<Spec>('BugReporting') as Spec | null | undefined);

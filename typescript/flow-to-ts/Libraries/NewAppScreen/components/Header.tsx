@@ -1,4 +1,5 @@
-'use strict';
+'use strict';;
+import _Import0 from './logo.png';
 
 
 
@@ -15,7 +16,7 @@ import { Node } from "react";
 import { Text, StyleSheet, ImageBackground } from "react-native";
 import React from "react";
 
-const Header = (): Node => <ImageBackground accessibilityRole={'image'} source={require('./logo.png')} style={styles.background} imageStyle={styles.logo}>
+const Header = (): Node => <ImageBackground accessibilityRole={'image'} source={_Import0} style={styles.background} imageStyle={styles.logo}>
     <Text style={styles.text}>Welcome to React</Text>
   </ImageBackground>;
 

@@ -3,12 +3,12 @@ import infoLog from '../Utilities/infoLog';
 import performanceNow from 'fbjs/lib/performanceNow';
 
 type Handler = {
-  onIterate?: () => void;
-  onStall: (params: {
+  onIterate?: (() => void);
+  onStall: ((params: {
     lastInterval: number;
     busyTime: number;
 
-  }) => string | null | undefined;
+  }) => string | null | undefined);
 
 };
 
@@ -25,7 +25,7 @@ type Handler = {
  * queried with `getStats`.
  */
 const JSEventLoopWatchdog = {
-  getStats: function (): Object {
+  getStats: function (): any {
     return { stallCount, totalStallTime, longestStall, acceptableBusyTime };
   },
   reset: function () {
@@ -79,4 +79,4 @@ let longestStall = 0;
 let lastInterval = 0;
 const handlers: Array<Handler> = [];
 
-export default JSEventLoopWatchdog;
+export default JSEventLoopWatchdog;;

@@ -43,62 +43,16 @@ function verifyComponentAttributeEquivalence(componentName: string, config: Reac
   }
 }
 
-export function lefthandObjectDiff(leftObj: Object, rightObj: Object): Object {
-  const differentKeys = {};
-
-  function compare(leftItem, rightItem, key) {
-    if (typeof leftItem !== typeof rightItem && leftItem != null) {
-      differentKeys[key] = rightItem;
-      return;
-    }
-
-    if (typeof leftItem === 'object') {
-      const objDiff = lefthandObjectDiff(leftItem, rightItem);
-      if (Object.keys(objDiff).length > 1) {
-        differentKeys[key] = objDiff;
-      }
-      return;
-    }
-
-    if (leftItem !== rightItem) {
-      differentKeys[key] = rightItem;
-      return;
-    }
-  }
-
-  for (const key in leftObj) {
-    if (IGNORED_KEYS.includes(key)) {
-      continue;
-    }
-
-    if (!rightObj) {
-      differentKeys[key] = {};
-    } else if (leftObj.hasOwnProperty(key)) {
-      compare(leftObj[key], rightObj[key], key);
-    }
-  }
-
-  return differentKeys;
+export function lefthandObjectDiff(leftObj: any, rightObj: any): any {
+  return null as any;
 }
 
 export function getConfigWithoutViewProps(viewConfig: ReactNativeBaseComponentViewConfig<>, propName: string): {} {
-  if (!viewConfig[propName]) {
-    return {};
-  }
-
-  return Object.keys(viewConfig[propName]).filter(prop => !ReactNativeViewViewConfig[propName][prop]).reduce((obj, prop) => {
-    obj[prop] = viewConfig[propName][prop];
-    return obj;
-  }, {});
+  return null as any;
 }
 
 export function stringifyViewConfig(viewConfig: any): string {
-  return JSON.stringify(viewConfig, (key, val) => {
-    if (typeof val === 'function') {
-      return `ƒ ${val.name}`;
-    }
-    return val;
-  }, 2);
+  return null as any;
 }
 
 export default verifyComponentAttributeEquivalence;

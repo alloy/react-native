@@ -32,7 +32,7 @@ class RCTDeviceEventEmitter extends EventEmitter {
     this.sharedSubscriber = sharedSubscriber;
   }
 
-  addListener(eventType: string, listener: Function, context: Object | null | undefined): EmitterSubscription {
+  addListener(eventType: string, listener: ((...args: any) => any), context: any | null | undefined): EmitterSubscription {
     if (__DEV__) {
       checkNativeEventModule(eventType);
     }
@@ -55,4 +55,4 @@ class RCTDeviceEventEmitter extends EventEmitter {
   }
 }
 
-export default new RCTDeviceEventEmitter() as RCTDeviceEventEmitter;
+export default new RCTDeviceEventEmitter() as RCTDeviceEventEmitter;;

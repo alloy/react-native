@@ -28,56 +28,16 @@ import * as LogBoxStyle from "./LogBoxStyle";
 import LogBoxLog, { LogLevel } from "../Data/LogBoxLog";
 
 type Props = $ReadOnly<{
-  onDismiss: () => void;
-  onChangeSelectedIndex: (index: number) => void;
-  onMinimize: () => void;
+  onDismiss: (() => void);
+  onChangeSelectedIndex: ((index: number) => void);
+  onMinimize: (() => void);
   logs: ReadonlyArray<LogBoxLog>;
   selectedIndex: number;
   fatalType?: LogLevel | null | undefined;
 }>;
 
 function LogBoxInspector(props: Props): React.ReactNode {
-  const {
-    logs,
-    selectedIndex
-  } = props;
-  let log = logs[selectedIndex];
-
-  React.useEffect(() => {
-    if (log) {
-      LogBoxData.symbolicateLogNow(log);
-    }
-  }, [log]);
-
-  React.useEffect(() => {
-    // Optimistically symbolicate the last and next logs.
-    if (logs.length > 1) {
-      const selected = selectedIndex;
-      const lastIndex = logs.length - 1;
-      const prevIndex = selected - 1 < 0 ? lastIndex : selected - 1;
-      const nextIndex = selected + 1 > lastIndex ? 0 : selected + 1;
-      LogBoxData.symbolicateLogLazy(logs[prevIndex]);
-      LogBoxData.symbolicateLogLazy(logs[nextIndex]);
-    }
-  }, [logs, selectedIndex]);
-
-  React.useEffect(() => {
-    Keyboard.dismiss();
-  }, []);
-
-  function _handleRetry() {
-    LogBoxData.retrySymbolicateLogNow(log);
-  }
-
-  if (log == null) {
-    return null;
-  }
-
-  return <View style={styles.root}>
-      <LogBoxInspectorHeader onSelectIndex={props.onChangeSelectedIndex} selectedIndex={selectedIndex} total={logs.length} level={log.level} />
-      <LogBoxInspectorBody log={log} onRetry={_handleRetry} />
-      <LogBoxInspectorFooter onDismiss={props.onDismiss} onMinimize={props.onMinimize} level={log.level} />
-    </View>;
+  return null as any;
 }
 
 const headerTitleMap = {

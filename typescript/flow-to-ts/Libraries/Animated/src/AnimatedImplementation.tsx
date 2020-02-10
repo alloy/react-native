@@ -1,11 +1,5 @@
 'use strict';;
 import _Import0 from './AnimatedEvent';
-
-const {
-  AnimatedEvent,
-  attachNativeEvent
-} = _Import0;
-
 import AnimatedAddition from './nodes/AnimatedAddition';
 import AnimatedDiffClamp from './nodes/AnimatedDiffClamp';
 import AnimatedDivision from './nodes/AnimatedDivision';
@@ -23,6 +17,23 @@ import SpringAnimation from './animations/SpringAnimation';
 import TimingAnimation from './animations/TimingAnimation';
 import createAnimatedComponent from './createAnimatedComponent';
 
+
+
+
+
+
+
+
+
+
+
+
+
+const {
+  AnimatedEvent,
+  attachNativeEvent
+} = _Import0;
+
 import { AnimationConfig, EndCallback, EndResult } from "./animations/Animation";
 import { TimingAnimationConfig } from "./animations/TimingAnimation";
 import { DecayAnimationConfig } from "./animations/DecayAnimation";
@@ -30,11 +41,11 @@ import { SpringAnimationConfig } from "./animations/SpringAnimation";
 import { Mapping, EventConfig } from "./AnimatedEvent";
 
 export type CompositeAnimation = {
-  start: (callback?: EndCallback | null | undefined) => void;
-  stop: () => void;
-  reset: () => void;
-  _startNativeLoop: (iterations?: number) => void;
-  _isUsingNativeDriver: () => boolean;
+  start: ((callback?: EndCallback | null | undefined) => void);
+  stop: (() => void);
+  reset: (() => void);
+  _startNativeLoop: ((iterations?: number) => void);
+  _isUsingNativeDriver: (() => boolean);
 
 };
 
@@ -73,7 +84,7 @@ const _combineCallbacks = function (callback: EndCallback | null | undefined, co
   }
 };
 
-const maybeVectorAnim = function (value: AnimatedValue | AnimatedValueXY, config: Object, anim: (value: AnimatedValue, config: Object) => CompositeAnimation): CompositeAnimation | null | undefined {
+const maybeVectorAnim = function (value: AnimatedValue | AnimatedValueXY, config: any, anim: ((value: AnimatedValue, config: any) => CompositeAnimation)): CompositeAnimation | null | undefined {
   if (value instanceof AnimatedValueXY) {
     const configX = { ...config };
     const configY = { ...config };
@@ -405,25 +416,11 @@ const loop = function (animation: CompositeAnimation, {
   };
 };
 
-function forkEvent(event: (AnimatedEvent | null | undefined) | (Function | null | undefined), listener: Function): AnimatedEvent | Function {
-  if (!event) {
-    return listener;
-  } else if (event instanceof AnimatedEvent) {
-    event.__addListener(listener);
-    return event;
-  } else {
-    return (...args) => {
-      typeof event === 'function' && event(...args);
-      listener(...args);
-    };
-  }
+function forkEvent(event: (AnimatedEvent | null | undefined) | (((...args: any) => any) | null | undefined), listener: ((...args: any) => any)): AnimatedEvent | ((...args: any) => any) {
+  return null as any;
 }
 
-function unforkEvent(event: (AnimatedEvent | null | undefined) | (Function | null | undefined), listener: Function): void {
-  if (event && event instanceof AnimatedEvent) {
-    event.__removeListener(listener);
-  }
-}
+function unforkEvent(event: (AnimatedEvent | null | undefined) | (((...args: any) => any) | null | undefined), listener: ((...args: any) => any)): void {}
 
 const event = function (argMapping: ReadonlyArray<Mapping | null | undefined>, config: EventConfig): any {
   const animatedEvent = new AnimatedEvent(argMapping, config);
@@ -627,4 +624,4 @@ export default {
   Event: AnimatedEvent,
 
   __PropsOnlyForTests: AnimatedProps
-};
+};;

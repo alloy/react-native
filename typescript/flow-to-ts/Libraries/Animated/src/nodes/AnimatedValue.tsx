@@ -32,23 +32,7 @@ const NativeAnimatedAPI = NativeAnimatedHelper.API;
  * this two-phases process is to deal with composite props such as
  * transform which can receive values from multiple parents.
  */
-function _flush(rootNode: AnimatedValue): void {
-  const animatedStyles = new Set();
-  function findAnimatedStyles(node) {
-    /* $FlowFixMe(>=0.68.0 site=react_native_fb) This comment suppresses an
-     * error found when Flow v0.68 was deployed. To see the error delete this
-     * comment and run Flow. */
-    if (typeof node.update === 'function') {
-      animatedStyles.add(node);
-    } else {
-      node.__getChildren().forEach(findAnimatedStyles);
-    }
-  }
-  findAnimatedStyles(rootNode);
-
-  /* $FlowFixMe */
-  animatedStyles.forEach(animatedStyle => animatedStyle.update());
-}
+function _flush(rootNode: AnimatedValue): void {}
 
 /**
  * Standard value for driving animations.  One `Animated.Value` can drive
@@ -150,7 +134,7 @@ class AnimatedValue extends AnimatedWithChildren {
    *
    * See http://facebook.github.io/react-native/docs/animatedvalue.html#stopanimation
    */
-  stopAnimation(callback?: (value: number) => void | null | undefined): void {
+  stopAnimation(callback?: ((value: number) => void) | null | undefined): void {
     this.stopTracking();
     this._animation && this._animation.stop();
     this._animation = null;
@@ -162,7 +146,7 @@ class AnimatedValue extends AnimatedWithChildren {
    *
    * See http://facebook.github.io/react-native/docs/animatedvalue.html#resetanimation
    */
-  resetAnimation(callback?: (value: number) => void | null | undefined): void {
+  resetAnimation(callback?: ((value: number) => void) | null | undefined): void {
     this.stopAnimation(callback);
     this._value = this._startingValue;
   }
@@ -234,7 +218,7 @@ class AnimatedValue extends AnimatedWithChildren {
     super.__callListeners(this.__getValue());
   }
 
-  __getNativeConfig(): Object {
+  __getNativeConfig(): any {
     return {
       type: 'value',
       value: this._value,
@@ -243,4 +227,4 @@ class AnimatedValue extends AnimatedWithChildren {
   }
 }
 
-export default AnimatedValue;
+export default AnimatedValue;;

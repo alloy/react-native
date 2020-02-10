@@ -49,4 +49,4 @@ const ImageStylePropTypes = {
   borderBottomRightRadius: ReactPropTypes.number
 };
 
-export default ImageStylePropTypes;
+export default ImageStylePropTypes;;

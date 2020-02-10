@@ -12,4 +12,4 @@ import { IPerformanceLogger } from "./createPerformanceLogger";
  */
 const GlobalPerformanceLogger: IPerformanceLogger = createPerformanceLogger();
 
-export default GlobalPerformanceLogger;
+export default GlobalPerformanceLogger;;

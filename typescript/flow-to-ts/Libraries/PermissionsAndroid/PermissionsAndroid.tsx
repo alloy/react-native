@@ -207,4 +207,4 @@ class PermissionsAndroid {
 
 const PermissionsAndroidInstance: PermissionsAndroid = new PermissionsAndroid();
 
-export default PermissionsAndroidInstance;
+export default PermissionsAndroidInstance;;

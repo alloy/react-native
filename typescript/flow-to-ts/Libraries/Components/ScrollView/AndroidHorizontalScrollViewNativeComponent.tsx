@@ -1,6 +1,7 @@
 'use strict';;
 import registerGeneratedViewConfig from '../../Utilities/registerGeneratedViewConfig';
 import requireNativeComponent from '../../ReactNative/requireNativeComponent';
+import _Import0 from '../../StyleSheet/processColor';
 
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ScrollViewNativeProps } from "./ScrollViewNativeComponentType";
@@ -12,7 +13,7 @@ const AndroidHorizontalScrollViewViewConfig = {
   validAttributes: {
     decelerationRate: true,
     disableIntervalMomentum: true,
-    endFillColor: { process: require('../../StyleSheet/processColor') },
+    endFillColor: { process: _Import0 },
     fadingEdgeLength: true,
     nestedScrollEnabled: true,
     overScrollMode: true,

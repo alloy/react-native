@@ -11,7 +11,7 @@ const AnimatedView = AnimatedImplementation.createAnimatedComponent(View);
 export type Props = {
   children?: React.ReactElement<any>;
   nextHeaderLayoutY: number | null | undefined;
-  onLayout: (event: LayoutEvent) => void;
+  onLayout: ((event: LayoutEvent) => void);
   scrollAnimatedValue: AnimatedImplementation.Value;
   // Will cause sticky headers to stick at the bottom of the ScrollView instead
   // of the top.
@@ -152,4 +152,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ScrollViewStickyHeader;
+export default ScrollViewStickyHeader;;

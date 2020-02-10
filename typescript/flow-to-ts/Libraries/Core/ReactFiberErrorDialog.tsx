@@ -28,32 +28,7 @@ import { handleException, SyntheticError } from "./ExceptionsManager";
  * trace within the native redbox component.
  */
 function showErrorDialog(capturedError: CapturedError): boolean {
-  const {
-    componentStack,
-    error
-  } = capturedError;
-
-  let errorToHandle;
-
-  // Typically Errors are thrown but eg strings or null can be thrown as well.
-  if (error instanceof Error) {
-    errorToHandle = (error as ExtendedError);
-  } else if (typeof error === 'string') {
-    errorToHandle = (new SyntheticError(error) as ExtendedError);
-  } else {
-    errorToHandle = (new SyntheticError('Unspecified error') as ExtendedError);
-  }
-  try {
-    errorToHandle.componentStack = componentStack;
-    errorToHandle.isComponentError = true;
-  } catch (e) {}
-  handleException(errorToHandle, false);
-
-  // Return false here to prevent ReactFiberErrorLogger default behavior of
-  // logging error details to console.error. Calls to console.error are
-  // automatically routed to the native redbox controller, which we've already
-  // done above by calling ExceptionsManager.
-  return false;
+ return null as any;
 }
 
-export default { showErrorDialog };
+export default { showErrorDialog };;

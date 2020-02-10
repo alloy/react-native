@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeDeviceInfo from "./NativeDeviceInfo";
 
-export default NativeDeviceInfo;
+export default NativeDeviceInfo;;

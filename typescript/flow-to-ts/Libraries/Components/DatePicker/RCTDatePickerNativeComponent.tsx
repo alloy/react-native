@@ -38,7 +38,7 @@ type NativeProps = $ReadOnly<ViewProps & {
 type ComponentType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly setNativeDate: (viewRef: React.ElementRef<ComponentType>, date: Float) => void;
+  readonly setNativeDate: ((viewRef: React.ElementRef<ComponentType>, date: Float) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

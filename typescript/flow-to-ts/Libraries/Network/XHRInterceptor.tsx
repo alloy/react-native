@@ -135,4 +135,4 @@ const XHRInterceptor = {
   }
 };
 
-export default XHRInterceptor;
+export default XHRInterceptor;;

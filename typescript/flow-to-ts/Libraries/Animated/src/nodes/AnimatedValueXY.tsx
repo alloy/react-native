@@ -3,11 +3,11 @@ import AnimatedValue from './AnimatedValue';
 import AnimatedWithChildren from './AnimatedWithChildren';
 import invariant from 'invariant';
 
-type ValueXYListenerCallback = (value: {
+type ValueXYListenerCallback = ((value: {
   x: number;
   y: number;
 
-}) => unknown;
+}) => unknown);
 
 let _uniqueId = 1;
 
@@ -108,11 +108,11 @@ class AnimatedValueXY extends AnimatedWithChildren {
    *
    * See http://facebook.github.io/react-native/docs/animatedvaluexy.html#resetanimation
    */
-  resetAnimation(callback?: (value: {
+  resetAnimation(callback?: ((value: {
     x: number;
     y: number;
 
-  }) => void): void {
+  }) => void)): void {
     this.x.resetAnimation();
     this.y.resetAnimation();
     callback && callback(this.__getValue());
@@ -125,11 +125,11 @@ class AnimatedValueXY extends AnimatedWithChildren {
    *
    * See http://facebook.github.io/react-native/docs/animatedvaluexy.html#stopanimation
    */
-  stopAnimation(callback?: (value: {
+  stopAnimation(callback?: ((value: {
     x: number;
     y: number;
 
-  }) => void): void {
+  }) => void)): void {
     this.x.stopAnimation();
     this.y.stopAnimation();
     callback && callback(this.__getValue());
@@ -207,4 +207,4 @@ class AnimatedValueXY extends AnimatedWithChildren {
   }
 }
 
-export default AnimatedValueXY;
+export default AnimatedValueXY;;

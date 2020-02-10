@@ -354,4 +354,4 @@ export default {
    * See http://facebook.github.io/react-native/docs/view.html#needsoffscreenalphacompositing
    */
   needsOffscreenAlphaCompositing: PropTypes.bool
-};
+};;

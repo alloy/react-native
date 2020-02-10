@@ -307,7 +307,7 @@ export default {
    * internally to process color and transform values. You should not use this
    * unless you really know what you are doing and have exhausted other options.
    */
-  setStyleAttributePreprocessor(property: string, process: (nextProp: unknown) => unknown) {
+  setStyleAttributePreprocessor(property: string, process: ((nextProp: unknown) => unknown)) {
     let value;
 
     if (ReactNativeStyleAttributes[property] === true) {
@@ -343,4 +343,4 @@ export default {
     }
     return obj;
   }
-};
+};;

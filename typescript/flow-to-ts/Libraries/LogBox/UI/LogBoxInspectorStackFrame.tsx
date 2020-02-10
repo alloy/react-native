@@ -25,29 +25,11 @@ import { StackFrame } from "../../Core/NativeExceptionsManager";
 
 type Props = $ReadOnly<{
   frame: StackFrame;
-  onPress?: (event: PressEvent) => void | null | undefined;
+  onPress?: ((event: PressEvent) => void) | null | undefined;
 }>;
 
 function LogBoxInspectorStackFrame(props: Props): React.ReactNode {
-  const {
-    frame,
-    onPress
-  } = props;
-  const column = frame.column != null && parseInt(frame.column, 10);
-  const location = getFileName(frame.file) + (frame.lineNumber != null ? ':' + frame.lineNumber + (column && !isNaN(column) ? ':' + (column + 1) : '') : '');
-  return <View style={styles.frameContainer}>
-      <LogBoxButton backgroundColor={{
-      default: 'transparent',
-      pressed: onPress ? LogBoxStyle.getBackgroundColor(1) : 'transparent'
-    }} onPress={onPress} style={styles.frame}>
-        <Text style={[styles.name, frame.collapse === true && styles.dim]}>
-          {frame.methodName}
-        </Text>
-        <Text ellipsizeMode="middle" numberOfLines={1} style={[styles.location, frame.collapse === true && styles.dim]}>
-          {location}
-        </Text>
-      </LogBoxButton>
-    </View>;
+  return null as any;
 }
 
 function getFileName(file) {

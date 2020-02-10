@@ -9,4 +9,4 @@ export default {
   span: (AnimatedImplementation.createAnimatedComponent('span') as $FlowFixMe),
   // $FlowFixMe createAnimatedComponent expects to receive types. Plain intrinsic components can't be typed like this
   img: (AnimatedImplementation.createAnimatedComponent('img') as $FlowFixMe)
-};
+};;

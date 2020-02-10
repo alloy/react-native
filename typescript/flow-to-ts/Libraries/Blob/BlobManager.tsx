@@ -15,11 +15,7 @@ import invariant from "invariant";
  * http://stackoverflow.com/questions/105034
  */
 function uuidv4(): string {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-    const r = Math.random() * 16 | 0,
-          v = c == 'x' ? r : r & 0x3 | 0x8;
-    return v.toString(16);
-  });
+  return null as any;
 }
 
 // **Temporary workaround**
@@ -30,11 +26,7 @@ function uuidv4(): string {
 // that the current bridge infra doesn't allow to track js objects
 // deallocation. Ideally the whole Blob object should be a jsi::HostObject.
 function createBlobCollector(blobId: string): BlobCollector | null {
-  if (global.__blobCollectorProvider == null) {
-    return null;
-  } else {
-    return global.__blobCollectorProvider(blobId);
-  }
+  return null as any;
 }
 
 /**
@@ -158,4 +150,4 @@ class BlobManager {
   }
 }
 
-export default BlobManager;
+export default BlobManager;;

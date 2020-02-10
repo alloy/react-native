@@ -1,6 +1,7 @@
 'use strict';;
 import Platform from '../../Utilities/Platform';
 import React from 'react';
+import _Import0 from '../../ReactNative/UIManager';
 import { $ReadOnly } from "utility-types";
 
 
@@ -21,7 +22,7 @@ import PullToRefreshViewNativeComponent, { Commands as PullToRefreshCommands } f
 
 let RefreshLayoutConsts: any;
 if (Platform.OS === 'android') {
-  const AndroidSwipeRefreshLayout = require('../../ReactNative/UIManager').getViewManagerConfig('AndroidSwipeRefreshLayout');
+  const AndroidSwipeRefreshLayout = _Import0.getViewManagerConfig('AndroidSwipeRefreshLayout');
   RefreshLayoutConsts = AndroidSwipeRefreshLayout ? AndroidSwipeRefreshLayout.Constants : { SIZE: {} };
 } else {
   RefreshLayoutConsts = { SIZE: {} };
@@ -75,7 +76,7 @@ export type RefreshControlProps = $ReadOnly<ViewProps & IOSProps & AndroidProps 
   /**
    * Called when the view starts refreshing.
    */
-  onRefresh?: () => void | null | undefined;
+  onRefresh?: (() => void) | null | undefined;
 
   /**
    * Whether the view should be indicating an active refresh.
@@ -192,4 +193,4 @@ class RefreshControl extends React.Component<RefreshControlProps> {
   };
 }
 
-export default RefreshControl;
+export default RefreshControl;;

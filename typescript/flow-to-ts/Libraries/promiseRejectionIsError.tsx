@@ -1,6 +1,19 @@
 'use strict';;
+import './Promise';
 import rejectionTracking from 'promise/setimmediate/rejection-tracking';
-import './Promise'; // make sure the default rejection handler is installed
+
+
+
+
+
+
+
+
+
+
+
+
+; // make sure the default rejection handler is installed
 
 export default () => {
   rejectionTracking.enable({
@@ -10,4 +23,4 @@ export default () => {
     },
     onHandled: () => {}
   });
-};
+};;

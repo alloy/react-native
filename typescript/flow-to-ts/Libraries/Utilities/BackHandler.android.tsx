@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeDeviceEventManager from "../../Libraries/NativeModules/specs/NativeDeviceEventManager";
 import RCTDeviceEventEmitter from "../EventEmitter/RCTDeviceEventEmitter";
 
@@ -49,9 +61,9 @@ RCTDeviceEventEmitter.addListener(DEVICE_BACK_EVENT, function () {
  * ```
  */
 type TBackHandler = {
-  readonly exitApp: () => void;
-  readonly addEventListener: (eventName: BackPressEventName, handler: Function) => {remove: () => void;};
-  readonly removeEventListener: (eventName: BackPressEventName, handler: Function) => void;
+  readonly exitApp: (() => void);
+  readonly addEventListener: ((eventName: BackPressEventName, handler: ((...args: any) => any)) => {remove: (() => void);});
+  readonly removeEventListener: ((eventName: BackPressEventName, handler: ((...args: any) => any)) => void);
 };
 const BackHandler: TBackHandler = {
   exitApp: function (): void {
@@ -68,7 +80,7 @@ const BackHandler: TBackHandler = {
    * - `hardwareBackPress`: Fires when the Android hardware back button is pressed or when the
    * tvOS menu button is pressed.
    */
-  addEventListener: function (eventName: BackPressEventName, handler: Function): {remove: () => void;} {
+  addEventListener: function (eventName: BackPressEventName, handler: ((...args: any) => any)): {remove: (() => void);} {
     if (_backPressSubscriptions.indexOf(handler) === -1) {
       _backPressSubscriptions.push(handler);
     }
@@ -80,11 +92,11 @@ const BackHandler: TBackHandler = {
   /**
    * Removes the event handler.
    */
-  removeEventListener: function (eventName: BackPressEventName, handler: Function): void {
+  removeEventListener: function (eventName: BackPressEventName, handler: ((...args: any) => any)): void {
     if (_backPressSubscriptions.indexOf(handler) !== -1) {
       _backPressSubscriptions.splice(_backPressSubscriptions.indexOf(handler), 1);
     }
   }
 };
 
-export default BackHandler;
+export default BackHandler;;

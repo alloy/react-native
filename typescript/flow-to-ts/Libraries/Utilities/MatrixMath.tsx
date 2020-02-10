@@ -325,7 +325,7 @@ const MatrixMath = {
    * which was based on
    * http://tog.acm.org/resources/GraphicsGems/gemsii/unmatrix.c
    */
-  decomposeMatrix(transformMatrix: Array<number>): Object | null | undefined {
+  decomposeMatrix(transformMatrix: Array<number>): any | null | undefined {
     invariant(transformMatrix.length === 16, 'Matrix decomposition needs a list of 3d matrix values, received %s', transformMatrix);
 
     // output values
@@ -473,4 +473,4 @@ const MatrixMath = {
   }
 };
 
-export default MatrixMath;
+export default MatrixMath;;

@@ -47,4 +47,4 @@ class AnimatedModulo extends AnimatedWithChildren {
   }
 }
 
-export default AnimatedModulo;
+export default AnimatedModulo;;

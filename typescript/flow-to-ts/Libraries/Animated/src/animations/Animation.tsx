@@ -4,7 +4,7 @@ import NativeAnimatedHelper from '../NativeAnimatedHelper';
 import AnimatedValue from "../nodes/AnimatedValue";
 
 export type EndResult = {finished: boolean;};
-export type EndCallback = (result: EndResult) => void;
+export type EndCallback = ((result: EndResult) => void);
 
 export type AnimationConfig = {
   isInteraction?: boolean;
@@ -24,7 +24,7 @@ class Animation {
   __nativeId: number;
   __onEnd: EndCallback | null | undefined;
   __iterations: number;
-  start(fromValue: number, onUpdate: (value: number) => void, onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {}
+  start(fromValue: number, onUpdate: ((value: number) => void), onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {}
   stop(): void {
     if (this.__nativeId) {
       NativeAnimatedHelper.API.stopAnimation(this.__nativeId);
@@ -50,4 +50,4 @@ class Animation {
   }
 }
 
-export default Animation;
+export default Animation;;

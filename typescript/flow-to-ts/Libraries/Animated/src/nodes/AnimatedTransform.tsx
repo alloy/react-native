@@ -5,9 +5,9 @@ import NativeAnimatedHelper from '../NativeAnimatedHelper';
 
 class AnimatedTransform extends AnimatedWithChildren {
 
-  _transforms: ReadonlyArray<Object>;
+  _transforms: ReadonlyArray<any>;
 
-  constructor(transforms: ReadonlyArray<Object>) {
+  constructor(transforms: ReadonlyArray<any>) {
     super();
     this._transforms = transforms;
   }
@@ -24,7 +24,7 @@ class AnimatedTransform extends AnimatedWithChildren {
     super.__makeNative();
   }
 
-  __getValue(): ReadonlyArray<Object> {
+  __getValue(): ReadonlyArray<any> {
     return this._transforms.map(transform => {
       const result = {};
       for (const key in transform) {
@@ -39,7 +39,7 @@ class AnimatedTransform extends AnimatedWithChildren {
     });
   }
 
-  __getAnimatedValue(): ReadonlyArray<Object> {
+  __getAnimatedValue(): ReadonlyArray<any> {
     return this._transforms.map(transform => {
       const result = {};
       for (const key in transform) {
@@ -108,4 +108,4 @@ class AnimatedTransform extends AnimatedWithChildren {
   }
 }
 
-export default AnimatedTransform;
+export default AnimatedTransform;;

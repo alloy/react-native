@@ -15,7 +15,7 @@ import { TurboModule } from "../TurboModule/RCTExport";
 import * as TurboModuleRegistry from "../TurboModule/TurboModuleRegistry";
 
 export interface Spec extends TurboModule {
-  readonly getConstants: () => {
+  readonly getConstants: (() => {
     isTesting: boolean;
     reactNativeVersion: {
       major: number;
@@ -30,8 +30,8 @@ export interface Spec extends TurboModule {
     Model: string;
     ServerHost?: string;
     uiMode: string;
-  };
-  readonly getAndroidID: () => string;
+  });
+  readonly getAndroidID: (() => string);
 }
 
 export default (TurboModuleRegistry.getEnforcing<Spec>('PlatformConstants') as Spec);

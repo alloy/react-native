@@ -51,4 +51,4 @@ class StaticContainer extends React.Component<Props> {
   }
 }
 
-export default StaticContainer;
+export default StaticContainer;;

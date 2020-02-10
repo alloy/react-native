@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeSourceCode from "../../NativeModules/specs/NativeSourceCode";
 
 let _cachedDevServerURL: string | null | undefined;
@@ -15,15 +27,7 @@ type DevServerInfo = {
  * @return URL to packager with trailing slash
  */
 function getDevServer(): DevServerInfo {
-  if (_cachedDevServerURL === undefined) {
-    const match = NativeSourceCode.getConstants().scriptURL.match(/^https?:\/\/.*?\//);
-    _cachedDevServerURL = match ? match[0] : null;
-  }
-
-  return {
-    url: _cachedDevServerURL || FALLBACK,
-    bundleLoadedFromServer: _cachedDevServerURL !== null
-  };
+  return null as any;
 }
 
-export default getDevServer;
+export default getDevServer;;

@@ -75,4 +75,4 @@ const sanitize = (data: SymbolicatedStackTrace): Stack => {
   return stack;
 };
 
-export default YellowBoxSymbolication;
+export default YellowBoxSymbolication;;

@@ -135,4 +135,4 @@ class FileReader extends (EventTarget(...READER_EVENTS) as any) {
   }
 }
 
-export default FileReader;
+export default FileReader;;

@@ -82,4 +82,4 @@ ProgressBarAndroidToExport.defaultProps = {
 
 
 
-export default ProgressBarAndroidToExport as typeof ProgressBarAndroidNativeComponent;
+export default ProgressBarAndroidToExport as typeof ProgressBarAndroidNativeComponent;;

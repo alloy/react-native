@@ -159,4 +159,4 @@ const buildStyleInterpolator = function (anims) {
   return styleInterpolator;
 };
 
-export default buildStyleInterpolator;
+export default buildStyleInterpolator;;

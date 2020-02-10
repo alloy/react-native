@@ -24,7 +24,7 @@ import { ViewStyleProp } from "../StyleSheet/StyleSheet";
 import { PressEvent } from "../Types/CoreEventTypes";
 
 type Inspected = $ReadOnly<{
-  frame?: Object;
+  frame?: any;
   style?: ViewStyleProp;
 }>;
 
@@ -32,12 +32,12 @@ type Props = $ReadOnly<{
   isFabric: boolean;
   inspected?: Inspected;
   inspectedView?: React.ElementRef<HostComponent<unknown>> | null | undefined;
-  onTouchViewTag: (tag: number, frame: Object, pointerY: number) => unknown;
+  onTouchViewTag: ((tag: number, frame: any, pointerY: number) => unknown);
 }>;
 
 class InspectorOverlay extends React.Component<Props> {
 
-  findViewForTouchEvent: (e: PressEvent) => void = (e: PressEvent) => {
+  findViewForTouchEvent: ((e: PressEvent) => void) = (e: PressEvent) => {
     const {
       locationX,
       locationY
@@ -47,7 +47,7 @@ class InspectorOverlay extends React.Component<Props> {
     });
   };
 
-  shouldSetResponser: (e: PressEvent) => boolean = (e: PressEvent): boolean => {
+  shouldSetResponser: ((e: PressEvent) => boolean) = (e: PressEvent): boolean => {
     this.findViewForTouchEvent(e);
     return true;
   };
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InspectorOverlay;
+export default InspectorOverlay;;

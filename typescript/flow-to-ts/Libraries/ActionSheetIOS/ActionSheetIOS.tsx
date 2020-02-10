@@ -1,6 +1,18 @@
 'use strict';;
 import invariant from 'invariant';
 import processColor from '../StyleSheet/processColor';
+
+
+
+
+
+
+
+
+
+
+
+
 import RCTActionSheetManager from "./NativeActionSheetManager";
 
 /**
@@ -33,7 +45,7 @@ const ActionSheetIOS = {
     readonly cancelButtonIndex?: number | null | undefined;
     readonly anchor?: number | null | undefined;
     readonly tintColor?: number | string;
-  }, callback: (buttonIndex: number) => void) {
+  }, callback: ((buttonIndex: number) => void)) {
     invariant(typeof options === 'object' && options !== null, 'Options must be a valid object');
     invariant(typeof callback === 'function', 'Must provide a valid callback');
     invariant(RCTActionSheetManager, "ActionSheetManager does't exist");
@@ -81,7 +93,7 @@ const ActionSheetIOS = {
    *
    * See http://facebook.github.io/react-native/docs/actionsheetios.html#showshareactionsheetwithoptions
    */
-  showShareActionSheetWithOptions(options: any, failureCallback: any, successCallback: any) {
+  showShareActionSheetWithOptions(options: any, failureCallback: ((...args: any) => any), successCallback: ((...args: any) => any)) {
     invariant(typeof options === 'object' && options !== null, 'Options must be a valid object');
     invariant(typeof failureCallback === 'function', 'Must provide a valid failureCallback');
     invariant(typeof successCallback === 'function', 'Must provide a valid successCallback');
@@ -90,4 +102,4 @@ const ActionSheetIOS = {
   }
 };
 
-export default ActionSheetIOS;
+export default ActionSheetIOS;;

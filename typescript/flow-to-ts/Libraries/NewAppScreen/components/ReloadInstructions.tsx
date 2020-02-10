@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const ReloadInstructions: () => Node = Platform.select({
+const ReloadInstructions: (() => Node) = Platform.select({
   ios: () => <Text>
       Press <Text style={styles.highlight}>Cmd + R</Text> in the simulator to
       reload your app's code.

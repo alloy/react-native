@@ -104,8 +104,8 @@ type NativeProps = $ReadOnly<ViewProps & {
 type NativeType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly openDrawer: (viewRef: React.ElementRef<NativeType>) => void;
-  readonly closeDrawer: (viewRef: React.ElementRef<NativeType>) => void;
+  readonly openDrawer: ((viewRef: React.ElementRef<NativeType>) => void);
+  readonly closeDrawer: ((viewRef: React.ElementRef<NativeType>) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

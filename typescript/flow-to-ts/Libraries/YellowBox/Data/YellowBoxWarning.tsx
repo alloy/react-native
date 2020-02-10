@@ -19,7 +19,7 @@ import { Category, Message } from "./YellowBoxCategory";
 import { Stack } from "./YellowBoxSymbolication";
 
 export type SymbolicationRequest = $ReadOnly<{
-  abort: () => void;
+  abort: (() => void);
 }>;
 
 class YellowBoxWarning {
@@ -73,12 +73,12 @@ class YellowBoxWarning {
     return this.symbolicated.status === 'COMPLETE' ? this.symbolicated.stack : this.stack;
   }
 
-  retrySymbolicate(callback: () => void): SymbolicationRequest {
+  retrySymbolicate(callback: (() => void)): SymbolicationRequest {
     YellowBoxSymbolication.delete(this.stack);
     return this.symbolicate(callback);
   }
 
-  symbolicate(callback: () => void): SymbolicationRequest {
+  symbolicate(callback: (() => void)): SymbolicationRequest {
     let aborted = false;
 
     if (this.symbolicated.status !== 'COMPLETE') {
@@ -111,4 +111,4 @@ class YellowBoxWarning {
   }
 }
 
-export default YellowBoxWarning;
+export default YellowBoxWarning;;

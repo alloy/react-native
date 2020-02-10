@@ -14,4 +14,4 @@ import { HostComponent } from "../Renderer/shims/ReactNativeTypes";
  */
 const requireNativeComponent = <T>(uiViewClassName: string): HostComponent<T> => ((createReactNativeComponentClass(uiViewClassName, () => getNativeComponentAttributes(uiViewClassName)) as any) as HostComponent<T>);
 
-export default requireNativeComponent;
+export default requireNativeComponent;;

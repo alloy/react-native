@@ -12,7 +12,7 @@ const ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 class StyleSheetValidation {
 
-  static validateStyleProp(prop: string, style: Object, caller: string) {
+  static validateStyleProp(prop: string, style: any, caller: string) {
     if (!__DEV__ || global.__RCTProfileIsProfiling) {
       return;
     }
@@ -27,7 +27,7 @@ class StyleSheetValidation {
     }
   }
 
-  static validateStyle(name: string, styles: Object) {
+  static validateStyle(name: string, styles: any) {
     if (!__DEV__ || global.__RCTProfileIsProfiling) {
       return;
     }
@@ -62,4 +62,4 @@ if (__DEV__ && !global.__RCTProfileIsProfiling) {
   StyleSheetValidation.addValidStylePropTypes(DeprecatedViewStylePropTypes);
 }
 
-export default StyleSheetValidation;
+export default StyleSheetValidation;;

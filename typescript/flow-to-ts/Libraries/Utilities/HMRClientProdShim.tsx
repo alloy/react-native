@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import { HMRClientNativeInterface } from "./HMRClient";
 
 // This shim ensures DEV binary builds don't crash in JS
@@ -13,4 +25,4 @@ const HMRClientProdShim: HMRClientNativeInterface = {
   log() {}
 };
 
-export default HMRClientProdShim;
+export default HMRClientProdShim;;

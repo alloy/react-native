@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InputAccessoryView;
+export default InputAccessoryView;;

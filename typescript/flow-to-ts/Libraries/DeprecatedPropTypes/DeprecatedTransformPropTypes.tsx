@@ -2,13 +2,13 @@
 import ReactPropTypes from 'prop-types';
 import deprecatedPropType from '../Utilities/deprecatedPropType';
 
-const TransformMatrixPropType = function (props: Object, propName: string, componentName: string): Error | null | undefined {
+const TransformMatrixPropType = function (props: any, propName: string, componentName: string): Error | null | undefined {
   if (props[propName]) {
     return new Error('The transformMatrix style property is deprecated. ' + 'Use `transform: [{ matrix: ... }]` instead.');
   }
 };
 
-const DecomposedMatrixPropType = function (props: Object, propName: string, componentName: string): Error | null | undefined {
+const DecomposedMatrixPropType = function (props: any, propName: string, componentName: string): Error | null | undefined {
   if (props[propName]) {
     return new Error('The decomposedMatrix style property is deprecated. ' + 'Use `transform: [...]` instead.');
   }
@@ -25,4 +25,4 @@ const DeprecatedTransformPropTypes = {
   translateY: (deprecatedPropType(ReactPropTypes.number, 'Use the transform prop instead.') as ReactPropsCheckType)
 };
 
-export default DeprecatedTransformPropTypes;
+export default DeprecatedTransformPropTypes;;

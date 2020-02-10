@@ -35,16 +35,16 @@ type NetworkRequestInfo = {
   dataSent?: any;
   responseContentType?: string;
   responseSize?: number;
-  requestHeaders?: Object;
+  requestHeaders?: any;
   responseHeaders?: string;
-  response?: Object | string;
+  response?: any | string;
   responseURL?: string;
   responseType?: string;
   timeout?: number;
   closeReason?: string;
   messages?: string;
-  serverClose?: Object;
-  serverError?: Object;
+  serverClose?: any;
+  serverError?: any;
 
 };
 
@@ -55,30 +55,15 @@ type State = {
 };
 
 function getStringByValue(value: any): string {
-  if (value === undefined) {
-    return 'undefined';
-  }
-  if (typeof value === 'object') {
-    return JSON.stringify(value);
-  }
-  if (typeof value === 'string' && value.length > 500) {
-    return String(value).substr(0, 500).concat('\n***TRUNCATED TO 500 CHARACTERS***');
-  }
-  return value;
+  return null as any;
 }
 
 function getTypeShortName(type: any): string {
-  if (type === 'XMLHttpRequest') {
-    return 'XHR';
-  } else if (type === 'WebSocket') {
-    return 'WS';
-  }
-
-  return '';
+  return null as any;
 }
 
 function keyExtractor(request: NetworkRequestInfo): string {
-  return String(request.id);
+  return null as any;
 }
 
 /**
@@ -409,7 +394,7 @@ class NetworkOverlay extends React.Component<Props, State> {
     this._requestsListView = listRef;
   };
 
-  _requestsListViewOnScroll = (e: Object): void => {
+  _requestsListViewOnScroll = (e: any): void => {
     this._requestsListViewScrollMetrics.offset = e.nativeEvent.contentOffset.y;
     this._requestsListViewScrollMetrics.visibleLength = e.nativeEvent.layoutMeasurement.height;
     this._requestsListViewScrollMetrics.contentLength = e.nativeEvent.contentSize.height;
@@ -580,4 +565,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default NetworkOverlay;
+export default NetworkOverlay;;

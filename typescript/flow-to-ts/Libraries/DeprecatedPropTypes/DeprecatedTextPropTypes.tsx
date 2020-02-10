@@ -147,4 +147,4 @@ export default {
    * See https://facebook.github.io/react-native/docs/text.html#dataDetectorType
    */
   dataDetectorType: (PropTypes.oneOf(DataDetectorTypes) as React$PropType$Primitive<"phoneNumber" | "link" | "email" | "none" | "all">)
-};
+};;

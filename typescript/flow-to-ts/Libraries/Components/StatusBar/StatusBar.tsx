@@ -115,15 +115,8 @@ type Props = $ReadOnly<AndroidProps & IOSProps & {
 /**
  * Merges the prop stack with the default values.
  */
-function mergePropsStack(propsStack: Array<Object>, defaultValues: Object): Object {
-  return propsStack.reduce((prev, cur) => {
-    for (const prop in cur) {
-      if (cur[prop] != null) {
-        prev[prop] = cur[prop];
-      }
-    }
-    return prev;
-  }, Object.assign({}, defaultValues));
+function mergePropsStack(propsStack: Array<any>, defaultValues: any): any {
+  return null as any;
 }
 
 /**
@@ -131,23 +124,7 @@ function mergePropsStack(propsStack: Array<Object>, defaultValues: Object): Obje
  * and the transition/animation info.
  */
 function createStackEntry(props: any): any {
-  return {
-    backgroundColor: props.backgroundColor != null ? {
-      value: props.backgroundColor,
-      animated: props.animated
-    } : null,
-    barStyle: props.barStyle != null ? {
-      value: props.barStyle,
-      animated: props.animated
-    } : null,
-    translucent: props.translucent,
-    hidden: props.hidden != null ? {
-      value: props.hidden,
-      animated: props.animated,
-      transition: props.showHideTransition
-    } : null,
-    networkActivityIndicatorVisible: props.networkActivityIndicatorVisible
-  };
+  return null as any;
 }
 
 /**
@@ -443,4 +420,4 @@ class StatusBar extends React.Component<Props> {
   }
 }
 
-export default StatusBar;
+export default StatusBar;;

@@ -34,7 +34,7 @@ type Label = Stringish | number;
 
 type NativeProps = $ReadOnly<{
   items: ReadonlyArray<RCTPickerIOSItemType>;
-  onChange: (event: PickerIOSChangeEvent) => void;
+  onChange: ((event: PickerIOSChangeEvent) => void);
   selectedIndex: number;
   style?: TextStyleProp | null | undefined;
   testID?: string | null | undefined;
@@ -44,7 +44,7 @@ type NativeProps = $ReadOnly<{
 type ComponentType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly setNativeSelectedIndex: (viewRef: React.ElementRef<ComponentType>, index: number) => void;
+  readonly setNativeSelectedIndex: ((viewRef: React.ElementRef<ComponentType>, index: number) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

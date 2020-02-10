@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -45,7 +45,7 @@ class Dimensions {
    * @param {string} dim Name of dimension as defined when calling `set`.
    * @returns {Object?} Value for the dimension.
    */
-  static get(dim: string): Object {
+  static get(dim: string): any {
     invariant(dimensions[dim], 'No dimension set for key ' + dim);
     return dimensions[dim];
   }
@@ -108,7 +108,7 @@ class Dimensions {
    *   are the same as the return values of `Dimensions.get('window')` and
    *   `Dimensions.get('screen')`, respectively.
    */
-  static addEventListener(type: "change", handler: Function) {
+  static addEventListener(type: "change", handler: ((...args: any) => any)) {
     invariant(type === 'change', 'Trying to subscribe to unknown event: "%s"', type);
     eventEmitter.addListener(type, handler);
   }
@@ -116,7 +116,7 @@ class Dimensions {
   /**
    * Remove an event handler.
    */
-  static removeEventListener(type: "change", handler: Function) {
+  static removeEventListener(type: "change", handler: ((...args: any) => any)) {
     invariant(type === 'change', 'Trying to remove listener for unknown event: "%s"', type);
     eventEmitter.removeListener(type, handler);
   }
@@ -137,4 +137,4 @@ if (!initialDims) {
 
 Dimensions.set(initialDims);
 
-export default Dimensions;
+export default Dimensions;;

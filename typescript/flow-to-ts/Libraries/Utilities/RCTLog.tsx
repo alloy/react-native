@@ -9,7 +9,7 @@ const levelsMap = {
   fatal: 'error'
 };
 
-let warningHandler: (arg0: Array<any>) => void | null | undefined = null;
+let warningHandler: ((arg0: Array<any>) => void) | null | undefined = null;
 
 const RCTLog = {
   // level one of log, info, warn, error, mustfix
@@ -38,4 +38,4 @@ const RCTLog = {
   }
 };
 
-export default RCTLog;
+export default RCTLog;;

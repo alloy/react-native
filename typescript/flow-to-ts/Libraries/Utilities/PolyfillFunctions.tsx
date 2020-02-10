@@ -14,32 +14,8 @@ import defineLazyObjectProperty from './defineLazyObjectProperty';
  *
  * @see https://github.com/facebook/react-native/issues/934
  */
-function polyfillObjectProperty<T>(object: Object, name: string, getValue: () => T): void {
-  const descriptor = Object.getOwnPropertyDescriptor(object, name);
-  if (__DEV__ && descriptor) {
-    const backupName = `original${name[0].toUpperCase()}${name.substr(1)}`;
-    Object.defineProperty(object, backupName, descriptor);
-  }
+function polyfillObjectProperty<T>(object: any, name: string, getValue: (() => T)): void {}
 
-  const {
-    enumerable,
-    writable,
-    configurable
-  } = descriptor || {};
-  if (descriptor && !configurable) {
-    console.error('Failed to set polyfill. ' + name + ' is not configurable.');
-    return;
-  }
+function polyfillGlobal<T>(name: string, getValue: (() => T)): void {}
 
-  defineLazyObjectProperty(object, name, {
-    get: getValue,
-    enumerable: enumerable !== false,
-    writable: writable !== false
-  });
-}
-
-function polyfillGlobal<T>(name: string, getValue: () => T): void {
-  polyfillObjectProperty(global, name, getValue);
-}
-
-export default { polyfillObjectProperty, polyfillGlobal };
+export default { polyfillObjectProperty, polyfillGlobal };;

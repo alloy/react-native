@@ -8,4 +8,4 @@ function openURLInBrowser(url: string) {
   });
 }
 
-export default openURLInBrowser;
+export default openURLInBrowser;;

@@ -48,4 +48,4 @@ export default {
   onLoad: PropTypes.func,
 
   onLoadEnd: PropTypes.func
-};
+};;

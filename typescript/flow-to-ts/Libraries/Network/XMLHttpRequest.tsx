@@ -10,11 +10,11 @@ const DEBUG_NETWORK_SEND_DELAY: false = false; // Set to a number of millisecond
 
 export type NativeResponseType = "base64" | "blob" | "text";
 export type ResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
-export type Response = (Object | null | undefined) | string;
+export type Response = (any | null | undefined) | string;
 
 type XHRInterceptor = {
-  requestSent(id: number, url: string, method: string, headers: Object): void;
-  responseReceived(id: number, url: string, status: number, headers: Object): void;
+  requestSent(id: number, url: string, method: string, headers: any): void;
+  responseReceived(id: number, url: string, status: number, headers: any): void;
   dataReceived(id: number, data: string): void;
   loadingFinished(id: number, encodedDataLength: number): void;
   loadingFailed(id: number, error: string): void;
@@ -47,13 +47,13 @@ const XHR_EVENTS = REQUEST_EVENTS.concat('readystatechange');
 
 class XMLHttpRequestEventTarget extends (EventTarget(...REQUEST_EVENTS) as any) {
 
-  onload: Function | null | undefined;
-  onloadstart: Function | null | undefined;
-  onprogress: Function | null | undefined;
-  ontimeout: Function | null | undefined;
-  onerror: Function | null | undefined;
-  onabort: Function | null | undefined;
-  onloadend: Function | null | undefined;
+  onload: ((...args: any) => any) | null | undefined;
+  onloadstart: ((...args: any) => any) | null | undefined;
+  onprogress: ((...args: any) => any) | null | undefined;
+  ontimeout: ((...args: any) => any) | null | undefined;
+  onerror: ((...args: any) => any) | null | undefined;
+  onabort: ((...args: any) => any) | null | undefined;
+  onloadend: ((...args: any) => any) | null | undefined;
 }
 
 /**
@@ -76,17 +76,17 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
   DONE: number = DONE;
 
   // EventTarget automatically initializes these to `null`.
-  onload: Function | null | undefined;
-  onloadstart: Function | null | undefined;
-  onprogress: Function | null | undefined;
-  ontimeout: Function | null | undefined;
-  onerror: Function | null | undefined;
-  onabort: Function | null | undefined;
-  onloadend: Function | null | undefined;
-  onreadystatechange: Function | null | undefined;
+  onload: ((...args: any) => any) | null | undefined;
+  onloadstart: ((...args: any) => any) | null | undefined;
+  onprogress: ((...args: any) => any) | null | undefined;
+  ontimeout: ((...args: any) => any) | null | undefined;
+  onerror: ((...args: any) => any) | null | undefined;
+  onabort: ((...args: any) => any) | null | undefined;
+  onloadend: ((...args: any) => any) | null | undefined;
+  onreadystatechange: ((...args: any) => any) | null | undefined;
 
   readyState: number = UNSENT;
-  responseHeaders: Object | null | undefined;
+  responseHeaders: any | null | undefined;
   status: number = 0;
   timeout: number = 0;
   responseURL: string | null | undefined;
@@ -100,10 +100,10 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
   _aborted: boolean = false;
   _cachedResponse: Response;
   _hasError: boolean = false;
-  _headers: Object;
-  _lowerCaseResponseHeaders: Object;
+  _headers: any;
+  _lowerCaseResponseHeaders: any;
   _method: string | null | undefined = null;
-  _response: string | (Object | null | undefined);
+  _response: string | (any | null | undefined);
   _responseType: ResponseType;
   _response: string = '';
   _sent: boolean;
@@ -245,7 +245,7 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
     }
   }
 
-  __didReceiveResponse(requestId: number, status: number, responseHeaders: Object | null | undefined, responseURL: string | null | undefined): void {
+  __didReceiveResponse(requestId: number, status: number, responseHeaders: any | null | undefined, responseURL: string | null | undefined): void {
     if (requestId === this._requestId) {
       this.status = status;
       this.setResponseHeaders(responseHeaders);
@@ -436,7 +436,7 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
     this._reset();
   }
 
-  setResponseHeaders(responseHeaders: Object | null | undefined): void {
+  setResponseHeaders(responseHeaders: any | null | undefined): void {
     this.responseHeaders = responseHeaders || null;
     const headers = responseHeaders || {};
     this._lowerCaseResponseHeaders = Object.keys(headers).reduce((lcaseHeaders, headerName) => {
@@ -477,4 +477,4 @@ class XMLHttpRequest extends (EventTarget(...XHR_EVENTS) as any) {
   }
 }
 
-export default XMLHttpRequest;
+export default XMLHttpRequest;;

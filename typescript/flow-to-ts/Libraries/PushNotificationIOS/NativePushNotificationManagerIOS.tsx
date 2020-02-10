@@ -23,7 +23,7 @@ type Notification = {
   readonly fireDate?: number | null | undefined;
   readonly alertBody?: string | null | undefined;
   readonly alertAction?: string | null | undefined;
-  readonly userInfo?: Object | null | undefined;
+  readonly userInfo?: any | null | undefined;
   readonly category?: string | null | undefined;
   // Actual type: 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute'
   readonly repeatInterval?: string | null | undefined;
@@ -32,35 +32,35 @@ type Notification = {
 };
 
 export interface Spec extends TurboModule {
-  readonly getConstants: () => {};
-  readonly onFinishRemoteNotification: (notificationId: string,
+  readonly getConstants: (() => {});
+  readonly onFinishRemoteNotification: ((notificationId: string,
   /**
    * Type:
    *  'UIBackgroundFetchResultNewData' |
    *  'UIBackgroundFetchResultNoData' |
    *  'UIBackgroundFetchResultFailed'
    */
-  fetchResult: string) => void;
-  readonly setApplicationIconBadgeNumber: (num: number) => void;
-  readonly getApplicationIconBadgeNumber: (callback: (num: number) => void) => void;
-  readonly requestPermissions: (permission: {
+  fetchResult: string) => void);
+  readonly setApplicationIconBadgeNumber: ((num: number) => void);
+  readonly getApplicationIconBadgeNumber: ((callback: ((num: number) => void)) => void);
+  readonly requestPermissions: ((permission: {
     readonly alert: boolean;
     readonly badge: boolean;
     readonly sound: boolean;
-  }) => Promise<Permissions>;
-  readonly abandonPermissions: () => void;
-  readonly checkPermissions: (callback: (permissions: Permissions) => void) => void;
-  readonly presentLocalNotification: (notification: Notification) => void;
-  readonly scheduleLocalNotification: (notification: Notification) => void;
-  readonly cancelAllLocalNotifications: () => void;
-  readonly cancelLocalNotifications: (userInfo: Object) => void;
-  readonly getInitialNotification: () => Promise<Notification | null | undefined>;
-  readonly getScheduledLocalNotifications: (callback: (notification: Notification) => void) => void;
-  readonly removeAllDeliveredNotifications: () => void;
-  readonly removeDeliveredNotifications: (identifiers: Array<string>) => void;
-  readonly getDeliveredNotifications: (callback: (notification: Array<Notification>) => void) => void;
-  readonly addListener: (eventType: string) => void;
-  readonly removeListeners: (count: number) => void;
+  }) => Promise<Permissions>);
+  readonly abandonPermissions: (() => void);
+  readonly checkPermissions: ((callback: ((permissions: Permissions) => void)) => void);
+  readonly presentLocalNotification: ((notification: Notification) => void);
+  readonly scheduleLocalNotification: ((notification: Notification) => void);
+  readonly cancelAllLocalNotifications: (() => void);
+  readonly cancelLocalNotifications: ((userInfo: any) => void);
+  readonly getInitialNotification: (() => Promise<Notification | null | undefined>);
+  readonly getScheduledLocalNotifications: ((callback: ((notification: Notification) => void)) => void);
+  readonly removeAllDeliveredNotifications: (() => void);
+  readonly removeDeliveredNotifications: ((identifiers: Array<string>) => void);
+  readonly getDeliveredNotifications: ((callback: ((notification: Array<Notification>) => void)) => void);
+  readonly addListener: ((eventType: string) => void);
+  readonly removeListeners: ((count: number) => void);
 }
 
 export default (TurboModuleRegistry.get<Spec>('PushNotificationManager') as Spec | null | undefined);

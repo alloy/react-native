@@ -12,69 +12,7 @@ import sizesDiffer from '../Utilities/differ/sizesDiffer';
 import warning from 'fbjs/lib/warning';
 
 function getNativeComponentAttributes(uiViewClassName: string): any {
-  const viewConfig = UIManager.getViewManagerConfig(uiViewClassName);
-
-  invariant(viewConfig != null && viewConfig.NativeProps != null, 'requireNativeComponent: "%s" was not found in the UIManager.', uiViewClassName);
-
-  // TODO: This seems like a whole lot of runtime initialization for every
-  // native component that can be either avoided or simplified.
-  let {
-    baseModuleName,
-    bubblingEventTypes,
-    directEventTypes
-  } = viewConfig;
-  let nativeProps = viewConfig.NativeProps;
-  while (baseModuleName) {
-    const baseModule = UIManager.getViewManagerConfig(baseModuleName);
-    if (!baseModule) {
-      warning(false, 'Base module "%s" does not exist', baseModuleName);
-      baseModuleName = null;
-    } else {
-      bubblingEventTypes = {
-        ...baseModule.bubblingEventTypes,
-        ...bubblingEventTypes
-      };
-      directEventTypes = {
-        ...baseModule.directEventTypes,
-        ...directEventTypes
-      };
-      nativeProps = {
-        ...baseModule.NativeProps,
-        ...nativeProps
-      };
-      baseModuleName = baseModule.baseModuleName;
-    }
-  }
-
-  const validAttributes = {};
-
-  for (const key in nativeProps) {
-    const typeName = nativeProps[key];
-    const diff = getDifferForType(typeName);
-    const process = getProcessorForType(typeName);
-
-    validAttributes[key] = diff == null && process == null ? true : { diff, process };
-  }
-
-  // Unfortunately, the current setup declares style properties as top-level
-  // props. This makes it so we allow style properties in the `style` prop.
-  // TODO: Move style properties into a `style` prop and disallow them as
-  // top-level props on the native side.
-  validAttributes.style = ReactNativeStyleAttributes;
-
-  Object.assign(viewConfig, {
-    uiViewClassName,
-    validAttributes,
-    bubblingEventTypes,
-    directEventTypes
-  });
-
-  if (!hasAttachedDefaultEventTypes) {
-    attachDefaultEventTypes(viewConfig);
-    hasAttachedDefaultEventTypes = true;
-  }
-
-  return viewConfig;
+  return null as any;
 }
 
 // TODO: Figure out how this makes sense. We're using a global boolean to only
@@ -95,66 +33,16 @@ function attachDefaultEventTypes(viewConfig: any) {
 }
 
 // TODO: Figure out how to avoid all this runtime initialization cost.
-function merge(destination: Object | null | undefined, source: Object | null | undefined): Object | null | undefined {
-  if (!source) {
-    return destination;
-  }
-  if (!destination) {
-    return source;
-  }
-
-  for (const key in source) {
-    if (!source.hasOwnProperty(key)) {
-      continue;
-    }
-
-    let sourceValue = source[key];
-    if (destination.hasOwnProperty(key)) {
-      const destinationValue = destination[key];
-      if (typeof sourceValue === 'object' && typeof destinationValue === 'object') {
-        sourceValue = merge(destinationValue, sourceValue);
-      }
-    }
-    destination[key] = sourceValue;
-  }
-  return destination;
+function merge(destination: any | null | undefined, source: any | null | undefined): any | null | undefined {
+  return null as any;
 }
 
-function getDifferForType(typeName: string): (prevProp: any, nextProp: any) => boolean | null | undefined {
-  switch (typeName) {
-    // iOS Types
-    case 'CATransform3D':
-      return matricesDiffer;
-    case 'CGPoint':
-      return pointsDiffer;
-    case 'CGSize':
-      return sizesDiffer;
-    case 'UIEdgeInsets':
-      return insetsDiffer;
-
-    // Android Types
-    // (not yet implemented)
-  }
-  return null;
+function getDifferForType(typeName: string): ((prevProp: any, nextProp: any) => boolean) | null | undefined {
+  return null as any;
 }
 
-function getProcessorForType(typeName: string): (nextProp: any) => any | null | undefined {
-  switch (typeName) {
-    // iOS Types
-    case 'CGColor':case 'UIColor':
-      return processColor;
-    case 'CGColorArray':case 'UIColorArray':
-      return processColorArray;
-    case 'CGImage':case 'UIImage':case 'RCTImageSource':
-      return resolveAssetSource;
-    // Android Types
-    case 'Color':
-      return processColor;
-    case 'ColorArray':
-      return processColorArray;
-
-  }
-  return null;
+function getProcessorForType(typeName: string): ((nextProp: any) => any) | null | undefined {
+  return null as any;
 }
 
-export default getNativeComponentAttributes;
+export default getNativeComponentAttributes;;

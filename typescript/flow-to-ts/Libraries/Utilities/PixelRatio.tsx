@@ -113,4 +113,4 @@ class PixelRatio {
   static startDetecting() {}
 }
 
-export default PixelRatio;
+export default PixelRatio;;

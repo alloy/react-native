@@ -39,4 +39,4 @@ const BridgeSpyStallHandler = {
   }
 };
 
-export default BridgeSpyStallHandler;
+export default BridgeSpyStallHandler;;

@@ -32,48 +32,20 @@ const customDirectEventTypes: {
   }>;
 } = {};
 
-export { customBubblingEventTypes, customDirectEventTypes };
+exports.customBubblingEventTypes = customBubblingEventTypes;
+exports.customDirectEventTypes = customDirectEventTypes;
 
 const viewConfigCallbacks = new Map();
 const viewConfigs = new Map();
 
-function processEventTypes(viewConfig: ReactNativeBaseComponentViewConfig<>): void {
-  const {
-    bubblingEventTypes,
-    directEventTypes
-  } = viewConfig;
-
-  if (__DEV__) {
-    if (bubblingEventTypes != null && directEventTypes != null) {
-      for (const topLevelType in directEventTypes) {
-        invariant(bubblingEventTypes[topLevelType] == null, 'Event cannot be both direct and bubbling: %s', topLevelType);
-      }
-    }
-  }
-
-  if (bubblingEventTypes != null) {
-    for (const topLevelType in bubblingEventTypes) {
-      if (customBubblingEventTypes[topLevelType] == null) {
-        customBubblingEventTypes[topLevelType] = bubblingEventTypes[topLevelType];
-      }
-    }
-  }
-
-  if (directEventTypes != null) {
-    for (const topLevelType in directEventTypes) {
-      if (customDirectEventTypes[topLevelType] == null) {
-        customDirectEventTypes[topLevelType] = directEventTypes[topLevelType];
-      }
-    }
-  }
-}
+function processEventTypes(viewConfig: ReactNativeBaseComponentViewConfig<>): void {}
 
 /**
  * Registers a native view/component by name.
  * A callback is provided to load the view config from UIManager.
  * The callback is deferred until the view is actually rendered.
  */
-export const register = function (name: string, callback: ViewConfigGetter): string {
+exports.register = function (name: string, callback: ViewConfigGetter): string {
   invariant(!viewConfigCallbacks.has(name), 'Tried to register two views with the same name %s', name);
   invariant(typeof callback === 'function', 'View config getter callback for component `%s` must be a function (received `%s`)', name, callback === null ? 'null' : typeof callback);
   viewConfigCallbacks.set(name, callback);
@@ -85,7 +57,7 @@ export const register = function (name: string, callback: ViewConfigGetter): str
  * If this is the first time the view has been used,
  * This configuration will be lazy-loaded from UIManager.
  */
-export const get = function (name: string): ReactNativeBaseComponentViewConfig<> {
+exports.get = function (name: string): ReactNativeBaseComponentViewConfig<> {
   let viewConfig;
   if (!viewConfigs.has(name)) {
     const callback = viewConfigCallbacks.get(name);

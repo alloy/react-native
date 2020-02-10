@@ -1,4 +1,17 @@
 'use strict';;
+import NativeJSCSamplingProfiler from './NativeJSCSamplingProfiler';
+
+
+
+
+
+
+
+
+
+
+
+
 const SamplingProfiler = {
   poke: function (token: number): void {
     let error = null;
@@ -15,11 +28,10 @@ const SamplingProfiler = {
       error = e.toString();
     }
 
-    const NativeJSCSamplingProfiler = require('./NativeJSCSamplingProfiler').default;
     if (NativeJSCSamplingProfiler) {
       NativeJSCSamplingProfiler.operationComplete(token, result, error);
     }
   }
 };
 
-export default SamplingProfiler;
+export default SamplingProfiler;;

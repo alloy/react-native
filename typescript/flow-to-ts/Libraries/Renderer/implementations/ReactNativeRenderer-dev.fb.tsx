@@ -1,10 +1,11 @@
 'use strict';;
-import React from "react";
-import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
-import checkPropTypes from "prop-types/checkPropTypes";
-import Scheduler from "scheduler";
-import tracing from "scheduler/tracing";
-import _require from "../shims/ReactFeatureFlags";
+import _Import0 from "react";
+import "react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore";
+import _Import1 from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
+import _Import2 from "prop-types/checkPropTypes";
+import _Import3 from "scheduler";
+import _Import4 from "scheduler/tracing";
+import _Import5 from "../shims/ReactFeatureFlags";
 
 
 
@@ -19,9 +20,16 @@ import _require from "../shims/ReactFeatureFlags";
 
 
 if (__DEV__) {
-  (function () {
-    "use strict";
-    require("react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore");
+  (function () {"use strict";
+
+
+
+    var React = _Import0;
+    ;
+    var ReactNativePrivateInterface = _Import1;
+    var checkPropTypes = _Import2;
+    var Scheduler = _Import3;
+    var tracing = _Import4;
 
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
     // Current owner and dispatcher used to share the same ref,
@@ -2228,6 +2236,8 @@ if (__DEV__) {
       ReactNativeBridgeEventPlugin: ReactNativeBridgeEventPlugin
     });
 
+    // Uncomment to re-export dynamic flags from the fbsource version.
+    var _require = _Import5;
     var enableNativeTargetAsInstance = _require.enableNativeTargetAsInstance; // The rest of the flags are static for better dead code elimination.
 
     var enableUserTimingAPI = true;
@@ -3503,7 +3513,7 @@ if (__DEV__) {
      */
     var ReactNativeFiberHostComponent =
     /*#__PURE__*/
-    function () {
+    (function () {
       function ReactNativeFiberHostComponent(tag, viewConfig) {
         this._nativeTag = tag;
         this._children = [];
@@ -3566,7 +3576,7 @@ if (__DEV__) {
       };
 
       return ReactNativeFiberHostComponent;
-    }(); // eslint-disable-next-line no-unused-expressions
+    })(); // eslint-disable-next-line no-unused-expressions
 
     // can re-export everything from this module.
 
@@ -20095,7 +20105,7 @@ if (__DEV__) {
        */
       var ReactNativeComponent =
       /*#__PURE__*/
-      function (_React$Component) {
+      (function (_React$Component) {
         _inheritsLoose(ReactNativeComponent, _React$Component);
 
         function ReactNativeComponent() {
@@ -20296,7 +20306,7 @@ if (__DEV__) {
         };
 
         return ReactNativeComponent;
-      }(React.Component); // eslint-disable-next-line no-unused-expressions
+      })(React.Component); // eslint-disable-next-line no-unused-expressions
 
       return ReactNativeComponent;
     };
@@ -20594,6 +20604,7 @@ if (__DEV__) {
 
     var reactNativeRenderer = ReactNativeRenderer$3.default || ReactNativeRenderer$3;
 
-    export default reactNativeRenderer;
+    export default reactNativeRenderer;;
+
   })();
 }

@@ -11,7 +11,7 @@
 
 let _inGuard = 0;
 
-type ErrorHandler = (error: unknown, isFatal: boolean) => void;
+type ErrorHandler = ((error: unknown, isFatal: boolean) => void);
 type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;
 
 /**
@@ -71,7 +71,7 @@ const ErrorUtils = {
   inGuard(): boolean {
     return !!_inGuard;
   },
-  guard<TArgs extends ReadonlyArray<unknown>, TOut>(fun: Fn<TArgs, TOut>, name?: string | null | undefined, context?: unknown | null | undefined): (...args: TArgs) => TOut | null | undefined | null | undefined {
+  guard<TArgs extends ReadonlyArray<unknown>, TOut>(fun: Fn<TArgs, TOut>, name?: string | null | undefined, context?: unknown | null | undefined): ((...args: TArgs) => TOut | null | undefined) | null | undefined {
     // TODO: (moti) T48204753 Make sure this warning is never hit and remove it - types
     // should be sufficient.
     if (typeof fun !== 'function') {
@@ -80,7 +80,7 @@ const ErrorUtils = {
     }
     const guardName = name ?? fun.name ?? '<generated guard>';
     function guarded(...args: TArgs): TOut | null | undefined {
-      return ErrorUtils.applyWithGuard(fun, context ?? this, args, null, guardName);
+      return null as any;
     }
 
     return guarded;

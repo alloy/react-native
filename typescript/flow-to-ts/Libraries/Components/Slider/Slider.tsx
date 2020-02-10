@@ -118,14 +118,14 @@ type Props = $ReadOnly<ViewProps & IOSProps & {
   /**
    * Callback continuously called while the user is dragging the slider.
    */
-  onValueChange?: (value: number) => void | null | undefined;
+  onValueChange?: ((value: number) => void) | null | undefined;
 
   /**
    * Callback that is called when the user releases the slider,
    * regardless if the value has changed. The current value is passed
    * as an argument to the callback handler.
    */
-  onSlidingComplete?: (value: number) => void | null | undefined;
+  onSlidingComplete?: ((value: number) => void) | null | undefined;
 
   /**
    * Used to locate this view in UI automation tests.
@@ -241,4 +241,4 @@ if (Platform.OS === 'ios') {
   });
 }
 
-export default SliderWithRef;
+export default SliderWithRef;;

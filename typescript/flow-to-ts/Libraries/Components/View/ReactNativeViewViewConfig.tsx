@@ -1,4 +1,45 @@
 'use strict';;
+import _Import0 from '../../StyleSheet/processColor';
+import _Import1 from '../../StyleSheet/processColor';
+import _Import2 from '../../StyleSheet/processColor';
+import _Import3 from '../../StyleSheet/processColor';
+import _Import4 from '../../StyleSheet/processColor';
+import _Import5 from '../../StyleSheet/processColor';
+import _Import6 from '../../StyleSheet/processColor';
+import _Import7 from '../../StyleSheet/processColor';
+import _Import8 from '../../Utilities/differ/insetsDiffer';
+import _Import9 from '../../StyleSheet/processColor';
+import _Import10 from '../../Utilities/differ/sizesDiffer';
+import _Import11 from '../../StyleSheet/processColor';
+import _Import12 from '../../StyleSheet/processColor';
+import _Import13 from '../../StyleSheet/processColor';
+import _Import14 from '../../StyleSheet/processColor';
+import _Import15 from '../../StyleSheet/processColor';
+import _Import16 from '../../StyleSheet/processColor';
+import _Import17 from '../../StyleSheet/processColor';
+import _Import18 from '../../StyleSheet/processColor';
+import _Import19 from '../../StyleSheet/processColor';
+import _Import20 from '../../StyleSheet/processColor';
+import _Import21 from '../../StyleSheet/processColor';
+import _Import22 from '../../Utilities/differ/sizesDiffer';
+import _Import23 from '../../StyleSheet/processColor';
+import _Import24 from '../../StyleSheet/processColor';
+import _Import25 from '../../StyleSheet/processColor';
+import _Import26 from '../../Utilities/differ/matricesDiffer';
+import _Import27 from '../../StyleSheet/processTransform';
+import _Import28 from '../../Utilities/differ/matricesDiffer';
+import _Import29 from '../../StyleSheet/processTransform';
+
+
+
+
+
+
+
+
+
+
+
 import ReactNativeViewViewConfigAndroid from "./ReactNativeViewViewConfigAndroid";
 import { Platform } from "react-native";
 
@@ -122,25 +163,25 @@ const ReactNativeViewConfig = {
     alignSelf: true,
     aspectRatio: true,
     backfaceVisibility: true,
-    backgroundColor: { process: require('../../StyleSheet/processColor') },
-    borderBottomColor: { process: require('../../StyleSheet/processColor') },
+    backgroundColor: { process: _Import0 },
+    borderBottomColor: { process: _Import1 },
     borderBottomEndRadius: true,
     borderBottomLeftRadius: true,
     borderBottomRightRadius: true,
     borderBottomStartRadius: true,
     borderBottomWidth: true,
-    borderColor: { process: require('../../StyleSheet/processColor') },
-    borderEndColor: { process: require('../../StyleSheet/processColor') },
+    borderColor: { process: _Import2 },
+    borderEndColor: { process: _Import3 },
     borderEndWidth: true,
-    borderLeftColor: { process: require('../../StyleSheet/processColor') },
+    borderLeftColor: { process: _Import4 },
     borderLeftWidth: true,
     borderRadius: true,
-    borderRightColor: { process: require('../../StyleSheet/processColor') },
+    borderRightColor: { process: _Import5 },
     borderRightWidth: true,
-    borderStartColor: { process: require('../../StyleSheet/processColor') },
+    borderStartColor: { process: _Import6 },
     borderStartWidth: true,
     borderStyle: true,
-    borderTopColor: { process: require('../../StyleSheet/processColor') },
+    borderTopColor: { process: _Import7 },
     borderTopEndRadius: true,
     borderTopLeftRadius: true,
     borderTopRightRadius: true,
@@ -161,7 +202,7 @@ const ReactNativeViewConfig = {
     flexShrink: true,
     flexWrap: true,
     height: true,
-    hitSlop: { diff: (require('../../Utilities/differ/insetsDiffer') as any) },
+    hitSlop: { diff: (_Import8 as any) },
     importantForAccessibility: true,
     justifyContent: true,
     left: true,
@@ -204,8 +245,8 @@ const ReactNativeViewConfig = {
     rotation: true,
     scaleX: true,
     scaleY: true,
-    shadowColor: { process: require('../../StyleSheet/processColor') },
-    shadowOffset: { diff: require('../../Utilities/differ/sizesDiffer') },
+    shadowColor: { process: _Import9 },
+    shadowOffset: { diff: _Import10 },
     shadowOpacity: true,
     shadowRadius: true,
     shouldRasterizeIOS: true,
@@ -216,25 +257,25 @@ const ReactNativeViewConfig = {
       alignSelf: true,
       aspectRatio: true,
       backfaceVisibility: true,
-      backgroundColor: { process: require('../../StyleSheet/processColor') },
-      borderBottomColor: { process: require('../../StyleSheet/processColor') },
+      backgroundColor: { process: _Import11 },
+      borderBottomColor: { process: _Import12 },
       borderBottomEndRadius: true,
       borderBottomLeftRadius: true,
       borderBottomRightRadius: true,
       borderBottomStartRadius: true,
       borderBottomWidth: true,
-      borderColor: { process: require('../../StyleSheet/processColor') },
-      borderEndColor: { process: require('../../StyleSheet/processColor') },
+      borderColor: { process: _Import13 },
+      borderEndColor: { process: _Import14 },
       borderEndWidth: true,
-      borderLeftColor: { process: require('../../StyleSheet/processColor') },
+      borderLeftColor: { process: _Import15 },
       borderLeftWidth: true,
       borderRadius: true,
-      borderRightColor: { process: require('../../StyleSheet/processColor') },
+      borderRightColor: { process: _Import16 },
       borderRightWidth: true,
-      borderStartColor: { process: require('../../StyleSheet/processColor') },
+      borderStartColor: { process: _Import17 },
       borderStartWidth: true,
       borderStyle: true,
-      borderTopColor: { process: require('../../StyleSheet/processColor') },
+      borderTopColor: { process: _Import18 },
       borderTopEndRadius: true,
       borderTopLeftRadius: true,
       borderTopRightRadius: true,
@@ -242,7 +283,7 @@ const ReactNativeViewConfig = {
       borderTopWidth: true,
       borderWidth: true,
       bottom: true,
-      color: { process: require('../../StyleSheet/processColor') },
+      color: { process: _Import19 },
       decomposedMatrix: true,
       direction: true,
       display: true,
@@ -280,7 +321,7 @@ const ReactNativeViewConfig = {
       minWidth: true,
       opacity: true,
       overflow: true,
-      overlayColor: { process: require('../../StyleSheet/processColor') },
+      overlayColor: { process: _Import20 },
       padding: true,
       paddingBottom: true,
       paddingEnd: true,
@@ -296,23 +337,23 @@ const ReactNativeViewConfig = {
       rotation: true,
       scaleX: true,
       scaleY: true,
-      shadowColor: { process: require('../../StyleSheet/processColor') },
-      shadowOffset: { diff: require('../../Utilities/differ/sizesDiffer') },
+      shadowColor: { process: _Import21 },
+      shadowOffset: { diff: _Import22 },
       shadowOpacity: true,
       shadowRadius: true,
       start: true,
       textAlign: true,
       textAlignVertical: true,
-      textDecorationColor: { process: require('../../StyleSheet/processColor') },
+      textDecorationColor: { process: _Import23 },
       textDecorationLine: true,
       textDecorationStyle: true,
-      textShadowColor: { process: require('../../StyleSheet/processColor') },
+      textShadowColor: { process: _Import24 },
       textShadowOffset: true,
       textShadowRadius: true,
       textTransform: true,
-      tintColor: { process: require('../../StyleSheet/processColor') },
+      tintColor: { process: _Import25 },
       top: true,
-      transform: ((Platform.OS === 'ios' ? { diff: require('../../Utilities/differ/matricesDiffer') } : { process: require('../../StyleSheet/processTransform') }) as any),
+      transform: ((Platform.OS === 'ios' ? { diff: _Import26 } : { process: _Import27 }) as any),
       transformMatrix: true,
       translateX: true,
       translateY: true,
@@ -322,7 +363,7 @@ const ReactNativeViewConfig = {
     },
     testID: true,
     top: true,
-    transform: ((Platform.OS === 'ios' ? { diff: require('../../Utilities/differ/matricesDiffer') } : { process: require('../../StyleSheet/processTransform') }) as any),
+    transform: ((Platform.OS === 'ios' ? { diff: _Import28 } : { process: _Import29 }) as any),
     translateX: true,
     translateY: true,
     width: true,
@@ -330,4 +371,4 @@ const ReactNativeViewConfig = {
   }
 };
 
-export default ReactNativeViewConfig;
+export default ReactNativeViewConfig;;

@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -43,14 +43,14 @@ type Props = $ReadOnly<{
   hitSlop?: EdgeInsetsProp | null | undefined;
   importantForAccessibility?: ("auto" | "yes" | "no" | "no-hide-descendants") | null | undefined;
   nativeID?: string | null | undefined;
-  onAccessibilityAction?: (event: AccessibilityActionEvent) => unknown | null | undefined;
-  onBlur?: (event: BlurEvent) => unknown | null | undefined;
-  onFocus?: (event: FocusEvent) => unknown | null | undefined;
-  onLayout?: (event: LayoutEvent) => unknown | null | undefined;
-  onLongPress?: (event: PressEvent) => unknown | null | undefined;
-  onPress?: (event: PressEvent) => unknown | null | undefined;
-  onPressIn?: (event: PressEvent) => unknown | null | undefined;
-  onPressOut?: (event: PressEvent) => unknown | null | undefined;
+  onAccessibilityAction?: ((event: AccessibilityActionEvent) => unknown) | null | undefined;
+  onBlur?: ((event: BlurEvent) => unknown) | null | undefined;
+  onFocus?: ((event: FocusEvent) => unknown) | null | undefined;
+  onLayout?: ((event: LayoutEvent) => unknown) | null | undefined;
+  onLongPress?: ((event: PressEvent) => unknown) | null | undefined;
+  onPress?: ((event: PressEvent) => unknown) | null | undefined;
+  onPressIn?: ((event: PressEvent) => unknown) | null | undefined;
+  onPressOut?: ((event: PressEvent) => unknown) | null | undefined;
   pressRetentionOffset?: EdgeInsetsProp | null | undefined;
   rejectResponderTermination?: boolean | null | undefined;
   testID?: string | null | undefined;
@@ -142,22 +142,7 @@ class TouchableWithoutFeedback extends React.Component<Props, State> {
 }
 
 function createPressabilityConfig(props: Props): PressabilityConfig {
-  return {
-    cancelable: !props.rejectResponderTermination,
-    disabled: props.disabled,
-    hitSlop: props.hitSlop,
-    delayLongPress: props.delayLongPress,
-    delayPressIn: props.delayPressIn,
-    delayPressOut: props.delayPressOut,
-    pressRectOffset: props.pressRetentionOffset,
-    android_disableSound: props.touchSoundDisabled,
-    onBlur: props.onBlur,
-    onFocus: props.onFocus,
-    onLongPress: props.onLongPress,
-    onPress: props.onPress,
-    onPressIn: props.onPressIn,
-    onPressOut: props.onPressOut
-  };
+  return null as any;
 }
 
-export default TouchableWithoutFeedback;
+export default TouchableWithoutFeedback;;

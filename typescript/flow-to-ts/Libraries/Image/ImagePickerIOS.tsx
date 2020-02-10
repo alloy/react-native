@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -16,18 +16,18 @@ import NativeImagePickerIOS from "./NativeImagePickerIOS";
 import invariant from "invariant";
 
 const ImagePickerIOS = {
-  canRecordVideos: function (callback: (result: boolean) => void): void {
+  canRecordVideos: function (callback: ((result: boolean) => void)): void {
     invariant(NativeImagePickerIOS, 'ImagePickerIOS is not available');
     return NativeImagePickerIOS.canRecordVideos(callback);
   },
-  canUseCamera: function (callback: (result: boolean) => void): void {
+  canUseCamera: function (callback: ((result: boolean) => void)): void {
     invariant(NativeImagePickerIOS, 'ImagePickerIOS is not available');
     return NativeImagePickerIOS.canUseCamera(callback);
   },
   openCameraDialog: function (config: $ReadOnly<{
     unmirrorFrontFacingCamera?: boolean;
     videoMode?: boolean;
-  }>, successCallback: (imageURL: string, height: number, width: number) => void, cancelCallback: () => void): void {
+  }>, successCallback: ((imageURL: string, height: number, width: number) => void), cancelCallback: (() => void)): void {
     invariant(NativeImagePickerIOS, 'ImagePickerIOS is not available');
 
     var newConfig = {
@@ -48,7 +48,7 @@ const ImagePickerIOS = {
   openSelectDialog: function (config: $ReadOnly<{
     showImages?: boolean;
     showVideos?: boolean;
-  }>, successCallback: (imageURL: string, height: number, width: number) => void, cancelCallback: () => void): void {
+  }>, successCallback: ((imageURL: string, height: number, width: number) => void), cancelCallback: (() => void)): void {
     invariant(NativeImagePickerIOS, 'ImagePickerIOS is not available');
 
     var newConfig = {
@@ -90,4 +90,4 @@ const ImagePickerIOS = {
   }
 };
 
-export default ImagePickerIOS;
+export default ImagePickerIOS;;

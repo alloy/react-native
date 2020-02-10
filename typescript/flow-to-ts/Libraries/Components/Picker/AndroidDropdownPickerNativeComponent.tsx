@@ -47,7 +47,7 @@ type NativeProps = $ReadOnly<ViewProps & {
 type NativeType = HostComponent<NativeProps>;
 
 interface NativeCommands {
-  readonly setNativeSelectedPosition: (viewRef: React.ElementRef<NativeType>, index: number) => void;
+  readonly setNativeSelectedPosition: ((viewRef: React.ElementRef<NativeType>, index: number) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

@@ -1,10 +1,22 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import EventEmitter from "../vendor/emitter/EventEmitter";
 import NativeEventEmitter from "../EventEmitter/NativeEventEmitter";
 import NativeAppearance, { AppearancePreferences, ColorSchemeName } from "./NativeAppearance";
 import invariant from "invariant";
 
-type AppearanceListener = (preferences: AppearancePreferences) => void;
+type AppearanceListener = ((preferences: AppearancePreferences) => void);
 const eventEmitter = new EventEmitter();
 
 if (NativeAppearance) {
@@ -49,4 +61,4 @@ export default {
   removeChangeListener(listener: AppearanceListener): void {
     eventEmitter.removeListener('change', listener);
   }
-};
+};;

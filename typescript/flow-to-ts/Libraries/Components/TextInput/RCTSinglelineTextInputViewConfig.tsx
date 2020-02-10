@@ -1,4 +1,22 @@
 'use strict';;
+import _Import0 from '../../Utilities/differ/sizesDiffer';
+import _Import1 from '../../StyleSheet/processColor';
+import _Import2 from '../../StyleSheet/processColor';
+import _Import3 from '../../StyleSheet/processColor';
+import _Import4 from '../../StyleSheet/processColor';
+import _Import5 from '../../StyleSheet/processColor';
+
+
+
+
+
+
+
+
+
+
+
+
 import ReactNativeViewViewConfig from "../../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../../Renderer/shims/ReactNativeTypes";
 
@@ -68,7 +86,7 @@ const RCTSinglelineTextInputViewConfig = {
     fontWeight: true,
     fontVariant: true,
     // flowlint-next-line untyped-import:off
-    textShadowOffset: { diff: require('../../Utilities/differ/sizesDiffer') },
+    textShadowOffset: { diff: _Import0 },
     allowFontScaling: true,
     fontStyle: true,
     textTransform: true,
@@ -81,15 +99,15 @@ const RCTSinglelineTextInputViewConfig = {
     textShadowRadius: true,
     letterSpacing: true,
     textDecorationStyle: true,
-    textDecorationColor: { process: require('../../StyleSheet/processColor') },
-    color: { process: require('../../StyleSheet/processColor') },
+    textDecorationColor: { process: _Import1 },
+    color: { process: _Import2 },
     maxFontSizeMultiplier: true,
-    textShadowColor: { process: require('../../StyleSheet/processColor') },
+    textShadowColor: { process: _Import3 },
     editable: true,
     inputAccessoryViewID: true,
     caretHidden: true,
     enablesReturnKeyAutomatically: true,
-    placeholderTextColor: { process: require('../../StyleSheet/processColor') },
+    placeholderTextColor: { process: _Import4 },
     onSelectionChange: true,
     clearButtonMode: true,
     onContentSizeChange: true,
@@ -100,7 +118,7 @@ const RCTSinglelineTextInputViewConfig = {
     mostRecentEventCount: true,
     onChange: true,
     scrollEnabled: true,
-    selectionColor: { process: require('../../StyleSheet/processColor') },
+    selectionColor: { process: _Import5 },
     contextMenuHidden: true,
     secureTextEntry: true,
     onTextInput: true,
@@ -120,4 +138,4 @@ const RCTSinglelineTextInputViewConfig = {
   }
 };
 
-export default RCTSinglelineTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;
+export default RCTSinglelineTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;;

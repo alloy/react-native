@@ -25,7 +25,7 @@ import NativeImageLoaderIOS from "./NativeImageLoaderIOS";
 
 import ImageViewNativeComponent from "./ImageViewNativeComponent";
 
-function getSize(uri: string, success: (width: number, height: number) => void, failure?: (error: any) => void) {
+function getSize(uri: string, success: ((width: number, height: number) => void), failure?: ((error: any) => void)) {
   NativeImageLoaderIOS.getSize(uri).then(([width, height]) => success(width, height)).catch(failure || function () {
     console.warn('Failed to get size for image ' + uri);
   });
@@ -33,22 +33,18 @@ function getSize(uri: string, success: (width: number, height: number) => void, 
 
 function getSizeWithHeaders(uri: string, headers: {
   [key: string]: string;
-}, success: (width: number, height: number) => void, failure?: (error: any) => void): any {
-  return NativeImageLoaderIOS.getSizeWithHeaders(uri, headers).then(function (sizes) {
-    success(sizes.width, sizes.height);
-  }).catch(failure || function () {
-    console.warn('Failed to get size for image: ' + uri);
-  });
+}, success: ((width: number, height: number) => void), failure?: ((error: any) => void)): any {
+  return null as any;
 }
 
 function prefetch(url: string): any {
-  return NativeImageLoaderIOS.prefetchImage(url);
+  return null as any;
 }
 
 async function queryCache(urls: Array<string>): Promise<{
   [key: string]: "memory" | "disk" | "disk/memory";
 }> {
-  return await NativeImageLoaderIOS.queryCache(urls);
+  return null as any;
 }
 
 type ImageComponentStatics = $ReadOnly<{
@@ -160,4 +156,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default (Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics;
+export default (Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics;;

@@ -3,6 +3,8 @@ import Platform from '../../Utilities/Platform';
 import React from 'react';
 import StyleSheet from '../../StyleSheet/StyleSheet';
 import View from '../View/View';
+import _Import0 from '../ProgressBarAndroid/ProgressBarAndroid';
+import _Import1 from './ActivityIndicatorViewNativeComponent';
 import { $ReadOnly } from "utility-types";
 
 
@@ -19,7 +21,7 @@ import { $ReadOnly } from "utility-types";
 import { HostComponent } from "../../Renderer/shims/ReactNativeTypes";
 import { ViewProps } from "../View/ViewPropTypes";
 
-const PlatformActivityIndicator = Platform.OS === 'android' ? require('../ProgressBarAndroid/ProgressBarAndroid') : require('./ActivityIndicatorViewNativeComponent').default;
+const PlatformActivityIndicator = Platform.OS === 'android' ? _Import0 : _Import1.default;
 
 const GRAY = '#999999';
 
@@ -137,4 +139,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ActivityIndicatorWithRef;
+export default ActivityIndicatorWithRef;;

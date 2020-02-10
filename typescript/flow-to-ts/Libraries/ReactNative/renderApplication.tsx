@@ -2,14 +2,17 @@
 import AppContainer from './AppContainer';
 import React from 'react';
 import invariant from 'invariant';
+import '../Utilities/BackHandler';
+import _Import0 from '../Renderer/shims/ReactFabric';
+import _Import1 from '../Renderer/shims/ReactNative';
 import GlobalPerformanceLogger from "../Utilities/GlobalPerformanceLogger";
 import { IPerformanceLogger } from "../Utilities/createPerformanceLogger";
 import PerformanceLoggerContext from "../Utilities/PerformanceLoggerContext";
 
 // require BackHandler so it sets the default handler that exits the app if no listeners respond
-import '../Utilities/BackHandler';
+;
 
-function renderApplication<Props extends Object>(RootComponent: React.ComponentType<Props>, initialProps: Props, rootTag: any, WrapperComponent?: React.ComponentType<any> | null | undefined, fabric?: boolean, showArchitectureIndicator?: boolean, scopedPerformanceLogger?: IPerformanceLogger, isLogBox?: boolean) {
+function renderApplication<Props extends any>(RootComponent: React.ComponentType<Props>, initialProps: Props, rootTag: any, WrapperComponent?: React.ComponentType<any> | null | undefined, fabric?: boolean, showArchitectureIndicator?: boolean, scopedPerformanceLogger?: IPerformanceLogger, isLogBox?: boolean) {
   invariant(rootTag, 'Expect to have a valid rootTag, instead got ', rootTag);
 
   const renderable = <PerformanceLoggerContext.Provider value={scopedPerformanceLogger ?? GlobalPerformanceLogger}>
@@ -20,11 +23,11 @@ function renderApplication<Props extends Object>(RootComponent: React.ComponentT
 
   GlobalPerformanceLogger.startTimespan('renderApplication_React_render');
   if (fabric) {
-    require('../Renderer/shims/ReactFabric').render(renderable, rootTag);
+    _Import0.render(renderable, rootTag);
   } else {
-    require('../Renderer/shims/ReactNative').render(renderable, rootTag);
+    _Import1.render(renderable, rootTag);
   }
   GlobalPerformanceLogger.stopTimespan('renderApplication_React_render');
 }
 
-export default renderApplication;
+export default renderApplication;;

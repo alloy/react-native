@@ -7,28 +7,29 @@ import infoLog from '../Utilities/infoLog';
 import invariant from 'invariant';
 import renderApplication from './renderApplication';
 import createPerformanceLogger from '../Utilities/createPerformanceLogger';
+import LogBoxInspector from '../LogBox/LogBoxInspectorContainer';
 import { IPerformanceLogger } from "../Utilities/createPerformanceLogger";
 
 import NativeHeadlessJsTaskSupport from "./NativeHeadlessJsTaskSupport";
 import HeadlessJsTaskError from "./HeadlessJsTaskError";
 
-type Task = (taskData: any) => Promise<void>;
-export type TaskProvider = () => Task;
-type TaskCanceller = () => void;
-type TaskCancelProvider = () => TaskCanceller;
+type Task = ((taskData: any) => Promise<void>);
+export type TaskProvider = (() => Task);
+type TaskCanceller = (() => void);
+type TaskCancelProvider = (() => TaskCanceller);
 
-export type ComponentProvider = () => React$ComponentType<any>;
-export type ComponentProviderInstrumentationHook = (component: ComponentProvider, scopedPerformanceLogger: IPerformanceLogger) => React$ComponentType<any>;
+export type ComponentProvider = (() => React$ComponentType<any>);
+export type ComponentProviderInstrumentationHook = ((component: ComponentProvider, scopedPerformanceLogger: IPerformanceLogger) => React$ComponentType<any>);
 export type AppConfig = {
   appKey: string;
   component?: ComponentProvider;
-  run?: Function;
+  run?: ((...args: any) => any);
   section?: boolean;
 
 };
 export type Runnable = {
   component?: ComponentProvider;
-  run: Function;
+  run: ((...args: any) => any);
 
 };
 export type Runnables = {
@@ -39,7 +40,7 @@ export type Registry = {
   runnables: Runnables;
 
 };
-export type WrapperComponentProvider = (arg0: any) => React$ComponentType<any>;
+export type WrapperComponentProvider = ((arg0: any) => React$ComponentType<any>);
 
 const runnables: Runnables = {};
 let runCount = 1;
@@ -95,7 +96,7 @@ const AppRegistry = {
     return appKey;
   },
 
-  registerRunnable(appKey: string, run: Function): string {
+  registerRunnable(appKey: string, run: ((...args: any) => any)): string {
     runnables[appKey] = { run };
     return appKey;
   },
@@ -231,7 +232,6 @@ const AppRegistry = {
 BatchedBridge.registerCallableModule('AppRegistry', AppRegistry);
 
 if (__DEV__) {
-  const LogBoxInspector = require('../LogBox/LogBoxInspectorContainer').default;
   AppRegistry.registerComponent('LogBox', () => LogBoxInspector);
 } else {
   AppRegistry.registerComponent('LogBox', () => (function NoOp() {
@@ -239,4 +239,4 @@ if (__DEV__) {
   }));
 }
 
-export default AppRegistry;
+export default AppRegistry;;

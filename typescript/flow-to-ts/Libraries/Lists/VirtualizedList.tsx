@@ -14,11 +14,6 @@ import infoLog from '../Utilities/infoLog';
 import invariant from 'invariant';
 import warning from 'fbjs/lib/warning';
 import _Import0 from './VirtualizeUtils';
-
-const {
-  computeWindowedRenderLimits
-} = _Import0;
-
 import { $ReadOnly } from "utility-types";
 
 
@@ -32,6 +27,10 @@ import { $ReadOnly } from "utility-types";
 
 
 
+const {
+  computeWindowedRenderLimits
+} = _Import0;
+
 import { ScrollResponderType } from "../Components/ScrollView/ScrollView";
 import { ViewStyleProp } from "../StyleSheet/StyleSheet";
 import { ViewabilityConfig, ViewToken, ViewabilityConfigCallbackPair } from "./ViewabilityHelper";
@@ -39,9 +38,9 @@ import { ViewabilityConfig, ViewToken, ViewabilityConfigCallbackPair } from "./V
 type Item = any;
 
 export type Separators = {
-  highlight: () => void;
-  unhighlight: () => void;
-  updateProps: (select: "leading" | "trailing", newProps: Object) => void;
+  highlight: (() => void);
+  unhighlight: (() => void);
+  updateProps: ((select: "leading" | "trailing", newProps: any) => void);
 
 };
 
@@ -52,15 +51,15 @@ export type RenderItemProps<ItemT> = {
 
 };
 
-export type RenderItemType<ItemT> = (info: RenderItemProps<ItemT>) => React.ReactNode;
+export type RenderItemType<ItemT> = ((info: RenderItemProps<ItemT>) => React.ReactNode);
 
 type ViewabilityHelperCallbackTuple = {
   viewabilityHelper: ViewabilityHelper;
-  onViewableItemsChanged: (info: {
+  onViewableItemsChanged: ((info: {
     viewableItems: Array<ViewToken>;
     changed: Array<ViewToken>;
 
-  }) => void;
+  }) => void);
 
 };
 
@@ -74,12 +73,12 @@ type RequiredProps = {
   /**
    * A generic accessor for extracting an item from any sort of data blob.
    */
-  getItem: (data: any, index: number) => Item | null | undefined;
+  getItem: ((data: any, index: number) => Item | null | undefined);
 
   /**
    * Determines how many items are in the data blob.
    */
-  getItemCount: (data: any) => number;
+  getItemCount: ((data: any) => number);
 };
 type OptionalProps = {
   renderItem?: RenderItemType<Item> | null | undefined;
@@ -104,12 +103,12 @@ type OptionalProps = {
    */
   extraData?: any;
   // e.g. height, y
-  getItemLayout?: (data: any, index: number) => {
+  getItemLayout?: ((data: any, index: number) => {
     length: number;
     offset: number;
     index: number;
 
-  };
+  });
   horizontal?: boolean | null | undefined;
 
   /**
@@ -131,7 +130,7 @@ type OptionalProps = {
    * Reverses the direction of scroll. Uses scale transforms of -1.
    */
   inverted?: boolean | null | undefined;
-  keyExtractor: (item: Item, index: number) => string;
+  keyExtractor: ((item: Item, index: number) => string);
 
   /**
    * Each cell is rendered using this element. Can be a React Component Class,
@@ -221,7 +220,7 @@ type OptionalProps = {
    * Called once when the scroll position gets within `onEndReachedThreshold` of the rendered
    * content.
    */
-  onEndReached?: (info: {distanceFromEnd: number;}) => void | null | undefined;
+  onEndReached?: ((info: {distanceFromEnd: number;}) => void) | null | undefined;
 
   /**
    * How far from the end (in units of visible length of the list) the bottom edge of the
@@ -235,29 +234,29 @@ type OptionalProps = {
    * If provided, a standard RefreshControl will be added for "Pull to Refresh" functionality. Make
    * sure to also set the `refreshing` prop correctly.
    */
-  onRefresh?: () => void | null | undefined;
+  onRefresh?: (() => void) | null | undefined;
 
   /**
    * Used to handle failures when scrolling to an index that has not been measured yet. Recommended
    * action is to either compute your own offset and `scrollTo` it, or scroll as far as possible and
    * then try again after more items have been rendered.
    */
-  onScrollToIndexFailed?: (info: {
+  onScrollToIndexFailed?: ((info: {
     index: number;
     highestMeasuredFrameIndex: number;
     averageItemLength: number;
 
-  }) => void | null | undefined;
+  }) => void) | null | undefined;
 
   /**
    * Called when the viewability of rows changes, as defined by the
    * `viewabilityConfig` prop.
    */
-  onViewableItemsChanged?: (info: {
+  onViewableItemsChanged?: ((info: {
     viewableItems: Array<ViewToken>;
     changed: Array<ViewToken>;
 
-  }) => void | null | undefined;
+  }) => void) | null | undefined;
   persistentScrollbar?: boolean | null | undefined;
 
   /**
@@ -288,7 +287,7 @@ type OptionalProps = {
   /**
    * Render a custom scroll component, e.g. with a differently styled `RefreshControl`.
    */
-  renderScrollComponent?: (props: Object) => React.ReactElement<any>;
+  renderScrollComponent?: ((props: any) => React.ReactElement<any>);
 
   /**
    * Amount of time between low-pri item render batches, e.g. for rendering items quite a ways off
@@ -328,7 +327,7 @@ type DefaultProps = {
   disableVirtualization: boolean;
   horizontal: boolean;
   initialNumToRender: number;
-  keyExtractor: (item: Item, index: number) => string;
+  keyExtractor: ((item: Item, index: number) => string);
   maxToRenderPerBatch: number;
   onEndReachedThreshold: number;
   scrollEventThrottle: number;
@@ -554,7 +553,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     }
   }
 
-  setNativeProps(props: Object) {
+  setNativeProps(props: any) {
     if (this._scrollRef) {
       this._scrollRef.setNativeProps(props);
     }
@@ -589,12 +588,12 @@ class VirtualizedList extends React.PureComponent<Props, State> {
       cellKey: React$PropType$Primitive<string>;
     };
     virtualizedList: {
-      getScrollMetrics: React$PropType$Primitive<Function>;
+      getScrollMetrics: React$PropType$Primitive<((...args: any) => any)>;
       horizontal: React$PropType$Primitive<boolean>;
-      getOutermostParentListRef: React$PropType$Primitive<Function>;
-      getNestedChildState: React$PropType$Primitive<Function>;
-      registerAsNestedChild: React$PropType$Primitive<Function>;
-      unregisterAsNestedChild: React$PropType$Primitive<Function>;
+      getOutermostParentListRef: React$PropType$Primitive<((...args: any) => any)>;
+      getNestedChildState: React$PropType$Primitive<((...args: any) => any)>;
+      registerAsNestedChild: React$PropType$Primitive<((...args: any) => any)>;
+      unregisterAsNestedChild: React$PropType$Primitive<((...args: any) => any)>;
       debugInfo: {
         listKey: React$PropType$Primitive<string>;
         cellKey: React$PropType$Primitive<string>;
@@ -619,12 +618,12 @@ class VirtualizedList extends React.PureComponent<Props, State> {
   };
 
   static childContextTypes: any | {
-    getScrollMetrics: React$PropType$Primitive<Function>;
+    getScrollMetrics: React$PropType$Primitive<((...args: any) => any)>;
     horizontal: React$PropType$Primitive<boolean>;
-    getOutermostParentListRef: React$PropType$Primitive<Function>;
-    getNestedChildState: React$PropType$Primitive<Function>;
-    registerAsNestedChild: React$PropType$Primitive<Function>;
-    unregisterAsNestedChild: React$PropType$Primitive<Function>;
+    getOutermostParentListRef: React$PropType$Primitive<((...args: any) => any)>;
+    getNestedChildState: React$PropType$Primitive<((...args: any) => any)>;
+    registerAsNestedChild: React$PropType$Primitive<((...args: any) => any)>;
+    unregisterAsNestedChild: React$PropType$Primitive<((...args: any) => any)>;
   } = {
     virtualizedList: PropTypes.shape({
       getScrollMetrics: PropTypes.func,
@@ -638,7 +637,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
 
   getChildContext(): {
     virtualizedList: {
-      getScrollMetrics: () => {
+      getScrollMetrics: (() => {
         contentLength: number;
         dOffset: number;
         dt: number;
@@ -647,22 +646,22 @@ class VirtualizedList extends React.PureComponent<Props, State> {
         velocity: number;
         visibleLength: number;
 
-      };
+      });
       horizontal: boolean | null | undefined;
-      getOutermostParentListRef: Function;
-      getNestedChildState: (arg0: string) => ChildListState | null | undefined;
-      registerAsNestedChild: (arg0: {
+      getOutermostParentListRef: ((...args: any) => any);
+      getNestedChildState: ((arg0: string) => ChildListState | null | undefined);
+      registerAsNestedChild: ((arg0: {
         cellKey: string;
         key: string;
         ref: VirtualizedList;
         parentDebugInfo: ListDebugInfo;
 
-      }) => ChildListState | null | undefined;
-      unregisterAsNestedChild: (arg0: {
+      }) => ChildListState | null | undefined);
+      unregisterAsNestedChild: ((arg0: {
         key: string;
         state: ChildListState;
 
-      }) => void;
+      }) => void);
       debugInfo: ListDebugInfo;
 
     };
@@ -761,7 +760,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
 
   state: State;
 
-  constructor(props: Props, context: Object) {
+  constructor(props: Props, context: any) {
     super(props, context);
     invariant( // $FlowFixMe
     !props.onScroll || !props.onScroll.__isNative, 'Components based on VirtualizedList must be wrapped with Animated.createAnimatedComponent ' + 'to support native onScroll events with useNativeDriver');
@@ -848,7 +847,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     };
   }
 
-  _pushCells(cells: Array<Object>, stickyHeaderIndices: Array<number>, stickyIndicesFromProps: Set<number>, first: number, last: number, inversionStyle: ViewStyleProp) {
+  _pushCells(cells: Array<any>, stickyHeaderIndices: Array<number>, stickyIndicesFromProps: Set<number>, first: number, last: number, inversionStyle: ViewStyleProp) {
     const {
       CellRendererComponent,
       ItemSeparatorComponent,
@@ -876,7 +875,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     }
   }
 
-  _onUpdateSeparators = (keys: Array<string | null | undefined>, newProps: Object) => {
+  _onUpdateSeparators = (keys: Array<string | null | undefined>, newProps: any) => {
     keys.forEach(key => {
       const ref = key != null && this._cellRefs[key];
       ref && ref.updateSeparatorProps(newProps);
@@ -1219,7 +1218,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     }
   }
 
-  _onLayout = (e: Object) => {
+  _onLayout = (e: any) => {
     if (this._isNestedWithSameOrientation()) {
       // Need to adjust our scroll metrics to be relative to our containing
       // VirtualizedList before we can make claims about list item viewability
@@ -1360,7 +1359,7 @@ class VirtualizedList extends React.PureComponent<Props, State> {
     };
   };
 
-  _onScroll = (e: Object) => {
+  _onScroll = (e: any) => {
     this._nestedChildLists.forEach(childList => {
       childList.ref && childList.ref._onScroll(e);
     });
@@ -1662,17 +1661,17 @@ type CellRendererProps = {
   inversionStyle: ViewStyleProp;
   item: Item;
   // This is extracted by ScrollViewStickyHeader
-  onLayout: (event: Object) => void;
-  onUnmount: (cellKey: string) => void;
-  onUpdateSeparators: (cellKeys: Array<string | null | undefined>, props: Object) => void;
+  onLayout: ((event: any) => void);
+  onUnmount: ((cellKey: string) => void);
+  onUpdateSeparators: ((cellKeys: Array<string | null | undefined>, props: any) => void);
   parentProps: {
     // e.g. height, y,
-    getItemLayout?: (data: any, index: number) => {
+    getItemLayout?: ((data: any, index: number) => {
       length: number;
       offset: number;
       index: number;
 
-    };
+    });
     renderItem?: RenderItemType<Item> | null | undefined;
     ListItemComponent?: (React.ComponentType<any> | React.ReactElement<any>) | null | undefined;
 
@@ -1742,7 +1741,7 @@ class CellRenderer extends React.Component<CellRendererProps, CellRendererState>
         highlighted: false
       });
     },
-    updateProps: (select: "leading" | "trailing", newProps: Object) => {
+    updateProps: (select: "leading" | "trailing", newProps: any) => {
       const {
         cellKey,
         prevCellKey
@@ -1751,7 +1750,7 @@ class CellRenderer extends React.Component<CellRendererProps, CellRendererState>
     }
   };
 
-  updateSeparatorProps(newProps: Object) {
+  updateSeparatorProps(newProps: any) {
     this.setState(state => ({
       separatorProps: { ...state.separatorProps, ...newProps }
     }));
@@ -1922,4 +1921,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default VirtualizedList;
+export default VirtualizedList;;

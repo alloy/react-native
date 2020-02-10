@@ -1,4 +1,20 @@
 'use strict';;
+import _Import0 from '../Utilities/differ/insetsDiffer';
+import _Import1 from './resolveAssetSource';
+import _Import2 from '../StyleSheet/processColor';
+import _Import3 from '../StyleSheet/processColor';
+
+
+
+
+
+
+
+
+
+
+
+
 import ReactNativeViewViewConfig from "../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../Renderer/shims/ReactNativeTypes";
 
@@ -29,9 +45,9 @@ const ImageViewViewConfig = {
     ...ReactNativeViewViewConfig.validAttributes,
     blurRadius: true,
     // flowlint-next-line unclear-type:off
-    capInsets: { diff: (require('../Utilities/differ/insetsDiffer') as any) },
+    capInsets: { diff: (_Import0 as any) },
     defaultSource: {
-      process: require('./resolveAssetSource')
+      process: _Import1
     },
     defaultSrc: true,
     fadeDuration: true,
@@ -43,15 +59,15 @@ const ImageViewViewConfig = {
     onLoadStart: true,
     onPartialLoad: true,
     onProgress: true,
-    overlayColor: { process: require('../StyleSheet/processColor') },
+    overlayColor: { process: _Import2 },
     progressiveRenderingEnabled: true,
     resizeMethod: true,
     resizeMode: true,
     shouldNotifyLoadEvents: true,
     source: true,
     src: true,
-    tintColor: { process: require('../StyleSheet/processColor') }
+    tintColor: { process: _Import3 }
   }
 };
 
-export default ImageViewViewConfig as ReactNativeBaseComponentViewConfig<>;
+export default ImageViewViewConfig as ReactNativeBaseComponentViewConfig<>;;

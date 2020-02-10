@@ -19,4 +19,4 @@ class BorderBox extends React.Component<$FlowFixMeProps> {
   }
 }
 
-export default BorderBox;
+export default BorderBox;;

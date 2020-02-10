@@ -1,5 +1,17 @@
 'use strict';;
 import ReactNativeVersion from './ReactNativeVersion';
+
+
+
+
+
+
+
+
+
+
+
+
 import Platform from "../Utilities/Platform";
 
 /**
@@ -11,7 +23,7 @@ import Platform from "../Utilities/Platform";
  * implementations for other platforms (ex: Windows) may override this module
  * and rely on its existence as a separate module.
  */
-export const checkVersions = function checkVersions(): void {
+exports.checkVersions = function checkVersions(): void {
   const nativeVersion = Platform.constants.reactNativeVersion;
   if (ReactNativeVersion.version.major !== nativeVersion.major || ReactNativeVersion.version.minor !== nativeVersion.minor) {
     console.error(`React Native version mismatch.\n\nJavaScript version: ${_formatVersion(ReactNativeVersion.version)}\n` + `Native version: ${_formatVersion(nativeVersion)}\n\n` + 'Make sure that you have rebuilt the native code. If the problem ' + 'persists try clearing the Watchman and packager caches with ' + '`watchman watch-del-all && react-native start --reset-cache`.');
@@ -19,6 +31,5 @@ export const checkVersions = function checkVersions(): void {
 };
 
 function _formatVersion(version): string {
-  return `${version.major}.${version.minor}.${version.patch}` + ( // eslint-disable-next-line eqeqeq
-  (version.prerelease != undefined ? `-${version.prerelease}` : ''));
+  return null as any;
 }

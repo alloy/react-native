@@ -5,4 +5,4 @@ function dismissKeyboard() {
   TextInputState.blurTextInput(TextInputState.currentlyFocusedField());
 }
 
-export default dismissKeyboard;
+export default dismissKeyboard;;

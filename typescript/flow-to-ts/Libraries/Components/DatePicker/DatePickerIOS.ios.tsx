@@ -79,7 +79,7 @@ type Props = $ReadOnly<ViewProps & {
    * The first and only argument is an Event. For getting the date the picker
    * was changed to, use onDateChange instead.
    */
-  onChange?: (event: Event) => void | null | undefined;
+  onChange?: ((event: Event) => void) | null | undefined;
 
   /**
    * Date change handler.
@@ -88,7 +88,7 @@ type Props = $ReadOnly<ViewProps & {
    * The first and only argument is a Date object representing the new
    * date and time.
    */
-  onDateChange: (date: Date) => void;
+  onDateChange: ((date: Date) => void);
 
   /**
    * Timezone offset in minutes.
@@ -148,4 +148,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DatePickerIOS;
+export default DatePickerIOS;;

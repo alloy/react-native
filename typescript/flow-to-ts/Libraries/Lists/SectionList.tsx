@@ -41,18 +41,18 @@ type OptionalProps<SectionT extends SectionBase<any>> = {
   /**
    * Default renderer for every item in every section. Can be over-ridden on a per-section basis.
    */
-  renderItem?: (info: {
+  renderItem?: ((info: {
     item: Item;
     index: number;
     section: SectionT;
     separators: {
-      highlight: () => void;
-      unhighlight: () => void;
-      updateProps: (select: "leading" | "trailing", newProps: Object) => void;
+      highlight: (() => void);
+      unhighlight: (() => void);
+      updateProps: ((select: "leading" | "trailing", newProps: any) => void);
 
     };
 
-  }) => null | React.ReactElement<any>;
+  }) => null | React.ReactElement<any>);
 
   /**
    * A marker property for telling the list to re-render (since it implements `PureComponent`). If
@@ -79,13 +79,13 @@ type OptionalProps<SectionT extends SectionBase<any>> = {
    * falls back to using the index, like react does. Note that this sets keys for each item, but
    * each overall section still needs its own key.
    */
-  keyExtractor: (item: Item, index: number) => string;
+  keyExtractor: ((item: Item, index: number) => string);
 
   /**
    * Called once when the scroll position gets within `onEndReachedThreshold` of the rendered
    * content.
    */
-  onEndReached?: (info: {distanceFromEnd: number;}) => void | null | undefined;
+  onEndReached?: ((info: {distanceFromEnd: number;}) => void) | null | undefined;
 
   /**
    * Note: may have bugs (missing content) in some circumstances - use at your own risk.
@@ -222,7 +222,7 @@ class SectionList<SectionT extends SectionBase<any>> extends React.PureComponent
     }
   }
 
-  setNativeProps(props: Object) {
+  setNativeProps(props: any) {
     const listRef = this._wrapperListRef && this._wrapperListRef.getListRef();
     if (listRef) {
       listRef.setNativeProps(props);
@@ -242,4 +242,4 @@ class SectionList<SectionT extends SectionBase<any>> extends React.PureComponent
   };
 }
 
-export default SectionList;
+export default SectionList;;

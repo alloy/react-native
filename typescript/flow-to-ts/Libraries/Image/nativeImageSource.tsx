@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -44,21 +44,7 @@ type NativeImageSourceSpec = $ReadOnly<{
  *
  */
 function nativeImageSource(spec: NativeImageSourceSpec): ImageURISource {
-  let uri = Platform.select({
-    android: spec.android,
-    default: spec.default,
-    ios: spec.ios
-  });
-  if (uri == null) {
-    console.warn('nativeImageSource(...): No image name supplied for `%s`:\n%s', Platform.OS, JSON.stringify(spec, null, 2));
-    uri = '';
-  }
-  return {
-    deprecated: true,
-    height: spec.height,
-    uri,
-    width: spec.width
-  };
+  return null as any;
 }
 
-export default nativeImageSource;
+export default nativeImageSource;;

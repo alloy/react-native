@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 export type PackagerAsset = {
   readonly __packager_asset: boolean;
   readonly fileSystemLocation: string;
@@ -15,13 +27,11 @@ export type PackagerAsset = {
 const assets: Array<PackagerAsset> = [];
 
 function registerAsset(asset: PackagerAsset): number {
-  // `push` returns new array length, so the first asset will
-  // get id 1 (not 0) to make the value truthy
-  return assets.push(asset);
+  return null as any;
 }
 
 function getAssetByID(assetId: number): PackagerAsset {
-  return assets[assetId - 1];
+  return null as any;
 }
 
-export default { registerAsset, getAssetByID };
+export default { registerAsset, getAssetByID };;

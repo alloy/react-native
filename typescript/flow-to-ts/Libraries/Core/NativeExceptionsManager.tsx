@@ -1,5 +1,5 @@
 'use strict';;
-import Platform from '../Utilities/Platform.ios';
+import Platform from '../Utilities/Platform';
 
 
 
@@ -32,20 +32,20 @@ export type ExceptionData = {
   id: number;
   isFatal: boolean;
   // flowlint-next-line unclear-type:off
-  extraData?: Object;
+  extraData?: any;
 
 };
 
 export interface Spec extends TurboModule {
   // Deprecated: Use `reportException`
-  readonly reportFatalException: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
+  readonly reportFatalException: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
   // Deprecated: Use `reportException`
-  readonly reportSoftException: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
+  readonly reportSoftException: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
   // TODO(T53311281): This is a noop on iOS now. Implement it.
-  readonly reportException?: (data: ExceptionData) => void;
-  readonly updateExceptionMessage: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
+  readonly reportException?: ((data: ExceptionData) => void);
+  readonly updateExceptionMessage: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
   // TODO(T53311281): This is a noop on iOS now. Implement it.
-  readonly dismissRedbox?: () => void;
+  readonly dismissRedbox?: (() => void);
 }
 
 const NativeModule = TurboModuleRegistry.getEnforcing<Spec>('ExceptionsManager');

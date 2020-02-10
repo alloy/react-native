@@ -1,12 +1,26 @@
 'use strict';;
+import _Import0 from '../implementations/ReactNativeRenderer-dev';
+import _Import1 from '../implementations/ReactNativeRenderer-prod';
+
+
+
+
+
+
+
+
+
+
+
+
 import { ReactNativeType } from "./ReactNativeTypes";
 
 let ReactNative;
 
 if (__DEV__) {
-  ReactNative = require('../implementations/ReactNativeRenderer-dev');
+  ReactNative = _Import0;
 } else {
-  ReactNative = require('../implementations/ReactNativeRenderer-prod');
+  ReactNative = _Import1;
 }
 
-export default ReactNative as ReactNativeType;
+export default ReactNative as ReactNativeType;;

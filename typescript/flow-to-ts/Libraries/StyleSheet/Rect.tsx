@@ -22,9 +22,9 @@ export type Rect = $ReadOnly<{
 export type RectOrSize = Rect | number;
 
 export function createSquare(size: number): Rect {
-  return { bottom: size, left: size, right: size, top: size };
+  return null as any;
 }
 
 export function normalizeRect(rectOrSize: RectOrSize | null | undefined): Rect | null | undefined {
-  return typeof rectOrSize === 'number' ? createSquare(rectOrSize) : rectOrSize;
+  return null as any;
 }

@@ -14,7 +14,7 @@ import NativeAppState from "./NativeAppState";
  */
 class AppState extends NativeEventEmitter {
 
-  _eventHandlers: Object;
+  _eventHandlers: any;
   _supportedEvents = ['change', 'memoryWarning', 'blur', 'focus'];
   currentState: string | null | undefined;
   isAvailable: boolean;
@@ -65,7 +65,7 @@ class AppState extends NativeEventEmitter {
    *
    * See http://facebook.github.io/react-native/docs/appstate.html#addeventlistener
    */
-  addEventListener(type: string, handler: Function) {
+  addEventListener(type: string, handler: ((...args: any) => any)) {
     invariant(this._supportedEvents.indexOf(type) !== -1, 'Trying to subscribe to unknown event: "%s"', type);
 
     switch (type) {
@@ -102,7 +102,7 @@ class AppState extends NativeEventEmitter {
    *
    * See http://facebook.github.io/react-native/docs/appstate.html#removeeventlistener
    */
-  removeEventListener(type: string, handler: Function) {
+  removeEventListener(type: string, handler: ((...args: any) => any)) {
     invariant(this._supportedEvents.indexOf(type) !== -1, 'Trying to remove listener for unknown event: "%s"', type);
     if (!this._eventHandlers[type].has(handler)) {
       return;
@@ -121,11 +121,11 @@ class MissingNativeAppStateShim extends EventEmitter {
   isAvailable: boolean = false;
   currentState: string | null | undefined = null;
 
-  addEventListener(type: string, handler: Function) {
+  addEventListener(type: string, handler: ((...args: any) => any)) {
     throwMissingNativeModule();
   }
 
-  removeEventListener(type: string, handler: Function) {
+  removeEventListener(type: string, handler: ((...args: any) => any)) {
     throwMissingNativeModule();
   }
 
@@ -148,4 +148,4 @@ class MissingNativeAppStateShim extends EventEmitter {
 // We reassign the class variable to keep the autodoc generator happy.
 const AppStateInstance: AppState | MissingNativeAppStateShim = NativeAppState ? new AppState() : new MissingNativeAppStateShim();
 
-export default AppStateInstance;
+export default AppStateInstance;;

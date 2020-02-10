@@ -32,20 +32,20 @@ export type SectionBase<SectionItemT> = {
    */
   key?: string;
   // Optional props will override list-wide props just for this section.
-  renderItem?: (info: {
+  renderItem?: ((info: {
     item: SectionItemT;
     index: number;
     section: SectionBase<SectionItemT>;
     separators: {
-      highlight: () => void;
-      unhighlight: () => void;
-      updateProps: (select: "leading" | "trailing", newProps: Object) => void;
+      highlight: (() => void);
+      unhighlight: (() => void);
+      updateProps: ((select: "leading" | "trailing", newProps: any) => void);
 
     };
 
-  }) => null | React.ReactElement<any> | null | undefined;
+  }) => null | React.ReactElement<any>) | null | undefined;
   ItemSeparatorComponent?: React.ComponentType<any> | null | undefined;
-  keyExtractor?: (item: SectionItemT, index?: number | null | undefined) => string;
+  keyExtractor?: ((item: SectionItemT, index?: number | null | undefined) => string);
 
 };
 
@@ -57,35 +57,35 @@ type OptionalProps<SectionT extends SectionBase<any>> = {
   /**
    * Default renderer for every item in every section.
    */
-  renderItem?: (info: {
+  renderItem?: ((info: {
     item: Item;
     index: number;
     section: SectionT;
     separators: {
-      highlight: () => void;
-      unhighlight: () => void;
-      updateProps: (select: "leading" | "trailing", newProps: Object) => void;
+      highlight: (() => void);
+      unhighlight: (() => void);
+      updateProps: ((select: "leading" | "trailing", newProps: any) => void);
 
     };
 
-  }) => null | React.ReactElement<any>;
+  }) => null | React.ReactElement<any>);
 
   /**
    * Rendered at the top of each section. These stick to the top of the `ScrollView` by default on
    * iOS. See `stickySectionHeadersEnabled`.
    */
-  renderSectionHeader?: (info: {
+  renderSectionHeader?: ((info: {
     section: SectionT;
 
-  }) => null | React.ReactElement<any> | null | undefined;
+  }) => null | React.ReactElement<any>) | null | undefined;
 
   /**
    * Rendered at the bottom of each section.
    */
-  renderSectionFooter?: (info: {
+  renderSectionFooter?: ((info: {
     section: SectionT;
 
-  }) => null | React.ReactElement<any> | null | undefined;
+  }) => null | React.ReactElement<any>) | null | undefined;
 
   /**
    * Rendered at the top and bottom of each section (note this is different from
@@ -101,7 +101,7 @@ type OptionalProps<SectionT extends SectionBase<any>> = {
    * enabled by default on iOS because that is the platform standard there.
    */
   stickySectionHeadersEnabled?: boolean;
-  onEndReached?: (arg0: {distanceFromEnd: number;}) => void | null | undefined;
+  onEndReached?: ((arg0: {distanceFromEnd: number;}) => void) | null | undefined;
 };
 
 type VirtualizedListProps = React.ElementProps<typeof VirtualizedList>;
@@ -156,7 +156,7 @@ class VirtualizedSectionList<SectionT extends SectionBase<any>> extends React.Pu
     return this._listRef;
   }
 
-  constructor(props: Props<SectionT>, context: Object) {
+  constructor(props: Props<SectionT>, context: any) {
     super(props, context);
     this.state = this._computeState(props);
   }
@@ -361,12 +361,12 @@ class VirtualizedSectionList<SectionT extends SectionBase<any>> extends React.Pu
     }
   };
 
-  _onUpdateSeparator = (key: string, newProps: Object) => {
+  _onUpdateSeparator = (key: string, newProps: any) => {
     const ref = this._cellRefs[key];
     ref && ref.updateSeparatorProps(newProps);
   };
 
-  _getSeparatorComponent(index: number, info?: Object | null | undefined): React.ComponentType<any> | null | undefined {
+  _getSeparatorComponent(index: number, info?: any | null | undefined): React.ComponentType<any> | null | undefined {
     info = info || this._subExtractor(index);
     if (!info) {
       return null;
@@ -398,10 +398,10 @@ class VirtualizedSectionList<SectionT extends SectionBase<any>> extends React.Pu
 
 type ItemWithSeparatorCommonProps = $ReadOnly<{
   leadingItem: Item | null | undefined;
-  leadingSection: Object | null | undefined;
-  section: Object;
+  leadingSection: any | null | undefined;
+  section: any;
   trailingItem: Item | null | undefined;
-  trailingSection: Object | null | undefined;
+  trailingSection: any | null | undefined;
 }>;
 
 type ItemWithSeparatorProps = $ReadOnly<ItemWithSeparatorCommonProps & {
@@ -410,9 +410,9 @@ type ItemWithSeparatorProps = $ReadOnly<ItemWithSeparatorCommonProps & {
   cellKey: string;
   index: number;
   item: Item;
-  onUpdateSeparator: (cellKey: string, newProps: Object) => void;
+  onUpdateSeparator: ((cellKey: string, newProps: any) => void);
   prevCellKey?: string | null | undefined;
-  renderItem: Function;
+  renderItem: ((...args: any) => any);
   inverted: boolean;
 }>;
 
@@ -454,7 +454,7 @@ class ItemWithSeparator extends React.Component<ItemWithSeparatorProps, ItemWith
     unhighlight: () => {
       ['leading', 'trailing'].forEach(s => this._separators.updateProps(s, { highlighted: false }));
     },
-    updateProps: (select: "leading" | "trailing", newProps: Object) => {
+    updateProps: (select: "leading" | "trailing", newProps: any) => {
       const {
         LeadingSeparatorComponent,
         cellKey,
@@ -491,7 +491,7 @@ class ItemWithSeparator extends React.Component<ItemWithSeparatorProps, ItemWith
     };
   }
 
-  updateSeparatorProps(newProps: Object) {
+  updateSeparatorProps(newProps: any) {
     this.setState(state => ({
       separatorProps: { ...state.separatorProps, ...newProps }
     }));
@@ -526,4 +526,4 @@ class ItemWithSeparator extends React.Component<ItemWithSeparatorProps, ItemWith
   }
 }
 
-export default VirtualizedSectionList;
+export default VirtualizedSectionList;;

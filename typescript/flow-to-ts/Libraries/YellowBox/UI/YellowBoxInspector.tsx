@@ -29,8 +29,8 @@ import YellowBoxWarning from "../Data/YellowBoxWarning";
 import { SymbolicationRequest } from "../Data/YellowBoxWarning";
 
 type Props = $ReadOnly<{
-  onDismiss: () => void;
-  onMinimize: () => void;
+  onDismiss: (() => void);
+  onMinimize: (() => void);
   warnings: ReadonlyArray<YellowBoxWarning>;
 }>;
 
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxInspector;
+export default YellowBoxInspector;;

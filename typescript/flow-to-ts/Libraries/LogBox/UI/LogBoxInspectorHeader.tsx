@@ -24,37 +24,14 @@ import LogBoxButton from "./LogBoxButton";
 import * as LogBoxStyle from "./LogBoxStyle";
 import { LogLevel } from "../Data/LogBoxLog";
 type Props = $ReadOnly<{
-  onSelectIndex: (selectedIndex: number) => void;
+  onSelectIndex: ((selectedIndex: number) => void);
   selectedIndex: number;
   total: number;
   level: LogLevel;
 }>;
 
 function LogBoxInspectorHeader(props: Props): React.ReactNode {
-  if (props.level === 'syntax') {
-    return <View style={[styles.safeArea, styles[props.level]]}>
-        <View style={styles.header}>
-          <View style={styles.title}>
-            <Text style={styles.titleText}>Failed to compile</Text>
-          </View>
-        </View>
-      </View>;
-  }
-
-  const prevIndex = props.selectedIndex - 1 < 0 ? props.total - 1 : props.selectedIndex - 1;
-  const nextIndex = props.selectedIndex + 1 > props.total - 1 ? 0 : props.selectedIndex + 1;
-
-  const titleText = `Log ${props.selectedIndex + 1} of ${props.total}`;
-
-  return <View style={[styles.safeArea, styles[props.level]]}>
-      <View style={styles.header}>
-        <LogBoxInspectorHeaderButton disabled={props.total <= 1} level={props.level} image={LogBoxImageSource.chevronLeft} onPress={() => props.onSelectIndex(prevIndex)} />
-        <View style={styles.title}>
-          <Text style={styles.titleText}>{titleText}</Text>
-        </View>
-        <LogBoxInspectorHeaderButton disabled={props.total <= 1} level={props.level} image={LogBoxImageSource.chevronRight} onPress={() => props.onSelectIndex(nextIndex)} />
-      </View>
-    </View>;
+  return null as any;
 }
 
 const backgroundForLevel = (level: LogLevel) => ({
@@ -80,11 +57,9 @@ function LogBoxInspectorHeaderButton(props: $ReadOnly<{
   disabled: boolean;
   image: string;
   level: LogLevel;
-  onPress?: () => void | null | undefined;
+  onPress?: (() => void) | null | undefined;
 }>): React.ReactNode {
-  return <LogBoxButton backgroundColor={backgroundForLevel(props.level)} onPress={props.disabled ? null : props.onPress} style={headerStyles.button}>
-      {props.disabled ? null : <Image source={{ height: 16, uri: props.image, width: 16 }} style={headerStyles.buttonImage} />}
-    </LogBoxButton>;
+  return null as any;
 }
 
 const headerStyles = StyleSheet.create({

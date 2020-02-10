@@ -74,7 +74,7 @@ class SpringAnimation extends Animation {
   _startTime: number;
   _lastTime: number;
   _frameTime: number;
-  _onUpdate: (value: number) => void;
+  _onUpdate: ((value: number) => void);
   _animationFrame: any;
   _useNativeDriver: boolean;
 
@@ -145,7 +145,7 @@ class SpringAnimation extends Animation {
     };
   }
 
-  start(fromValue: number, onUpdate: (value: number) => void, onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
+  start(fromValue: number, onUpdate: ((value: number) => void), onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
     this.__active = true;
     this._startPosition = fromValue;
     this._lastPosition = this._startPosition;
@@ -180,7 +180,7 @@ class SpringAnimation extends Animation {
     }
   }
 
-  getInternalState(): Object {
+  getInternalState(): any {
     return {
       lastPosition: this._lastPosition,
       lastVelocity: this._lastVelocity,
@@ -298,4 +298,4 @@ class SpringAnimation extends Animation {
   }
 }
 
-export default SpringAnimation;
+export default SpringAnimation;;

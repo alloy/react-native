@@ -91,12 +91,12 @@ const AccessibilityInfo = {
    *
    * Same as `isScreenReaderEnabled`
    */
-  get fetch(): () => Promise<boolean> {
+  get fetch(): (() => Promise<boolean>) {
     console.warn('AccessibilityInfo.fetch is deprecated, call Accessibility.isScreenReaderEnabled instead');
     return this.isScreenReaderEnabled;
   },
 
-  addEventListener: function (eventName: ChangeEventName, handler: Function): void {
+  addEventListener: function (eventName: ChangeEventName, handler: ((...args: any) => any)): void {
     let listener;
 
     if (eventName === 'change' || eventName === 'screenReaderChanged') {
@@ -112,7 +112,7 @@ const AccessibilityInfo = {
     _subscriptions.set(handler, listener);
   },
 
-  removeEventListener: function (eventName: ChangeEventName, handler: Function): void {
+  removeEventListener: function (eventName: ChangeEventName, handler: ((...args: any) => any)): void {
     const listener = _subscriptions.get(handler);
     if (!listener) {
       return;
@@ -142,4 +142,4 @@ const AccessibilityInfo = {
   }
 };
 
-export default AccessibilityInfo;
+export default AccessibilityInfo;;

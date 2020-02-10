@@ -1,4 +1,15 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
 import NativeToastAndroid from "./NativeToastAndroid";
 
 /**
@@ -43,4 +54,4 @@ const ToastAndroid = {
   }
 };
 
-export default ToastAndroid;
+export default ToastAndroid;;

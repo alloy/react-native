@@ -4,12 +4,11 @@ import AnimatedValueXY from '../nodes/AnimatedValueXY';
 import AnimatedInterpolation from '../nodes/AnimatedInterpolation';
 import Animation from './Animation';
 import _Import0 from '../NativeAnimatedHelper';
+import Easing from '../Easing';
 
 const {
   shouldUseNativeDriver
 } = _Import0;
-
-import Easing from '../Easing';
 
 import { AnimationConfig, EndCallback } from "./Animation";
 
@@ -19,7 +18,7 @@ export type TimingAnimationConfig = AnimationConfig & {
     y: number;
 
   } | AnimatedValueXY | AnimatedInterpolation;
-  easing?: (value: number) => number;
+  easing?: ((value: number) => number);
   duration?: number;
   delay?: number;
 
@@ -27,7 +26,7 @@ export type TimingAnimationConfig = AnimationConfig & {
 
 export type TimingAnimationConfigSingle = AnimationConfig & {
   toValue: number | AnimatedValue | AnimatedInterpolation;
-  easing?: (value: number) => number;
+  easing?: ((value: number) => number);
   duration?: number;
   delay?: number;
 
@@ -48,8 +47,8 @@ class TimingAnimation extends Animation {
   _toValue: any;
   _duration: number;
   _delay: number;
-  _easing: (value: number) => number;
-  _onUpdate: (value: number) => void;
+  _easing: ((value: number) => number);
+  _onUpdate: ((value: number) => void);
   _animationFrame: any;
   _timeout: any;
   _useNativeDriver: boolean;
@@ -81,7 +80,7 @@ class TimingAnimation extends Animation {
     };
   }
 
-  start(fromValue: number, onUpdate: (value: number) => void, onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
+  start(fromValue: number, onUpdate: ((value: number) => void), onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
     this.__active = true;
     this._fromValue = fromValue;
     this._onUpdate = onUpdate;
@@ -137,4 +136,4 @@ class TimingAnimation extends Animation {
   }
 }
 
-export default TimingAnimation;
+export default TimingAnimation;;

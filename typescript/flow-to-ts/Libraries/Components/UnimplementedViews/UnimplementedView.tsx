@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   } : {}
 });
 
-export default UnimplementedView;
+export default UnimplementedView;;

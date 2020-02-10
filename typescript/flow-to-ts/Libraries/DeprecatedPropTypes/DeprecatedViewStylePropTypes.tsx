@@ -48,4 +48,4 @@ const DeprecatedViewStylePropTypes = {
   elevation: ReactPropTypes.number
 };
 
-export default DeprecatedViewStylePropTypes;
+export default DeprecatedViewStylePropTypes;;

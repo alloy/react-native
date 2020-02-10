@@ -31,7 +31,7 @@ type ButtonProps = $ReadOnly<{
   /**
    * Handler to be called when the user taps the button
    */
-  onPress: (event?: PressEvent) => unknown;
+  onPress: ((event?: PressEvent) => unknown);
 
   /**
    * If true, doesn't play system sound on touch (Android Only)
@@ -214,4 +214,4 @@ const styles = StyleSheet.create({
   })
 });
 
-export default Button;
+export default Button;;

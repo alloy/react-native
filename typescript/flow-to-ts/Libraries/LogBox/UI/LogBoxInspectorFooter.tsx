@@ -23,42 +23,22 @@ import LogBoxButton from "./LogBoxButton";
 import * as LogBoxStyle from "./LogBoxStyle";
 
 type Props = $ReadOnly<{
-  onDismiss: () => void;
-  onMinimize: () => void;
+  onDismiss: (() => void);
+  onMinimize: (() => void);
   level?: LogLevel | null | undefined;
 }>;
 
 function LogBoxInspectorFooter(props: Props): React.ReactNode {
-  if (props.level === 'syntax') {
-    return <View style={styles.root}>
-        <View style={styles.button}>
-          <Text style={styles.syntaxErrorText}>
-            This error cannot be dismissed.
-          </Text>
-        </View>
-      </View>;
-  }
-
-  return <View style={styles.root}>
-      <FooterButton text="Dismiss" onPress={props.onDismiss} />
-      <FooterButton text="Minimize" onPress={props.onMinimize} />
-    </View>;
+  return null as any;
 }
 
 type ButtonProps = $ReadOnly<{
-  onPress: () => void;
+  onPress: (() => void);
   text: string;
 }>;
 
 function FooterButton(props: ButtonProps): React.ReactNode {
-  return <LogBoxButton backgroundColor={{
-    default: 'transparent',
-    pressed: LogBoxStyle.getBackgroundDarkColor()
-  }} onPress={props.onPress} style={buttonStyles.safeArea}>
-      <View style={buttonStyles.content}>
-        <Text style={buttonStyles.label}>{props.text}</Text>
-      </View>
-    </LogBoxButton>;
+  return null as any;
 }
 
 const buttonStyles = StyleSheet.create({

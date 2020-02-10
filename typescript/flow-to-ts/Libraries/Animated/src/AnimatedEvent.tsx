@@ -13,52 +13,13 @@ export type Mapping = {
   [key: string]: Mapping;
 } | AnimatedValue;
 export type EventConfig = {
-  listener?: Function | null | undefined;
+  listener?: ((...args: any) => any) | null | undefined;
   useNativeDriver: boolean;
 
 };
 
-function attachNativeEvent(viewRef: any, eventName: string, argMapping: ReadonlyArray<Mapping | null | undefined>): {detach: () => void;} {
-  // Find animated values in `argMapping` and create an array representing their
-  // key path inside the `nativeEvent` object. Ex.: ['contentOffset', 'x'].
-  const eventMappings = [];
-
-  const traverse = (value, path) => {
-    if (value instanceof AnimatedValue) {
-      value.__makeNative();
-
-      eventMappings.push({
-        nativeEventPath: path,
-        animatedValueTag: value.__getNativeTag()
-      });
-    } else if (typeof value === 'object') {
-      for (const key in value) {
-        traverse(value[key], path.concat(key));
-      }
-    }
-  };
-
-  invariant(argMapping[0] && argMapping[0].nativeEvent, 'Native driven events only support animated values contained inside `nativeEvent`.');
-
-  // Assume that the event containing `nativeEvent` is always the first argument.
-  traverse(argMapping[0].nativeEvent, []);
-
-  const viewTag = ReactNative.findNodeHandle(viewRef);
-  if (viewTag != null) {
-    eventMappings.forEach(mapping => {
-      NativeAnimatedHelper.API.addAnimatedEventToView(viewTag, eventName, mapping);
-    });
-  }
-
-  return {
-    detach() {
-      if (viewTag != null) {
-        eventMappings.forEach(mapping => {
-          NativeAnimatedHelper.API.removeAnimatedEventFromView(viewTag, eventName, mapping.animatedValueTag);
-        });
-      }
-    }
-  };
+function attachNativeEvent(viewRef: any, eventName: string, argMapping: ReadonlyArray<Mapping | null | undefined>): {detach: (() => void);} {
+  return null as any;
 }
 
 function validateMapping(argMapping, args) {
@@ -87,9 +48,9 @@ function validateMapping(argMapping, args) {
 class AnimatedEvent {
 
   _argMapping: ReadonlyArray<Mapping | null | undefined>;
-  _listeners: Array<Function> = [];
-  _callListeners: Function;
-  _attachedEvent: {detach: () => void;} | null | undefined;
+  _listeners: Array<((...args: any) => any)> = [];
+  _callListeners: ((...args: any) => any);
+  _attachedEvent: {detach: (() => void);} | null | undefined;
   __isNative: boolean;
 
   constructor(argMapping: ReadonlyArray<Mapping | null | undefined>, config: EventConfig) {
@@ -108,11 +69,11 @@ class AnimatedEvent {
     this.__isNative = shouldUseNativeDriver(config);
   }
 
-  __addListener(callback: Function): void {
+  __addListener(callback: ((...args: any) => any)): void {
     this._listeners.push(callback);
   }
 
-  __removeListener(callback: Function): void {
+  __removeListener(callback: ((...args: any) => any)): void {
     this._listeners = this._listeners.filter(listener => listener !== callback);
   }
 
@@ -175,4 +136,4 @@ class AnimatedEvent {
   }
 }
 
-export default { AnimatedEvent, attachNativeEvent };
+export default { AnimatedEvent, attachNativeEvent };;

@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 const getReactData = require('getReactData');
 
@@ -18,11 +30,7 @@ const MAX_STRING_LENGTH = 50;
  * of React and will fail in future versions.
  */
 function dumpReactTree(): string {
-  try {
-    return getReactTree();
-  } catch (e) {
-    return 'Failed to dump react tree: ' + e;
-  }
+  return null as any;
 }
 
 function getReactTree() {
@@ -138,4 +146,4 @@ function indent(size: number) {
   return ' '.repeat(size * INDENTATION_SIZE);
 }
 */
-export default dumpReactTree;
+export default dumpReactTree;;

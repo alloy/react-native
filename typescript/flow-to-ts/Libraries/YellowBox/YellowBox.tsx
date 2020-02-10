@@ -2,8 +2,10 @@
 import React from 'react';
 import Platform from '../Utilities/Platform';
 import RCTLog from '../Utilities/RCTLog';
+import YellowBoxContainer from './YellowBoxContainer';
 import LogBox from '../LogBox/LogBox';
 import YellowBoxRegistry from './Data/YellowBoxRegistry';
+import LogBoxNotificationContainer from '../LogBox/LogBoxNotificationContainer';
 import { $ReadOnly, Class } from "utility-types";
 
 
@@ -49,9 +51,6 @@ let YellowBox;
  * the ignored warning messages.
  */
 if (__DEV__) {
-  const YellowBoxContainer = require('./YellowBoxContainer').default;
-  const LogBoxNotificationContainer = require('../LogBox/LogBoxNotificationContainer').default;
-
   // YellowBox needs to insert itself early,
   // in order to access the component stacks appended by React DevTools.
   const {
@@ -238,4 +237,4 @@ export default YellowBox as Class<React.Component<Props, State>> & {
   __unstable_enableLogBox(): void;
   __unstable_isLogBoxEnabled(): boolean;
 
-};
+};;

@@ -1,7 +1,20 @@
 'use strict';;
+import NativeExceptionsManager from './NativeExceptionsManager';
 import parseErrorStack from './Devtools/parseErrorStack';
 import symbolicateStackTrace from './Devtools/symbolicateStackTrace';
 import stringifySafe from '../Utilities/stringifySafe';
+
+
+
+
+
+
+
+
+
+
+
+
 import { ExtendedError } from "./Devtools/parseErrorStack";
 import * as LogBoxData from "../LogBox/Data/LogBoxData";
 import { ExceptionData } from "./NativeExceptionsManager";
@@ -11,7 +24,7 @@ class SyntheticError extends Error {
   name: string = '';
 }
 
-type ExceptionDecorator = (arg0: ExceptionData) => ExceptionData;
+type ExceptionDecorator = ((arg0: ExceptionData) => ExceptionData);
 
 let userExceptionDecorator: ExceptionDecorator | null | undefined;
 let inUserExceptionDecorator = false;
@@ -25,16 +38,7 @@ function unstable_setExceptionDecorator(exceptionDecorator: ExceptionDecorator |
 }
 
 function preprocessException(data: ExceptionData): ExceptionData {
-  if (userExceptionDecorator && !inUserExceptionDecorator) {
-    inUserExceptionDecorator = true;
-    try {
-      return userExceptionDecorator(data);
-    } catch {// Fall through
-    } finally {
-      inUserExceptionDecorator = false;
-    }
-  }
-  return data;
+  return null as any;
 }
 
 /**
@@ -42,7 +46,6 @@ function preprocessException(data: ExceptionData): ExceptionData {
  */
 let exceptionID = 0;
 function reportException(e: ExtendedError, isFatal: boolean) {
-  const NativeExceptionsManager = require('./NativeExceptionsManager').default;
   if (NativeExceptionsManager) {
     const stack = parseErrorStack(e);
     const currentExceptionID = ++exceptionID;
@@ -193,4 +196,4 @@ export default {
   installConsoleErrorReporter,
   SyntheticError,
   unstable_setExceptionDecorator
-};
+};;

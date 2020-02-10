@@ -1,9 +1,6 @@
 'use strict';;
 import _Import0 from '../Utilities/PolyfillFunctions';
-
-const {
-  polyfillGlobal
-} = _Import0;
+import _Import1 from './Timers/JSTimers';
 
 
 
@@ -18,12 +15,16 @@ const {
 
 // In bridgeless mode, timers are host functions installed from cpp.
 if (!global.RN$Bridgeless) {
+  const {
+    polyfillGlobal
+  } = _Import0;
+
   /**
    * Set up timers.
    * You can use this module directly, or just require InitializeCore.
    */
   const defineLazyTimer = name => {
-    polyfillGlobal(name, () => require('./Timers/JSTimers')[name]);
+    polyfillGlobal(name, () => _Import1[name]);
   };
   defineLazyTimer('setTimeout');
   defineLazyTimer('setInterval');

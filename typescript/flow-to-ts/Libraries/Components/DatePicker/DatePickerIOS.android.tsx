@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DummyDatePickerIOS;
+export default DummyDatePickerIOS;;

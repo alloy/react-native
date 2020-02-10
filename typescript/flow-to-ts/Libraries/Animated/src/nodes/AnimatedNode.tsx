@@ -4,7 +4,7 @@ import invariant from 'invariant';
 
 const NativeAnimatedAPI = NativeAnimatedHelper.API;
 
-type ValueListenerCallback = (state: {value: number;}) => unknown;
+type ValueListenerCallback = ((state: {value: number;}) => unknown);
 
 let _uniqueId = 1;
 
@@ -59,7 +59,7 @@ class AnimatedNode {
    *
    * See http://facebook.github.io/react-native/docs/animatedvalue.html#addlistener
    */
-  addListener(callback: (value: any) => unknown): string {
+  addListener(callback: ((value: any) => unknown)): string {
     const id = String(_uniqueId++);
     this._listeners[id] = callback;
     if (this.__isNative) {
@@ -150,7 +150,7 @@ class AnimatedNode {
 
     return nativeTag;
   }
-  __getNativeConfig(): Object {
+  __getNativeConfig(): any {
     throw new Error('This JS animated node type cannot be used as native animated node');
   }
   toJSON(): any {
@@ -158,4 +158,4 @@ class AnimatedNode {
   }
 }
 
-export default AnimatedNode;
+export default AnimatedNode;;

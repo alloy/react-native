@@ -32,7 +32,7 @@ class DecayAnimation extends Animation {
   _fromValue: number;
   _deceleration: number;
   _velocity: number;
-  _onUpdate: (value: number) => void;
+  _onUpdate: ((value: number) => void);
   _animationFrame: any;
   _useNativeDriver: boolean;
 
@@ -59,7 +59,7 @@ class DecayAnimation extends Animation {
     };
   }
 
-  start(fromValue: number, onUpdate: (value: number) => void, onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
+  start(fromValue: number, onUpdate: ((value: number) => void), onEnd: EndCallback | null | undefined, previousAnimation: Animation | null | undefined, animatedValue: AnimatedValue): void {
     this.__active = true;
     this._lastValue = fromValue;
     this._fromValue = fromValue;
@@ -99,4 +99,4 @@ class DecayAnimation extends Animation {
   }
 }
 
-export default DecayAnimation;
+export default DecayAnimation;;

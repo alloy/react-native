@@ -1,109 +1,28 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function normalizeColor(color: string | number): number | null | undefined {
-  const matchers = getMatchers();
-  let match;
-
-  if (typeof color === 'number') {
-    if (color >>> 0 === color && color >= 0 && color <= 0xffffffff) {
-      return color;
-    }
-    return null;
-  }
-
-  // Ordered based on occurrences on Facebook codebase
-  if (match = matchers.hex6.exec(color)) {
-    return parseInt(match[1] + 'ff', 16) >>> 0;
-  }
-
-  if (names.hasOwnProperty(color)) {
-    return names[color];
-  }
-
-  if (match = matchers.rgb.exec(color)) {
-    return (// b
-      (parse255(match[1]) << 24 | // r
-      parse255(match[2]) << 16 | // g
-      parse255(match[3]) << 8 | 0x000000ff) >>> // a
-      0
-    );
-  }
-
-  if (match = matchers.rgba.exec(color)) {
-    return (// b
-      (parse255(match[1]) << 24 | // r
-      parse255(match[2]) << 16 | // g
-      parse255(match[3]) << 8 | parse1(match[4])) >>> // a
-      0
-    );
-  }
-
-  if (match = matchers.hex3.exec(color)) {
-    return parseInt(match[1] + match[1] + // r
-    match[2] + match[2] + // g
-    match[3] + match[3] + // b
-    'ff', // a
-    16) >>> 0;
-  }
-
-  // https://drafts.csswg.org/css-color-4/#hex-notation
-  if (match = matchers.hex8.exec(color)) {
-    return parseInt(match[1], 16) >>> 0;
-  }
-
-  if (match = matchers.hex4.exec(color)) {
-    return parseInt(match[1] + match[1] + // r
-    match[2] + match[2] + // g
-    match[3] + match[3] + // b
-    match[4] + match[4], // a
-    16) >>> 0;
-  }
-
-  if (match = matchers.hsl.exec(color)) {
-    return (hslToRgb(parse360(match[1]), // h
-    parsePercentage(match[2]), // s
-    parsePercentage(match[3]) // l
-    ) | 0x000000ff) >>> // a
-    0;
-  }
-
-  if (match = matchers.hsla.exec(color)) {
-    return (hslToRgb(parse360(match[1]), // h
-    parsePercentage(match[2]), // s
-    parsePercentage(match[3]) // l
-    ) | parse1(match[4])) >>> // a
-    0;
-  }
-
-  return null;
+  return null as any;
 }
 
 function hue2rgb(p: number, q: number, t: number): number {
-  if (t < 0) {
-    t += 1;
-  }
-  if (t > 1) {
-    t -= 1;
-  }
-  if (t < 1 / 6) {
-    return p + (q - p) * 6 * t;
-  }
-  if (t < 1 / 2) {
-    return q;
-  }
-  if (t < 2 / 3) {
-    return p + (q - p) * (2 / 3 - t) * 6;
-  }
-  return p;
+  return null as any;
 }
 
 function hslToRgb(h: number, s: number, l: number): number {
-  const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-  const p = 2 * l - q;
-  const r = hue2rgb(p, q, h + 1 / 3);
-  const g = hue2rgb(p, q, h);
-  const b = hue2rgb(p, q, h - 1 / 3);
-
-  return Math.round(r * 255) << 24 | Math.round(g * 255) << 16 | Math.round(b * 255) << 8;
+  return null as any;
 }
 
 // var INTEGER = '[-+]?\\d+';
@@ -133,42 +52,19 @@ function getMatchers() {
 }
 
 function parse255(str: string): number {
-  const int = parseInt(str, 10);
-  if (int < 0) {
-    return 0;
-  }
-  if (int > 255) {
-    return 255;
-  }
-  return int;
+  return null as any;
 }
 
 function parse360(str: string): number {
-  const int = parseFloat(str);
-  return (int % 360 + 360) % 360 / 360;
+  return null as any;
 }
 
 function parse1(str: string): number {
-  const num = parseFloat(str);
-  if (num < 0) {
-    return 0;
-  }
-  if (num > 1) {
-    return 255;
-  }
-  return Math.round(num * 255);
+  return null as any;
 }
 
 function parsePercentage(str: string): number {
-  // parseFloat conveniently ignores the final %
-  const int = parseFloat(str);
-  if (int < 0) {
-    return 0;
-  }
-  if (int > 100) {
-    return 1;
-  }
-  return int / 100;
+  return null as any;
 }
 
 const names = {
@@ -326,4 +222,4 @@ const names = {
   yellowgreen: 0x9acd32ff
 };
 
-export default normalizeColor;
+export default normalizeColor;;

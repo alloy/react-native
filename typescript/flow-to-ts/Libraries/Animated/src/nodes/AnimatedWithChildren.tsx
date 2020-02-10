@@ -65,4 +65,4 @@ class AnimatedWithChildren extends AnimatedNode {
   }
 }
 
-export default AnimatedWithChildren;
+export default AnimatedWithChildren;;

@@ -33,8 +33,8 @@ export type GeneratedViewConfig = {
   }>;
   validAttributes?: {
     [propName: string]: true | $ReadOnly<{
-      diff?: <T>(arg1: any, arg2: any) => boolean;
-      process?: (arg1: any) => any;
+      diff?: (<T>(arg1: any, arg2: any) => boolean);
+      process?: ((arg1: any) => any);
     }>;
   };
 
@@ -77,4 +77,4 @@ function registerGeneratedViewConfig(componentName: string, viewConfig: Generate
   });
 }
 
-export default registerGeneratedViewConfig;
+export default registerGeneratedViewConfig;;

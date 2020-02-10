@@ -45,12 +45,12 @@ export type ScrollViewNativeProps = $ReadOnly<ViewProps & {
   maximumZoomScale?: number | null | undefined;
   minimumZoomScale?: number | null | undefined;
   nestedScrollEnabled?: boolean | null | undefined;
-  onMomentumScrollBegin?: (event: ScrollEvent) => void | null | undefined;
-  onMomentumScrollEnd?: (event: ScrollEvent) => void | null | undefined;
-  onScroll?: (event: ScrollEvent) => void | null | undefined;
-  onScrollBeginDrag?: (event: ScrollEvent) => void | null | undefined;
-  onScrollEndDrag?: (event: ScrollEvent) => void | null | undefined;
-  onScrollToTop?: (event: ScrollEvent) => void;
+  onMomentumScrollBegin?: ((event: ScrollEvent) => void) | null | undefined;
+  onMomentumScrollEnd?: ((event: ScrollEvent) => void) | null | undefined;
+  onScroll?: ((event: ScrollEvent) => void) | null | undefined;
+  onScrollBeginDrag?: ((event: ScrollEvent) => void) | null | undefined;
+  onScrollEndDrag?: ((event: ScrollEvent) => void) | null | undefined;
+  onScrollToTop?: ((event: ScrollEvent) => void);
   overScrollMode?: ("auto" | "always" | "never") | null | undefined;
   pagingEnabled?: boolean | null | undefined;
   persistentScrollbar?: boolean | null | undefined;
@@ -73,7 +73,7 @@ export type ScrollViewNativeProps = $ReadOnly<ViewProps & {
   DEPRECATED_sendUpdatedChildFrames?: boolean | null | undefined;
   // Overrides
   style?: (ViewStyleProp) | DangerouslyImpreciseStyle;
-  onResponderGrant?: (e: any) => void | boolean | null | undefined;
+  onResponderGrant?: ((e: any) => void | boolean) | null | undefined;
 }>;
 
 export type ScrollViewNativeComponentType = HostComponent<ScrollViewNativeProps>;

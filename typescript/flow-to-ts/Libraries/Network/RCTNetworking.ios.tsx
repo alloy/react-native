@@ -12,7 +12,7 @@ class RCTNetworking extends NativeEventEmitter {
     super(NativeNetworkingIOS);
   }
 
-  sendRequest(method: string, trackingName: string, url: string, headers: Object, data: RequestBody, responseType: NativeResponseType, incrementalUpdates: boolean, timeout: number, callback: (requestId: number) => void, withCredentials: boolean) {
+  sendRequest(method: string, trackingName: string, url: string, headers: any, data: RequestBody, responseType: NativeResponseType, incrementalUpdates: boolean, timeout: number, callback: ((requestId: number) => void), withCredentials: boolean) {
     const body = convertRequestBody(data);
     NativeNetworkingIOS.sendRequest({
       method,
@@ -30,9 +30,9 @@ class RCTNetworking extends NativeEventEmitter {
     NativeNetworkingIOS.abortRequest(requestId);
   }
 
-  clearCookies(callback: (result: boolean) => void) {
+  clearCookies(callback: ((result: boolean) => void)) {
     NativeNetworkingIOS.clearCookies(callback);
   }
 }
 
-export default new RCTNetworking() as RCTNetworking;
+export default new RCTNetworking() as RCTNetworking;;

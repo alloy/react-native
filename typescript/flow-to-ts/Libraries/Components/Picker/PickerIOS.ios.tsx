@@ -40,8 +40,8 @@ type Label = Stringish | number;
 type Props = $ReadOnly<ViewProps & {
   children: React.ChildrenArray<React.ReactElement<typeof PickerIOSItem>>;
   itemStyle?: TextStyleProp | null | undefined;
-  onChange?: (event: PickerIOSChangeEvent) => unknown | null | undefined;
-  onValueChange?: (itemValue: string | number, itemIndex: number) => unknown | null | undefined;
+  onChange?: ((event: PickerIOSChangeEvent) => unknown) | null | undefined;
+  onValueChange?: ((itemValue: string | number, itemIndex: number) => unknown) | null | undefined;
   selectedValue: (number | string) | null | undefined;
   accessibilityLabel?: string | null | undefined;
 }>;
@@ -71,7 +71,7 @@ class PickerIOS extends React.Component<Props, State> {
     items: []
   };
 
-  static Item: (props: ItemProps) => null = PickerIOSItem;
+  static Item: ((props: ItemProps) => null) = PickerIOSItem;
 
   static getDerivedStateFromProps(props: Props): State {
     let selectedIndex = 0;
@@ -128,4 +128,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default PickerIOS;
+export default PickerIOS;;

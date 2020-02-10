@@ -1,10 +1,10 @@
 'use strict';;
 import UIManager from './UIManager';
 
-type OnSuccessCallback = (left: number, top: number, width: number, height: number, pageX: number, pageY: number) => void;
+type OnSuccessCallback = ((left: number, top: number, width: number, height: number, pageX: number, pageY: number) => void);
 
 // I don't know what type error is...
-type OnErrorCallback = (error: any) => void;
+type OnErrorCallback = ((error: any) => void);
 
 /**
  * Queries the layout of a view. The layout does not reflect the element as
@@ -33,4 +33,4 @@ const queryLayoutByID = function (tag: number | null | undefined, onError: OnErr
   UIManager.measure(tag, onSuccess);
 };
 
-export default queryLayoutByID;
+export default queryLayoutByID;;

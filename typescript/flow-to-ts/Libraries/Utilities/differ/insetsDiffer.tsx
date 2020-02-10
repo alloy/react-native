@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 type Inset = {
   top: number | null | undefined;
   left: number | null | undefined;
@@ -20,4 +32,4 @@ const insetsDiffer = function (one: Inset, two: Inset): boolean {
   return one !== two && (one.top !== two.top || one.left !== two.left || one.right !== two.right || one.bottom !== two.bottom);
 };
 
-export default insetsDiffer;
+export default insetsDiffer;;

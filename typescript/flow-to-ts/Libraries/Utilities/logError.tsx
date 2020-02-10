@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Small utility that can be used as an error handler. You cannot just pass
  * `console.error` as a failure callback - it's not properly bound.  If passes an
@@ -13,4 +25,4 @@ const logError = function (...args: ReadonlyArray<unknown>) {
   }
 };
 
-export default logError;
+export default logError;;

@@ -9,17 +9,13 @@ type Header = [string, string];
 
 // Convert FormData headers to arrays, which are easier to consume in
 // native on Android.
-function convertHeadersMapToArray(headers: Object): Array<Header> {
-  const headerArray = [];
-  for (const name in headers) {
-    headerArray.push([name, headers[name]]);
-  }
-  return headerArray;
+function convertHeadersMapToArray(headers: any): Array<Header> {
+  return null as any;
 }
 
 let _requestId = 1;
 function generateRequestId(): number {
-  return _requestId++;
+  return null as any;
 }
 
 /**
@@ -32,7 +28,7 @@ class RCTNetworking extends NativeEventEmitter {
     super(NativeNetworkingAndroid);
   }
 
-  sendRequest(method: string, trackingName: string, url: string, headers: Object, data: RequestBody, responseType: "text" | "base64", incrementalUpdates: boolean, timeout: number, callback: (requestId: number) => unknown, withCredentials: boolean) {
+  sendRequest(method: string, trackingName: string, url: string, headers: any, data: RequestBody, responseType: "text" | "base64", incrementalUpdates: boolean, timeout: number, callback: ((requestId: number) => unknown), withCredentials: boolean) {
     const body = convertRequestBody(data);
     if (body && body.formData) {
       body.formData = body.formData.map(part => ({
@@ -49,9 +45,9 @@ class RCTNetworking extends NativeEventEmitter {
     NativeNetworkingAndroid.abortRequest(requestId);
   }
 
-  clearCookies(callback: (result: boolean) => any) {
+  clearCookies(callback: ((result: boolean) => any)) {
     NativeNetworkingAndroid.clearCookies(callback);
   }
 }
 
-export default new RCTNetworking() as RCTNetworking;
+export default new RCTNetworking() as RCTNetworking;;

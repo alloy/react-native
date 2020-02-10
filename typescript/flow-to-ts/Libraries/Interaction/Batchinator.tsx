@@ -25,10 +25,10 @@ import InteractionManager from './InteractionManager';
  */
 class Batchinator {
 
-  _callback: () => void;
+  _callback: (() => void);
   _delay: number;
-  _taskHandle: {cancel: () => void;} | null | undefined;
-  constructor(callback: () => void, delayMS: number) {
+  _taskHandle: {cancel: (() => void);} | null | undefined;
+  constructor(callback: (() => void), delayMS: number) {
     this._delay = delayMS;
     this._callback = callback;
   }
@@ -64,4 +64,4 @@ class Batchinator {
   }
 }
 
-export default Batchinator;
+export default Batchinator;;

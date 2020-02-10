@@ -10,8 +10,8 @@ import EventSubscriptionVendor from "./EventSubscriptionVendor";
 class EmitterSubscription extends EventSubscription {
 
   emitter: EventEmitter;
-  listener: Function;
-  context: Object | null | undefined;
+  listener: ((...args: any) => any);
+  context: any | null | undefined;
 
   /**
    * @param {EventEmitter} emitter - The event emitter that registered this
@@ -23,7 +23,7 @@ class EmitterSubscription extends EventSubscription {
    * @param {*} context - Optional context object to use when invoking the
    *   listener
    */
-  constructor(emitter: EventEmitter, subscriber: EventSubscriptionVendor, listener: Function, context: Object | null | undefined) {
+  constructor(emitter: EventEmitter, subscriber: EventSubscriptionVendor, listener: ((...args: any) => any), context: any | null | undefined) {
     super(subscriber);
     this.emitter = emitter;
     this.listener = listener;
@@ -41,4 +41,4 @@ class EmitterSubscription extends EventSubscription {
   }
 }
 
-export default EmitterSubscription;
+export default EmitterSubscription;;

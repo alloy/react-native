@@ -14,4 +14,4 @@ const DeprecatedEdgeInsetsPropType: React$PropType$Primitive<{
   right: PropTypes.number
 });
 
-export default DeprecatedEdgeInsetsPropType;
+export default DeprecatedEdgeInsetsPropType;;

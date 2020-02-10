@@ -17,4 +17,4 @@ const ImageSourcePropType = PropTypes.oneOfType([ImageURISourcePropType, // Opaq
 PropTypes.number, // Multiple sources
 PropTypes.arrayOf(ImageURISourcePropType)]);
 
-export default ImageSourcePropType;
+export default ImageSourcePropType;;

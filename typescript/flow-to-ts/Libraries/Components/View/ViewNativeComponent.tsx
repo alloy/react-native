@@ -40,8 +40,8 @@ let viewConfig: {} | {
   uiViewClassName: string;
   validAttributes?: {
     [propName: string]: true | $ReadOnly<{
-      diff?: <T>(arg1: any, arg2: any) => boolean;
-      process?: (arg1: any) => any;
+      diff?: (<T>(arg1: any, arg2: any) => boolean);
+      process?: ((arg1: any) => any);
     }>;
   };
 };
@@ -65,8 +65,8 @@ if (__DEV__ || global.RN$Bridgeless) {
 export const __INTERNAL_VIEW_CONFIG = viewConfig;
 
 interface NativeCommands {
-  readonly hotspotUpdate: (viewRef: React.ElementRef<HostComponent<unknown>>, x: number, y: number) => void;
-  readonly setPressed: (viewRef: React.ElementRef<HostComponent<unknown>>, pressed: boolean) => void;
+  readonly hotspotUpdate: ((viewRef: React.ElementRef<HostComponent<unknown>>, x: number, y: number) => void);
+  readonly setPressed: ((viewRef: React.ElementRef<HostComponent<unknown>>, pressed: boolean) => void);
 }
 
 export const Commands: NativeCommands = codegenNativeCommands<NativeCommands>({

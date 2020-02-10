@@ -74,8 +74,8 @@ export type PushNotificationEventName = $Keys<{
  */
 class PushNotificationIOS {
 
-  _data: Object;
-  _alert: string | Object;
+  _data: any;
+  _alert: string | any;
   _sound: string;
   _category: string;
   _contentAvailable: ContentAvailable;
@@ -96,7 +96,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#presentlocalnotification
    */
-  static presentLocalNotification(details: Object) {
+  static presentLocalNotification(details: any) {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.presentLocalNotification(details);
   }
@@ -106,7 +106,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#schedulelocalnotification
    */
-  static scheduleLocalNotification(details: Object) {
+  static scheduleLocalNotification(details: any) {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.scheduleLocalNotification(details);
   }
@@ -136,7 +136,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#getdeliverednotifications
    */
-  static getDeliveredNotifications(callback: (notifications: Array<Object>) => void): void {
+  static getDeliveredNotifications(callback: ((notifications: Array<any>) => void)): void {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.getDeliveredNotifications(callback);
   }
@@ -166,7 +166,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#getapplicationiconbadgenumber
    */
-  static getApplicationIconBadgeNumber(callback: Function) {
+  static getApplicationIconBadgeNumber(callback: ((...args: any) => any)) {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.getApplicationIconBadgeNumber(callback);
   }
@@ -176,7 +176,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#cancellocalnotification
    */
-  static cancelLocalNotifications(userInfo: Object) {
+  static cancelLocalNotifications(userInfo: any) {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.cancelLocalNotifications(userInfo);
   }
@@ -186,7 +186,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#getscheduledlocalnotifications
    */
-  static getScheduledLocalNotifications(callback: Function) {
+  static getScheduledLocalNotifications(callback: ((...args: any) => any)) {
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.getScheduledLocalNotifications(callback);
   }
@@ -197,7 +197,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#addeventlistener
    */
-  static addEventListener(type: PushNotificationEventName, handler: Function) {
+  static addEventListener(type: PushNotificationEventName, handler: ((...args: any) => any)) {
     invariant(type === 'notification' || type === 'register' || type === 'registrationError' || type === 'localNotification', 'PushNotificationIOS only supports `notification`, `register`, `registrationError`, and `localNotification` events');
     let listener;
     if (type === 'notification') {
@@ -226,7 +226,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#removeeventlistener
    */
-  static removeEventListener(type: PushNotificationEventName, handler: Function) {
+  static removeEventListener(type: PushNotificationEventName, handler: ((...args: any) => any)) {
     invariant(type === 'notification' || type === 'register' || type === 'registrationError' || type === 'localNotification', 'PushNotificationIOS only supports `notification`, `register`, `registrationError`, and `localNotification` events');
     const listener = _notifHandlers.get(type);
     if (!listener) {
@@ -287,7 +287,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#checkpermissions
    */
-  static checkPermissions(callback: Function) {
+  static checkPermissions(callback: ((...args: any) => any)) {
     invariant(typeof callback === 'function', 'Must provide a valid callback');
     invariant(NativePushNotificationManagerIOS, 'PushNotificationManager is not available.');
     NativePushNotificationManagerIOS.checkPermissions(callback);
@@ -312,7 +312,7 @@ class PushNotificationIOS {
    * `getInitialNotification` is sufficient
    *
    */
-  constructor(nativeNotif: Object) {
+  constructor(nativeNotif: any) {
     this._data = {};
     this._remoteNotificationCompleteCallbackCalled = false;
     this._isRemote = nativeNotif.remote;
@@ -365,7 +365,7 @@ class PushNotificationIOS {
   /**
    * An alias for `getAlert` to get the notification's main message string
    */
-  getMessage(): (string | null | undefined) | (Object | null | undefined) {
+  getMessage(): (string | null | undefined) | (any | null | undefined) {
     // alias because "alert" is an ambiguous name
     return this._alert;
   }
@@ -393,7 +393,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#getalert
    */
-  getAlert(): (string | null | undefined) | (Object | null | undefined) {
+  getAlert(): (string | null | undefined) | (any | null | undefined) {
     return this._alert;
   }
 
@@ -420,7 +420,7 @@ class PushNotificationIOS {
    *
    * See https://facebook.github.io/react-native/docs/pushnotificationios.html#getdata
    */
-  getData(): Object | null | undefined {
+  getData(): any | null | undefined {
     return this._data;
   }
 
@@ -434,4 +434,4 @@ class PushNotificationIOS {
   }
 }
 
-export default PushNotificationIOS;
+export default PushNotificationIOS;;

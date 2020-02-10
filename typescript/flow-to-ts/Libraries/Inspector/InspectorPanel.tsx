@@ -26,16 +26,16 @@ import { ViewStyleProp } from "../StyleSheet/StyleSheet";
 type Props = $ReadOnly<{
   devtoolsIsOpen: boolean;
   inspecting: boolean;
-  setInspecting: (val: boolean) => void;
+  setInspecting: ((val: boolean) => void);
   perfing: boolean;
-  setPerfing: (val: boolean) => void;
+  setPerfing: ((val: boolean) => void);
   touchTargeting: boolean;
-  setTouchTargeting: (val: boolean) => void;
+  setTouchTargeting: ((val: boolean) => void);
   networking: boolean;
-  setNetworking: (val: boolean) => void;
+  setNetworking: ((val: boolean) => void);
   hierarchy?: Array<{name: string;}> | null | undefined;
   selection?: number | null | undefined;
-  setSelection: (arg0: number) => unknown;
+  setSelection: ((arg0: number) => unknown);
   inspected?: $ReadOnly<{
     style?: ViewStyleProp | null | undefined;
     frame?: $ReadOnly<{
@@ -87,7 +87,7 @@ class InspectorPanel extends React.Component<Props> {
 }
 
 type InspectorPanelButtonProps = $ReadOnly<{
-  onClick: (val: boolean) => void;
+  onClick: ((val: boolean) => void);
   pressed: boolean;
   title: string;
 }>;
@@ -137,4 +137,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default InspectorPanel;
+export default InspectorPanel;;

@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 type HermesStackLocationNative = {
   readonly type: "NATIVE";
 };
@@ -51,51 +63,9 @@ const RE_FRAME = /^ {4}at (.+?)(?: \((native)\)?| \((address at )?(.+?):(\d+):(\
 const RE_SKIPPED = /^ {4}... skipping (\d+) frames$/;
 
 function parseLine(line: string): HermesStackEntry | null | undefined {
-  const asFrame = line.match(RE_FRAME);
-  if (asFrame) {
-    return {
-      type: 'FRAME',
-      functionName: asFrame[1],
-      location: asFrame[2] === 'native' ? { type: 'NATIVE' } : asFrame[3] === 'address at ' ? {
-        type: 'BYTECODE',
-        sourceUrl: asFrame[4],
-        line1Based: Number.parseInt(asFrame[5], 10),
-        virtualOffset0Based: Number.parseInt(asFrame[6], 10)
-      } : {
-        type: 'SOURCE',
-        sourceUrl: asFrame[4],
-        line1Based: Number.parseInt(asFrame[5], 10),
-        column1Based: Number.parseInt(asFrame[6], 10)
-      }
-    };
-  }
-  const asSkipped = line.match(RE_SKIPPED);
-  if (asSkipped) {
-    return {
-      type: 'SKIPPED',
-      count: Number.parseInt(asSkipped[1], 10)
-    };
-  }
+  return null as any;
 }
 
 export default function parseHermesStack(stack: string): HermesParsedStack {
-  const lines = stack.split(/\n/);
-  let entries = [];
-  let lastMessageLine = -1;
-  for (let i = 0; i < lines.length; ++i) {
-    const line = lines[i];
-    if (!line) {
-      continue;
-    }
-    const entry = parseLine(line);
-    if (entry) {
-      entries.push(entry);
-      continue;
-    }
-    // No match - we're still in the message
-    lastMessageLine = i;
-    entries = [];
-  }
-  const message = lines.slice(0, lastMessageLine + 1).join('\n');
-  return { message, entries };
-};
+  return null as any;
+};;

@@ -22,7 +22,7 @@ import { StackFrame } from "../../Core/NativeExceptionsManager";
 
 type Props = $ReadOnly<{
   frame: StackFrame;
-  onPress?: (event: PressEvent) => void | null | undefined;
+  onPress?: ((event: PressEvent) => void) | null | undefined;
 }>;
 
 const YellowBoxInspectorStackFrame = (props: Props): React.ReactNode => {
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxInspectorStackFrame;
+export default YellowBoxInspectorStackFrame;;

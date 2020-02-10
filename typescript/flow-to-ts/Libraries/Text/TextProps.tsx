@@ -90,29 +90,29 @@ export type TextProps = $ReadOnly<{
    *
    * See https://facebook.github.io/react-native/docs/text.html#onlayout
    */
-  onLayout?: (event: LayoutEvent) => unknown | null | undefined;
+  onLayout?: ((event: LayoutEvent) => unknown) | null | undefined;
 
   /**
    * This function is called on long press.
    *
    * See https://facebook.github.io/react-native/docs/text.html#onlongpress
    */
-  onLongPress?: (event: PressEvent) => unknown | null | undefined;
+  onLongPress?: ((event: PressEvent) => unknown) | null | undefined;
 
   /**
    * This function is called on press.
    *
    * See https://facebook.github.io/react-native/docs/text.html#onpress
    */
-  onPress?: (event: PressEvent) => unknown | null | undefined;
-  onResponderGrant?: (event: PressEvent, dispatchID: string) => void | null | undefined;
-  onResponderMove?: (event: PressEvent) => void | null | undefined;
-  onResponderRelease?: (event: PressEvent) => void | null | undefined;
-  onResponderTerminate?: (event: PressEvent) => void | null | undefined;
-  onResponderTerminationRequest?: () => boolean | null | undefined;
-  onStartShouldSetResponder?: () => boolean | null | undefined;
-  onMoveShouldSetResponder?: () => boolean | null | undefined;
-  onTextLayout?: (event: TextLayoutEvent) => unknown | null | undefined;
+  onPress?: ((event: PressEvent) => unknown) | null | undefined;
+  onResponderGrant?: ((event: PressEvent, dispatchID: string) => void) | null | undefined;
+  onResponderMove?: ((event: PressEvent) => void) | null | undefined;
+  onResponderRelease?: ((event: PressEvent) => void) | null | undefined;
+  onResponderTerminate?: ((event: PressEvent) => void) | null | undefined;
+  onResponderTerminationRequest?: (() => boolean) | null | undefined;
+  onStartShouldSetResponder?: (() => boolean) | null | undefined;
+  onMoveShouldSetResponder?: (() => boolean) | null | undefined;
+  onTextLayout?: ((event: TextLayoutEvent) => unknown) | null | undefined;
 
   /**
    * Defines how far your touch may move off of the button, before

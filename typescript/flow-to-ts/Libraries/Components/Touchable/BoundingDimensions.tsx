@@ -30,4 +30,4 @@ BoundingDimensions.getPooledFromElement = function (element) {
 
 PooledClass.addPoolingTo(BoundingDimensions, twoArgumentPooler);
 
-export default BoundingDimensions;
+export default BoundingDimensions;;

@@ -1,6 +1,29 @@
 "use strict";;
-import ReactNativePrivateInterface from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
-import 'react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore';
+import "react-native/Libraries/ReactPrivate/ReactNativePrivateInitializeCore";
+import _Import0 from "react-native/Libraries/ReactPrivate/ReactNativePrivateInterface";
+import _Import1 from "react";
+import _Import2 from "scheduler";
+import _Import3 from "scheduler/tracing";
+import _Import4 from "../shims/ReactFeatureFlags";
+
+
+
+
+
+
+
+
+
+
+
+
+;
+var ReactNativePrivateInterface = _Import0,
+    React = _Import1,
+    Scheduler = _Import2,
+    tracing = _Import3,
+    eventPluginOrder = null,
+    namesToPlugins = {};
 function recomputePluginOrdering() {
   if (eventPluginOrder) for (var pluginName in namesToPlugins) {
     var pluginModule = namesToPlugins[pluginName],
@@ -514,7 +537,7 @@ injection.injectEventPluginsByName({
     }
   }
 });
-var enableNativeTargetAsInstance = require("../shims/ReactFeatureFlags").enableNativeTargetAsInstance;
+var enableNativeTargetAsInstance = _Import4.enableNativeTargetAsInstance;
 function getInstanceFromInstance(instanceHandle) {
   return instanceHandle;
 }
@@ -842,7 +865,7 @@ var _nativeFabricUIManage = nativeFabricUIManager,
     getViewConfigForType = ReactNativePrivateInterface.ReactNativeViewConfigRegistry.get,
     nextReactTag = 2;
 registerEventHandler && registerEventHandler(dispatchEvent);
-var ReactFabricHostComponent = function () {
+var ReactFabricHostComponent = (function () {
   function ReactFabricHostComponent(tag, viewConfig, props, internalInstanceHandle) {
     this._nativeTag = tag;
     this.viewConfig = viewConfig;
@@ -867,7 +890,7 @@ var ReactFabricHostComponent = function () {
   };
   _proto.setNativeProps = function () {};
   return ReactFabricHostComponent;
-}();
+})();
 function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
   if (!hostContext.isInAParentText) throw Error("Text strings must be rendered within a <Text> component.");
   hostContext = nextReactTag;
@@ -4244,8 +4267,8 @@ flushDiscreteUpdatesImpl = function () {
 };
 var roots = new Map(),
     ReactFabric = {
-  NativeComponent: function (findNodeHandle, findHostInstance) {
-    return function (_React$Component) {
+  NativeComponent: (function (findNodeHandle, findHostInstance) {
+    return (function (_React$Component) {
       function ReactNativeComponent() {
         return _React$Component.apply(this, arguments) || this;
       }
@@ -4290,8 +4313,8 @@ var roots = new Map(),
         }
       };
       return ReactNativeComponent;
-    }(React.Component);
-  }(findNodeHandle, findHostInstance),
+    })(React.Component);
+  })(findNodeHandle, findHostInstance),
   findHostInstance_DEPRECATED: function (componentOrHandle) {
     if (null == componentOrHandle) return null;
     if (componentOrHandle._nativeTag) return componentOrHandle;
@@ -4336,7 +4359,7 @@ var roots = new Map(),
     return createPortal(children, containerTag, null, 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null);
   },
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: {
-    NativeMethodsMixin: function (findNodeHandle, findHostInstance) {
+    NativeMethodsMixin: (function (findNodeHandle, findHostInstance) {
       return {
         measure: function (callback) {
           try {
@@ -4377,7 +4400,7 @@ var roots = new Map(),
           ReactNativePrivateInterface.TextInputState.blurTextInput(findNodeHandle(this));
         }
       };
-    }(findNodeHandle, findHostInstance)
+    })(findNodeHandle, findHostInstance)
   }
 };
 (function (devToolsConfig) {
@@ -4412,4 +4435,4 @@ var roots = new Map(),
 });
 var ReactFabric$2 = { default: ReactFabric },
     ReactFabric$3 = ReactFabric$2 && ReactFabric || ReactFabric$2;
-export default ReactFabric$3.default || ReactFabric$3;
+export default ReactFabric$3.default || ReactFabric$3;;

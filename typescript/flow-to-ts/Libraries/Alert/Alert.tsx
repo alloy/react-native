@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import Platform from "../Utilities/Platform";
 import NativeDialogManagerAndroid, { DialogOptions } from "../NativeModules/specs/NativeDialogManagerAndroid";
 import RCTAlertManager from "./RCTAlertManager";
@@ -7,14 +19,14 @@ export type AlertType = "default" | "plain-text" | "secure-text" | "login-passwo
 export type AlertButtonStyle = "default" | "cancel" | "destructive";
 export type Buttons = Array<{
   text?: string;
-  onPress?: Function | null | undefined;
+  onPress?: ((...args: any) => any) | null | undefined;
   style?: AlertButtonStyle;
 
 }>;
 
 type Options = {
   cancelable?: boolean | null | undefined;
-  onDismiss?: () => void | null | undefined;
+  onDismiss?: (() => void) | null | undefined;
 
 };
 
@@ -79,7 +91,7 @@ class Alert {
     }
   }
 
-  static prompt(title: string | null | undefined, message?: string | null | undefined, callbackOrButtons?: ((text: string) => void | Buttons) | null | undefined, type?: AlertType | null | undefined = 'plain-text', defaultValue?: string, keyboardType?: string): void {
+  static prompt(title: string | null | undefined, message?: string | null | undefined, callbackOrButtons?: (((text: string) => void) | Buttons) | null | undefined, type?: AlertType | null | undefined = 'plain-text', defaultValue?: string, keyboardType?: string): void {
     if (Platform.OS === 'ios') {
       if (typeof type === 'function') {
         console.warn('You passed a callback function as the "type" argument to Alert.prompt(). React Native is ' + 'assuming  you want to use the deprecated Alert.prompt(title, defaultValue, buttons, callback) ' + 'signature. The current signature is Alert.prompt(title, message, callbackOrButtons, type, defaultValue, ' + 'keyboardType) and the old syntax will be removed in a future version.');
@@ -134,4 +146,4 @@ class Alert {
   }
 }
 
-export default Alert;
+export default Alert;;

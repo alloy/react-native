@@ -25,7 +25,7 @@ import { $ReadOnly } from "utility-types";
 import YellowBoxWarning from "../Data/YellowBoxWarning";
 
 type Props = $ReadOnly<{
-  onSelectIndex: (selectedIndex: number) => void;
+  onSelectIndex: ((selectedIndex: number) => void);
   selectedIndex: number;
   warnings: ReadonlyArray<YellowBoxWarning>;
 }>;
@@ -50,7 +50,7 @@ const YellowBoxInspectorHeader = (props: Props): React.ReactNode => {
 const YellowBoxInspectorHeaderButton = (props: $ReadOnly<{
   disabled: boolean;
   image: string;
-  onPress?: () => void | null | undefined;
+  onPress?: (() => void) | null | undefined;
 }>): React.ReactNode => <YellowBoxPressable backgroundColor={{
   default: 'transparent',
   pressed: YellowBoxStyle.getHighlightColor(1)
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxInspectorHeader;
+export default YellowBoxInspectorHeader;;

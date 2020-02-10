@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly } from "utility-types";
 
 
@@ -92,10 +92,10 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
    * Creates a value for the `background` prop that uses the Android theme's
    * default background for selectable elements.
    */
-  static SelectableBackground: () => $ReadOnly<{
+  static SelectableBackground: (() => $ReadOnly<{
     attribute: "selectableItemBackground";
     type: "ThemeAttrAndroid";
-  }> = () => ({
+  }>) = () => ({
     type: 'ThemeAttrAndroid',
     attribute: 'selectableItemBackground'
   });
@@ -104,10 +104,10 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
    * Creates a value for the `background` prop that uses the Android theme's
    * default background for borderless selectable elements. Requires API 21+.
    */
-  static SelectableBackgroundBorderless: () => $ReadOnly<{
+  static SelectableBackgroundBorderless: (() => $ReadOnly<{
     attribute: "selectableItemBackgroundBorderless";
     type: "ThemeAttrAndroid";
-  }> = () => ({
+  }>) = () => ({
     type: 'ThemeAttrAndroid',
     attribute: 'selectableItemBackgroundBorderless'
   });
@@ -117,11 +117,11 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
    * the supplied color. If `borderless` is true, the ripple will render outside
    * of the view bounds. Requires API 21+.
    */
-  static Ripple: (color: string, borderless: boolean) => $ReadOnly<{
+  static Ripple: ((color: string, borderless: boolean) => $ReadOnly<{
     borderless: boolean;
     color: number | null | undefined;
     type: "RippleAndroid";
-  }> = (color: string, borderless: boolean) => ({
+  }>) = (color: string, borderless: boolean) => ({
     type: 'RippleAndroid',
     color: processColor(color),
     borderless
@@ -130,7 +130,7 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
   /**
    * Whether `useForeground` is supported.
    */
-  static canUseNativeForeground: () => boolean = () => Platform.OS === 'android' && Platform.Version >= 23;
+  static canUseNativeForeground: (() => boolean) = () => Platform.OS === 'android' && Platform.Version >= 23;
 
   _tvTouchable: TVTouchable | null | undefined;
 
@@ -285,4 +285,4 @@ class TouchableNativeFeedback extends React.Component<Props, State> {
 
 const getBackgroundProp = Platform.OS === 'android' ? (background, useForeground) => useForeground && TouchableNativeFeedback.canUseNativeForeground() ? { nativeForegroundAndroid: background } : { nativeBackgroundAndroid: background } : (background, useForeground) => null;
 
-export default TouchableNativeFeedback;
+export default TouchableNativeFeedback;;

@@ -12,11 +12,11 @@ export type ViewToken = {
 
 export type ViewabilityConfigCallbackPair = {
   viewabilityConfig: ViewabilityConfig;
-  onViewableItemsChanged: (info: {
+  onViewableItemsChanged: ((info: {
     viewableItems: Array<ViewToken>;
     changed: Array<ViewToken>;
 
-  }) => void;
+  }) => void);
 
 };
 
@@ -87,11 +87,11 @@ class ViewabilityHelper {
   /**
    * Determines which items are viewable based on the current metrics and config.
    */
-  computeViewableItems(itemCount: number, scrollOffset: number, viewportHeight: number, getFrameMetrics: (index: number) => {
+  computeViewableItems(itemCount: number, scrollOffset: number, viewportHeight: number, getFrameMetrics: ((index: number) => {
     length: number;
     offset: number;
 
-  } | null | undefined, // Optional optimization to reduce the scan size
+  } | null | undefined), // Optional optimization to reduce the scan size
   renderRange?: {
     first: number;
     last: number;
@@ -140,15 +140,15 @@ class ViewabilityHelper {
    * Figures out which items are viewable and how that has changed from before and calls
    * `onViewableItemsChanged` as appropriate.
    */
-  onUpdate(itemCount: number, scrollOffset: number, viewportHeight: number, getFrameMetrics: (index: number) => {
+  onUpdate(itemCount: number, scrollOffset: number, viewportHeight: number, getFrameMetrics: ((index: number) => {
     length: number;
     offset: number;
 
-  } | null | undefined, createViewToken: (index: number, isViewable: boolean) => ViewToken, onViewableItemsChanged: (arg0: {
+  } | null | undefined), createViewToken: ((index: number, isViewable: boolean) => ViewToken), onViewableItemsChanged: ((arg0: {
     viewableItems: Array<ViewToken>;
     changed: Array<ViewToken>;
 
-  }) => void, // Optional optimization to reduce the scan size
+  }) => void), // Optional optimization to reduce the scan size
   renderRange?: {
     first: number;
     last: number;
@@ -224,22 +224,15 @@ class ViewabilityHelper {
 }
 
 function _isViewable(viewAreaMode: boolean, viewablePercentThreshold: number, top: number, bottom: number, viewportHeight: number, itemLength: number): boolean {
-  if (_isEntirelyVisible(top, bottom, viewportHeight)) {
-    return true;
-  } else {
-    const pixels = _getPixelsVisible(top, bottom, viewportHeight);
-    const percent = 100 * (viewAreaMode ? pixels / viewportHeight : pixels / itemLength);
-    return percent >= viewablePercentThreshold;
-  }
+  return null as any;
 }
 
 function _getPixelsVisible(top: number, bottom: number, viewportHeight: number): number {
-  const visibleHeight = Math.min(bottom, viewportHeight) - Math.max(top, 0);
-  return Math.max(0, visibleHeight);
+  return null as any;
 }
 
 function _isEntirelyVisible(top: number, bottom: number, viewportHeight: number): boolean {
-  return top >= 0 && bottom <= viewportHeight && bottom > top;
+  return null as any;
 }
 
-export default ViewabilityHelper;
+export default ViewabilityHelper;;

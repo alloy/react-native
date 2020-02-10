@@ -1,4 +1,21 @@
 'use strict';;
+import _Import0 from '../../StyleSheet/processColor';
+import _Import1 from '../../StyleSheet/processColor';
+import _Import2 from '../../StyleSheet/processColor';
+import _Import3 from '../../StyleSheet/processColor';
+import _Import4 from '../../StyleSheet/processColor';
+
+
+
+
+
+
+
+
+
+
+
+
 import ReactNativeViewViewConfig from "../../Components/View/ReactNativeViewViewConfig";
 import { ReactNativeBaseComponentViewConfig } from "../../Renderer/shims/ReactNativeTypes";
 
@@ -20,19 +37,19 @@ const AndroidTextInputViewConfig = {
     placeholder: true,
     inlineImagePadding: true,
     contextMenuHidden: true,
-    textShadowColor: { process: require('../../StyleSheet/processColor') },
+    textShadowColor: { process: _Import0 },
     maxLength: true,
     selectTextOnFocus: true,
     textShadowRadius: true,
-    underlineColorAndroid: { process: require('../../StyleSheet/processColor') },
+    underlineColorAndroid: { process: _Import1 },
     textDecorationLine: true,
     blurOnSubmit: true,
     textAlignVertical: true,
     fontStyle: true,
     textShadowOffset: true,
-    selectionColor: { process: require('../../StyleSheet/processColor') },
+    selectionColor: { process: _Import2 },
     selection: true,
-    placeholderTextColor: { process: require('../../StyleSheet/processColor') },
+    placeholderTextColor: { process: _Import3 },
     importantForAutofill: true,
     lineHeight: true,
     textTransform: true,
@@ -46,7 +63,7 @@ const AndroidTextInputViewConfig = {
     returnKeyLabel: true,
     fontSize: true,
     onKeyPress: true,
-    cursorColor: { process: require('../../StyleSheet/processColor') },
+    cursorColor: { process: _Import4 },
     text: true,
     showSoftInputOnFocus: true,
     textAlign: true,
@@ -70,4 +87,4 @@ const AndroidTextInputViewConfig = {
   }
 };
 
-export default AndroidTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;
+export default AndroidTextInputViewConfig as ReactNativeBaseComponentViewConfig<>;;

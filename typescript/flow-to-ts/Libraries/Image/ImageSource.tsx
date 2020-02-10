@@ -42,7 +42,7 @@ export type ImageURISource = $ReadOnly<{
    * `headers` is an object representing the HTTP headers to send along with the
    * request for a remote image.
    */
-  headers?: Object | null | undefined;
+  headers?: any | null | undefined;
 
   /**
    * `body` is the HTTP body to send with the request. This must be a valid

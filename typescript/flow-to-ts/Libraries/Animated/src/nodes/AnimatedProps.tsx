@@ -1,23 +1,33 @@
 'use strict';;
 import _Import0 from '../AnimatedEvent';
-
-const {
-  AnimatedEvent
-} = _Import0;
-
 import AnimatedNode from './AnimatedNode';
 import AnimatedStyle from './AnimatedStyle';
 import NativeAnimatedHelper from '../NativeAnimatedHelper';
 import ReactNative from '../../../Renderer/shims/ReactNative';
 import invariant from 'invariant';
 
+
+
+
+
+
+
+
+
+
+
+
+const {
+  AnimatedEvent
+} = _Import0;
+
 class AnimatedProps extends AnimatedNode {
 
-  _props: Object;
+  _props: any;
   _animatedView: any;
-  _callback: () => void;
+  _callback: (() => void);
 
-  constructor(props: Object, callback: () => void) {
+  constructor(props: any, callback: (() => void)) {
     super();
     if (props.style) {
       props = {
@@ -30,7 +40,7 @@ class AnimatedProps extends AnimatedNode {
     this.__attach();
   }
 
-  __getValue(): Object {
+  __getValue(): any {
     const props = {};
     for (const key in this._props) {
       const value = this._props[key];
@@ -49,7 +59,7 @@ class AnimatedProps extends AnimatedNode {
     return props;
   }
 
-  __getAnimatedValue(): Object {
+  __getAnimatedValue(): any {
     const props = {};
     for (const key in this._props) {
       const value = this._props[key];
@@ -135,7 +145,7 @@ class AnimatedProps extends AnimatedNode {
     }
   }
 
-  __getNativeConfig(): Object {
+  __getNativeConfig(): any {
     const propsConfig = {};
     for (const propKey in this._props) {
       const value = this._props[propKey];
@@ -151,4 +161,4 @@ class AnimatedProps extends AnimatedNode {
   }
 }
 
-export default AnimatedProps;
+export default AnimatedProps;;

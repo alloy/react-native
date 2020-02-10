@@ -21,7 +21,7 @@
  * This pipes all of our console logging functions to native logging so that
  * JavaScript errors in required modules show up in Xcode via NSLog.
  */
-const inspect = function () {
+const inspect = (function () {
   // Copyright Joyent, Inc. and other Node contributors.
   //
   // Permission is hereby granted, free of charge, to any person obtaining a
@@ -333,7 +333,7 @@ const inspect = function () {
   }
 
   return inspect;
-}();
+})();
 
 const OBJECT_COLUMN_NAME = '(index)';
 const LOG_LEVELS = {

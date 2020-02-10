@@ -10,7 +10,7 @@ class TVEventHandler {
   __nativeTVNavigationEventListener: EmitterSubscription | null | undefined = null;
   __nativeTVNavigationEventEmitter: NativeEventEmitter | null | undefined = null;
 
-  enable(component: any | null | undefined, callback: Function): void {
+  enable(component: any | null | undefined, callback: ((...args: any) => any)): void {
     if (Platform.OS === 'ios' && !NativeTVNavigationEventEmitter) {
       return;
     }
@@ -34,4 +34,4 @@ class TVEventHandler {
   }
 }
 
-export default TVEventHandler;
+export default TVEventHandler;;

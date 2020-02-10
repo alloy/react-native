@@ -1,4 +1,17 @@
 'use strict';;
+import '../NativeModules/specs/NativeLogBox';
+
+
+
+
+
+
+
+
+
+
+
+
 import Platform from "../Utilities/Platform";
 import RCTLog from "../Utilities/RCTLog";
 import * as LogBoxData from "./Data/LogBoxData";
@@ -46,7 +59,7 @@ if (__DEV__) {
 
     install: (): void => {
       // Trigger lazy initialization of module.
-      require('../NativeModules/specs/NativeLogBox');
+      ;
 
       errorImpl = function (...args) {
         registerError(...args);
@@ -184,4 +197,4 @@ export default LogBox as {
   install(): void;
   uninstall(): void;
 
-};
+};;

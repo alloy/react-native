@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativeEventEmitter from "../../EventEmitter/NativeEventEmitter";
 import { EventConfig } from "./AnimatedEvent";
 import NativeAnimatedModule from "./NativeAnimatedModule";
@@ -164,17 +176,11 @@ const SUPPORTED_INTERPOLATION_PARAMS = {
   extrapolateLeft: true
 };
 
-function addWhitelistedStyleProp(prop: string): void {
-  STYLES_WHITELIST[prop] = true;
-}
+function addWhitelistedStyleProp(prop: string): void {}
 
-function addWhitelistedTransformProp(prop: string): void {
-  TRANSFORM_WHITELIST[prop] = true;
-}
+function addWhitelistedTransformProp(prop: string): void {}
 
-function addWhitelistedInterpolationParam(param: string): void {
-  SUPPORTED_INTERPOLATION_PARAMS[param] = true;
-}
+function addWhitelistedInterpolationParam(param: string): void {}
 
 function validateTransform(configs: Array<{
   type: "animated";
@@ -186,75 +192,32 @@ function validateTransform(configs: Array<{
   property: string;
   value: number | string;
 
-}>): void {
-  configs.forEach(config => {
-    if (!TRANSFORM_WHITELIST.hasOwnProperty(config.property)) {
-      throw new Error(`Property '${config.property}' is not supported by native animated module`);
-    }
-  });
-}
+}>): void {}
 
 function validateStyles(styles: {
   [key: string]: number | null | undefined;
-}): void {
-  for (const key in styles) {
-    if (!STYLES_WHITELIST.hasOwnProperty(key)) {
-      throw new Error(`Style property '${key}' is not supported by native animated module`);
-    }
-  }
-}
+}): void {}
 
-function validateInterpolation(config: InterpolationConfigType): void {
-  for (const key in config) {
-    if (!SUPPORTED_INTERPOLATION_PARAMS.hasOwnProperty(key)) {
-      throw new Error(`Interpolation property '${key}' is not supported by native animated module`);
-    }
-  }
-}
+function validateInterpolation(config: InterpolationConfigType): void {}
 
 function generateNewNodeTag(): number {
-  return __nativeAnimatedNodeTagCount++;
+  return null as any;
 }
 
 function generateNewAnimationId(): number {
-  return __nativeAnimationIdCount++;
+  return null as any;
 }
 
-function assertNativeAnimatedModule(): void {
-  invariant(NativeAnimatedModule, 'Native animated module is not available');
-}
+function assertNativeAnimatedModule(): void {}
 
 let _warnedMissingNativeAnimated = false;
 
 function shouldUseNativeDriver(config: AnimationConfig | EventConfig): boolean {
-  if (config.useNativeDriver == null) {
-    console.warn('Animated: `useNativeDriver` was not specified. This is a required ' + 'option and must be explicitly set to `true` or `false`');
-  }
-
-  if (config.useNativeDriver === true && !NativeAnimatedModule) {
-    if (!_warnedMissingNativeAnimated) {
-      console.warn('Animated: `useNativeDriver` is not supported because the native ' + 'animated module is missing. Falling back to JS-based animation. To ' + 'resolve this, add `RCTAnimation` module to this app, or remove ' + '`useNativeDriver`. ' + 'More info: https://github.com/facebook/react-native/issues/11094#issuecomment-263240420');
-      _warnedMissingNativeAnimated = true;
-    }
-    return false;
-  }
-
-  return config.useNativeDriver || false;
+  return null as any;
 }
 
 function transformDataType(value: number | string): number | string {
-  // Change the string type to number type so we can reuse the same logic in
-  // iOS and Android platform
-  if (typeof value !== 'string') {
-    return value;
-  }
-  if (/deg$/.test(value)) {
-    const degrees = parseFloat(value) || 0;
-    const radians = degrees * Math.PI / 180.0;
-    return radians;
-  } else {
-    return value;
-  }
+  return null as any;
 }
 
 export default {
@@ -277,4 +240,4 @@ export default {
     }
     return nativeEventEmitter;
   }
-};
+};;

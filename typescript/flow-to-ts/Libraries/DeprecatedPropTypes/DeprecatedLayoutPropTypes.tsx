@@ -57,4 +57,4 @@ const LayoutPropTypes = {
   direction: (ReactPropTypes.oneOf(['inherit', 'ltr', 'rtl']) as React$PropType$Primitive<"inherit" | "ltr" | "rtl">)
 };
 
-export default LayoutPropTypes;
+export default LayoutPropTypes;;

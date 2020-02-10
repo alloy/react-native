@@ -8,4 +8,4 @@ import NativeStatusBarManagerIOS from "./NativeStatusBarManagerIOS";
  */
 class StatusBarIOS extends NativeEventEmitter {}
 
-export default new StatusBarIOS(NativeStatusBarManagerIOS) as StatusBarIOS;
+export default new StatusBarIOS(NativeStatusBarManagerIOS) as StatusBarIOS;;

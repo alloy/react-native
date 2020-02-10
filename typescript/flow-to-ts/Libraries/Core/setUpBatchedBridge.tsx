@@ -1,5 +1,16 @@
 'use strict';;
 import BatchedBridge from '../BatchedBridge/BatchedBridge';
+import _Import0 from '../Performance/Systrace';
+import _Import1 from './Timers/JSTimers';
+import _Import2 from '../HeapCapture/HeapCapture';
+import _Import3 from '../Performance/SamplingProfiler';
+import _Import4 from '../Utilities/RCTLog';
+import _Import5 from '../EventEmitter/RCTDeviceEventEmitter';
+import _Import6 from '../EventEmitter/RCTNativeAppEventEmitter';
+import _Import7 from '../Utilities/GlobalPerformanceLogger';
+import _Import8 from '../Utilities/JSDevSupportModule';
+import _Import9 from '../Utilities/HMRClient';
+import _Import10 from '../Utilities/HMRClientProdShim';
 
 
 
@@ -19,18 +30,18 @@ if (global.RN$Bridgeless && global.RN$registerCallableModule) {
   registerModule = (moduleName, factory) => BatchedBridge.registerLazyCallableModule(moduleName, factory);
 }
 
-registerModule('Systrace', () => require('../Performance/Systrace'));
-registerModule('JSTimers', () => require('./Timers/JSTimers'));
-registerModule('HeapCapture', () => require('../HeapCapture/HeapCapture'));
-registerModule('SamplingProfiler', () => require('../Performance/SamplingProfiler'));
-registerModule('RCTLog', () => require('../Utilities/RCTLog'));
-registerModule('RCTDeviceEventEmitter', () => require('../EventEmitter/RCTDeviceEventEmitter'));
-registerModule('RCTNativeAppEventEmitter', () => require('../EventEmitter/RCTNativeAppEventEmitter'));
-registerModule('GlobalPerformanceLogger', () => require('../Utilities/GlobalPerformanceLogger'));
-registerModule('JSDevSupportModule', () => require('../Utilities/JSDevSupportModule'));
+registerModule('Systrace', () => _Import0);
+registerModule('JSTimers', () => _Import1);
+registerModule('HeapCapture', () => _Import2);
+registerModule('SamplingProfiler', () => _Import3);
+registerModule('RCTLog', () => _Import4);
+registerModule('RCTDeviceEventEmitter', () => _Import5);
+registerModule('RCTNativeAppEventEmitter', () => _Import6);
+registerModule('GlobalPerformanceLogger', () => _Import7);
+registerModule('JSDevSupportModule', () => _Import8);
 
 if (__DEV__ && !global.__RCTProfileIsProfiling) {
-  registerModule('HMRClient', () => require('../Utilities/HMRClient'));
+  registerModule('HMRClient', () => _Import9);
 } else {
-  registerModule('HMRClient', () => require('../Utilities/HMRClientProdShim'));
+  registerModule('HMRClient', () => _Import10);
 }

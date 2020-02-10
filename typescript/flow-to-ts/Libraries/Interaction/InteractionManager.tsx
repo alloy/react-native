@@ -74,9 +74,9 @@ const InteractionManager = {
    * "promise".
    */
   runAfterInteractions(task: Task | null | undefined): {
-    then: Function;
-    done: Function;
-    cancel: Function;
+    then: ((...args: any) => any);
+    done: ((...args: any) => any);
+    cancel: ((...args: any) => any);
 
   } {
     const tasks = [];
@@ -200,4 +200,4 @@ function _processUpdate() {
   _deleteInteractionSet.clear();
 }
 
-export default InteractionManager;
+export default InteractionManager;;

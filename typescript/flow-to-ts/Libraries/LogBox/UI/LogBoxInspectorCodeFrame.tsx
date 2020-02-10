@@ -30,51 +30,7 @@ type Props = $ReadOnly<{
 }>;
 
 function LogBoxInspectorCodeFrame(props: Props): React.ReactNode {
-  const codeFrame = props.codeFrame;
-  if (codeFrame == null) {
-    return null;
-  }
-
-  function getFileName() {
-    const matches = /[^/]*$/.exec(codeFrame.fileName);
-    if (matches && matches.length > 0) {
-      return matches[0];
-    }
-
-    return codeFrame.fileName;
-  }
-
-  function getLocation() {
-    const location = codeFrame.location;
-    if (location != null) {
-      return ` (${location.row}:${location.column + 1
-      /* Code frame columns are zero indexed */
-      })`;
-    }
-
-    return null;
-  }
-
-  return <LogBoxInspectorSection heading="Source" action={<AppInfo />}>
-      <View style={styles.box}>
-        <View style={styles.frame}>
-          <ScrollView horizontal>
-            <AnsiHighlight style={styles.content} text={codeFrame.content} />
-          </ScrollView>
-        </View>
-        <LogBoxButton backgroundColor={{
-        default: 'transparent',
-        pressed: LogBoxStyle.getBackgroundDarkColor(1)
-      }} style={styles.button} onPress={() => {
-        openFileInEditor(codeFrame.fileName, codeFrame.location?.row ?? 0);
-      }}>
-          <Text style={styles.fileText}>
-            {getFileName()}
-            {getLocation()}
-          </Text>
-        </LogBoxButton>
-      </View>
-    </LogBoxInspectorSection>;
+  return null as any;
 }
 
 function AppInfo() {

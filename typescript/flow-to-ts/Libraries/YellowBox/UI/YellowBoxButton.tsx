@@ -22,7 +22,7 @@ import { EdgeInsetsProp } from "../../StyleSheet/EdgeInsetsPropType";
 type Props = $ReadOnly<{
   hitSlop?: EdgeInsetsProp | null | undefined;
   label: string;
-  onPress: () => void;
+  onPress: (() => void);
 }>;
 
 const YellowBoxButton = (props: Props): React.ReactNode => <YellowBoxPressable hitSlop={props.hitSlop} onPress={props.onPress} style={styles.root}>
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxButton;
+export default YellowBoxButton;;

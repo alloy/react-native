@@ -18,7 +18,7 @@ import { $ReadOnly } from "utility-types";
 
 
 
-type ReturnBoolType = <V>(arg0: V) => true;
+type ReturnBoolType = (<V>(arg0: V) => true);
 type BoolifiedDeprecatedViewStylePropTypes = $ObjMap<typeof DeprecatedViewStylePropTypes, ReturnBoolType>;
 type BoolifiedDeprecatedTextStylePropTypes = $ObjMapi<typeof DeprecatedTextStylePropTypes, ReturnBoolType>;
 type BoolifiedDeprecatedImageStylePropTypes = $ObjMapi<typeof DeprecatedImageStylePropTypes, ReturnBoolType>;
@@ -71,4 +71,4 @@ ReactNativeStyleAttributes.tintColor = colorAttributes;
 ReactNativeStyleAttributes.textShadowColor = colorAttributes;
 ReactNativeStyleAttributes.overlayColor = colorAttributes;
 
-export default ReactNativeStyleAttributes;
+export default ReactNativeStyleAttributes;;

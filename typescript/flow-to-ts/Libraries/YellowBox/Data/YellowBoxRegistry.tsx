@@ -17,12 +17,12 @@ import { Category, Message } from "./YellowBoxCategory";
 import { Stack } from "./YellowBoxSymbolication";
 export type Registry = Map<Category, ReadonlyArray<YellowBoxWarning>>;
 
-export type Observer = (registry: Registry) => void;
+export type Observer = ((registry: Registry) => void);
 
 export type IgnorePattern = string | RegExp;
 
 export type Subscription = $ReadOnly<{
-  unsubscribe: () => void;
+  unsubscribe: (() => void);
 }>;
 
 const observers: Set<{observer: Observer;}> = new Set();
@@ -33,27 +33,7 @@ let disabled = false;
 let projection = new Map();
 let updateTimeout = null;
 
-function handleUpdate(): void {
-  projection = new Map();
-  if (!disabled) {
-    for (const [category, warnings] of registry) {
-      const filtered = warnings.filter(warning => !YellowBoxRegistry.isWarningIgnored(warning.message));
-      if (filtered.length > 0) {
-        projection.set(category, filtered);
-      }
-    }
-  }
-  if (updateTimeout == null) {
-    updateTimeout = setImmediate(() => {
-      updateTimeout = null;
-      for (const {
-        observer
-      } of observers) {
-        observer(projection);
-      }
-    });
-  }
-}
+function handleUpdate(): void {}
 
 const YellowBoxRegistry = {
   isWarningIgnored(message: Message): boolean {
@@ -146,4 +126,4 @@ const YellowBoxRegistry = {
   }
 };
 
-export default YellowBoxRegistry;
+export default YellowBoxRegistry;;

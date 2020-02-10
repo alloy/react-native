@@ -26,8 +26,8 @@ import { Category } from "../Data/YellowBoxCategory";
 import { Registry } from "../Data/YellowBoxRegistry";
 
 type Props = $ReadOnly<{
-  onDismiss: (category: Category) => void;
-  onDismissAll: () => void;
+  onDismiss: ((category: Category) => void);
+  onDismissAll: (() => void);
   registry: Registry;
 }>;
 
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxList;
+export default YellowBoxList;;

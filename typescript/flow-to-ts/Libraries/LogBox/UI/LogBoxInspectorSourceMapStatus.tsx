@@ -24,77 +24,12 @@ import * as LogBoxStyle from "./LogBoxStyle";
 import { PressEvent } from "../../Types/CoreEventTypes";
 
 type Props = $ReadOnly<{
-  onPress?: (event: PressEvent) => void | null | undefined;
+  onPress?: ((event: PressEvent) => void) | null | undefined;
   status: "COMPLETE" | "FAILED" | "NONE" | "PENDING";
 }>;
 
 function LogBoxInspectorSourceMapStatus(props: Props): React.ReactNode {
-  const [state, setState] = React.useState({
-    animation: null,
-    rotate: null
-  });
-
-  React.useEffect(() => {
-    if (props.status === 'PENDING') {
-      if (state.animation == null) {
-        const animated = new Animated.Value(0);
-        const animation = Animated.loop(Animated.timing(animated, {
-          duration: 2000,
-          easing: Easing.linear,
-          toValue: 1,
-          useNativeDriver: true
-        }));
-        setState({
-          animation,
-          rotate: animated.interpolate({
-            inputRange: [0, 1],
-            outputRange: ['0deg', '360deg']
-          })
-        });
-        animation.start();
-      }
-    } else {
-      if (state.animation != null) {
-        state.animation.stop();
-        setState({
-          animation: null,
-          rotate: null
-        });
-      }
-    }
-
-    return () => {
-      if (state.animation != null) {
-        state.animation.stop();
-      }
-    };
-  }, [props.status, state.animation]);
-
-  let image;
-  let color;
-  switch (props.status) {
-    case 'FAILED':
-      image = LogBoxImageSource.alertTriangle;
-      color = LogBoxStyle.getErrorColor(1);
-      break;
-    case 'PENDING':
-      image = LogBoxImageSource.loader;
-      color = LogBoxStyle.getWarningColor(1);
-      break;
-
-  }
-
-  if (props.status === 'COMPLETE' || image == null) {
-    return null;
-  }
-
-  return <LogBoxButton backgroundColor={{
-    default: 'transparent',
-    pressed: LogBoxStyle.getBackgroundColor(1)
-  }} hitSlop={{ bottom: 8, left: 8, right: 8, top: 8 }} onPress={props.onPress} style={styles.root}>
-      <Animated.Image source={{ height: 16, uri: image, width: 16 }} style={[styles.image, { tintColor: color }, state.rotate == null || props.status !== 'PENDING' ? null : { transform: [{ rotate: state.rotate }] }]} />
-      <Text style={[styles.text, { color }]}>Source Map</Text>
-    </LogBoxButton>;
+  return null as any;
 }
 
 const styles = StyleSheet.create({

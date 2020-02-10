@@ -87,22 +87,22 @@ type Props = $ReadOnly<{
    * - Settling, meaning that there was an interaction with the navigation view, and the
    * navigation view is now finishing its closing or opening animation
    */
-  onDrawerStateChanged?: (state: DrawerStates) => unknown | null | undefined;
+  onDrawerStateChanged?: ((state: DrawerStates) => unknown) | null | undefined;
 
   /**
    * Function called whenever the navigation view has been opened.
    */
-  onDrawerOpen?: () => unknown | null | undefined;
+  onDrawerOpen?: (() => unknown) | null | undefined;
 
   /**
    * Function called whenever the navigation view has been closed.
    */
-  onDrawerClose?: () => unknown | null | undefined;
+  onDrawerClose?: (() => unknown) | null | undefined;
 
   /**
    * The navigation view that will be rendered to the side of the screen and can be pulled in.
    */
-  renderNavigationView: () => React.ReactElement<any>;
+  renderNavigationView: (() => React.ReactElement<any>);
 
   /**
    * Make the drawer take the entire screen and draw the background of the
@@ -290,11 +290,11 @@ class DrawerLayoutAndroid extends React.Component<Props, State> {
     nullthrows(this._nativeRef.current).measureInWindow(callback);
   }
 
-  measureLayout(relativeToNativeNode: number, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: () => void) {
+  measureLayout(relativeToNativeNode: number, onSuccess: MeasureLayoutOnSuccessCallback, onFail?: (() => void)) {
     nullthrows(this._nativeRef.current).measureLayout(relativeToNativeNode, onSuccess, onFail);
   }
 
-  setNativeProps(nativeProps: Object) {
+  setNativeProps(nativeProps: any) {
     nullthrows(this._nativeRef.current).setNativeProps(nativeProps);
   }
 }
@@ -329,4 +329,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DrawerLayoutAndroid;
+export default DrawerLayoutAndroid;;

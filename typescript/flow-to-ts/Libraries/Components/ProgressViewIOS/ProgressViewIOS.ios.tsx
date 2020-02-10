@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
 
 const ProgressViewIOSWithRef = React.forwardRef(ProgressViewIOS);
 
-export default ProgressViewIOSWithRef as typeof RCTProgressViewNativeComponent;
+export default ProgressViewIOSWithRef as typeof RCTProgressViewNativeComponent;;

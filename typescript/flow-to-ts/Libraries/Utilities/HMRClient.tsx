@@ -6,6 +6,7 @@ import Platform from './Platform';
 import prettyFormat from 'pretty-format';
 import LoadingView from './LoadingView';
 import LoadingView from './LoadingView';
+import NativeExceptionsManager from '../Core/NativeExceptionsManager';
 
 import NativeRedBox from "../NativeModules/specs/NativeRedBox";
 import * as LogBoxData from "../LogBox/Data/LogBoxData";
@@ -248,7 +249,6 @@ function dismissRedbox() {
   if (Platform.OS === 'ios' && NativeRedBox != null && NativeRedBox.dismiss != null) {
     NativeRedBox.dismiss();
   } else {
-    const NativeExceptionsManager = require('../Core/NativeExceptionsManager').default;
     NativeExceptionsManager && NativeExceptionsManager.dismissRedbox && NativeExceptionsManager.dismissRedbox();
   }
 }
@@ -272,4 +272,4 @@ function showCompileError() {
   throw error;
 }
 
-export default HMRClient;
+export default HMRClient;;

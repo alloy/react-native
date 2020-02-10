@@ -112,7 +112,7 @@ export type Props = $ReadOnly<ViewProps & {
    *
    * See https://facebook.github.io/react-native/docs/modal.html#ondismiss
    */
-  onDismiss?: () => unknown | null | undefined;
+  onDismiss?: (() => unknown) | null | undefined;
 
   /**
    * Deprecated. Use the `animationType` prop instead.
@@ -242,4 +242,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Modal;
+export default Modal;;

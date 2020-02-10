@@ -28,7 +28,7 @@ type Props = $ReadOnly<{
   }>;
   children?: React.ReactNode;
   hitSlop?: EdgeInsetsProp | null | undefined;
-  onPress?: (event: PressEvent) => void | null | undefined;
+  onPress?: ((event: PressEvent) => void) | null | undefined;
   style?: ViewStyleProp;
 }>;
 
@@ -71,4 +71,4 @@ class YellowBoxPressable extends React.Component<Props, State> {
   };
 }
 
-export default YellowBoxPressable;
+export default YellowBoxPressable;;

@@ -42,7 +42,7 @@ export type ReactConsumer<T> = {
   key: null | string;
   ref: null;
   props: {
-    children: (value: T) => ReactNodeList;
+    children: ((value: T) => ReactNodeList);
     unstable_observedBits?: number;
 
   };
@@ -53,13 +53,13 @@ export type ReactContext<T> = {
   $$typeof: Symbol | number;
   Consumer: ReactContext<T>;
   Provider: ReactProviderType<T>;
-  _calculateChangedBits: (a: T, b: T) => number | null;
+  _calculateChangedBits: ((a: T, b: T) => number) | null;
   _currentValue: T;
   _currentValue2: T;
   _threadCount: number;
   // DEV only
-  _currentRenderer?: Object | null;
-  _currentRenderer2?: Object | null;
+  _currentRenderer?: any | null;
+  _currentRenderer2?: any | null;
 
 };
 
@@ -78,15 +78,15 @@ export type RefObject = {
 };
 
 export type ReactEventResponderInstance<E, C> = {
-  fiber: Object;
-  props: Object;
+  fiber: any;
+  props: any;
   responder: ReactEventResponder<E, C>;
   rootEventTypes: null | Set<string>;
-  state: Object;
+  state: any;
 };
 
 export type ReactEventResponderListener<E, C> = {
-  props: Object;
+  props: any;
   responder: ReactEventResponder<E, C>;
 };
 
@@ -96,11 +96,11 @@ export type ReactEventResponder<E, C> = {
   targetEventTypes: null | Array<string>;
   targetPortalPropagation: boolean;
   rootEventTypes: null | Array<string>;
-  getInitialState: null | ((props: Object) => Object);
-  onEvent: null | ((event: E, context: C, props: Object, state: Object) => void);
-  onRootEvent: null | ((event: E, context: C, props: Object, state: Object) => void);
-  onMount: null | ((context: C, props: Object, state: Object) => void);
-  onUnmount: null | ((context: C, props: Object, state: Object) => void);
+  getInitialState: null | ((props: any) => any);
+  onEvent: null | ((event: E, context: C, props: any, state: any) => void);
+  onRootEvent: null | ((event: E, context: C, props: any, state: any) => void);
+  onMount: null | ((context: C, props: any, state: any) => void);
+  onUnmount: null | ((context: C, props: any, state: any) => void);
 
 };
 
@@ -113,25 +113,25 @@ export const ContinuousEvent: EventPriority = 2;
 export type ReactFundamentalComponentInstance<C, H> = {
   currentFiber: unknown;
   instance: unknown;
-  prevProps: null | Object;
-  props: Object;
+  prevProps: null | any;
+  props: any;
   impl: ReactFundamentalImpl<C, H>;
-  state: Object;
+  state: any;
 };
 
 export type ReactFundamentalImpl<C, H> = {
   displayName: string;
   reconcileChildren: boolean;
-  getInitialState?: (props: Object) => Object;
-  getInstance: (context: C, props: Object, state: Object) => H;
-  getServerSideString?: (context: C, props: Object) => string;
-  getServerSideStringClose?: (context: C, props: Object) => string;
-  onMount: (context: C, instance: unknown, props: Object, state: Object) => void;
-  shouldUpdate?: (context: C, prevProps: null | Object, nextProps: Object, state: Object) => boolean;
-  onUpdate?: (context: C, instance: unknown, prevProps: null | Object, nextProps: Object, state: Object) => void;
-  onUnmount?: (context: C, instance: unknown, props: Object, state: Object) => void;
-  onHydrate?: (context: C, props: Object, state: Object) => boolean;
-  onFocus?: (context: C, props: Object, state: Object) => boolean;
+  getInitialState?: ((props: any) => any);
+  getInstance: ((context: C, props: any, state: any) => H);
+  getServerSideString?: ((context: C, props: any) => string);
+  getServerSideStringClose?: ((context: C, props: any) => string);
+  onMount: ((context: C, instance: unknown, props: any, state: any) => void);
+  shouldUpdate?: ((context: C, prevProps: null | any, nextProps: any, state: any) => boolean);
+  onUpdate?: ((context: C, instance: unknown, prevProps: null | any, nextProps: any, state: any) => void);
+  onUnmount?: ((context: C, instance: unknown, props: any, state: any) => void);
+  onHydrate?: ((context: C, props: any, state: any) => boolean);
+  onFocus?: ((context: C, props: any, state: any) => boolean);
 
 };
 
@@ -148,13 +148,13 @@ export type ReactScopeMethods = {
   getChildren(): null | Array<ReactScopeMethods>;
   getChildrenFromRoot(): null | Array<ReactScopeMethods>;
   getParent(): null | ReactScopeMethods;
-  getProps(): Object;
-  queryAllNodes(arg0: (type: string | Object, props: Object, instance: Object) => boolean): null | Array<Object>;
-  queryFirstNode(arg0: (type: string | Object, props: Object, instance: Object) => boolean): null | Object;
-  containsNode(arg0: Object): boolean;
+  getProps(): any;
+  queryAllNodes(arg0: ((type: string | any, props: any, instance: any) => boolean)): null | Array<any>;
+  queryFirstNode(arg0: ((type: string | any, props: any, instance: any) => boolean)): null | any;
+  containsNode(arg0: any): boolean;
 };
 
 export type ReactScopeInstance = {
-  fiber: Object;
+  fiber: any;
   methods: null | ReactScopeMethods;
 };

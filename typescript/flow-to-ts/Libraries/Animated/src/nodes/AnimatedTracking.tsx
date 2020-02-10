@@ -2,7 +2,6 @@
 import AnimatedValue from './AnimatedValue';
 import AnimatedNode from './AnimatedNode';
 import _Import0 from '../NativeAnimatedHelper';
-
 const {
   generateNewAnimationId,
   shouldUseNativeDriver
@@ -15,11 +14,11 @@ class AnimatedTracking extends AnimatedNode {
   _value: AnimatedValue;
   _parent: AnimatedNode;
   _callback: EndCallback | null | undefined;
-  _animationConfig: Object;
+  _animationConfig: any;
   _animationClass: any;
   _useNativeDriver: boolean;
 
-  constructor(value: AnimatedValue, parent: AnimatedNode, animationClass: any, animationConfig: Object, callback?: EndCallback | null | undefined) {
+  constructor(value: AnimatedValue, parent: AnimatedNode, animationClass: any, animationConfig: any, callback?: EndCallback | null | undefined) {
     super();
     this._value = value;
     this._parent = parent;
@@ -37,7 +36,7 @@ class AnimatedTracking extends AnimatedNode {
     this._value.__makeNative();
   }
 
-  __getValue(): Object {
+  __getValue(): any {
     return this._parent.__getValue();
   }
 
@@ -82,4 +81,4 @@ class AnimatedTracking extends AnimatedNode {
   }
 }
 
-export default AnimatedTracking;
+export default AnimatedTracking;;

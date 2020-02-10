@@ -25,7 +25,7 @@ import AnimatedInterpolation from "../../Animated/src/nodes/AnimatedInterpolatio
 import { PressEvent } from "../../Types/CoreEventTypes";
 
 type Props = $ReadOnly<{
-  onPress?: (event: PressEvent) => void | null | undefined;
+  onPress?: ((event: PressEvent) => void) | null | undefined;
   status: "COMPLETE" | "FAILED" | "NONE" | "PENDING";
 }>;
 
@@ -134,4 +134,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxInspectorSourceMapStatus;
+export default YellowBoxInspectorSourceMapStatus;;

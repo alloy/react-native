@@ -60,7 +60,7 @@ class Share {
    *  - `dialogTitle`
    *
    */
-  static share(content: Content, options: Options = {}): Promise<Object> {
+  static share(content: Content, options: Options = {}): Promise<any> {
     invariant(typeof content === 'object' && content !== null, 'Content to share must be a valid object');
     invariant(typeof content.url === 'string' || typeof content.message === 'string', 'At least one of URL and message is required');
     invariant(typeof options === 'object' && options !== null, 'Options must be a valid object');
@@ -117,4 +117,4 @@ class Share {
   static dismissedAction: "dismissedAction" = 'dismissedAction';
 }
 
-export default Share;
+export default Share;;

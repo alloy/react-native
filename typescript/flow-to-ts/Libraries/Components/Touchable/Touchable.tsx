@@ -872,4 +872,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Touchable;
+export default Touchable;;

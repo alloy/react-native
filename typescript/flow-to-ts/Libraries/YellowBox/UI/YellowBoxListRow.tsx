@@ -25,7 +25,7 @@ import { Category } from "../Data/YellowBoxCategory";
 type Props = $ReadOnly<{
   category: Category;
   warnings: ReadonlyArray<YellowBoxWarning>;
-  onPress: (category: Category) => void;
+  onPress: ((category: Category) => void);
 }>;
 
 class YellowBoxListRow extends React.Component<Props> {
@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default YellowBoxListRow;
+export default YellowBoxListRow;;

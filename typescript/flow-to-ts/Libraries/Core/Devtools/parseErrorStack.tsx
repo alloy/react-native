@@ -1,6 +1,18 @@
 'use strict';;
 import parseHermesStack from './parseHermesStack';
 import stacktraceParser from 'stacktrace-parser';
+
+
+
+
+
+
+
+
+
+
+
+
 import { StackFrame } from "../NativeExceptionsManager";
 import { HermesParsedStack } from "./parseHermesStack";
 
@@ -14,39 +26,11 @@ export type ExtendedError = Error & {
 };
 
 function convertHermesStack(stack: HermesParsedStack): Array<StackFrame> {
-  const frames = [];
-  for (const entry of stack.entries) {
-    if (entry.type !== 'FRAME') {
-      continue;
-    }
-    const {
-      location,
-      functionName
-    } = entry;
-    if (location.type === 'NATIVE') {
-      continue;
-    }
-    frames.push({
-      methodName: functionName,
-      file: location.sourceUrl,
-      lineNumber: location.line1Based,
-      column: location.type === 'SOURCE' ? location.column1Based - 1 : location.virtualOffset0Based
-    });
-  }
-  return frames;
+  return null as any;
 }
 
 function parseErrorStack(e: ExtendedError): Array<StackFrame> {
-  if (!e || !e.stack) {
-    return [];
-  }
-
-  const stack = Array.isArray(e.stack) ? e.stack : global.HermesInternal ? convertHermesStack(parseHermesStack(e.stack)) : stacktraceParser.parse(e.stack).map(frame => ({
-    ...frame,
-    column: frame.column != null ? frame.column - 1 : null
-  }));
-
-  return stack;
+  return null as any;
 }
 
-export default parseErrorStack;
+export default parseErrorStack;;

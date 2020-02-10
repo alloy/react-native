@@ -3,6 +3,7 @@ import React from 'react';
 import ReactTestRenderer from 'react-test-renderer';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import _Import0 from 'react-native';
+const shallowRenderer = new ShallowRenderer();
 
 const {
   Switch,
@@ -12,25 +13,18 @@ const {
   VirtualizedList
 } = _Import0;
 
-const shallowRenderer = new ShallowRenderer();
-
 import { ReactTestInstance, ReactTestRendererNode, Predicate } from "react-test-renderer";
 
 function byClickable(): Predicate {
-  return withMessage(node => // note: <Text /> lazy-mounts press handlers after the first press,
-  //       so this is a workaround for targeting text nodes.
-  node.type === Text && node.props && typeof node.props.onPress === 'function' || // note: Special casing <Switch /> since it doesn't use touchable
-  node.type === Switch && node.props && node.props.disabled !== true || node.type === View && node?.props?.onStartShouldSetResponder?.testOnly_pressabilityConfig || // HACK: Find components that use `Pressability`.
-  node.instance?.state?.pressability != null || // TODO: Remove this after deleting `Touchable`.
-  node.instance && typeof node.instance.touchableHandlePress === 'function', 'is clickable');
+  return null as any;
 }
 
 function byTestID(testID: string): Predicate {
-  return withMessage(node => node.props && node.props.testID === testID, `testID prop equals ${testID}`);
+  return null as any;
 }
 
 function byTextMatching(regex: RegExp): Predicate {
-  return withMessage(node => node.props && regex.exec(node.props.children), `text content matches ${regex.toString()}`);
+  return null as any;
 }
 
 function enter(instance: ReactTestInstance, text: string) {
@@ -40,13 +34,8 @@ function enter(instance: ReactTestInstance, text: string) {
 }
 
 // Returns null if there is no error, otherwise returns an error message string.
-function maximumDepthError(tree: {toJSON: () => ReactTestRendererNode;}, maxDepthLimit: number): string | null | undefined {
-  const maxDepth = maximumDepthOfJSON(tree.toJSON());
-  if (maxDepth > maxDepthLimit) {
-    return `maximumDepth of ${maxDepth} exceeded limit of ${maxDepthLimit} - this is a proxy ` + 'metric to protect against stack overflow errors:\n\n' + 'https://fburl.com/rn-view-stack-overflow.\n\n' + 'To fix, you need to remove native layers from your hierarchy, such as unnecessary View ' + 'wrappers.';
-  } else {
-    return null;
-  }
+function maximumDepthError(tree: {toJSON: (() => ReactTestRendererNode);}, maxDepthLimit: number): string | null | undefined {
+  return null as any;
 }
 
 function expectNoConsoleWarn() {
@@ -65,7 +54,7 @@ function expectNoConsoleError() {
   });
 }
 
-function expectRendersMatchingSnapshot(name: string, ComponentProvider: () => React.ReactElement<any>, unmockComponent: () => unknown) {
+function expectRendersMatchingSnapshot(name: string, ComponentProvider: (() => React.ReactElement<any>), unmockComponent: (() => unknown)) {
   let instance;
 
   jest.resetAllMocks();
@@ -93,30 +82,15 @@ function expectRendersMatchingSnapshot(name: string, ComponentProvider: () => Re
 
 // Takes a node from toJSON()
 function maximumDepthOfJSON(node: ReactTestRendererNode): number {
-  if (node == null) {
-    return 0;
-  } else if (typeof node === 'string' || node.children == null) {
-    return 1;
-  } else {
-    let maxDepth = 0;
-    node.children.forEach(child => {
-      maxDepth = Math.max(maximumDepthOfJSON(child) + 1, maxDepth);
-    });
-    return maxDepth;
-  }
+  return null as any;
 }
 
 function renderAndEnforceStrictMode(element: React.ReactNode): any {
-  expectNoConsoleError();
-  return renderWithStrictMode(element);
+  return null as any;
 }
 
 function renderWithStrictMode(element: React.ReactNode): any {
-  const WorkAroundBugWithStrictModeInTestRenderer = prps => prps.children;
-  const StrictMode = (React as $FlowFixMe).StrictMode;
-  return ReactTestRenderer.create(<WorkAroundBugWithStrictModeInTestRenderer>
-      <StrictMode>{element}</StrictMode>
-    </WorkAroundBugWithStrictModeInTestRenderer>);
+  return null as any;
 }
 
 function tap(instance: ReactTestInstance) {
@@ -155,8 +129,7 @@ function scrollToBottom(instance: ReactTestInstance) {
 // To make error messages a little bit better, we attach a custom toString
 // implementation to a predicate
 function withMessage(fn: Predicate, message: string): Predicate {
-  (fn as any).toString = () => message;
-  return fn;
+  return null as any;
 }
 
 export { byClickable };

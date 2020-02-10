@@ -1,15 +1,27 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 const Settings = {
   get(key: string): unknown {
     console.warn('Settings is not yet supported on Android');
     return null;
   },
 
-  set(settings: Object) {
+  set(settings: any) {
     console.warn('Settings is not yet supported on Android');
   },
 
-  watchKeys(keys: string | Array<string>, callback: Function): number {
+  watchKeys(keys: string | Array<string>, callback: ((...args: any) => any)): number {
     console.warn('Settings is not yet supported on Android');
     return -1;
   },
@@ -19,4 +31,4 @@ const Settings = {
   }
 };
 
-export default Settings;
+export default Settings;;

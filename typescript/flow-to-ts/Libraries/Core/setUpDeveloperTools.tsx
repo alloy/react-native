@@ -1,6 +1,9 @@
 'use strict';;
+import './setUpReactDevTools';
 import JSInspector from '../JSInspector/JSInspector';
+import _Import0 from '../JSInspector/NetworkAgent';
 import HMRClient from '../Utilities/HMRClient';
+import './setUpReactRefresh';
 
 
 
@@ -25,9 +28,9 @@ if (__DEV__) {
   // TODO (T45803484) Enable devtools for bridgeless RN
   if (!global.RN$Bridgeless) {
     if (!global.__RCTProfileIsProfiling) {
-      require('./setUpReactDevTools');
+      ;
 
-      JSInspector.registerAgent(require('../JSInspector/NetworkAgent'));
+      JSInspector.registerAgent(_Import0);
     }
 
     // Note we can't check if console is "native" because it would appear "native" in JSC and Hermes.
@@ -63,6 +66,6 @@ if (__DEV__) {
       }
     }
 
-    require('./setUpReactRefresh');
+    ;
   }
 }

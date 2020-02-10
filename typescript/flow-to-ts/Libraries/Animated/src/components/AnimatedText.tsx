@@ -2,4 +2,4 @@
 import Text from '../../../Text/Text';
 import createAnimatedComponent from '../createAnimatedComponent';
 
-export default createAnimatedComponent(Text) as $FlowFixMe;
+export default createAnimatedComponent(Text) as $FlowFixMe;;

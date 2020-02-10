@@ -93,4 +93,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default BoxInspector;
+export default BoxInspector;;

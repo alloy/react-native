@@ -46,29 +46,9 @@ export function PressabilityDebugView({
   color,
   hitSlop
 }: Props): React.ReactNode {
-  if (__DEV__) {
-    if (isEnabled()) {
-      const baseColor = '#' + (normalizeColor(color) ?? 0).toString(16).padStart(8, '0');
-
-      return <View pointerEvents="none" style={{
-        backgroundColor: baseColor.slice(0, -2) + '0F', // 15%
-        borderColor: baseColor.slice(0, -2) + '55', // 85%
-        borderStyle: 'dashed',
-        borderWidth: 1,
-        bottom: -(hitSlop?.bottom ?? 0),
-        left: -(hitSlop?.left ?? 0),
-        position: 'absolute',
-        right: -(hitSlop?.right ?? 0),
-        top: -(hitSlop?.top ?? 0)
-      }} />;
-    }
-  }
-  return null;
+  return null as any;
 }
 
 export function isEnabled(): boolean {
-  if (__DEV__) {
-    return Touchable.TOUCH_TARGET_DEBUG;
-  }
-  return false;
+  return null as any;
 }

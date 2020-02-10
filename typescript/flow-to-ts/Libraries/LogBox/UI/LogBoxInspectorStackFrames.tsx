@@ -27,63 +27,15 @@ import LogBoxLog from "../Data/LogBoxLog";
 
 type Props = $ReadOnly<{
   log: LogBoxLog;
-  onRetry: () => void;
+  onRetry: (() => void);
 }>;
 
 export function getCollapseMessage(stackFrames: Stack, collapsed: boolean): string {
-  if (stackFrames.length === 0) {
-    return 'No frames to show';
-  }
-
-  const collapsedCount = stackFrames.reduce((count, {
-    collapse
-  }) => {
-    if (collapse === true) {
-      return count + 1;
-    }
-
-    return count;
-  }, 0);
-
-  if (collapsedCount === 0) {
-    return 'Showing all frames';
-  }
-
-  const framePlural = `frame${collapsedCount > 1 ? 's' : ''}`;
-  if (collapsedCount === stackFrames.length) {
-    return collapsed ? `See${collapsedCount > 1 ? ' all ' : ' '}${collapsedCount} collapsed ${framePlural}` : `Collapse${collapsedCount > 1 ? ' all ' : ' '}${collapsedCount} ${framePlural}`;
-  } else {
-    return collapsed ? `See ${collapsedCount} more ${framePlural}` : `Collapse ${collapsedCount} ${framePlural}`;
-  }
+  return null as any;
 }
 
 function LogBoxInspectorStackFrames(props: Props): React.ReactNode {
-  const [collapsed, setCollapsed] = React.useState(true);
-
-  function getStackList() {
-    if (collapsed === true) {
-      return props.log.getAvailableStack().filter(({
-        collapse
-      }) => !collapse);
-    } else {
-      return props.log.getAvailableStack();
-    }
-  }
-
-  if (props.log.getAvailableStack().length === 0) {
-    return null;
-  }
-
-  return <LogBoxInspectorSection heading="Call Stack" action={<LogBoxInspectorSourceMapStatus onPress={props.log.symbolicated.status === 'FAILED' ? props.onRetry : null} status={props.log.symbolicated.status} />}>
-      {props.log.symbolicated.status !== 'COMPLETE' && <View style={stackStyles.hintBox}>
-          <Text style={stackStyles.hintText}>
-            This call stack is not symbolicated. Some features are unavailable
-            such as viewing the function name or tapping to open files.
-          </Text>
-        </View>}
-      <StackFrameList list={getStackList()} status={props.log.symbolicated.status} />
-      <StackFrameFooter onPress={() => setCollapsed(!collapsed)} message={getCollapseMessage(props.log.getAvailableStack(), collapsed)} />
-    </LogBoxInspectorSection>;
+  return null as any;
 }
 
 function StackFrameList(props) {

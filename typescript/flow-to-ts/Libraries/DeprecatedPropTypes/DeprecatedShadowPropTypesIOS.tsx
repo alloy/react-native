@@ -16,4 +16,4 @@ const DeprecatedShadowPropTypesIOS = {
   shadowRadius: ReactPropTypes.number
 };
 
-export default DeprecatedShadowPropTypesIOS;
+export default DeprecatedShadowPropTypesIOS;;

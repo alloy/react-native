@@ -1,4 +1,6 @@
-'use strict';
+'use strict';;
+import SegmentFetcher from './SegmentFetcher/NativeSegmentFetcher';
+import SegmentFetcher from './SegmentFetcher/NativeSegmentFetcher';
 
 
 
@@ -21,8 +23,7 @@ export type GetSegmentFunction = typeof __getSegment;
 function __fetchSegment(segmentId: number, options: {
   readonly otaBuildNumber: string | null | undefined;
   readonly requestedModuleName?: string | null | undefined;
-}, callback: (arg0: Error | null | undefined) => void) {
-  const SegmentFetcher = require('./SegmentFetcher/NativeSegmentFetcher').default;
+}, callback: ((arg0: Error | null | undefined) => void)) {
   SegmentFetcher.fetchSegment(segmentId, options, (errorObject: {
     message: string;
     code: string;
@@ -43,9 +44,7 @@ global.__fetchSegment = __fetchSegment;
 function __getSegment(segmentId: number, options: {
   readonly otaBuildNumber: string | null | undefined;
   readonly requestedModuleName?: string | null | undefined;
-}, callback: (arg0: Error | null | undefined, arg1: string | null | undefined) => void) {
-  const SegmentFetcher = require('./SegmentFetcher/NativeSegmentFetcher').default;
-
+}, callback: ((arg0: Error | null | undefined, arg1: string | null | undefined) => void)) {
   if (!SegmentFetcher.getSegment) {
     throw new Error('SegmentFetcher.getSegment must be defined');
   }

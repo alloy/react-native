@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 import NativePlatformConstantsAndroid from "./NativePlatformConstantsAndroid";
 
 export type PlatformSelectSpec<A, N, D> = {
@@ -47,4 +59,4 @@ const Platform = {
   select: <A, N, D>(spec: PlatformSelectSpec<A, N, D>): A | N | D => 'android' in spec ? spec.android : 'native' in spec ? spec.native : spec.default
 };
 
-export default Platform;
+export default Platform;;

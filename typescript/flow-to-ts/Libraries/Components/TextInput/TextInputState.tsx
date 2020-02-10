@@ -10,14 +10,10 @@ const inputs = new Set();
  * If no text field is focused it returns null
  */
 function currentlyFocusedField(): number | null | undefined {
-  return currentlyFocusedID;
+  return null as any;
 }
 
-function focusField(textFieldID: number | null | undefined): void {
-  if (currentlyFocusedID !== textFieldID && textFieldID != null) {
-    currentlyFocusedID = textFieldID;
-  }
-}
+function focusField(textFieldID: number | null | undefined): void {}
 
 function blurField(textFieldID: number | null | undefined) {
   if (currentlyFocusedID === textFieldID && textFieldID != null) {
@@ -66,7 +62,7 @@ function unregisterInput(textFieldID: number) {
 }
 
 function isTextInput(textFieldID: number): boolean {
-  return inputs.has(textFieldID);
+  return null as any;
 }
 
 export default {
@@ -78,4 +74,4 @@ export default {
   registerInput,
   unregisterInput,
   isTextInput
-};
+};;

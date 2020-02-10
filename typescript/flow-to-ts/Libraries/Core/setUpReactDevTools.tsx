@@ -4,6 +4,7 @@ import AppState from '../AppState/AppState';
 import getDevServer from './Devtools/getDevServer';
 import WebSocket from '../WebSocket/WebSocket';
 import viewConfig from '../Components/View/ReactNativeViewViewConfig.js';
+import _Import0 from '../StyleSheet/flattenStyle';
 import RCTNativeAppEventEmitter from '../EventEmitter/RCTNativeAppEventEmitter';
 
 
@@ -40,7 +41,7 @@ if (__DEV__) {
 
       reactDevTools.connectToDevTools({
         isAppActive,
-        resolveRNStyle: require('../StyleSheet/flattenStyle'),
+        resolveRNStyle: _Import0,
         nativeStyleEditorValidAttributes: Object.keys(viewConfig.validAttributes.style),
         websocket: ws
       });

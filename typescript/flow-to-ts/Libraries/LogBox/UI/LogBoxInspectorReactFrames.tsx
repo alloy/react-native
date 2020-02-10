@@ -52,64 +52,7 @@ function getPrettyFileName(path) {
   return fileName;
 }
 function LogBoxInspectorReactFrames(props: Props): React.ReactNode {
-  const [collapsed, setCollapsed] = React.useState(true);
-  if (props.log.componentStack == null || props.log.componentStack.length < 1) {
-    return null;
-  }
-
-  function getStackList() {
-    if (collapsed) {
-      return props.log.componentStack.slice(0, 3);
-    } else {
-      return props.log.componentStack;
-    }
-  }
-
-  function getCollapseMessage() {
-    if (props.log.componentStack.length <= 3) {
-      return;
-    }
-
-    const count = props.log.componentStack.length - 3;
-    if (collapsed) {
-      return `See ${count} more components`;
-    } else {
-      return `Collapse ${count} components`;
-    }
-  }
-
-  return <LogBoxInspectorSection heading="Component Stack">
-      {getStackList().map((frame, index) => <View // Unfortunately we don't have a unique identifier for stack traces.
-    key={index} style={componentStyles.frameContainer}>
-          <LogBoxButton backgroundColor={{
-        default: 'transparent',
-        pressed: LogBoxStyle.getBackgroundColor(1)
-      }} onPress={// Older versions of DevTools do not provide full path.
-      // This will not work on Windows, remove check once the
-      // DevTools return the full file path.
-      frame.fileName.startsWith('/') ? () => openFileInEditor(frame.fileName, frame.location?.row ?? 1) : null} style={componentStyles.frame}>
-            <View style={componentStyles.component}>
-              <Text style={componentStyles.frameName}>
-                <Text style={componentStyles.bracket}>{'<'}</Text>
-                {frame.content}
-                <Text style={componentStyles.bracket}>{' />'}</Text>
-              </Text>
-            </View>
-            <Text style={componentStyles.frameLocation}>
-              {getPrettyFileName(frame.fileName)}
-              {frame.location ? `:${frame.location.row}` : ''}
-            </Text>
-          </LogBoxButton>
-        </View>)}
-      <View style={componentStyles.collapseContainer}>
-        <LogBoxButton backgroundColor={{
-        default: 'transparent',
-        pressed: LogBoxStyle.getBackgroundColor(1)
-      }} onPress={() => setCollapsed(!collapsed)} style={componentStyles.collapseButton}>
-          <Text style={componentStyles.collapse}>{getCollapseMessage()}</Text>
-        </LogBoxButton>
-      </View>
-    </LogBoxInspectorSection>;
+  return null as any;
 }
 
 const componentStyles = StyleSheet.create({

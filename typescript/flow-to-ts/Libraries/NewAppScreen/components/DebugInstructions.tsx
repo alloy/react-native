@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const DebugInstructions: () => Node = Platform.select({
+const DebugInstructions: (() => Node) = Platform.select({
   ios: () => <Text>
       Press <Text style={styles.highlight}>Cmd + D</Text> in the simulator or{' '}
       <Text style={styles.highlight}>Shake</Text> your device to open the React

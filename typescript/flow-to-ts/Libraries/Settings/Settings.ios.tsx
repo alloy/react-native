@@ -6,7 +6,7 @@ import NativeSettingsManager from "./NativeSettingsManager";
 
 const subscriptions: Array<{
   keys: Array<string>;
-  callback: Function | null | undefined;
+  callback: ((...args: any) => any) | null | undefined;
 
 }> = [];
 
@@ -17,12 +17,12 @@ const Settings = {
     return this._settings[key];
   },
 
-  set(settings: Object) {
+  set(settings: any) {
     this._settings = Object.assign(this._settings, settings);
     NativeSettingsManager.setValues(settings);
   },
 
-  watchKeys(keys: string | Array<string>, callback: Function): number {
+  watchKeys(keys: string | Array<string>, callback: ((...args: any) => any)): number {
     if (typeof keys === 'string') {
       keys = [keys];
     }
@@ -40,7 +40,7 @@ const Settings = {
     }
   },
 
-  _sendObservations(body: Object) {
+  _sendObservations(body: any) {
     Object.keys(body).forEach(key => {
       const newValue = body[key];
       const didChange = this._settings[key] !== newValue;
@@ -59,4 +59,4 @@ const Settings = {
 
 RCTDeviceEventEmitter.addListener('settingsUpdated', Settings._sendObservations.bind(Settings));
 
-export default Settings;
+export default Settings;;

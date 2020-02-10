@@ -29,10 +29,10 @@ export interface Spec extends TurboModule {
   // types.
 
   /* 'light' | 'dark' */
-  readonly getColorScheme: () => string | null | undefined;
+  readonly getColorScheme: (() => string | null | undefined);
   // RCTEventEmitter
-  readonly addListener: (eventName: string) => void;
-  readonly removeListeners: (count: number) => void;
+  readonly addListener: ((eventName: string) => void);
+  readonly removeListeners: ((count: number) => void);
 }
 
 export default (TurboModuleRegistry.get<Spec>('Appearance') as Spec | null | undefined);

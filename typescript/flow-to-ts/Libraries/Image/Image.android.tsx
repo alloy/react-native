@@ -136,12 +136,8 @@ const ImageProps = {
  *
  * See https://facebook.github.io/react-native/docs/image.html#getsize
  */
-function getSize(url: string, success: (width: number, height: number) => void, failure?: (error: any) => void): any {
-  return NativeImageLoaderAndroid.getSize(url).then(function (sizes) {
-    success(sizes.width, sizes.height);
-  }).catch(failure || function () {
-    console.warn('Failed to get size for image: ' + url);
-  });
+function getSize(url: string, success: ((width: number, height: number) => void), failure?: ((error: any) => void)): any {
+  return null as any;
 }
 
 /**
@@ -152,18 +148,12 @@ function getSize(url: string, success: (width: number, height: number) => void, 
  */
 function getSizeWithHeaders(url: string, headers: {
   [key: string]: string;
-}, success: (width: number, height: number) => void, failure?: (error: any) => void): any {
-  return NativeImageLoaderAndroid.getSizeWithHeaders(url, headers).then(function (sizes) {
-    success(sizes.width, sizes.height);
-  }).catch(failure || function () {
-    console.warn('Failed to get size for image: ' + url);
-  });
+}, success: ((width: number, height: number) => void), failure?: ((error: any) => void)): any {
+  return null as any;
 }
 
-function prefetch(url: string, callback: Function | null | undefined): any {
-  const requestId = generateRequestId();
-  callback && callback(requestId);
-  return NativeImageLoaderAndroid.prefetchImage(url, requestId);
+function prefetch(url: string, callback: ((...args: any) => any) | null | undefined): any {
+  return null as any;
 }
 
 function abortPrefetch(requestId: number) {
@@ -178,7 +168,7 @@ function abortPrefetch(requestId: number) {
 async function queryCache(urls: Array<string>): Promise<{
   [key: string]: "memory" | "disk" | "disk/memory";
 }> {
-  return await NativeImageLoaderAndroid.queryCache(urls);
+  return null as any;
 }
 
 type ImageComponentStatics = $ReadOnly<{
@@ -321,4 +311,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default (Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof TextInlineImageNativeComponent> | React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics;
+export default (Image as any) as React.AbstractComponent<ImagePropsType, React.ElementRef<typeof TextInlineImageNativeComponent> | React.ElementRef<typeof ImageViewNativeComponent>> & ImageComponentStatics;;

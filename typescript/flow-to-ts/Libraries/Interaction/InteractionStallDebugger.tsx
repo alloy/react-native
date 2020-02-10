@@ -9,4 +9,4 @@ const InteractionStallDebugger = {
   }
 };
 
-export default InteractionStallDebugger;
+export default InteractionStallDebugger;;

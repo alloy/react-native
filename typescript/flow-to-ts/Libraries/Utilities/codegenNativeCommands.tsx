@@ -19,15 +19,7 @@ type Options<T = string> = $ReadOnly<{
 }>;
 
 function codegenNativeCommands<T extends {}>(options: Options<$Keys<T>>): T {
-  const commandObj = {};
-
-  options.supportedCommands.forEach(command => {
-    commandObj[command] = (ref, ...args) => {
-      dispatchCommand(ref, command, args);
-    };
-  });
-
-  return ((commandObj as any) as T);
+  return null as any;
 }
 
 export default codegenNativeCommands;

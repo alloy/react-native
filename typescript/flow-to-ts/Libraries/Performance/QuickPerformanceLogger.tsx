@@ -1,4 +1,16 @@
-'use strict';;
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
 const AUTO_SET_TIMESTAMP = -1;
 const DUMMY_INSTANCE_KEY = 0;
 
@@ -47,4 +59,4 @@ const QuickPerformanceLogger = {
   }
 };
 
-export default QuickPerformanceLogger;
+export default QuickPerformanceLogger;;

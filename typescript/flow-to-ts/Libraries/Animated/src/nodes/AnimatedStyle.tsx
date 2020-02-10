@@ -7,7 +7,7 @@ import flattenStyle from '../../../StyleSheet/flattenStyle';
 
 class AnimatedStyle extends AnimatedWithChildren {
 
-  _style: Object;
+  _style: any;
 
   constructor(style: any) {
     super();
@@ -42,7 +42,7 @@ class AnimatedStyle extends AnimatedWithChildren {
     return updatedStyle;
   }
 
-  __getValue(): Object {
+  __getValue(): any {
     return this._walkStyleAndGetValues(this._style);
   }
 
@@ -61,7 +61,7 @@ class AnimatedStyle extends AnimatedWithChildren {
     return updatedStyle;
   }
 
-  __getAnimatedValue(): Object {
+  __getAnimatedValue(): any {
     return this._walkStyleAndGetAnimatedValues(this._style);
   }
 
@@ -94,7 +94,7 @@ class AnimatedStyle extends AnimatedWithChildren {
     super.__makeNative();
   }
 
-  __getNativeConfig(): Object {
+  __getNativeConfig(): any {
     const styleConfig = {};
     for (const styleKey in this._style) {
       if (this._style[styleKey] instanceof AnimatedNode) {
@@ -113,4 +113,4 @@ class AnimatedStyle extends AnimatedWithChildren {
   }
 }
 
-export default AnimatedStyle;
+export default AnimatedStyle;;

@@ -1,4 +1,4 @@
-'use strict';;
+'use strict';
 import { $ReadOnly, $Diff } from "utility-types";
 
 
@@ -38,8 +38,8 @@ type Props = $ReadOnly<React.ElementConfig<TouchableWithoutFeedback> & AndroidPr
   activeOpacity?: number | null | undefined;
   underlayColor?: ColorValue | null | undefined;
   style?: ViewStyleProp | null | undefined;
-  onShowUnderlay?: () => void | null | undefined;
-  onHideUnderlay?: () => void | null | undefined;
+  onShowUnderlay?: (() => void) | null | undefined;
+  onHideUnderlay?: (() => void) | null | undefined;
   testOnly_pressed?: boolean | null | undefined;
   hostRef: React.Ref<typeof View>;
 }>;
@@ -327,4 +327,4 @@ class TouchableHighlight extends React.Component<Props, State> {
   }
 }
 
-export default React.forwardRef((props, hostRef) => <TouchableHighlight {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>;
+export default React.forwardRef((props, hostRef) => <TouchableHighlight {...props} hostRef={hostRef} />) as React.ComponentType<$ReadOnly<$Diff<Props, {hostRef: unknown;}>>>;;
