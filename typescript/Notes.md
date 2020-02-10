@@ -19,7 +19,7 @@ yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/i
 
 Faster, but can't log from flow-to-ts:
 ```bash
-find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'echo "$1:" && mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
+find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
 yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
 ```
 
