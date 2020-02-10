@@ -1,5 +1,6 @@
 import 'promise';
 import _Import0 from 'some-module';
+import FooBar from 'default-export-single-var';
 import _Import1 from 'some-other-module';
 import _Import2 from 'and-yet-another-module';
 import _Import3 from 'yet-another-module';

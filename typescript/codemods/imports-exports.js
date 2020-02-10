@@ -7,11 +7,9 @@ const {
     Identifier,
     Literal,
     MemberExpression,
-    ObjectExpression,
-    ObjectPattern,
-    ObjectProperty,
     Program,
-    VariableDeclarator
+    VariableDeclaration,
+    VariableDeclarator,
 } = require('jscodeshift');
 
 /**
@@ -82,10 +80,18 @@ const transformer = (file, api, options) => {
             if (Literal.check(source)) {
                 const variableDeclarator = findVariableDeclarator(requirePath);
                 if (variableDeclarator) {
-                    const tmpVar = j.identifier(`_Import${i++}`);
-                    const specifiers = [j.importDefaultSpecifier(tmpVar)];
-                    requirePath.replace(tmpVar);
-                    expressions.push(j.importDeclaration(specifiers, source));
+                    const id = variableDeclarator.node.id;
+                    const declaration = variableDeclarator.parent.node;
+                    if (Identifier.check(id) && VariableDeclaration.assert(declaration) && declaration.kind === 'const') {
+                        requirePath.parent.parent.replace(null);
+                        const specifiers = [j.importDefaultSpecifier(id)];
+                        expressions.push(j.importDeclaration(specifiers, source));
+                    } else {
+                        const tmpVar = j.identifier(`_Import${i++}`);
+                        const specifiers = [j.importDefaultSpecifier(tmpVar)];
+                        requirePath.replace(tmpVar);
+                        expressions.push(j.importDeclaration(specifiers, source));
+                    }
                 } else if (ExpressionStatement.check(requirePath.parent.node)) {
                     // This is the only expression, e.g. `require("foo");`
                     expressions.push(j.importDeclaration([], source));

@@ -1,5 +1,6 @@
 require('promise');
 const { foo, bar } = require('some-module');
+const FooBar = require('default-export-single-var');
 
 function someFunction() {
     let baz = require('some-other-module');
