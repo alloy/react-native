@@ -14,13 +14,16 @@
 
 ```bash
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -I {} sh -c 'echo "$1:" && mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {} 2>&1 | tee -a logs/flow-to-ts.log
-yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
 ```
 
 Faster, but can't log from flow-to-ts:
 ```bash
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
+```
+
+```bash
 yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
+yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/noops.js typescript/flow-to-ts/**/*.tsx
 ```
 
 * ~~`opaque` type isn't converted (`typescript/flow-to-ts/Libraries/Blob/BlobTypes.tsx`)~~

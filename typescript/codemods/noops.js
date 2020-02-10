@@ -9,6 +9,7 @@ const {
     Literal,
     MemberExpression,
     Program,
+    TSTypeAnnotation,
     VariableDeclaration,
     VariableDeclarator,
 } = require('jscodeshift');
@@ -23,22 +24,24 @@ const transformer = (file, api, options) => {
     collection
         .find(FunctionDeclaration, node => {
             if (!node.returnType) {
-                console.log(`[!] Missing function return type annotation (${node.id.name})`)
+                // console.log(`[!] Missing function return type annotation (${node.id.name})`)
                 return false;
             }
             return true;
         })
-        .replaceWith(({ node }) => ({
-            ...node,
-            body: j.blockStatement([
-                j.returnStatement(
-                    j.tsAsExpression.from({
-                        expression: j.literal(null),
-                        typeAnnotation: j.tsAnyKeyword()
-                    })
-                )
-            ])
-        }));
+        .replaceWith(({ node }) => {
+            const statements = [];
+            if (!(TSTypeAnnotation.check(node.returnType) && node.returnType.typeAnnotation.type === 'TSVoidKeyword')) {
+                statements.push(j.returnStatement(j.tsAsExpression.from({
+                    expression: j.literal(null),
+                    typeAnnotation: j.tsAnyKeyword()
+                })));
+            }
+            return ({
+                ...node,
+                body: j.blockStatement(statements)
+            });
+        });
 
     return collection.toSource();
 };
