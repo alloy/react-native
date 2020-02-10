@@ -21,7 +21,7 @@ yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/i
 
 * ~~`opaque` type isn't converted (`typescript/flow-to-ts/Libraries/Blob/BlobTypes.tsx`)~~
 * ~~needs extra parentheses around function, which Flow version actually has (in `typescript/flow-to-ts/Libraries/Animated/src/AnimatedEvent.tsx`): `__getHandler(): any | (...args: any) => void {`~~
-* class static properties that are readonly are not converted from + to readonly (`typescript/flow-to-ts/Libraries/Components/DatePickerAndroid/DatePickerAndroid.ios.tsx`)
+* ~~class static properties that are readonly are not converted from + to readonly (`typescript/flow-to-ts/Libraries/Components/DatePickerAndroid/DatePickerAndroid.ios.tsx`)~~
+* ~~`Object` should be converted to `any`, https://flow.org/en/docs/types/objects/#toc-object-type~~
+* ~~`Function` should be converted to `any`, https://flow.org/en/docs/types/functions/#toc-function-type~~
 * `type Fn<Args, Return> = (...Args) => Return;` becomes `type Fn<Args, Return> = (...: Args) => Return;`, but should be `type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;` (`typescript/flow-to-ts/Libraries/polyfills/error-guard.tsx`)
-* `Object` should be converted to `any`, https://flow.org/en/docs/types/objects/#toc-object-type
-* `Function` should be converted to `any`, https://flow.org/en/docs/types/functions/#toc-function-type

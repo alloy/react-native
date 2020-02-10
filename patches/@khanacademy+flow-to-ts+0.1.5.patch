@@ -25,7 +25,7 @@ index dc9c67c..2d609cc 100644
      tsCode += "\n";
    }
 diff --git a/node_modules/@khanacademy/flow-to-ts/src/transform.js b/node_modules/@khanacademy/flow-to-ts/src/transform.js
-index 8ab9470..5b9292e 100644
+index 8ab9470..688cb75 100644
 --- a/node_modules/@khanacademy/flow-to-ts/src/transform.js
 +++ b/node_modules/@khanacademy/flow-to-ts/src/transform.js
 @@ -1,4 +1,3 @@
@@ -54,7 +54,26 @@ index 8ab9470..5b9292e 100644
        } else {
          path.replaceWith(t.tsTypeReference(typeName, typeParameters));
        }
-@@ -566,6 +579,14 @@ const transform = {
+@@ -435,6 +448,18 @@ const transform = {
+       }
+     }
+   },
++  ClassProperty: {
++    exit(path) {
++      const { variance } = path.node;
++      const readonly = variance && variance.kind === "plus";
++      if (variance && variance.kind === "minus") {
++        // TODO: include file and location of infraction
++        console.warn("typescript doesn't support writeonly properties");
++      }
++      delete path.node.variance;
++      path.node.readonly = readonly;
++    }
++  },
+   ObjectTypeProperty: {
+     exit(path) {
+       const { key, value, optional, variance, kind, method } = path.node; // TODO: static, kind
+@@ -566,6 +591,14 @@ const transform = {
        }
      }
    },
