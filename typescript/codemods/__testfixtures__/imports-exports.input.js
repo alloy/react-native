@@ -9,5 +9,4 @@ function someFunction() {
 }
 
 module.exports = someFunction;
-module.exports = { someFunction, AliasedSomeFunction: someFunction };
-module.exports = { get someFunction() {}, AliasedSomeFunction: someFunction };
+module.exports = { someFunction, get someFunction() {}, AliasedSomeFunction: someFunction };

@@ -17,6 +17,12 @@ find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | x
 yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
 ```
 
+Faster, but can't log from flow-to-ts:
+```bash
+find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'echo "$1:" && mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
+yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
+```
+
 * ~~`opaque` type isn't converted (`typescript/flow-to-ts/Libraries/Blob/BlobTypes.tsx`)~~
 * ~~needs extra parentheses around function, which Flow version actually has (in `typescript/flow-to-ts/Libraries/Animated/src/AnimatedEvent.tsx`): `__getHandler(): any | (...args: any) => void {`~~
 * ~~class static properties that are readonly are not converted from + to readonly (`typescript/flow-to-ts/Libraries/Components/DatePickerAndroid/DatePickerAndroid.ios.tsx`)~~

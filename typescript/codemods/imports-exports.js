@@ -82,30 +82,10 @@ const transformer = (file, api, options) => {
             if (Literal.check(source)) {
                 const variableDeclarator = findVariableDeclarator(requirePath);
                 if (variableDeclarator) {
-                    const id = variableDeclarator.node.id;
-                    if (Identifier.check(id)) {
-                        const tmpVar = j.identifier(`_Import${i++}`);
-                        const specifiers = [j.importDefaultSpecifier(tmpVar)];
-                        requirePath.replace(tmpVar);
-                        expressions.push(j.importDeclaration(specifiers, source));
-                    } else if (ObjectPattern.check(id)) {
-                        const specifiers = id.properties.map(property => {
-                            if (ObjectProperty.check(property)) {
-                                if (Identifier.check(property.key)) {
-                                    return j.importSpecifier(property.key);
-                                } else {
-                                    throw new Error('[!] Expected identifier key');
-                                }
-                            } else {
-                                console.log(property);
-                                throw new Error('[!] Expected Property');
-                            }
-                        });
-                        expressions.push(j.importDeclaration(specifiers, source));
-                        requirePath.parent.parent.replace(null);
-                    } else {
-                        throw new Error('[!] Default import expected');
-                    }
+                    const tmpVar = j.identifier(`_Import${i++}`);
+                    const specifiers = [j.importDefaultSpecifier(tmpVar)];
+                    requirePath.replace(tmpVar);
+                    expressions.push(j.importDeclaration(specifiers, source));
                 } else if (ExpressionStatement.check(requirePath.parent.node)) {
                     // This is the only expression, e.g. `require("foo");`
                     expressions.push(j.importDeclaration([], source));
@@ -141,17 +121,7 @@ const transformer = (file, api, options) => {
             );
         })
         .forEach(path => {
-            const right = path.node.right;
-            if (ObjectExpression.check(right) && right.properties.every(property => ObjectProperty.check(property))) {
-                const specifiers = right.properties.map(property => {
-                    if (ObjectProperty.assert(property) && Identifier.assert(property.key) && Identifier.assert(property.value)) {
-                        return j.exportSpecifier(property.value, property.key);
-                    }
-                });
-                path.replace(j.exportNamedDeclaration(null, specifiers));
-            } else {
-                path.replace(j.exportDefaultDeclaration(path.node.right));
-            }
+            path.replace(j.exportDefaultDeclaration(path.node.right));
         });
 
     return collection.toSource();
