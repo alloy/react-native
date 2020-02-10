@@ -53,11 +53,18 @@ function getRequire(node) {
  * @returns { null | import("jscodeshift").ASTPath<import("jscodeshift").VariableDeclarator> }
  */
 function findVariableDeclarator(path) {
-    let declarator = path.parent;
-    while (declarator && !VariableDeclarator.check(declarator.node)) {
-        declarator = declarator.parent;
+    const parent = path.parent;
+    if (VariableDeclarator.check(parent.node)) {
+        return parent;
+    } else {
+        const expression = parent.node;
+        if (MemberExpression.check(expression) && Identifier.check(expression.property) && expression.property.name === 'default') {
+            if (VariableDeclarator.check(parent.parent.node)) {
+                return parent.parent;
+            }
+        }
     }
-    return declarator;
+    return null;
 }
 
 /**
@@ -79,6 +86,10 @@ const transformer = (file, api, options) => {
             const source = requirePath.node.arguments[0];
             if (Literal.check(source)) {
                 const variableDeclarator = findVariableDeclarator(requirePath);
+                // const variableDeclarator = VariableDeclarator.check(requirePath.parent.node)
+                //     ? requirePath.parent
+                //     // : null;
+                //     : (MemberExpression.check(requirePath.parent.node) && VariableDeclarator.check(requirePath.parent.parent) ? )
                 if (variableDeclarator) {
                     const id = variableDeclarator.node.id;
                     const declaration = variableDeclarator.parent;

@@ -2,6 +2,8 @@ require('promise');
 const { foo, bar } = require('some-module');
 const FooBar = require('default-export-single-var');
 
+const AssignmentWithNonDefaultExpression = require('assignment-with-non-default-expression').foo;
+
 function someFunction() {
     const ExplicitDefaultUsage = require('explicit-default-usage').default;
     let baz = require('some-other-module');
