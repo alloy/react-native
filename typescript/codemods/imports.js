@@ -106,13 +106,14 @@ const transformer = (file, api, options) => {
                     } else {
                         throw new Error('[!] Default import expected');
                     }
-                } else if (!ExpressionStatement.check(requirePath.parent.node)) {
+                } else if (ExpressionStatement.check(requirePath.parent.node)) {
+                    // This is the only expression, e.g. `require("foo");`
+                    expressions.push(j.importDeclaration([], source));
+                    requirePath.replace(null);
+                } else {
                     const tmpVar = j.identifier(`_Import${i++}`);
                     expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
                     requirePath.replace(tmpVar);
-                } else {
-                    expressions.push(j.importDeclaration([], source));
-                    requirePath.replace(null);
                 }
                 return true;
             } else {
