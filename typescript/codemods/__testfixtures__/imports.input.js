@@ -2,9 +2,10 @@ require('promise');
 const { foo, bar } = require('some-module');
 
 function someFunction() {
-    const baz = require('some-other-module');
+    let baz = require('some-other-module');
+    baz = require('and-yet-another-module')(foo);
     require('yet-another-module').foo(foo, bar, baz);
-    return require('and-yet-another-module');
+    return require('and-yet-another-another-module');
 }
 
 module.exports = someFunction;

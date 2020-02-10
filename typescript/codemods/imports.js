@@ -3,6 +3,7 @@
 const {
     AssignmentExpression,
     CallExpression,
+    ExpressionStatement,
     Identifier,
     Literal,
     MemberExpression,
@@ -10,8 +11,6 @@ const {
     ObjectPattern,
     ObjectProperty,
     Program,
-    Property,
-    ReturnStatement,
     VariableDeclarator
 } = require('jscodeshift');
 
@@ -73,22 +72,16 @@ const transformer = (file, api, options) => {
     const collection = j(file.source);
     const expressions = [];
 
+    /**
+     * require
+     */
     collection
         .find(CallExpression, node => Identifier.check(node.callee) && node.callee.name === 'require')
         .forEach(requirePath => {
             const source = requirePath.node.arguments[0];
             if (Literal.check(source)) {
                 const variableDeclarator = findVariableDeclarator(requirePath);
-                if (!variableDeclarator) {
-                    if (MemberExpression.check(requirePath.parent.node) || ReturnStatement.check(requirePath.parent.node)) {
-                        const tmpVar = j.identifier(`_Import${i++}`);
-                        expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
-                        requirePath.replace(tmpVar);
-                    } else {
-                        expressions.push(j.importDeclaration([], source));
-                        requirePath.replace(null);
-                    }
-                } else {
+                if (variableDeclarator) {
                     const id = variableDeclarator.node.id;
                     if (Identifier.check(id)) {
                         const tmpVar = j.identifier(`_Import${i++}`);
@@ -113,6 +106,13 @@ const transformer = (file, api, options) => {
                     } else {
                         throw new Error('[!] Default import expected');
                     }
+                } else if (!ExpressionStatement.check(requirePath.parent.node)) {
+                    const tmpVar = j.identifier(`_Import${i++}`);
+                    expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
+                    requirePath.replace(tmpVar);
+                } else {
+                    expressions.push(j.importDeclaration([], source));
+                    requirePath.replace(null);
                 }
                 return true;
             } else {
@@ -128,6 +128,7 @@ const transformer = (file, api, options) => {
         });
     });
 
+    // module.exports
     collection
         .find(AssignmentExpression, node => {
             const left = node.left;
