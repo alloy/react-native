@@ -14,14 +14,14 @@ export declare type ExceptionData = {
     stack: Array<StackFrame>;
     id: number;
     isFatal: boolean;
-    extraData?: Object;
+    extraData?: any;
 };
 export interface Spec extends TurboModule {
-    readonly reportFatalException: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
-    readonly reportSoftException: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
-    readonly reportException?: (data: ExceptionData) => void;
-    readonly updateExceptionMessage: (message: string, stack: Array<StackFrame>, exceptionId: number) => void;
-    readonly dismissRedbox?: () => void;
+    readonly reportFatalException: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
+    readonly reportSoftException: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
+    readonly reportException?: ((data: ExceptionData) => void);
+    readonly updateExceptionMessage: ((message: string, stack: Array<StackFrame>, exceptionId: number) => void);
+    readonly dismissRedbox?: (() => void);
 }
 declare const ExceptionsManager: {
     reportFatalException(message: string, stack: StackFrame[], exceptionId: number): void;

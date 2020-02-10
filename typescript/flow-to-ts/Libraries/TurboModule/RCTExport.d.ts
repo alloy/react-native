@@ -16,7 +16,7 @@
  * NOTE: This export is deprecated. Please us TurboModule.
  */
 export interface DEPRECATED_RCTExport<T extends void = void> {
-    readonly getConstants?: () => {};
+    readonly getConstants?: (() => {});
 }
 export interface TurboModule extends DEPRECATED_RCTExport<void> {
 }

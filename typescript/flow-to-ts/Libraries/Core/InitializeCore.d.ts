@@ -1,0 +1,13 @@
+import './setUpGlobals';
+import './setUpSystrace';
+import './setUpErrorHandling';
+import './polyfillPromise';
+import './setUpRegeneratorRuntime';
+import './setUpTimers';
+import './setUpXHR';
+import './setUpAlert';
+import './setUpNavigator';
+import './setUpBatchedBridge';
+import './setUpSegmentFetcher';
+import './checkNativeVersion';
+import './setUpDeveloperTools';

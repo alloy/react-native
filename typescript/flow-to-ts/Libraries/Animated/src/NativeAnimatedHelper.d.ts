@@ -1,0 +1,62 @@
+import NativeEventEmitter from "../../EventEmitter/NativeEventEmitter";
+import { EventConfig } from "./AnimatedEvent";
+import { EventMapping } from "./NativeAnimatedModule";
+import { AnimationConfig, EndCallback } from "./animations/Animation";
+import { InterpolationConfigType } from "./nodes/AnimatedInterpolation";
+declare function addWhitelistedStyleProp(prop: string): void;
+declare function addWhitelistedTransformProp(prop: string): void;
+declare function addWhitelistedInterpolationParam(param: string): void;
+declare function validateTransform(configs: Array<{
+    type: "animated";
+    property: string;
+    nodeTag: number | null | undefined;
+} | {
+    type: "static";
+    property: string;
+    value: number | string;
+}>): void;
+declare function validateStyles(styles: {
+    [key: string]: number | null | undefined;
+}): void;
+declare function validateInterpolation(config: InterpolationConfigType): void;
+declare function generateNewNodeTag(): number;
+declare function generateNewAnimationId(): number;
+declare function assertNativeAnimatedModule(): void;
+declare function shouldUseNativeDriver(config: AnimationConfig | EventConfig): boolean;
+declare function transformDataType(value: number | string): number | string;
+declare const _default: {
+    API: {
+        enableQueue: () => void;
+        disableQueue: () => void;
+        createAnimatedNode: (tag: number, config: any) => void;
+        startListeningToAnimatedNodeValue: (tag: number) => void;
+        stopListeningToAnimatedNodeValue: (tag: number) => void;
+        connectAnimatedNodes: (parentTag: number, childTag: number) => void;
+        disconnectAnimatedNodes: (parentTag: number, childTag: number) => void;
+        startAnimatingNode: (animationId: number, nodeTag: number, config: any, endCallback: EndCallback) => void;
+        stopAnimation: (animationId: number) => void;
+        setAnimatedNodeValue: (nodeTag: number, value: number) => void;
+        setAnimatedNodeOffset: (nodeTag: number, offset: number) => void;
+        flattenAnimatedNodeOffset: (nodeTag: number) => void;
+        extractAnimatedNodeOffset: (nodeTag: number) => void;
+        connectAnimatedNodeToView: (nodeTag: number, viewTag: number) => void;
+        disconnectAnimatedNodeFromView: (nodeTag: number, viewTag: number) => void;
+        restoreDefaultValues: (nodeTag: number) => void;
+        dropAnimatedNode: (tag: number) => void;
+        addAnimatedEventToView: (viewTag: number, eventName: string, eventMapping: EventMapping) => void;
+        removeAnimatedEventFromView(viewTag: number, eventName: string, animatedNodeTag: number): void;
+    };
+    addWhitelistedStyleProp: typeof addWhitelistedStyleProp;
+    addWhitelistedTransformProp: typeof addWhitelistedTransformProp;
+    addWhitelistedInterpolationParam: typeof addWhitelistedInterpolationParam;
+    validateStyles: typeof validateStyles;
+    validateTransform: typeof validateTransform;
+    validateInterpolation: typeof validateInterpolation;
+    generateNewNodeTag: typeof generateNewNodeTag;
+    generateNewAnimationId: typeof generateNewAnimationId;
+    assertNativeAnimatedModule: typeof assertNativeAnimatedModule;
+    shouldUseNativeDriver: typeof shouldUseNativeDriver;
+    transformDataType: typeof transformDataType;
+    readonly nativeEventEmitter: NativeEventEmitter;
+};
+export default _default;

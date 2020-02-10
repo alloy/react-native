@@ -1,6 +1,6 @@
 import { TurboModule } from "../TurboModule/RCTExport";
 export interface Spec extends TurboModule {
-    readonly getConstants: () => {
+    readonly getConstants: (() => {
         isTesting: boolean;
         reactNativeVersion: {
             major: number;
@@ -12,7 +12,7 @@ export interface Spec extends TurboModule {
         osVersion: string;
         systemName: string;
         interfaceIdiom: string;
-    };
+    });
 }
 declare const _default: Spec;
 export default _default;

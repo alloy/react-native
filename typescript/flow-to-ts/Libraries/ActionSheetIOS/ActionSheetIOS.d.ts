@@ -52,6 +52,6 @@ declare const ActionSheetIOS: {
      *
      * See http://facebook.github.io/react-native/docs/actionsheetios.html#showshareactionsheetwithoptions
      */
-    showShareActionSheetWithOptions(options: any, failureCallback: any, successCallback: any): void;
+    showShareActionSheetWithOptions(options: any, failureCallback: (...args: any) => any, successCallback: (...args: any) => any): void;
 };
 export default ActionSheetIOS;

@@ -6,15 +6,15 @@ export declare type SpyData = {
 };
 declare class MessageQueue {
     _lazyCallableModules: {
-        [key: string]: (arg0: void) => Object;
+        [key: string]: ((arg0: void) => any);
     };
     _queue: [number[], number[], any[], number];
-    _successCallbacks: Map<number, Function | null | undefined>;
-    _failureCallbacks: Map<number, Function | null | undefined>;
+    _successCallbacks: Map<number, ((...args: any) => any) | null | undefined>;
+    _failureCallbacks: Map<number, ((...args: any) => any) | null | undefined>;
     _callID: number;
     _lastFlush: number;
     _eventLoopStartTime: number;
-    _immediatesCallback: () => void | null | undefined;
+    _immediatesCallback: (() => void) | null | undefined;
     _debugInfo: {
         [key: number]: [number, number];
     };
@@ -24,7 +24,7 @@ declare class MessageQueue {
     _remoteMethodTable: {
         [key: number]: ReadonlyArray<string>;
     };
-    __spy: (data: SpyData) => void | null | undefined;
+    __spy: ((data: SpyData) => void) | null | undefined;
     constructor();
     /**
      * Public APIs
@@ -35,18 +35,18 @@ declare class MessageQueue {
     invokeCallbackAndReturnFlushedQueue(cbID: number, args: any[]): null | [Array<number>, Array<number>, Array<any>, number];
     flushedQueue(): null | [Array<number>, Array<number>, Array<any>, number];
     getEventLoopRunningTime(): number;
-    registerCallableModule(name: string, module: Object): void;
-    registerLazyCallableModule(name: string, factory: (arg0: void) => Object): void;
+    registerCallableModule(name: string, module: any): void;
+    registerLazyCallableModule(name: string, factory: ((arg0: void) => any)): void;
     getCallableModule(name: string): any | null;
-    callNativeSyncHook(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined): any;
-    processCallbacks(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined): void;
-    enqueueNativeCall(moduleID: number, methodID: number, params: any[], onFail: Function | null | undefined, onSucc: Function | null | undefined): void;
+    callNativeSyncHook(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined): any;
+    processCallbacks(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined): void;
+    enqueueNativeCall(moduleID: number, methodID: number, params: any[], onFail: ((...args: any) => any) | null | undefined, onSucc: ((...args: any) => any) | null | undefined): void;
     createDebugLookup(moduleID: number, name: string, methods: ReadonlyArray<string> | null | undefined): void;
-    setImmediatesCallback(fn: () => void): void;
+    setImmediatesCallback(fn: (() => void)): void;
     /**
      * Private methods
      */
-    __guard(fn: () => void): void;
+    __guard(fn: (() => void)): void;
     __shouldPauseOnThrow(): boolean;
     __callImmediates(): void;
     __callFunction(module: string, method: string, args: any[]): any;

@@ -15,5 +15,5 @@
  * Freezing the object and adding the throw mechanism is expensive and will
  * only be used in DEV.
  */
-declare function deepFreezeAndThrowOnMutationInDev<T extends Object>(object: T): T;
+declare function deepFreezeAndThrowOnMutationInDev<T extends any>(object: T): T;
 export default deepFreezeAndThrowOnMutationInDev;
