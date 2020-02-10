@@ -14,5 +14,5 @@ function someFunction() {
 }
 
 export default someFunction;;
-export { someFunction };;
-export default { get someFunction() {} };;
+export { someFunction, someFunction as AliasedSomeFunction };;
+export default { get someFunction() {}, AliasedSomeFunction: someFunction };;

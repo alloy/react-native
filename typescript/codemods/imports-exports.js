@@ -120,7 +120,6 @@ const transformer = (file, api, options) => {
                 throw new Error('[!] String-literal expected');
             }
         });
-
     // Hoist imports to top-level
     collection.find(Program).forEach(path => {
         const body = path.node.body;
@@ -129,7 +128,9 @@ const transformer = (file, api, options) => {
         });
     });
 
-    // module.exports
+    /**
+     * module.exports
+     */
     collection
         .find(AssignmentExpression, node => {
             const left = node.left;
@@ -143,11 +144,11 @@ const transformer = (file, api, options) => {
             const right = path.node.right;
             if (ObjectExpression.check(right) && right.properties.every(property => ObjectProperty.check(property))) {
                 const specifiers = right.properties.map(property => {
-                    if (ObjectProperty.check(property) && Identifier.check(property.key)) {
-                        return j.exportSpecifier(property.key, property.key);
+                    if (ObjectProperty.assert(property) && Identifier.assert(property.key) && Identifier.assert(property.value)) {
+                        return j.exportSpecifier(property.value, property.key);
                     }
                 });
-                path.replace(j.exportNamedDeclaration(null, specifiers))
+                path.replace(j.exportNamedDeclaration(null, specifiers));
             } else {
                 path.replace(j.exportDefaultDeclaration(path.node.right));
             }
