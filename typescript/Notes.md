@@ -8,7 +8,7 @@
   - there where `?number` is expected: https://github.com/facebook/react-native/blob/1e9db7bd6df3055b9b81d23f15a54bb250621a41/Libraries/StyleSheet/processColor.js#L18
 * Some third-party DT types will have tyo be improved, e.g. the `promise` package, which is used in `Libraries/promiseRejectionIsError.js`
 * In `typescript/flow-to-ts/Libraries/Animated/src/AnimatedEvent.tsx` the export should be `export { AnimatedEvent, attachNativeEvent }` and the import in `typescript/flow-to-ts/Libraries/Animated/src/AnimatedImplementation.tsx` should be `import { AnimatedEvent, attachNativeEvent } from …`.
-* Inline `require(…)` calls that are not stored in variables are currently not converted by the `imports.js` codemod. E.g. in `typescript/flow-to-ts/Libraries/Promise.tsx`
+* `typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.tsx` should be named `typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.ts`, as the type parameter is interpreted as jsx
 
 ## flow-to-ts
 
@@ -32,3 +32,4 @@ yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/n
 * ~~`Object` should be converted to `any`, https://flow.org/en/docs/types/objects/#toc-object-type~~
 * ~~`Function` should be converted to `any`, https://flow.org/en/docs/types/functions/#toc-function-type~~
 * `type Fn<Args, Return> = (...Args) => Return;` becomes `type Fn<Args, Return> = (...: Args) => Return;`, but should be `type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;` (`typescript/flow-to-ts/Libraries/polyfills/error-guard.tsx`)
+* `

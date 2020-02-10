@@ -166,7 +166,7 @@ declare const Touchable: {
      * Renders a debugging overlay to visualize touch target with hitSlop (might not work on Android).
      */
     renderDebugView: ({ color, hitSlop }: {
-        color: string | number;
+        color: React.ReactText;
         hitSlop: import("utility-types/dist/mapped-types")._DeepReadonlyObject<{
             bottom?: number | null | undefined;
             left?: number | null | undefined;

@@ -136,4 +136,4 @@ class AnimatedEvent {
   }
 }
 
-export default { AnimatedEvent, attachNativeEvent };;
+export { AnimatedEvent, attachNativeEvent };;
