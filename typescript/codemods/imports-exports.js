@@ -81,9 +81,9 @@ const transformer = (file, api, options) => {
                 const variableDeclarator = findVariableDeclarator(requirePath);
                 if (variableDeclarator) {
                     const id = variableDeclarator.node.id;
-                    const declaration = variableDeclarator.parent.node;
-                    if (Identifier.check(id) && VariableDeclaration.assert(declaration) && declaration.kind === 'const') {
-                        requirePath.parent.parent.replace(null);
+                    const declaration = variableDeclarator.parent;
+                    if (Identifier.check(id) && VariableDeclaration.assert(declaration.node) && declaration.node.kind === 'const') {
+                        declaration.replace(null);
                         const specifiers = [j.importDefaultSpecifier(id)];
                         expressions.push(j.importDeclaration(specifiers, source));
                     } else {
@@ -98,10 +98,9 @@ const transformer = (file, api, options) => {
                     requirePath.replace(null);
                 } else {
                     const tmpVar = j.identifier(`_Import${i++}`);
-                    expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source))
+                    expressions.push(j.importDeclaration([j.importDefaultSpecifier(tmpVar)], source));
                     requirePath.replace(tmpVar);
                 }
-                return true;
             } else {
                 throw new Error('[!] String-literal expected');
             }

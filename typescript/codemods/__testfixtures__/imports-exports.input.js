@@ -3,6 +3,7 @@ const { foo, bar } = require('some-module');
 const FooBar = require('default-export-single-var');
 
 function someFunction() {
+    const ExplicitDefaultUsage = require('explicit-default-usage').default;
     let baz = require('some-other-module');
     baz = require('and-yet-another-module')(foo);
     require('yet-another-module').foo(foo, bar, baz);
