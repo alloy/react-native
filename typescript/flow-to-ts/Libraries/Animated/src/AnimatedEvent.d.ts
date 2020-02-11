@@ -25,4 +25,8 @@ declare class AnimatedEvent {
     __getHandler(): any | ((...args: any) => void);
     _callListeners(...args: any): void;
 }
-export { AnimatedEvent, attachNativeEvent };
+declare const _default: {
+    AnimatedEvent: typeof AnimatedEvent;
+    attachNativeEvent: typeof attachNativeEvent;
+};
+export default _default;

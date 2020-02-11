@@ -63,5 +63,5 @@
     /* Advanced Options */
     // "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["typescript/globals.d.ts", "typescript/flow-to-ts/**/*.tsx"]
+  "include": ["typescript/globals.d.ts", "typescript/flow-to-ts/**/*.ts", "typescript/flow-to-ts/**/*.tsx"]
 }

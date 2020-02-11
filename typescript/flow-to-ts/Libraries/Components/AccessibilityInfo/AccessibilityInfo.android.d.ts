@@ -32,8 +32,8 @@ declare const AccessibilityInfo: {
      * Same as `isScreenReaderEnabled`
      */
     readonly fetch: () => Promise<boolean>;
-    addEventListener: (eventName: "change" | "reduceMotionChanged" | "screenReaderChanged", handler: (...args: any) => any) => void;
-    removeEventListener: (eventName: "change" | "reduceMotionChanged" | "screenReaderChanged", handler: (...args: any) => any) => void;
+    addEventListener: (eventName: "reduceMotionChanged" | "screenReaderChanged" | "change", handler: (...args: any) => any) => void;
+    removeEventListener: (eventName: "reduceMotionChanged" | "screenReaderChanged" | "change", handler: (...args: any) => any) => void;
     /**
      * Set accessibility focus to a react component.
      *
