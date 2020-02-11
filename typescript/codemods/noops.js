@@ -1,17 +1,10 @@
 // @ts-check
 
 const {
-    AssignmentExpression,
-    CallExpression,
-    ExpressionStatement,
     FunctionDeclaration,
-    Identifier,
-    Literal,
-    MemberExpression,
-    Program,
+    ObjectMethod,
+    Node,
     TSTypeAnnotation,
-    VariableDeclaration,
-    VariableDeclarator,
 } = require('jscodeshift');
 
 /**
@@ -22,25 +15,30 @@ const transformer = (file, api, options) => {
     const collection = j(file.source);
 
     collection
-        .find(FunctionDeclaration, node => {
-            if (!node.returnType) {
-                // console.log(`[!] Missing function return type annotation (${node.id.name})`)
-                return false;
+        .find(Node, node => {
+            if (FunctionDeclaration.check(node) || ObjectMethod.check(node)) {
+                if (!node.returnType) {
+                    // console.log(`[!] Missing function return type annotation (${node.id.name})`)
+                    return false;
+                }
+                return true;
             }
-            return true;
         })
-        .replaceWith(({ node }) => {
-            const statements = [];
-            if (!(TSTypeAnnotation.check(node.returnType) && node.returnType.typeAnnotation.type === 'TSVoidKeyword')) {
-                statements.push(j.returnStatement(j.tsAsExpression.from({
-                    expression: j.literal(null),
-                    typeAnnotation: j.tsAnyKeyword()
-                })));
+        .replaceWith(path => {
+            const node = path.node;
+            if (FunctionDeclaration.check(node) || ObjectMethod.check(node)) {
+                const statements = [];
+                if (!(TSTypeAnnotation.check(node.returnType) && node.returnType.typeAnnotation.type === 'TSVoidKeyword')) {
+                    statements.push(j.returnStatement(j.tsAsExpression.from({
+                        expression: j.literal(null),
+                        typeAnnotation: j.tsAnyKeyword(),
+                    })));
+                }
+                return ({
+                    ...node,
+                    body: j.blockStatement(statements),
+                });
             }
-            return ({
-                ...node,
-                body: j.blockStatement(statements)
-            });
         });
 
     return collection.toSource();

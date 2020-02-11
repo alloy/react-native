@@ -3,3 +3,9 @@ function foo(): number {
 }
 
 function bar(): void {}
+
+const x = {
+    get AccessibilityInfo(): AccessibilityInfo {
+        return null as any;
+    },
+}

@@ -6,3 +6,9 @@ function foo(): number {
 function bar(): void {
     const x = 21;
 }
+
+const x = {
+    get AccessibilityInfo(): AccessibilityInfo {
+        return AccessibilityInfo;
+    },
+}

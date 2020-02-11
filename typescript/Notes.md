@@ -12,18 +12,54 @@
 
 ## flow-to-ts
 
+Convert flow files to tsx:
+
+```bash
+yarn --silent flow-to-ts index.js > typescript/flow-to-ts/index.ts
+```
+
 ```bash
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -I {} sh -c 'echo "$1:" && mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {} 2>&1 | tee -a logs/flow-to-ts.log
 ```
 
 Faster, but can't log from flow-to-ts:
+
 ```bash
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
 ```
 
+Some manual fixes:
+
+* `type Fn<Args, Return> = (...Args) => Return;` becomes `type Fn<Args, Return> = (...: Args) => Return;`, but should be `type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;` (`typescript/flow-to-ts/Libraries/polyfills/error-guard.tsx`)
+
 ```bash
-yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/**/*.tsx
-yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/noops.js typescript/flow-to-ts/**/*.tsx
+mv typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.tsx typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.ts
+```
+
+Apply codemods:
+
+```bash
+yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/imports-exports.js typescript/flow-to-ts/index.ts typescript/flow-to-ts/**/*.tsx
+yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/noops.js typescript/flow-to-ts/index.ts typescript/flow-to-ts/**/*.tsx
+```
+
+Rename all iOS platform specific modules to their normal name:
+
+```bash
+find typescript/flow-to-ts -name '*.ios.tsx' | xargs -I {} sh -c 'mv "$1" $(echo "$1" | sed \'s/\(.*\)ios.tsx/\1tsx/\')' - {}
+```
+
+Finally run the TS compiler to generate the declarations:
+
+```bash
+tsc
+```
+
+Remove artifacts:
+
+```bash
+rm typescript/flow-to-ts/**/*.tsx
+rm typescript/flow-to-ts/**/*.jsx
 ```
 
 * ~~`opaque` type isn't converted (`typescript/flow-to-ts/Libraries/Blob/BlobTypes.tsx`)~~
@@ -32,4 +68,3 @@ yarn jscodeshift --extensions=tsx --parser=tsx --transform=typescript/codemods/n
 * ~~`Object` should be converted to `any`, https://flow.org/en/docs/types/objects/#toc-object-type~~
 * ~~`Function` should be converted to `any`, https://flow.org/en/docs/types/functions/#toc-function-type~~
 * `type Fn<Args, Return> = (...Args) => Return;` becomes `type Fn<Args, Return> = (...: Args) => Return;`, but should be `type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;` (`typescript/flow-to-ts/Libraries/polyfills/error-guard.tsx`)
-* `
