@@ -1,3 +1,5 @@
+import Bar from 'some-other-module';
+
 function foo(): number {
     return null as any;
 }
@@ -9,3 +11,5 @@ const x = {
         return null as any;
     },
 }
+
+Bar();

@@ -10,21 +10,29 @@
 * In `typescript/flow-to-ts/Libraries/Animated/src/AnimatedEvent.tsx` the export should be `export { AnimatedEvent, attachNativeEvent }` and the import in `typescript/flow-to-ts/Libraries/Animated/src/AnimatedImplementation.tsx` should be `import { AnimatedEvent, attachNativeEvent } from …`.
 * `typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.tsx` should be named `typescript/flow-to-ts/Libraries/ReactNative/requireNativeComponent.ts`, as the type parameter is interpreted as jsx
 
+## TODO:
+
+Exclude:
+
+```bash
+rm -rf typescript/flow-to-ts/Libraries/Renderer/implementations
+rm -rf typescript/flow-to-ts/Libraries/Animated/release
+rm -rf typescript/flow-to-ts/Libraries/ReactPrivate
+```
+
 ## flow-to-ts
 
 Convert flow files to tsx:
 
 ```bash
 yarn --silent flow-to-ts index.js > typescript/flow-to-ts/index.ts
-```
-
-```bash
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -I {} sh -c 'echo "$1:" && mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {} 2>&1 | tee -a logs/flow-to-ts.log
 ```
 
 Faster, but can't log from flow-to-ts:
 
 ```bash
+yarn --silent flow-to-ts index.js > typescript/flow-to-ts/index.ts
 find Libraries -name '*.js' | grep -v -E '__tests__|__mocks__|__flowtests__' | xargs -P 4 -I {} sh -c 'mkdir -p typescript/flow-to-ts/$(dirname "$1") && yarn --silent flow-to-ts "$1" > typescript/flow-to-ts/$(echo "$1" | sed \'s/\(.*\)js/\1tsx/\')' - {}
 ```
 
@@ -68,3 +76,23 @@ rm typescript/flow-to-ts/**/*.jsx
 * ~~`Object` should be converted to `any`, https://flow.org/en/docs/types/objects/#toc-object-type~~
 * ~~`Function` should be converted to `any`, https://flow.org/en/docs/types/functions/#toc-function-type~~
 * `type Fn<Args, Return> = (...Args) => Return;` becomes `type Fn<Args, Return> = (...: Args) => Return;`, but should be `type Fn<Args extends ReadonlyArray<any>, Return> = (...args: Args) => Return;` (`typescript/flow-to-ts/Libraries/polyfills/error-guard.tsx`)
+
+## Work with tsc errors
+
+Get list of all errors ranked by occurrence:
+
+```
+yarn -s tsc --pretty false | grep -E 'TS\\d+' -o | sort | uniq -c | sort -r
+```
+
+Get list of files with specific error:
+
+```bash
+yarn -s tsc --pretty false | grep -E {ERROR}
+```
+
+Get unique list with specific error, ranked by occurrence:
+
+```bash
+yarn -s tsc --pretty false | grep -E {ERROR} | cut -d ' ' -f 3- | sort | uniq -c | sort -r
+```
